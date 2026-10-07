@@ -1,0 +1,436 @@
+{
+  "schema_version": "0.1",
+  "workload_id": "example-coding-agent",
+  "generator": "hand-built/0.1",
+  "seed": 0,
+  "events": [
+    {
+      "event_id": "e01",
+      "user_id": "u1",
+      "session_id": "s1",
+      "timestamp": "2026-01-05T10:00:00Z",
+      "kind": "user_message",
+      "content": "For payments-service we're on PostgreSQL 14.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e02",
+      "user_id": "u1",
+      "session_id": "s1",
+      "timestamp": "2026-01-05T10:01:00Z",
+      "kind": "user_message",
+      "content": "Run the tests with `pytest -x`, please.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e03",
+      "user_id": "u1",
+      "session_id": "s1",
+      "timestamp": "2026-01-05T10:02:00Z",
+      "kind": "user_message",
+      "content": "We deploy from the main branch.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e04",
+      "user_id": "u1",
+      "session_id": "s1",
+      "timestamp": "2026-01-05T10:03:00Z",
+      "kind": "assistant_message",
+      "content": "Got it, I'll keep that in mind.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e05",
+      "user_id": "u1",
+      "session_id": "s2",
+      "timestamp": "2026-01-20T09:00:00Z",
+      "kind": "document",
+      "content": "README.md: Deploys go out from the `master` branch.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e06",
+      "user_id": "u1",
+      "session_id": "s2",
+      "timestamp": "2026-01-20T09:05:00Z",
+      "kind": "user_message",
+      "content": "Staging lives at staging-7.internal.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e07",
+      "user_id": "u1",
+      "session_id": "s2",
+      "timestamp": "2026-01-20T09:09:00Z",
+      "kind": "user_message",
+      "content": "Reminder: payments still runs on Postgres 14.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e08",
+      "user_id": "u1",
+      "session_id": "s3",
+      "timestamp": "2026-02-15T14:00:00Z",
+      "kind": "tool_result",
+      "content": "migrate.log: payments-service migrated to PostgreSQL 16. OK",
+      "metadata": {}
+    },
+    {
+      "event_id": "e09",
+      "user_id": "u1",
+      "session_id": "s3",
+      "timestamp": "2026-02-15T14:10:00Z",
+      "kind": "user_message",
+      "content": "Tests now run with `make test`.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e10",
+      "user_id": "u1",
+      "session_id": "s4",
+      "timestamp": "2026-03-10T11:00:00Z",
+      "kind": "user_message",
+      "content": "Please forget the staging hostname, it shouldn't be stored.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e11",
+      "user_id": "u1",
+      "session_id": "s4",
+      "timestamp": "2026-03-10T11:02:00Z",
+      "kind": "assistant_message",
+      "content": "Understood. Deploying from master as usual, then?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e12",
+      "user_id": "u1",
+      "session_id": "s5",
+      "timestamp": "2026-03-30T16:00:00Z",
+      "kind": "user_message",
+      "content": "Let's refactor the cart module next.",
+      "metadata": {}
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "f_db",
+      "user_id": "u1",
+      "entity": "payments-service",
+      "attribute": "database",
+      "category": "codebase",
+      "description": ""
+    },
+    {
+      "fact_id": "f_test",
+      "user_id": "u1",
+      "entity": "repo",
+      "attribute": "test_command",
+      "category": "workflow",
+      "description": ""
+    },
+    {
+      "fact_id": "f_branch",
+      "user_id": "u1",
+      "entity": "repo",
+      "attribute": "deploy_branch",
+      "category": "workflow",
+      "description": ""
+    },
+    {
+      "fact_id": "f_staging",
+      "user_id": "u1",
+      "entity": "staging",
+      "attribute": "hostname",
+      "category": "infrastructure",
+      "description": ""
+    }
+  ],
+  "mutations": [
+    {
+      "mutation_id": "m01",
+      "fact_id": "f_db",
+      "kind": "introduce",
+      "at": "2026-01-05T10:00:00Z",
+      "value": "PostgreSQL 14",
+      "source": "user",
+      "carrier_event_ids": [
+        "e01"
+      ]
+    },
+    {
+      "mutation_id": "m02",
+      "fact_id": "f_test",
+      "kind": "introduce",
+      "at": "2026-01-05T10:01:00Z",
+      "value": "pytest -x",
+      "source": "user",
+      "carrier_event_ids": [
+        "e02"
+      ]
+    },
+    {
+      "mutation_id": "m03",
+      "fact_id": "f_branch",
+      "kind": "introduce",
+      "at": "2026-01-05T10:02:00Z",
+      "value": "main",
+      "source": "user",
+      "carrier_event_ids": [
+        "e03"
+      ]
+    },
+    {
+      "mutation_id": "m04",
+      "fact_id": "f_branch",
+      "kind": "contradict",
+      "at": "2026-01-20T09:00:00Z",
+      "value": "master",
+      "source": "document",
+      "carrier_event_ids": [
+        "e05"
+      ]
+    },
+    {
+      "mutation_id": "m05",
+      "fact_id": "f_staging",
+      "kind": "introduce",
+      "at": "2026-01-20T09:05:00Z",
+      "value": "staging-7.internal",
+      "source": "user",
+      "carrier_event_ids": [
+        "e06"
+      ]
+    },
+    {
+      "mutation_id": "m06",
+      "fact_id": "f_db",
+      "kind": "restate",
+      "at": "2026-01-20T09:09:00Z",
+      "value": "PostgreSQL 14",
+      "source": "user",
+      "carrier_event_ids": [
+        "e07"
+      ]
+    },
+    {
+      "mutation_id": "m07",
+      "fact_id": "f_db",
+      "kind": "update",
+      "at": "2026-02-15T14:00:00Z",
+      "value": "PostgreSQL 16",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e08"
+      ]
+    },
+    {
+      "mutation_id": "m08",
+      "fact_id": "f_test",
+      "kind": "update",
+      "at": "2026-02-15T14:10:00Z",
+      "value": "make test",
+      "source": "user",
+      "carrier_event_ids": [
+        "e09"
+      ]
+    },
+    {
+      "mutation_id": "m09",
+      "fact_id": "f_staging",
+      "kind": "delete",
+      "at": "2026-03-10T11:00:00Z",
+      "value": null,
+      "source": "user",
+      "carrier_event_ids": [
+        "e10"
+      ]
+    },
+    {
+      "mutation_id": "m10",
+      "fact_id": "f_branch",
+      "kind": "contradict",
+      "at": "2026-03-10T11:02:00Z",
+      "value": "master",
+      "source": "model",
+      "carrier_event_ids": [
+        "e11"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "name": "c1",
+      "fraction": 0.5833,
+      "at": "2026-01-20T09:09:00Z"
+    },
+    {
+      "name": "c2",
+      "fraction": 0.75,
+      "at": "2026-02-15T14:10:00Z"
+    },
+    {
+      "name": "c3",
+      "fraction": 1.0,
+      "at": "2026-03-30T16:00:00Z"
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "p01",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "Which database version does payments-service use?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "f_db"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 14",
+        "aliases": [
+          "Postgres 14",
+          "PG 14"
+        ],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p02",
+      "user_id": "u1",
+      "probe_type": "contamination",
+      "question": "Which branch do we deploy from?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "f_branch"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "master"
+        ]
+      }
+    },
+    {
+      "probe_id": "p03",
+      "user_id": "u1",
+      "probe_type": "post_update",
+      "question": "Which database version does payments-service use?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "f_db"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 16",
+        "aliases": [
+          "Postgres 16",
+          "PG 16"
+        ],
+        "forbidden": [
+          "PostgreSQL 14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p04",
+      "user_id": "u1",
+      "probe_type": "post_update",
+      "question": "How do I run the test suite?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "f_test"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "make test",
+        "aliases": [],
+        "forbidden": [
+          "pytest -x"
+        ]
+      }
+    },
+    {
+      "probe_id": "p05",
+      "user_id": "u1",
+      "probe_type": "historical",
+      "question": "Which database version was payments-service on at the end of January?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "f_db"
+      ],
+      "as_of": "2026-01-31T23:59:00Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 14",
+        "aliases": [
+          "Postgres 14",
+          "PG 14"
+        ],
+        "forbidden": [
+          "PostgreSQL 16"
+        ]
+      }
+    },
+    {
+      "probe_id": "p06",
+      "user_id": "u1",
+      "probe_type": "post_delete",
+      "question": "What's the staging hostname?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "f_staging"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "staging-7.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p07",
+      "user_id": "u1",
+      "probe_type": "contamination",
+      "question": "Which branch do we deploy from?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "f_branch"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "master"
+        ]
+      }
+    },
+    {
+      "probe_id": "p08",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "Which message queue does payments-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    }
+  ]
+}
