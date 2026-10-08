@@ -1,0 +1,486 @@
+{
+  "workload_id": "example-coding-agent",
+  "generator": "hand-built/0.1",
+  "seed": 0,
+  "system": "no_memory",
+  "system_version": "1",
+  "system_config": {
+    "name": "no_memory",
+    "version": "1"
+  },
+  "capabilities": {
+    "provenance": false,
+    "temporal_query": false,
+    "deletion": false,
+    "abstention": false,
+    "persistence": false,
+    "export": false
+  },
+  "settings": {
+    "token_budget": 2000,
+    "delete_with_sources": false,
+    "tokenizer": "regex-words/1"
+  },
+  "started_at": "2026-10-07T13:22:24.771392Z",
+  "ops": [
+    {
+      "op": "ingest",
+      "at": "2026-01-05T10:03:00Z",
+      "ref": "s1",
+      "event_ids": [
+        "e01",
+        "e02",
+        "e03",
+        "e04"
+      ],
+      "latency_s": 4.499997885432094e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": null
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-20T09:09:00Z",
+      "ref": "s2",
+      "event_ids": [
+        "e05",
+        "e06",
+        "e07"
+      ],
+      "latency_s": 1.2500022421590984e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": null
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-15T14:10:00Z",
+      "ref": "s3",
+      "event_ids": [
+        "e08",
+        "e09"
+      ],
+      "latency_s": 8.330025593750179e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": null
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-10T11:00:00Z",
+      "ref": "s4",
+      "event_ids": [
+        "e10"
+      ],
+      "latency_s": 6.249974831007421e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": null
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-10T11:00:00Z",
+      "ref": "m09",
+      "event_ids": [],
+      "latency_s": 0.0,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {},
+      "error": "unsupported: no_memory does not support deletion"
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-10T11:02:00Z",
+      "ref": "s4",
+      "event_ids": [
+        "e11"
+      ],
+      "latency_s": 7.080016075633466e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": null
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-30T16:00:00Z",
+      "ref": "s5",
+      "event_ids": [
+        "e12"
+      ],
+      "latency_s": 5.409965524449944e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": null
+      },
+      "error": null
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "p01",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which database version does payments-service use?",
+      "asked_at": "2026-01-20T09:09:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 14",
+        "aliases": [
+          "Postgres 14",
+          "PG 14"
+        ],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 2.2500025806948543e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p02",
+      "probe_type": "contamination",
+      "checkpoint": "c1",
+      "question": "Which branch do we deploy from?",
+      "asked_at": "2026-01-20T09:09:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "master"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 8.749993867240846e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p03",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Which database version does payments-service use?",
+      "asked_at": "2026-02-15T14:10:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 16",
+        "aliases": [
+          "Postgres 16",
+          "PG 16"
+        ],
+        "forbidden": [
+          "PostgreSQL 14"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 6.250047590583563e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p04",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "How do I run the test suite?",
+      "asked_at": "2026-02-15T14:10:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "make test",
+        "aliases": [],
+        "forbidden": [
+          "pytest -x"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.00003807246685e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p05",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Which database version was payments-service on at the end of January?",
+      "asked_at": "2026-03-30T16:00:00Z",
+      "as_of": "2026-01-31T23:59:00Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 14",
+        "aliases": [
+          "Postgres 14",
+          "PG 14"
+        ],
+        "forbidden": [
+          "PostgreSQL 16"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.830006557516754e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p06",
+      "probe_type": "post_delete",
+      "checkpoint": "c3",
+      "question": "What's the staging hostname?",
+      "asked_at": "2026-03-30T16:00:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "staging-7.internal"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "no_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.579997039400041e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p07",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which branch do we deploy from?",
+      "asked_at": "2026-03-30T16:00:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "master"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.00003807246685e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p08",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-03-30T16:00:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "no_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.169996827840805e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    }
+  ],
+  "checkpoint_stats": {
+    "c1": {
+      "user_id": null,
+      "n_items": 0,
+      "storage_bytes": 0,
+      "extra": {}
+    },
+    "c2": {
+      "user_id": null,
+      "n_items": 0,
+      "storage_bytes": 0,
+      "extra": {}
+    },
+    "c3": {
+      "user_id": null,
+      "n_items": 0,
+      "storage_bytes": 0,
+      "extra": {}
+    }
+  }
+}

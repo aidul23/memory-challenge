@@ -1,0 +1,772 @@
+{
+  "workload_id": "example-coding-agent",
+  "generator": "hand-built/0.1",
+  "seed": 0,
+  "system": "transcript_rag",
+  "system_version": "1",
+  "system_config": {
+    "name": "transcript_rag",
+    "version": "1",
+    "retriever": "bm25",
+    "unit": "event",
+    "top_k": 5,
+    "k1": 1.5,
+    "b": 0.75,
+    "stopwords": 52
+  },
+  "capabilities": {
+    "provenance": true,
+    "temporal_query": false,
+    "deletion": true,
+    "abstention": false,
+    "persistence": false,
+    "export": false
+  },
+  "settings": {
+    "token_budget": 2000,
+    "delete_with_sources": false,
+    "tokenizer": "regex-words/1"
+  },
+  "started_at": "2026-10-07T13:22:24.773873Z",
+  "ops": [
+    {
+      "op": "ingest",
+      "at": "2026-01-05T10:03:00Z",
+      "ref": "s1",
+      "event_ids": [
+        "e01",
+        "e02",
+        "e03",
+        "e04"
+      ],
+      "latency_s": 2.0000006770715117e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 4,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-20T09:09:00Z",
+      "ref": "s2",
+      "event_ids": [
+        "e05",
+        "e06",
+        "e07"
+      ],
+      "latency_s": 1.0840012691915035e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-15T14:10:00Z",
+      "ref": "s3",
+      "event_ids": [
+        "e08",
+        "e09"
+      ],
+      "latency_s": 1.0000003385357559e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-10T11:00:00Z",
+      "ref": "s4",
+      "event_ids": [
+        "e10"
+      ],
+      "latency_s": 8.749993867240846e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-10T11:00:00Z",
+      "ref": "m09",
+      "event_ids": [],
+      "latency_s": 1.2920063454657793e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-10T11:02:00Z",
+      "ref": "s4",
+      "event_ids": [
+        "e11"
+      ],
+      "latency_s": 8.33999365568161e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-30T16:00:00Z",
+      "ref": "s5",
+      "event_ids": [
+        "e12"
+      ],
+      "latency_s": 7.080016075633466e-7,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": null,
+        "items_superseded": null,
+        "items_rejected": 0
+      },
+      "error": null
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "p01",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which database version does payments-service use?",
+      "asked_at": "2026-01-20T09:09:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 14",
+        "aliases": [
+          "Postgres 14",
+          "PG 14"
+        ],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "[2026-01-05 10:00 user_message] For payments-service we're on PostgreSQL 14.",
+          "memory_id": "e01",
+          "source_event_ids": [
+            "e01"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-05T10:00:00Z",
+          "score": 2.8001
+        },
+        {
+          "content": "[2026-01-20 09:09 user_message] Reminder: payments still runs on Postgres 14.",
+          "memory_id": "e07",
+          "source_event_ids": [
+            "e07"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-20T09:09:00Z",
+          "score": 1.0518
+        }
+      ],
+      "evidence_tokens": 42,
+      "injected_tokens": 42,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 14",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00005849999433849007,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p02",
+      "probe_type": "contamination",
+      "checkpoint": "c1",
+      "question": "Which branch do we deploy from?",
+      "asked_at": "2026-01-20T09:09:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "master"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "[2026-01-05 10:02 user_message] We deploy from the main branch.",
+          "memory_id": "e03",
+          "source_event_ids": [
+            "e03"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-05T10:02:00Z",
+          "score": 3.4267
+        },
+        {
+          "content": "[2026-01-20 09:00 document] README.md: Deploys go out from the `master` branch.",
+          "memory_id": "e05",
+          "source_event_ids": [
+            "e05"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-20T09:00:00Z",
+          "score": 0.9705
+        }
+      ],
+      "evidence_tokens": 43,
+      "injected_tokens": 43,
+      "budget_exceeded": false,
+      "verdict": "polluted",
+      "matched": "main",
+      "forbidden_hits": [
+        {
+          "value": "master",
+          "error_types": [
+            "contaminated"
+          ],
+          "source_event_ids": [
+            "e05"
+          ]
+        }
+      ],
+      "foreign_hits": [],
+      "latency_s": 0.00003241699596401304,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p03",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Which database version does payments-service use?",
+      "asked_at": "2026-02-15T14:10:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 16",
+        "aliases": [
+          "Postgres 16",
+          "PG 16"
+        ],
+        "forbidden": [
+          "PostgreSQL 14"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "[2026-01-05 10:00 user_message] For payments-service we're on PostgreSQL 14.",
+          "memory_id": "e01",
+          "source_event_ids": [
+            "e01"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-05T10:00:00Z",
+          "score": 2.4837
+        },
+        {
+          "content": "[2026-02-15 14:00 tool_result] migrate.log: payments-service migrated to PostgreSQL 16. OK",
+          "memory_id": "e08",
+          "source_event_ids": [
+            "e08"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-02-15T14:00:00Z",
+          "score": 1.9656
+        },
+        {
+          "content": "[2026-01-20 09:09 user_message] Reminder: payments still runs on Postgres 14.",
+          "memory_id": "e07",
+          "source_event_ids": [
+            "e07"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-20T09:09:00Z",
+          "score": 0.9839
+        }
+      ],
+      "evidence_tokens": 66,
+      "injected_tokens": 66,
+      "budget_exceeded": false,
+      "verdict": "polluted",
+      "matched": "PostgreSQL 16",
+      "forbidden_hits": [
+        {
+          "value": "PostgreSQL 14",
+          "error_types": [
+            "stale"
+          ],
+          "source_event_ids": [
+            "e01",
+            "e07"
+          ]
+        }
+      ],
+      "foreign_hits": [],
+      "latency_s": 0.000043249994632788,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p04",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "How do I run the test suite?",
+      "asked_at": "2026-02-15T14:10:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "make test",
+        "aliases": [],
+        "forbidden": [
+          "pytest -x"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "[2026-02-15 14:10 user_message] Tests now run with `make test`.",
+          "memory_id": "e09",
+          "source_event_ids": [
+            "e09"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-02-15T14:10:00Z",
+          "score": 3.3475
+        },
+        {
+          "content": "[2026-01-05 10:01 user_message] Run the tests with `pytest -x`, please.",
+          "memory_id": "e02",
+          "source_event_ids": [
+            "e02"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-05T10:01:00Z",
+          "score": 1.5495
+        }
+      ],
+      "evidence_tokens": 43,
+      "injected_tokens": 43,
+      "budget_exceeded": false,
+      "verdict": "polluted",
+      "matched": "make test",
+      "forbidden_hits": [
+        {
+          "value": "pytest -x",
+          "error_types": [
+            "stale"
+          ],
+          "source_event_ids": [
+            "e02"
+          ]
+        }
+      ],
+      "foreign_hits": [],
+      "latency_s": 0.00003245900006731972,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p05",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Which database version was payments-service on at the end of January?",
+      "asked_at": "2026-03-30T16:00:00Z",
+      "as_of": "2026-01-31T23:59:00Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 14",
+        "aliases": [
+          "Postgres 14",
+          "PG 14"
+        ],
+        "forbidden": [
+          "PostgreSQL 16"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "[2026-01-05 10:00 user_message] For payments-service we're on PostgreSQL 14.",
+          "memory_id": "e01",
+          "source_event_ids": [
+            "e01"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-05T10:00:00Z",
+          "score": 3.0045
+        },
+        {
+          "content": "[2026-02-15 14:00 tool_result] migrate.log: payments-service migrated to PostgreSQL 16. OK",
+          "memory_id": "e08",
+          "source_event_ids": [
+            "e08"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-02-15T14:00:00Z",
+          "score": 2.3748
+        },
+        {
+          "content": "[2026-01-20 09:09 user_message] Reminder: payments still runs on Postgres 14.",
+          "memory_id": "e07",
+          "source_event_ids": [
+            "e07"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-20T09:09:00Z",
+          "score": 1.2234
+        }
+      ],
+      "evidence_tokens": 66,
+      "injected_tokens": 66,
+      "budget_exceeded": false,
+      "verdict": "polluted",
+      "matched": "PostgreSQL 14",
+      "forbidden_hits": [
+        {
+          "value": "PostgreSQL 16",
+          "error_types": [
+            "future"
+          ],
+          "source_event_ids": [
+            "e08"
+          ]
+        }
+      ],
+      "foreign_hits": [],
+      "latency_s": 0.00004541600355878472,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p06",
+      "probe_type": "post_delete",
+      "checkpoint": "c3",
+      "question": "What's the staging hostname?",
+      "asked_at": "2026-03-30T16:00:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "staging-7.internal"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "[2026-03-10 11:00 user_message] Please forget the staging hostname, it shouldn't be stored.",
+          "memory_id": "e10",
+          "source_event_ids": [
+            "e10"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-03-10T11:00:00Z",
+          "score": 3.8642
+        },
+        {
+          "content": "[2026-01-20 09:05 user_message] Staging lives at staging-7.internal.",
+          "memory_id": "e06",
+          "source_event_ids": [
+            "e06"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-20T09:05:00Z",
+          "score": 2.3799
+        }
+      ],
+      "evidence_tokens": 44,
+      "injected_tokens": 44,
+      "budget_exceeded": false,
+      "verdict": "leaked",
+      "matched": null,
+      "forbidden_hits": [
+        {
+          "value": "staging-7.internal",
+          "error_types": [
+            "resurrected"
+          ],
+          "source_event_ids": [
+            "e06"
+          ]
+        }
+      ],
+      "foreign_hits": [],
+      "latency_s": 0.00003362500137882307,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p07",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which branch do we deploy from?",
+      "asked_at": "2026-03-30T16:00:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "master"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "[2026-01-05 10:02 user_message] We deploy from the main branch.",
+          "memory_id": "e03",
+          "source_event_ids": [
+            "e03"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-05T10:02:00Z",
+          "score": 4.6939
+        },
+        {
+          "content": "[2026-01-20 09:00 document] README.md: Deploys go out from the `master` branch.",
+          "memory_id": "e05",
+          "source_event_ids": [
+            "e05"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-20T09:00:00Z",
+          "score": 1.4217
+        }
+      ],
+      "evidence_tokens": 43,
+      "injected_tokens": 43,
+      "budget_exceeded": false,
+      "verdict": "polluted",
+      "matched": "main",
+      "forbidden_hits": [
+        {
+          "value": "master",
+          "error_types": [
+            "contaminated"
+          ],
+          "source_event_ids": [
+            "e05"
+          ]
+        }
+      ],
+      "foreign_hits": [],
+      "latency_s": 0.00003304099664092064,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p08",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-03-30T16:00:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "[2026-01-05 10:00 user_message] For payments-service we're on PostgreSQL 14.",
+          "memory_id": "e01",
+          "source_event_ids": [
+            "e01"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-05T10:00:00Z",
+          "score": 3.0045
+        },
+        {
+          "content": "[2026-02-15 14:00 tool_result] migrate.log: payments-service migrated to PostgreSQL 16. OK",
+          "memory_id": "e08",
+          "source_event_ids": [
+            "e08"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-02-15T14:00:00Z",
+          "score": 2.3748
+        },
+        {
+          "content": "[2026-01-20 09:09 user_message] Reminder: payments still runs on Postgres 14.",
+          "memory_id": "e07",
+          "source_event_ids": [
+            "e07"
+          ],
+          "valid_from": null,
+          "valid_to": null,
+          "recorded_at": "2026-01-20T09:09:00Z",
+          "score": 1.2234
+        }
+      ],
+      "evidence_tokens": 66,
+      "injected_tokens": 66,
+      "budget_exceeded": false,
+      "verdict": "no_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000040708997403271496,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    }
+  ],
+  "checkpoint_stats": {
+    "c1": {
+      "user_id": null,
+      "n_items": 7,
+      "storage_bytes": 277,
+      "extra": {}
+    },
+    "c2": {
+      "user_id": null,
+      "n_items": 9,
+      "storage_bytes": 367,
+      "extra": {}
+    },
+    "c3": {
+      "user_id": null,
+      "n_items": 12,
+      "storage_bytes": 511,
+      "extra": {}
+    }
+  }
+}
