@@ -14,6 +14,7 @@ from typing import Callable
 from interface.memory_system import MemorySystem
 from runner.replay import RunResult, run
 from systems.full_replay.system import FullReplay
+from systems.ledger.system import Ledger
 from systems.no_memory.system import NoMemory
 from systems.transcript_rag.system import TranscriptRAG
 from workloads.timeline import Timeline
@@ -24,6 +25,7 @@ SYSTEMS: dict[str, tuple[Callable[[], MemorySystem], bool]] = {
     "no_memory": (NoMemory, False),
     "full_replay": (FullReplay, True),
     "transcript_rag": (TranscriptRAG, False),
+    "ledger": (Ledger, False),
 }
 
 DEFAULT_TIMELINE = Path("workloads/examples/example_timeline.json")
