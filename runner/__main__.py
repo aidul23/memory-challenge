@@ -3,6 +3,7 @@
     python -m runner                                  # all baselines, example timeline
     python -m runner --systems transcript_rag --budget 500
     python -m runner --withhold-sources               # description-only deletion
+    python -m runner --systems ledger_llm             # calls the LLM configured in .env
 """
 
 from __future__ import annotations
@@ -14,6 +15,7 @@ from typing import Callable
 from interface.memory_system import MemorySystem
 from runner.replay import RunResult, run
 from systems.full_replay.system import FullReplay
+from systems.ledger.llm import LLMExtractor
 from systems.ledger.system import Ledger
 from systems.no_memory.system import NoMemory
 from systems.transcript_rag.system import TranscriptRAG
@@ -26,7 +28,10 @@ SYSTEMS: dict[str, tuple[Callable[[], MemorySystem], bool]] = {
     "full_replay": (FullReplay, True),
     "transcript_rag": (TranscriptRAG, False),
     "ledger": (Ledger, False),
+    "ledger_llm": (lambda: Ledger(LLMExtractor()), False),
 }
+#: Systems that spend money run only when named with --systems.
+PAID = {"ledger_llm"}
 
 DEFAULT_TIMELINE = Path("workloads/examples/example_timeline.json")
 
@@ -51,6 +56,8 @@ def print_report(runs: list[RunResult]) -> None:
         ("isolation violations", lambda s: str(s["isolation_violations"])),
         ("unsupported ops", lambda s: ",".join(s["unsupported"]) or "-"),
         ("injected tokens", lambda s: str(s["injected_tokens"])),
+        ("llm calls", lambda s: str(s["usage"]["llm_calls"])),
+        ("llm tokens in/out", lambda s: f'{s["usage"]["llm_input_tokens"]}/{s["usage"]["llm_output_tokens"]}'),
         ("mean retrieve ms", lambda s: f"{s['mean_retrieve_ms']:.2f}"),
         ("items at end", lambda s: str(s["final_items"])),
     ]:
@@ -63,7 +70,7 @@ def print_report(runs: list[RunResult]) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--timeline", type=Path, default=DEFAULT_TIMELINE)
-    ap.add_argument("--systems", nargs="+", choices=sorted(SYSTEMS), default=list(SYSTEMS))
+    ap.add_argument("--systems", nargs="+", choices=sorted(SYSTEMS), default=[n for n in SYSTEMS if n not in PAID])
     ap.add_argument("--budget", type=int, default=2000, help="evidence token budget per query")
     ap.add_argument("--withhold-sources", action="store_true",
                     help="send deletion requests without source_event_ids")

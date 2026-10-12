@@ -1,0 +1,5057 @@
+{
+  "workload_id": "synthetic-small-s0",
+  "generator": "synthetic/0.1",
+  "seed": 0,
+  "system": "ledger",
+  "system_version": "1",
+  "system_config": {
+    "name": "ledger",
+    "version": "1",
+    "extractor": {
+      "name": "rules",
+      "version": "1",
+      "slots": [
+        "database",
+        "test_command",
+        "deploy_branch",
+        "staging_hostname"
+      ]
+    },
+    "trust": {
+      "user_message": 3,
+      "tool_result": 3,
+      "code_change": 3,
+      "document": 2,
+      "assistant_message": 1,
+      "tool_call": 1
+    }
+  },
+  "capabilities": {
+    "provenance": true,
+    "temporal_query": true,
+    "deletion": true,
+    "abstention": true,
+    "persistence": true,
+    "export": true
+  },
+  "settings": {
+    "token_budget": 2000,
+    "delete_with_sources": true,
+    "tokenizer": "regex-words/1"
+  },
+  "started_at": "2026-10-08T19:12:50.081225Z",
+  "ops": [
+    {
+      "op": "ingest",
+      "at": "2026-01-07T11:29:00Z",
+      "ref": "u1-s001",
+      "event_ids": [
+        "e00001",
+        "e00002",
+        "e00003",
+        "e00004",
+        "e00005"
+      ],
+      "latency_s": 0.00003499999002087861,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-10T14:31:02Z",
+      "ref": "u3-s001",
+      "event_ids": [
+        "e00006",
+        "e00007",
+        "e00008",
+        "e00009",
+        "e00010"
+      ],
+      "latency_s": 0.00003395900421310216,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-14T08:23:00Z",
+      "ref": "u1-s002",
+      "event_ids": [
+        "e00011",
+        "e00012",
+        "e00013",
+        "e00014",
+        "e00015",
+        "e00016"
+      ],
+      "latency_s": 0.00001695800165180117,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-21T10:39:00Z",
+      "ref": "u1-s003",
+      "event_ids": [
+        "e00017",
+        "e00018",
+        "e00019",
+        "e00020"
+      ],
+      "latency_s": 0.000011625001206994057,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-25T14:19:02Z",
+      "ref": "u3-s002",
+      "event_ids": [
+        "e00021",
+        "e00022",
+        "e00023"
+      ],
+      "latency_s": 0.000011208991054445505,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-26T08:10:00Z",
+      "ref": "u1-s004",
+      "event_ids": [
+        "e00024",
+        "e00025",
+        "e00026",
+        "e00027"
+      ],
+      "latency_s": 9.958996088244021e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-31T12:57:01Z",
+      "ref": "u2-s001",
+      "event_ids": [
+        "e00028",
+        "e00029",
+        "e00030",
+        "e00031",
+        "e00032"
+      ],
+      "latency_s": 0.000013708006008528173,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-09T10:40:01Z",
+      "ref": "u2-s002",
+      "event_ids": [
+        "e00033",
+        "e00034",
+        "e00035",
+        "e00036"
+      ],
+      "latency_s": 9.875002433545887e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-09T12:33:02Z",
+      "ref": "u3-s003",
+      "event_ids": [
+        "e00037",
+        "e00038",
+        "e00039",
+        "e00040"
+      ],
+      "latency_s": 0.000010624993592500687,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-11T14:18:00Z",
+      "ref": "u1-s005",
+      "event_ids": [
+        "e00041",
+        "e00042",
+        "e00043",
+        "e00044",
+        "e00045",
+        "e00046"
+      ],
+      "latency_s": 0.00002333299198653549,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-11T15:51:02Z",
+      "ref": "u3-s004",
+      "event_ids": [
+        "e00047",
+        "e00048",
+        "e00049"
+      ],
+      "latency_s": 0.000010500007192604244,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-13T11:33:00Z",
+      "ref": "u1-s006",
+      "event_ids": [
+        "e00050",
+        "e00051",
+        "e00052",
+        "e00053",
+        "e00054"
+      ],
+      "latency_s": 0.000014292003470472991,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-13T11:36:00Z",
+      "ref": "u1-s006",
+      "event_ids": [
+        "e00055",
+        "e00056"
+      ],
+      "latency_s": 0.00001808399974834174,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-14T09:27:01Z",
+      "ref": "u2-s003",
+      "event_ids": [
+        "e00057",
+        "e00058",
+        "e00059",
+        "e00060",
+        "e00061"
+      ],
+      "latency_s": 0.000012415999663062394,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-17T14:28:02Z",
+      "ref": "u3-s005",
+      "event_ids": [
+        "e00062",
+        "e00063",
+        "e00064",
+        "e00065",
+        "e00066"
+      ],
+      "latency_s": 0.000012417003745213151,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-19T18:01:02Z",
+      "ref": "u3-s006",
+      "event_ids": [
+        "e00067",
+        "e00068",
+        "e00069",
+        "e00070",
+        "e00071",
+        "e00072"
+      ],
+      "latency_s": 0.000027582995244301856,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-27T16:59:01Z",
+      "ref": "u2-s004",
+      "event_ids": [
+        "e00073",
+        "e00074",
+        "e00075",
+        "e00076"
+      ],
+      "latency_s": 0.000014707999071106315,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-06T14:09:02Z",
+      "ref": "u3-s007",
+      "event_ids": [
+        "e00077",
+        "e00078"
+      ],
+      "latency_s": 8.207993232645094e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-09T12:20:02Z",
+      "ref": "u3-s008",
+      "event_ids": [
+        "e00079",
+        "e00080"
+      ],
+      "latency_s": 8.582996088080108e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-09T12:20:02Z",
+      "ref": "m00032",
+      "event_ids": [
+        "e00037",
+        "e00071"
+      ],
+      "latency_s": 0.000015666999388486147,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-09T12:28:02Z",
+      "ref": "u3-s008",
+      "event_ids": [
+        "e00081",
+        "e00082"
+      ],
+      "latency_s": 0.000010166986612603068,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-11T08:40:00Z",
+      "ref": "u1-s007",
+      "event_ids": [
+        "e00083",
+        "e00084"
+      ],
+      "latency_s": 9.709008736535907e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-17T15:01:01Z",
+      "ref": "u2-s005",
+      "event_ids": [
+        "e00085",
+        "e00086",
+        "e00087",
+        "e00088",
+        "e00089",
+        "e00090"
+      ],
+      "latency_s": 0.000017708007362671196,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-17T15:01:01Z",
+      "ref": "m00035",
+      "event_ids": [
+        "e00031"
+      ],
+      "latency_s": 9.666997357271612e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-20T13:22:01Z",
+      "ref": "u2-s006",
+      "event_ids": [
+        "e00091",
+        "e00092",
+        "e00093"
+      ],
+      "latency_s": 0.00001720900763757527,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-21T13:41:00Z",
+      "ref": "u1-s008",
+      "event_ids": [
+        "e00094",
+        "e00095",
+        "e00096",
+        "e00097"
+      ],
+      "latency_s": 0.00025599999935366213,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-27T11:56:00Z",
+      "ref": "u1-s009",
+      "event_ids": [
+        "e00098",
+        "e00099",
+        "e00100",
+        "e00101"
+      ],
+      "latency_s": 0.000016291000065393746,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-28T14:10:00Z",
+      "ref": "u1-s010",
+      "event_ids": [
+        "e00102",
+        "e00103"
+      ],
+      "latency_s": 9.374998626299202e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-28T14:10:00Z",
+      "ref": "m00040",
+      "event_ids": [
+        "e00013"
+      ],
+      "latency_s": 0.000010083997040055692,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-30T11:56:02Z",
+      "ref": "u3-s009",
+      "event_ids": [
+        "e00104",
+        "e00105",
+        "e00106"
+      ],
+      "latency_s": 0.000013625001884065568,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-02T09:19:00Z",
+      "ref": "u1-s011",
+      "event_ids": [
+        "e00107",
+        "e00108"
+      ],
+      "latency_s": 7.208000170066953e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-02T09:28:00Z",
+      "ref": "u1-s011",
+      "event_ids": [
+        "e00109",
+        "e00110"
+      ],
+      "latency_s": 0.000014165998436510563,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-10T12:28:01Z",
+      "ref": "u2-s007",
+      "event_ids": [
+        "e00111",
+        "e00112",
+        "e00113"
+      ],
+      "latency_s": 0.000010042000212706625,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-12T14:46:00Z",
+      "ref": "u1-s012",
+      "event_ids": [
+        "e00114"
+      ],
+      "latency_s": 6.250003934837878e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-18T11:24:01Z",
+      "ref": "u2-s008",
+      "event_ids": [
+        "e00115",
+        "e00116",
+        "e00117",
+        "e00118",
+        "e00119",
+        "e00120",
+        "e00121"
+      ],
+      "latency_s": 0.000020958003005944192,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-20T13:07:01Z",
+      "ref": "u2-s009",
+      "event_ids": [
+        "e00122",
+        "e00123",
+        "e00124",
+        "e00125",
+        "e00126"
+      ],
+      "latency_s": 0.000012999997125007212,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-24T09:34:02Z",
+      "ref": "u3-s010",
+      "event_ids": [
+        "e00127",
+        "e00128",
+        "e00129",
+        "e00130",
+        "e00131",
+        "e00132"
+      ],
+      "latency_s": 0.0000145840022014454,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-28T16:36:01Z",
+      "ref": "u2-s010",
+      "event_ids": [
+        "e00133",
+        "e00134"
+      ],
+      "latency_s": 7.499998901039362e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-04-28T16:36:01Z",
+      "ref": "m00052",
+      "event_ids": [
+        "e00091",
+        "e00118"
+      ],
+      "latency_s": 8.874994819052517e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-28T16:38:01Z",
+      "ref": "u2-s010",
+      "event_ids": [
+        "e00135",
+        "e00136"
+      ],
+      "latency_s": 7.6669966802001e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-05T15:47:00Z",
+      "ref": "u1-s013",
+      "event_ids": [
+        "e00137",
+        "e00138",
+        "e00139",
+        "e00140",
+        "e00141",
+        "e00142",
+        "e00143"
+      ],
+      "latency_s": 0.000018292004824616015,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-16T10:55:02Z",
+      "ref": "u3-s011",
+      "event_ids": [
+        "e00144",
+        "e00145",
+        "e00146",
+        "e00147",
+        "e00148",
+        "e00149"
+      ],
+      "latency_s": 0.000016707999748177826,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-18T15:33:01Z",
+      "ref": "u2-s011",
+      "event_ids": [
+        "e00150",
+        "e00151",
+        "e00152",
+        "e00153",
+        "e00154",
+        "e00155"
+      ],
+      "latency_s": 0.00001837499439716339,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-19T11:52:00Z",
+      "ref": "u1-s014",
+      "event_ids": [
+        "e00156",
+        "e00157",
+        "e00158",
+        "e00159",
+        "e00160",
+        "e00161",
+        "e00162"
+      ],
+      "latency_s": 0.00002200000744778663,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-19T11:58:00Z",
+      "ref": "u1-s014",
+      "event_ids": [
+        "e00163"
+      ],
+      "latency_s": 7.833994459360838e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-21T12:07:01Z",
+      "ref": "u2-s012",
+      "event_ids": [
+        "e00164",
+        "e00165",
+        "e00166",
+        "e00167",
+        "e00168",
+        "e00169"
+      ],
+      "latency_s": 0.00002024999412242323,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-24T12:25:01Z",
+      "ref": "u2-s013",
+      "event_ids": [
+        "e00170",
+        "e00171",
+        "e00172",
+        "e00173",
+        "e00174"
+      ],
+      "latency_s": 0.000013208002201281488,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-28T09:40:02Z",
+      "ref": "u3-s012",
+      "event_ids": [
+        "e00175",
+        "e00176",
+        "e00177"
+      ],
+      "latency_s": 9.83300560619682e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-30T12:33:01Z",
+      "ref": "u2-s014",
+      "event_ids": [
+        "e00178",
+        "e00179",
+        "e00180",
+        "e00181"
+      ],
+      "latency_s": 0.000011249998351559043,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-03T12:25:00Z",
+      "ref": "u1-s015",
+      "event_ids": [
+        "e00182",
+        "e00183"
+      ],
+      "latency_s": 8.749993867240846e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-06-03T12:25:00Z",
+      "ref": "m00074",
+      "event_ids": [
+        "e00004",
+        "e00043",
+        "e00097"
+      ],
+      "latency_s": 7.1250105975195765e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-03T12:33:00Z",
+      "ref": "u1-s015",
+      "event_ids": [
+        "e00184",
+        "e00185"
+      ],
+      "latency_s": 6.999995093792677e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-08T10:21:00Z",
+      "ref": "u1-s016",
+      "event_ids": [
+        "e00186",
+        "e00187",
+        "e00188",
+        "e00189",
+        "e00190",
+        "e00191"
+      ],
+      "latency_s": 0.000024125009076669812,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-13T13:21:02Z",
+      "ref": "u3-s013",
+      "event_ids": [
+        "e00192",
+        "e00193",
+        "e00194",
+        "e00195",
+        "e00196"
+      ],
+      "latency_s": 0.000016375008272007108,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-14T11:46:01Z",
+      "ref": "u2-s015",
+      "event_ids": [
+        "e00197",
+        "e00198",
+        "e00199",
+        "e00200"
+      ],
+      "latency_s": 0.000012165997759439051,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-16T08:48:01Z",
+      "ref": "u2-s016",
+      "event_ids": [
+        "e00201",
+        "e00202",
+        "e00203",
+        "e00204",
+        "e00205",
+        "e00206"
+      ],
+      "latency_s": 0.000013749988283962011,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-23T17:40:02Z",
+      "ref": "u3-s014",
+      "event_ids": [
+        "e00207",
+        "e00208",
+        "e00209",
+        "e00210"
+      ],
+      "latency_s": 0.000014541990822181106,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-29T08:29:02Z",
+      "ref": "u3-s015",
+      "event_ids": [
+        "e00211",
+        "e00212",
+        "e00213",
+        "e00214"
+      ],
+      "latency_s": 0.00001637499372009188,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-07-03T13:08:02Z",
+      "ref": "u3-s016",
+      "event_ids": [
+        "e00215",
+        "e00216"
+      ],
+      "latency_s": 8.624992915429175e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "p0001",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "What is the staging hostname of notifications-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "notifications-stg-5.internal",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging hostname: notifications-stg-5.internal (since 2026-02-11; source: user_message)",
+          "memory_id": "L000002",
+          "source_event_ids": [
+            "e00046"
+          ],
+          "valid_from": "2026-02-11T14:18:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:18:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "notifications-stg-5.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000019665996660478413,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0002",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Remind me: payments-service's CI provider?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Travis CI",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.708003300242126e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0003",
+      "probe_type": "post_update",
+      "checkpoint": "c1",
+      "question": "Where is notifications-service hosted?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "us-west-2"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.749999450519681e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0004",
+      "probe_type": "post_update",
+      "checkpoint": "c1",
+      "question": "Which CI does notifications-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "GitHub Actions"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.5420089261606336e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0005",
+      "probe_type": "historical",
+      "checkpoint": "c1",
+      "question": "What was the cloud region of notifications-service on January 21, 2026?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": "2026-01-21T02:11:52Z",
+      "expected": {
+        "kind": "value",
+        "value": "us-west-2",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.582994733937085e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0006",
+      "probe_type": "historical",
+      "checkpoint": "c1",
+      "question": "Back on January 23, 2026, which CI provider did notifications-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": "2026-01-23T18:49:44Z",
+      "expected": {
+        "kind": "value",
+        "value": "GitHub Actions",
+        "aliases": [],
+        "forbidden": [
+          "CircleCI"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.6670029405504465e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0007",
+      "probe_type": "contamination",
+      "checkpoint": "c1",
+      "question": "What is the cloud region of auth-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.416003892198205e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0008",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "Which runtime does auth-service target?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.1660096030682325e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0009",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What is the cloud region of payments-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.459004801698029e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0010",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which message queue does notifications-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Google Pub/Sub",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.3750111469998956e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0011",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Remind me: auth-service's message queue?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "NATS",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.083005478605628e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0012",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What is the cloud region of notifications-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.4999975468963385e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0013",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "Which test command does auth-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-02-13",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 7.333001121878624e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0014",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which runtime does payments-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.1669915188103914e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0015",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which CI does cart-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Drone CI",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 2.9999937396496534e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0016",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What is the database of cart-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database: PostgreSQL 12 (since 2026-01-10; source: user_message)",
+          "memory_id": "L000001",
+          "source_event_ids": [
+            "e00010"
+          ],
+          "valid_from": "2026-01-10T14:31:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-10T14:31:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 16,
+      "injected_tokens": 16,
+      "budget_exceeded": false,
+      "verdict": "no_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000010625008144415915,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0017",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What's the staging hostname for payments-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-02-13",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 6.041998858563602e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0018",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "What is the on-call owner of notifications-service?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Tomás Ruiz",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.5000051613897085e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0019",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "What is the deploy branch of auth-service?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch: release-train (since 2026-02-13; source: user_message)",
+          "memory_id": "L000003",
+          "source_event_ids": [
+            "e00055"
+          ],
+          "valid_from": "2026-02-13T11:34:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-13T11:34:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 18,
+      "injected_tokens": 18,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000011416996130719781,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0020",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Which CI does notifications-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "GitHub Actions"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.583001671358943e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0021",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Where is notifications-service hosted?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "us-west-2"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.2910029403865337e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0022",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "NATS"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.374996595084667e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0023",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "Which region is auth-service deployed in?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch: release-train (since 2026-02-13; source: user_message)",
+          "memory_id": "L000003",
+          "source_event_ids": [
+            "e00055"
+          ],
+          "valid_from": "2026-02-13T11:34:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-13T11:34:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 18,
+      "injected_tokens": 18,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 8.666000212542713e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0024",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "What was the cloud region of notifications-service on January 17, 2026?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": "2026-01-17T10:24:48Z",
+      "expected": {
+        "kind": "value",
+        "value": "us-west-2",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.542001988738775e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0025",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "What was the CI provider of notifications-service on January 28, 2026?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": "2026-01-28T03:38:14Z",
+      "expected": {
+        "kind": "value",
+        "value": "GitHub Actions",
+        "aliases": [],
+        "forbidden": [
+          "CircleCI"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.458008334040642e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0026",
+      "probe_type": "post_delete",
+      "checkpoint": "c2",
+      "question": "Where does payments-service staging live?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-9.internal"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "deleted at the user's request",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.6670029405504465e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0027",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Where does auth-service publish its events?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.3329997677356005e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0028",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Remind me: payments-service's deploy branch?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch: release-train (since 2026-02-13; source: user_message)",
+          "memory_id": "L000003",
+          "source_event_ids": [
+            "e00055"
+          ],
+          "valid_from": "2026-02-13T11:34:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-13T11:34:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 18,
+      "injected_tokens": 18,
+      "budget_exceeded": false,
+      "verdict": "no_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 8.458999218419194e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0029",
+      "probe_type": "post_delete",
+      "checkpoint": "c2",
+      "question": "Which message queue does notifications-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.6249984987080097e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0030",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Which message queue does auth-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Redis Streams",
+        "aliases": [],
+        "forbidden": [
+          "NATS"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.125009243376553e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0031",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "What was the message queue of auth-service on February 16, 2026?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": "2026-02-16T16:34:09Z",
+      "expected": {
+        "kind": "value",
+        "value": "NATS",
+        "aliases": [],
+        "forbidden": [
+          "Redis Streams"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.04199818149209e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0032",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Who owns notifications-service incidents?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Tomás Ruiz",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.0420051189139485e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0033",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "What's the command to test notifications-service?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "pnpm vitest run",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-04-02",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.708003300242126e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0034",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Who owns auth-service incidents?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 2.833010512404144e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0035",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Which CI provider does auth-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.125009243376553e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0036",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Which runtime does cart-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Java 17",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 2.8329959604889154e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0037",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Remind me: cart-service's on-call owner?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.3329997677356005e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0038",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "What language version is payments-service on?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Node 20",
+        "aliases": [
+          "Node.js 20"
+        ],
+        "forbidden": [
+          "Java 21"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.0830124160274863e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0039",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "Back on February 24, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": "2026-02-24T00:13:18Z",
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": [
+          "Node 20"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.0829909266904e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0040",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "Who owns payments-service incidents?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jonas Berg",
+        "aliases": [],
+        "forbidden": [
+          "Leena Koski"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 2.8329959604889154e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0041",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "What is the database of cart-service?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database: PostgreSQL 12 (since 2026-01-10; source: user_message)",
+          "memory_id": "L000001",
+          "source_event_ids": [
+            "e00010"
+          ],
+          "valid_from": "2026-01-10T14:31:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-10T14:31:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 16,
+      "injected_tokens": 16,
+      "budget_exceeded": false,
+      "verdict": "no_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 7.624999852851033e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0042",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Remind me: payments-service's cloud region?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.2919924706220627e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0043",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Which CI does notifications-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "GitHub Actions"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.6249984987080097e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0044",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Which runtime does payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Python 3.12",
+        "aliases": [],
+        "forbidden": [
+          "Java 21"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.2919924706220627e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0045",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the runtime of payments-service on March 21, 2026?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-03-21T08:15:50Z",
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": [
+          "Python 3.12"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.208995960652828e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0046",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the cloud region of notifications-service on January 23, 2026?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-01-23T09:41:36Z",
+      "expected": {
+        "kind": "value",
+        "value": "us-west-2",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.417001036927104e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0047",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Remind me: auth-service's cloud region?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.3340038498863578e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0048",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which CI provider does notifications-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "GitHub Actions"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.5420089261606336e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0049",
+      "probe_type": "post_delete",
+      "checkpoint": "c3",
+      "question": "Where does payments-service staging live?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-9.internal"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "deleted at the user's request",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.62500611320138e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0050",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "What is the database of auth-service?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MySQL 8.4",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database: MySQL 8.4 (since 2026-03-21; source: user_message)",
+          "memory_id": "L000005",
+          "source_event_ids": [
+            "e00095"
+          ],
+          "valid_from": "2026-03-21T13:33:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-21T13:33:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 18,
+      "injected_tokens": 18,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MySQL 8.4",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 8.917006198316813e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0051",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Who is on call for notifications-service?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Tomás Ruiz",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.4170079743489623e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0052",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "What language version is notifications-service on?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.4159893402829766e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0053",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which cloud region does payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.416003892198205e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0054",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "What is the message queue of notifications-service?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "ActiveMQ",
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.750007065013051e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0055",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Remind me: notifications-service's on-call owner?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Tomás Ruiz",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.5420089261606336e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0056",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Remind me: auth-service's runtime?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": [
+          "Java 17"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 2.9579969123005867e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0057",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Remind me: auth-service's message queue?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "NATS",
+          "Redis Streams"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.125009243376553e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0058",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on March 24, 2026, which test command did notifications-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-03-24T00:30:32Z",
+      "expected": {
+        "kind": "value",
+        "value": "pnpm vitest run",
+        "aliases": [],
+        "forbidden": [
+          "go test ./..."
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-03-24",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 6.874994141981006e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0059",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the message queue of auth-service on February 17, 2026?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-02-17T06:37:53Z",
+      "expected": {
+        "kind": "value",
+        "value": "NATS",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS",
+          "Redis Streams"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.125002305954695e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0060",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which CI provider does notifications-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.249995643272996e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0061",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Who is on call for auth-service?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.1249946914613247e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0062",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which on-call owner does cart-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": [
+          "Priya Nair"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.2910029403865337e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0063",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which database does payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 12",
+        "aliases": [
+          "Postgres 12",
+          "PG 12"
+        ],
+        "forbidden": [
+          "MongoDB 6.0"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database: PostgreSQL 12 (since 2026-01-10; source: user_message)",
+          "memory_id": "L000001",
+          "source_event_ids": [
+            "e00010"
+          ],
+          "valid_from": "2026-01-10T14:31:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-10T14:31:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 16,
+      "injected_tokens": 16,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 12",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 7.458002073690295e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0064",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.3329997677356005e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0065",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Remind me: payments-service's deploy branch?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "trunk",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-05-19",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.333000444807112e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0066",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "What language version is payments-service on?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Go 1.22",
+        "aliases": [],
+        "forbidden": [
+          "Java 21",
+          "Node 18",
+          "Node 20"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.4580007195472717e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0067",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on February 25, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-02-25T02:52:01Z",
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": [
+          "Go 1.22",
+          "Node 18",
+          "Node 20"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.49999822396785e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0068",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on April 11, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-04-11T03:53:00Z",
+      "expected": {
+        "kind": "value",
+        "value": "Node 20",
+        "aliases": [
+          "Node.js 20"
+        ],
+        "forbidden": [
+          "Go 1.22",
+          "Java 21",
+          "Node 18"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.958994057029486e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0069",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Remind me: cart-service's deploy branch?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-05-19",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.416994099505246e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0070",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which region is cart-service deployed in?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-05-19",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.749992513097823e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0071",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "What is the deploy branch of auth-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "trunk",
+        "aliases": [],
+        "forbidden": [
+          "main"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch: now (since 2026-04-02; source: user_message)",
+          "memory_id": "L000006",
+          "source_event_ids": [
+            "e00109"
+          ],
+          "valid_from": "2026-04-02T09:25:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-02T09:25:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 16,
+      "injected_tokens": 16,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000010499992640689015,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0072",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "Where does payments-service publish its events?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "RabbitMQ",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "Amazon SQS",
+          "NATS"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.208995960652828e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0073",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on April 9, 2026, which message queue did payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-04-09T09:44:12Z",
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "NATS",
+          "RabbitMQ"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.7909998102113605e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0074",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on April 13, 2026, which cloud region did notifications-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-04-13T03:36:22Z",
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-west-1",
+          "us-west-2"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.62500611320138e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0075",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Remind me: notifications-service's CI provider?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "GitLab CI",
+        "aliases": [],
+        "forbidden": [
+          "CircleCI",
+          "GitHub Actions"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.7090067053213716e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0076",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Which deploy branch does notifications-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "release-train",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch: now (since 2026-04-02; source: user_message)",
+          "memory_id": "L000006",
+          "source_event_ids": [
+            "e00109"
+          ],
+          "valid_from": "2026-04-02T09:25:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-02T09:25:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 16,
+      "injected_tokens": 16,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000010207993909716606,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0077",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "What is the cloud region of auth-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.749999450519681e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0078",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "RabbitMQ",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "Amazon SQS",
+          "NATS"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.4999975468963385e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0079",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "What is the cloud region of payments-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.583991201594472e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0080",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Who owns auth-service incidents?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.1249946914613247e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0081",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Which runtime does notifications-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Python 3.10",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.2079988159239292e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0082",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Remind me: notifications-service's message queue?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "ActiveMQ",
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.374996595084667e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0083",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "What's the command to test notifications-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "go test ./...",
+        "aliases": [],
+        "forbidden": [
+          "pnpm vitest run"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-07-03",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.8340083342045546e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0084",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "Where does auth-service publish its events?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Kafka",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS",
+          "NATS",
+          "RabbitMQ",
+          "Redis Streams"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.2080133678391576e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0085",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "What was the message queue of auth-service on March 23, 2026?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-03-23T10:45:35Z",
+      "expected": {
+        "kind": "value",
+        "value": "Redis Streams",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS",
+          "Kafka",
+          "NATS",
+          "RabbitMQ"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.041008651256561e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0086",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "What was the test command of notifications-service on March 30, 2026?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-03-30T21:00:53Z",
+      "expected": {
+        "kind": "value",
+        "value": "pnpm vitest run",
+        "aliases": [],
+        "forbidden": [
+          "go test ./..."
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-03-30",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 6.95799826644361e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0087",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "What is the test command of notifications-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "go test ./...",
+        "aliases": [],
+        "forbidden": [
+          "pnpm vitest run"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-07-03",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.08299854118377e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0088",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Remind me: auth-service's database?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MariaDB 11.4",
+        "aliases": [],
+        "forbidden": [
+          "MongoDB 7.0",
+          "PostgreSQL 15"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database: MariaDB 11.4 (since 2026-05-18; source: tool_result)",
+          "memory_id": "L000008",
+          "source_event_ids": [
+            "e00152"
+          ],
+          "valid_from": "2026-05-18T15:25:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-18T15:25:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 18,
+      "injected_tokens": 18,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MariaDB 11.4",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 7.875001756474376e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0089",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which region is auth-service deployed in?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-07-03",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.541995051316917e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0090",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which on-call owner does auth-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.374996595084667e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0091",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "What is the on-call owner of payments-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jonas Berg",
+        "aliases": [],
+        "forbidden": [
+          "Leena Koski"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.7080026231706142e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0092",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Remind me: payments-service's message queue?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "NATS"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.4159893402829766e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0093",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Which staging hostname does cart-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "cart-stg-4.internal",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging hostname: cart-stg-4.internal (since 2026-06-29; source: user_message)",
+          "memory_id": "L000012",
+          "source_event_ids": [
+            "e00213"
+          ],
+          "valid_from": "2026-06-29T08:28:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-29T08:28:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "cart-stg-4.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 8.042014087550342e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0094",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Remind me: payments-service's deploy branch?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "trunk",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-07-03",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 5.374997272156179e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0095",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "What language version is payments-service on?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Go 1.22",
+        "aliases": [],
+        "forbidden": [
+          "Java 21",
+          "Node 18",
+          "Node 20"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.3340038498863578e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0096",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on March 25, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-03-25T21:29:55Z",
+      "expected": {
+        "kind": "value",
+        "value": "Node 20",
+        "aliases": [
+          "Node.js 20"
+        ],
+        "forbidden": [
+          "Go 1.22",
+          "Java 21",
+          "Node 18"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.0000013541430235e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0097",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on April 30, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-04-30T21:41:12Z",
+      "expected": {
+        "kind": "value",
+        "value": "Node 18",
+        "aliases": [
+          "Node.js 18"
+        ],
+        "forbidden": [
+          "Go 1.22",
+          "Java 21",
+          "Node 20"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 4.0000013541430235e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0098",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which cloud region does payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.292007022537291e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    },
+    {
+      "probe_id": "p0099",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which cloud region does cart-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 3.3329997677356005e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      }
+    }
+  ],
+  "checkpoint_stats": {
+    "c1": {
+      "user_id": null,
+      "n_items": 2,
+      "storage_bytes": 41,
+      "extra": {
+        "active": 2,
+        "disputes": 0,
+        "tombstones": 0
+      }
+    },
+    "c2": {
+      "user_id": null,
+      "n_items": 4,
+      "storage_bytes": 48,
+      "extra": {
+        "active": 4,
+        "disputes": 0,
+        "tombstones": 1
+      }
+    },
+    "c3": {
+      "user_id": null,
+      "n_items": 5,
+      "storage_bytes": 50,
+      "extra": {
+        "active": 4,
+        "disputes": 1,
+        "tombstones": 2
+      }
+    },
+    "c4": {
+      "user_id": null,
+      "n_items": 8,
+      "storage_bytes": 106,
+      "extra": {
+        "active": 7,
+        "disputes": 2,
+        "tombstones": 2
+      }
+    }
+  }
+}

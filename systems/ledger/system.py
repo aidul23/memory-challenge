@@ -122,17 +122,21 @@ class Ledger(MemorySystem):
     def ingest(self, events: Sequence[Event]) -> WriteReport:
         added = updated = superseded = rejected = 0
         usages: list[Usage] = []
+        fresh: dict[str, list[Event]] = {}
         for ev in events:
             if ev.event_id in self._user(ev.user_id).blocked:
                 rejected += 1
-                continue
-            if ev.event_id in self._seen:
-                continue
-            self._seen.add(ev.event_id)
-            claims, usage = self.extractor.claims(ev)
+            elif ev.event_id not in self._seen:
+                self._seen.add(ev.event_id)
+                fresh.setdefault(ev.user_id, []).append(ev)
+        for user_id, batch in fresh.items():
+            ul = self._user(user_id)
+            claims, usage = self.extractor.claims(batch, self._known(ul))
             usages.append(usage)
-            for c in claims:
-                outcome = self._apply(self._user(ev.user_id), ev, c)
+            by_id = {e.event_id: e for e in batch}
+            order = {e.event_id: i for i, e in enumerate(batch)}
+            for c in sorted((c for c in claims if c.event_id in by_id), key=lambda c: order[c.event_id]):
+                outcome = self._apply(ul, by_id[c.event_id], c)
                 added += outcome in ("introduce", "supersede")
                 updated += outcome == "restate"
                 superseded += outcome == "supersede"
@@ -163,6 +167,18 @@ class Ledger(MemorySystem):
         ul.entries.append(new)
         return "supersede" if cur is not None else "introduce"
 
+    @staticmethod
+    def _known(ul: _UserLedger) -> dict[str, str]:
+        """Every slot this user has had, described for the extractor. Deleted
+        slots keep their key but never their values."""
+        known = {t.slot: "(deleted)" for t in ul.tombstones}
+        for e in ul.disputes + ul.entries:
+            known.setdefault(e.slot, e.label)
+        for e in ul.entries:
+            if e.valid_to is None:
+                known[e.slot] = f"{e.label} (current: {e.value})"
+        return known
+
     def _new_id(self) -> str:
         self._next_id += 1
         return f"L{self._next_id:06d}"
@@ -174,7 +190,7 @@ class Ledger(MemorySystem):
         usage = Usage()
         if not slots:
             # Description-only request, or sources we never turned into entries.
-            found, usage = self.extractor.slots_for(request.description)
+            found, usage = self.extractor.slots_for(request.description, self._known(ul))
             slots = set(found)
 
         def erased(e: Entry) -> bool:
@@ -190,10 +206,10 @@ class Ledger(MemorySystem):
     # ---- read path -------------------------------------------------------
 
     def retrieve(self, query: Query) -> RetrievalResult:
-        slots, usage = self.extractor.slots_for(query.text)
+        ul = self._users.get(query.user_id, _UserLedger())
+        slots, usage = self.extractor.slots_for(query.text, self._known(ul))
         if not slots:
             return RetrievalResult(abstained=True, abstain_reason="no known slot matches", usage=usage)
-        ul = self._users.get(query.user_id, _UserLedger())
         target = query.as_of or query.asked_at
 
         evidence: list[Evidence] = []
@@ -283,7 +299,6 @@ class Ledger(MemorySystem):
     def config(self) -> dict[str, Any]:
         return {
             "name": self.name, "version": self.version,
-            "extractor": self.extractor.config() if hasattr(self.extractor, "config")
-            else {"name": self.extractor.name, "version": self.extractor.version},
+            "extractor": self.extractor.config(),
             "trust": {k.value: v for k, v in TRUST.items()},
         }

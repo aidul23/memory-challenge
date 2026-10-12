@@ -1,9 +1,12 @@
 """Turning events into claims, and questions into slots.
 
-The ledger core never reads free text itself: an ``Extractor`` maps each event
-to zero or more ``Claim``s about named slots, and maps a question or a deletion
-description to the slots it is about. Swapping the extractor (rules today, an
-LLM later) leaves the ledger's temporal, trust and deletion logic untouched.
+The ledger core never reads free text itself: an ``Extractor`` maps a batch of
+events to ``Claim``s about named slots, and maps a question or a deletion
+description to the slots it is about. Both calls receive the user's ``known``
+slots (key -> description, including the current value) so an extractor can
+reuse slot keys and value spellings. Swapping the extractor (``RuleExtractor``
+here, ``LLMExtractor`` in ``llm.py``) leaves the ledger's temporal, trust and
+deletion logic untouched.
 
 ``RuleExtractor`` is a deterministic, model-free stand-in. Each ``SlotRule``
 pairs a value pattern (for writes) with cue patterns (for questions and
@@ -15,7 +18,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
-from typing import Callable, Protocol, Sequence
+from typing import Callable, Mapping, Protocol, Sequence
 
 from interface.memory_system import Event, Usage
 
@@ -24,6 +27,7 @@ from interface.memory_system import Event, Usage
 class Claim:
     """One value asserted for a slot by one event."""
 
+    event_id: str
     slot: str
     value: str
     """Canonical form, used to tell a restatement from a change."""
@@ -35,11 +39,16 @@ class Extractor(Protocol):
     name: str
     version: str
 
-    def claims(self, event: Event) -> tuple[list[Claim], Usage]: ...
-
-    def slots_for(self, text: str) -> tuple[list[str], Usage]:
-        """Slots a question or deletion description refers to."""
+    def claims(self, events: Sequence[Event], known: Mapping[str, str]) -> tuple[list[Claim], Usage]:
+        """Claims made by ``events`` (one user, stream order)."""
         ...
+
+    def slots_for(self, text: str, known: Mapping[str, str]) -> tuple[list[str], Usage]:
+        """Which of the ``known`` slots a question or deletion description
+        refers to."""
+        ...
+
+    def config(self) -> dict[str, object]: ...
 
 
 @dataclass(frozen=True)
@@ -94,15 +103,16 @@ class RuleExtractor:
     def __init__(self, rules: Sequence[SlotRule] = DEFAULT_RULES) -> None:
         self.rules = tuple(rules)
 
-    def claims(self, event: Event) -> tuple[list[Claim], Usage]:
+    def claims(self, events: Sequence[Event], known: Mapping[str, str] = {}) -> tuple[list[Claim], Usage]:
         out = []
-        for r in self.rules:
-            m = r.value.search(event.content)
-            if m:
-                out.append(Claim(slot=r.slot, value=r.canon(m), label=r.label))
+        for e in events:
+            for r in self.rules:
+                m = r.value.search(e.content)
+                if m:
+                    out.append(Claim(event_id=e.event_id, slot=r.slot, value=r.canon(m), label=r.label))
         return out, Usage()
 
-    def slots_for(self, text: str) -> tuple[list[str], Usage]:
+    def slots_for(self, text: str, known: Mapping[str, str] = {}) -> tuple[list[str], Usage]:
         return [r.slot for r in self.rules if r.cues.search(text)], Usage()
 
     def config(self) -> dict[str, object]:
