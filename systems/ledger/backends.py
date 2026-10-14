@@ -18,7 +18,15 @@ never guesses). Two backends cover most model families:
   LLM_EFFORT     reasoning effort. Anthropic: low..max (default low).
                  OpenAI: sent as reasoning_effort only when set (reasoning
                  models only).
+  LLM_TEMPERATURE  OpenAI only. Default 0 (with a fixed seed) for
+                 reproducible runs, or omitted when LLM_EFFORT is set, since
+                 reasoning models reject it; "none" omits it too.
   ANTHROPIC_API_KEY / OPENAI_API_KEY / OPENAI_BASE_URL
+
+Current Claude models reject sampling parameters (temperature, top_p, top_k),
+so Anthropic runs are reproducible only through the extractor's response
+cache; measure their run-to-run spread with ``python -m runner.sweep
+--repeats``.
 """
 
 from __future__ import annotations
@@ -34,8 +42,9 @@ from interface.memory_system import Usage
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_ANTHROPIC_MODEL = "claude-opus-5-5"
 MAX_OUTPUT_TOKENS = 16000
-ENV_KEYS = ("LLM_PROVIDER", "LLM_MODEL", "LLM_EFFORT", "ANTHROPIC_API_KEY", "ANTHROPIC_BASE_URL",
-            "OPENAI_API_KEY", "OPENAI_BASE_URL")
+SAMPLING_SEED = 0
+ENV_KEYS = ("LLM_PROVIDER", "LLM_MODEL", "LLM_EFFORT", "LLM_TEMPERATURE", "ANTHROPIC_API_KEY",
+            "ANTHROPIC_BASE_URL", "OPENAI_API_KEY", "OPENAI_BASE_URL")
 
 
 @dataclass(frozen=True)
@@ -94,8 +103,11 @@ class AnthropicBackend:
 class OpenAIBackend:
     provider = "openai"
 
-    def __init__(self, model: str, effort: str | None = None, client: Any = None) -> None:
-        self.model, self.effort = model, effort
+    def __init__(self, model: str, effort: str | None = None, client: Any = None,
+                 temperature: float | None = 0.0) -> None:
+        """``temperature`` None sends no sampling parameters (reasoning
+        models reject them); otherwise it is sent with a fixed seed."""
+        self.model, self.effort, self.temperature = model, effort, temperature
         if client is None:
             import openai
 
@@ -104,6 +116,8 @@ class OpenAIBackend:
 
     def complete_json(self, system: str, prompt: str, schema: dict[str, Any], name: str) -> JSONResult:
         extra: dict[str, Any] = {"reasoning_effort": self.effort} if self.effort else {}
+        if self.temperature is not None:
+            extra |= {"temperature": self.temperature, "seed": SAMPLING_SEED}
         response = self.client.chat.completions.create(
             model=self.model,
             max_completion_tokens=MAX_OUTPUT_TOKENS,
@@ -124,7 +138,12 @@ class OpenAIBackend:
 
     def config(self) -> dict[str, object]:
         base = os.environ.get("OPENAI_BASE_URL") or None
-        return {"provider": self.provider, "model": self.model, "effort": self.effort, "base_url": base}
+        cfg: dict[str, object] = {"provider": self.provider, "model": self.model, "effort": self.effort,
+                                  "base_url": base}
+        if self.temperature is not None:
+            # Part of the cache key: responses sampled differently never mix.
+            cfg |= {"temperature": self.temperature, "seed": SAMPLING_SEED}
+        return cfg
 
 
 def backend_from_env() -> Backend:
@@ -151,5 +170,15 @@ def backend_from_env() -> Backend:
     if provider == "openai":
         if model is None:
             raise RuntimeError("set LLM_MODEL in .env to an OpenAI (or compatible) model id")
-        return OpenAIBackend(model, effort)
+        raw = env("LLM_TEMPERATURE")
+        if raw is None:
+            temperature = None if effort else 0.0
+        elif raw.lower() == "none":
+            temperature = None
+        else:
+            try:
+                temperature = float(raw)
+            except ValueError:
+                raise RuntimeError(f"LLM_TEMPERATURE must be a number or 'none', not {raw!r}") from None
+        return OpenAIBackend(model, effort, temperature=temperature)
     raise RuntimeError(f"unknown LLM_PROVIDER {provider!r} (expected 'anthropic' or 'openai')")

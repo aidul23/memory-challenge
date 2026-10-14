@@ -30,7 +30,9 @@ Full walkthrough of the project: [`docs/PROJECT_OVERVIEW.md`](docs/PROJECT_OVERV
 - `interface/tokens.py`: the single tokenizer for evidence budgets.
 - `runner/replay.py`: replays a timeline (ingest per session, deletes at their
   stream position, probes at checkpoints), truncates over-budget evidence and
-  logs every call. `runner/scoring.py` scores the injected evidence: verdicts
+  logs every call. `runner/sweep.py` runs systems over several seeds and
+  reports mean ± sd, and with `--repeats` the run-to-run noise of LLM systems.
+  `runner/scoring.py` scores the injected evidence: verdicts
   `correct / polluted / wrong / missed / false_abstention / leaked /
   no_abstention`, with each forbidden value typed as `stale / future /
   contaminated / resurrected`.
@@ -44,5 +46,6 @@ python -m runner                      # baselines + ledger; logs in runs/<worklo
 python -m runner --withhold-sources   # deletion by description only
 python -m runner --timeline workloads/generated/synthetic-small-s0.json
 python -m runner --systems ledger ledger_llm   # ledger_llm calls the configured LLM
+python -m runner.sweep --seeds 0 1 2 3 4 --systems ledger ledger_llm --repeats 3   # mean ± sd over seeds, LLM noise
 python -m pytest -q tests
 ```

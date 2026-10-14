@@ -1,0 +1,5413 @@
+{
+  "schema_version": "0.1",
+  "workload_id": "synthetic-small-s4",
+  "generator": "synthetic/0.1",
+  "seed": 4,
+  "events": [
+    {
+      "event_id": "e00001",
+      "user_id": "u3",
+      "session_id": "u3-s001",
+      "timestamp": "2026-01-06T08:20:02Z",
+      "kind": "assistant_message",
+      "content": "Looking into it now.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00002",
+      "user_id": "u3",
+      "session_id": "u3-s001",
+      "timestamp": "2026-01-06T08:22:02Z",
+      "kind": "user_message",
+      "content": "The database for auth-service came up in standup today.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00003",
+      "user_id": "u3",
+      "session_id": "u3-s001",
+      "timestamp": "2026-01-06T08:28:02Z",
+      "kind": "user_message",
+      "content": "How is the auth-service refactor going?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00004",
+      "user_id": "u1",
+      "session_id": "u1-s001",
+      "timestamp": "2026-01-14T17:01:00Z",
+      "kind": "code_change",
+      "content": "config-sync: billing.database = PostgreSQL 13",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00005",
+      "user_id": "u1",
+      "session_id": "u1-s001",
+      "timestamp": "2026-01-14T17:07:00Z",
+      "kind": "user_message",
+      "content": "Note for later: payments-service uses CircleCI as its CI provider.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00006",
+      "user_id": "u1",
+      "session_id": "u1-s001",
+      "timestamp": "2026-01-14T17:08:00Z",
+      "kind": "user_message",
+      "content": "Please add type hints to the billing-service client.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00007",
+      "user_id": "u2",
+      "session_id": "u2-s001",
+      "timestamp": "2026-01-20T12:23:01Z",
+      "kind": "code_change",
+      "content": "dns: billing-stg-1.internal -> billing-service staging (A record created)",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00008",
+      "user_id": "u2",
+      "session_id": "u2-s001",
+      "timestamp": "2026-01-20T12:29:01Z",
+      "kind": "user_message",
+      "content": "Note for later: cart-service uses MySQL 8.0 as its database.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00009",
+      "user_id": "u2",
+      "session_id": "u2-s001",
+      "timestamp": "2026-01-20T12:31:01Z",
+      "kind": "tool_call",
+      "content": "read_file(\"billing/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00010",
+      "user_id": "u2",
+      "session_id": "u2-s001",
+      "timestamp": "2026-01-20T12:34:01Z",
+      "kind": "assistant_message",
+      "content": "I couldn't reproduce the failure locally.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00011",
+      "user_id": "u2",
+      "session_id": "u2-s002",
+      "timestamp": "2026-01-21T12:02:01Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00012",
+      "user_id": "u2",
+      "session_id": "u2-s002",
+      "timestamp": "2026-01-21T12:07:01Z",
+      "kind": "tool_result",
+      "content": "config-sync: billing.cloud_region = us-west-2",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00013",
+      "user_id": "u2",
+      "session_id": "u2-s002",
+      "timestamp": "2026-01-21T12:08:01Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"cart/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00014",
+      "user_id": "u1",
+      "session_id": "u1-s002",
+      "timestamp": "2026-01-26T11:45:00Z",
+      "kind": "tool_result",
+      "content": "All checks passed.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00015",
+      "user_id": "u1",
+      "session_id": "u1-s002",
+      "timestamp": "2026-01-26T11:51:00Z",
+      "kind": "assistant_message",
+      "content": "The refactor is about halfway done.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00016",
+      "user_id": "u1",
+      "session_id": "u1-s002",
+      "timestamp": "2026-01-26T11:55:00Z",
+      "kind": "tool_result",
+      "content": "3 files changed, 41 insertions(+), 7 deletions(-)",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00017",
+      "user_id": "u1",
+      "session_id": "u1-s002",
+      "timestamp": "2026-01-26T11:58:00Z",
+      "kind": "tool_call",
+      "content": "read_file(\"billing/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00018",
+      "user_id": "u1",
+      "session_id": "u1-s002",
+      "timestamp": "2026-01-26T12:00:00Z",
+      "kind": "code_change",
+      "content": "diff billing/.github/workflows/ci.yml: + run: npm test",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00019",
+      "user_id": "u3",
+      "session_id": "u3-s002",
+      "timestamp": "2026-01-31T08:33:02Z",
+      "kind": "code_change",
+      "content": "pagerduty: auth-service escalation policy -> Mikko Laine",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00020",
+      "user_id": "u3",
+      "session_id": "u3-s002",
+      "timestamp": "2026-01-31T08:37:02Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00021",
+      "user_id": "u3",
+      "session_id": "u3-s002",
+      "timestamp": "2026-01-31T08:40:02Z",
+      "kind": "code_change",
+      "content": "config-sync: auth.database = PostgreSQL 14",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00022",
+      "user_id": "u3",
+      "session_id": "u3-s002",
+      "timestamp": "2026-01-31T08:43:02Z",
+      "kind": "tool_result",
+      "content": "config-sync: inventory.ci_provider = Travis CI",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00023",
+      "user_id": "u3",
+      "session_id": "u3-s002",
+      "timestamp": "2026-01-31T08:44:02Z",
+      "kind": "tool_result",
+      "content": "All checks passed.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00024",
+      "user_id": "u3",
+      "session_id": "u3-s002",
+      "timestamp": "2026-01-31T08:46:02Z",
+      "kind": "assistant_message",
+      "content": "Done. I opened a draft PR for gateway-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00025",
+      "user_id": "u3",
+      "session_id": "u3-s002",
+      "timestamp": "2026-01-31T08:49:02Z",
+      "kind": "tool_call",
+      "content": "read_file(\"gateway/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00026",
+      "user_id": "u1",
+      "session_id": "u1-s003",
+      "timestamp": "2026-01-31T14:40:00Z",
+      "kind": "user_message",
+      "content": "For payments-service, the staging hostname is payments-stg-8.internal.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00027",
+      "user_id": "u1",
+      "session_id": "u1-s003",
+      "timestamp": "2026-01-31T14:44:00Z",
+      "kind": "tool_result",
+      "content": "All checks passed.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00028",
+      "user_id": "u2",
+      "session_id": "u2-s003",
+      "timestamp": "2026-02-08T15:46:01Z",
+      "kind": "user_message",
+      "content": "For cart-service, the message queue is NATS.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00029",
+      "user_id": "u2",
+      "session_id": "u2-s003",
+      "timestamp": "2026-02-08T15:50:01Z",
+      "kind": "document",
+      "content": "wiki/notifications.md: on-call owner: Tomás Ruiz",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00030",
+      "user_id": "u2",
+      "session_id": "u2-s003",
+      "timestamp": "2026-02-08T15:53:01Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00031",
+      "user_id": "u2",
+      "session_id": "u2-s003",
+      "timestamp": "2026-02-08T15:58:01Z",
+      "kind": "user_message",
+      "content": "For cart-service, the cloud region is eu-north-1.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00032",
+      "user_id": "u2",
+      "session_id": "u2-s003",
+      "timestamp": "2026-02-08T15:59:01Z",
+      "kind": "user_message",
+      "content": "Note for later: billing-service uses bazel test //... as its test command.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00033",
+      "user_id": "u2",
+      "session_id": "u2-s003",
+      "timestamp": "2026-02-08T16:02:01Z",
+      "kind": "assistant_message",
+      "content": "Okay, using billing-stg-8.internal as the billing-service staging hostname.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00034",
+      "user_id": "u2",
+      "session_id": "u2-s004",
+      "timestamp": "2026-02-09T08:35:01Z",
+      "kind": "user_message",
+      "content": "cart-service was relocated to eu-west-1.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00035",
+      "user_id": "u2",
+      "session_id": "u2-s004",
+      "timestamp": "2026-02-09T08:37:01Z",
+      "kind": "user_message",
+      "content": "The staging box for notifications-service is notifications-stg-1.internal.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00036",
+      "user_id": "u2",
+      "session_id": "u2-s004",
+      "timestamp": "2026-02-09T08:40:01Z",
+      "kind": "user_message",
+      "content": "Thanks, that looks good.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00037",
+      "user_id": "u2",
+      "session_id": "u2-s004",
+      "timestamp": "2026-02-09T08:43:01Z",
+      "kind": "tool_result",
+      "content": "config-sync: cart.database = MySQL 8.0",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00038",
+      "user_id": "u2",
+      "session_id": "u2-s004",
+      "timestamp": "2026-02-09T08:48:01Z",
+      "kind": "user_message",
+      "content": "For notifications-service, the database is PostgreSQL 17.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00039",
+      "user_id": "u3",
+      "session_id": "u3-s003",
+      "timestamp": "2026-02-15T15:33:02Z",
+      "kind": "tool_result",
+      "content": "All checks passed.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00040",
+      "user_id": "u3",
+      "session_id": "u3-s003",
+      "timestamp": "2026-02-15T15:36:02Z",
+      "kind": "document",
+      "content": "runbook.md: gateway-service staging is reachable at gateway-stg-3.internal.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00041",
+      "user_id": "u3",
+      "session_id": "u3-s003",
+      "timestamp": "2026-02-15T15:39:02Z",
+      "kind": "tool_call",
+      "content": "run_shell(\"git log -5 --oneline\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00042",
+      "user_id": "u3",
+      "session_id": "u3-s003",
+      "timestamp": "2026-02-15T15:44:02Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00043",
+      "user_id": "u3",
+      "session_id": "u3-s003",
+      "timestamp": "2026-02-15T15:45:02Z",
+      "kind": "user_message",
+      "content": "Thanks, that looks good.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00044",
+      "user_id": "u3",
+      "session_id": "u3-s004",
+      "timestamp": "2026-02-16T08:27:02Z",
+      "kind": "assistant_message",
+      "content": "Done. I opened a draft PR for gateway-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00045",
+      "user_id": "u3",
+      "session_id": "u3-s004",
+      "timestamp": "2026-02-16T08:31:02Z",
+      "kind": "user_message",
+      "content": "For inventory-service, tests run via `make test`.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00046",
+      "user_id": "u3",
+      "session_id": "u3-s004",
+      "timestamp": "2026-02-16T08:34:02Z",
+      "kind": "user_message",
+      "content": "The staging hostname for gateway-service came up in standup today.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00047",
+      "user_id": "u3",
+      "session_id": "u3-s005",
+      "timestamp": "2026-02-17T10:01:02Z",
+      "kind": "user_message",
+      "content": "How is the inventory-service refactor going?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00048",
+      "user_id": "u3",
+      "session_id": "u3-s005",
+      "timestamp": "2026-02-17T10:04:02Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"gateway/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00049",
+      "user_id": "u3",
+      "session_id": "u3-s005",
+      "timestamp": "2026-02-17T10:07:02Z",
+      "kind": "user_message",
+      "content": "Note for later: auth-service uses go test ./... as its test command.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00050",
+      "user_id": "u3",
+      "session_id": "u3-s005",
+      "timestamp": "2026-02-17T10:10:02Z",
+      "kind": "code_change",
+      "content": "config-sync: auth.oncall = Sara Nyström",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00051",
+      "user_id": "u3",
+      "session_id": "u3-s005",
+      "timestamp": "2026-02-17T10:13:02Z",
+      "kind": "user_message",
+      "content": "For gateway-service, the runtime is Node 20.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00052",
+      "user_id": "u3",
+      "session_id": "u3-s005",
+      "timestamp": "2026-02-17T10:17:02Z",
+      "kind": "user_message",
+      "content": "Don't keep auth-service's database in memory anymore.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00053",
+      "user_id": "u2",
+      "session_id": "u2-s005",
+      "timestamp": "2026-02-17T17:27:01Z",
+      "kind": "user_message",
+      "content": "For billing-service, the deploy branch is master.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00054",
+      "user_id": "u2",
+      "session_id": "u2-s005",
+      "timestamp": "2026-02-17T17:32:01Z",
+      "kind": "tool_call",
+      "content": "read_file(\"notifications/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00055",
+      "user_id": "u2",
+      "session_id": "u2-s005",
+      "timestamp": "2026-02-17T17:38:01Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00056",
+      "user_id": "u2",
+      "session_id": "u2-s005",
+      "timestamp": "2026-02-17T17:39:01Z",
+      "kind": "tool_result",
+      "content": "deploy.log: cart-service broker endpoint switched to Amazon SQS",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00057",
+      "user_id": "u3",
+      "session_id": "u3-s006",
+      "timestamp": "2026-02-22T11:36:02Z",
+      "kind": "assistant_message",
+      "content": "Looking into it now.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00058",
+      "user_id": "u3",
+      "session_id": "u3-s006",
+      "timestamp": "2026-02-22T11:37:02Z",
+      "kind": "user_message",
+      "content": "gateway-service's CI provider: Jenkins.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00059",
+      "user_id": "u3",
+      "session_id": "u3-s006",
+      "timestamp": "2026-02-22T11:38:02Z",
+      "kind": "user_message",
+      "content": "Run the gateway-service tests with `bazel test //...`.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00060",
+      "user_id": "u2",
+      "session_id": "u2-s006",
+      "timestamp": "2026-02-25T15:28:01Z",
+      "kind": "user_message",
+      "content": "Note for later: billing-service uses Leena Koski as its on-call owner.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00061",
+      "user_id": "u2",
+      "session_id": "u2-s006",
+      "timestamp": "2026-02-25T15:34:01Z",
+      "kind": "tool_result",
+      "content": "All checks passed.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00062",
+      "user_id": "u2",
+      "session_id": "u2-s006",
+      "timestamp": "2026-02-25T15:37:01Z",
+      "kind": "user_message",
+      "content": "Update: cart-service's message queue is ActiveMQ from now on.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00063",
+      "user_id": "u2",
+      "session_id": "u2-s006",
+      "timestamp": "2026-02-25T15:41:01Z",
+      "kind": "assistant_message",
+      "content": "Done. I opened a draft PR for billing-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00064",
+      "user_id": "u2",
+      "session_id": "u2-s006",
+      "timestamp": "2026-02-25T15:44:01Z",
+      "kind": "user_message",
+      "content": "Reminder: billing-service still uses bazel test //... as its test command.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00065",
+      "user_id": "u2",
+      "session_id": "u2-s006",
+      "timestamp": "2026-02-25T15:48:01Z",
+      "kind": "user_message",
+      "content": "notifications-service publishes its events to Kafka.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00066",
+      "user_id": "u1",
+      "session_id": "u1-s004",
+      "timestamp": "2026-02-28T10:39:00Z",
+      "kind": "assistant_message",
+      "content": "I'll update the Buildkite pipeline for payments-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00067",
+      "user_id": "u1",
+      "session_id": "u1-s004",
+      "timestamp": "2026-02-28T10:42:00Z",
+      "kind": "user_message",
+      "content": "Thanks, that looks good.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00068",
+      "user_id": "u1",
+      "session_id": "u1-s004",
+      "timestamp": "2026-02-28T10:43:00Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"billing/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00069",
+      "user_id": "u1",
+      "session_id": "u1-s005",
+      "timestamp": "2026-03-06T15:48:00Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"billing/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00070",
+      "user_id": "u1",
+      "session_id": "u1-s005",
+      "timestamp": "2026-03-06T15:49:00Z",
+      "kind": "user_message",
+      "content": "Note for later: payments-service uses Kafka as its message queue.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00071",
+      "user_id": "u3",
+      "session_id": "u3-s007",
+      "timestamp": "2026-03-08T16:11:02Z",
+      "kind": "user_message",
+      "content": "Change of plan: inventory-service now uses ./gradlew test as its test command.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00072",
+      "user_id": "u3",
+      "session_id": "u3-s007",
+      "timestamp": "2026-03-08T16:14:02Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00073",
+      "user_id": "u3",
+      "session_id": "u3-s007",
+      "timestamp": "2026-03-08T16:17:02Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00074",
+      "user_id": "u3",
+      "session_id": "u3-s007",
+      "timestamp": "2026-03-08T16:20:02Z",
+      "kind": "user_message",
+      "content": "Thanks, that looks good.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00075",
+      "user_id": "u1",
+      "session_id": "u1-s006",
+      "timestamp": "2026-03-11T09:42:00Z",
+      "kind": "user_message",
+      "content": "Remove what you know about payments-service's staging hostname, please.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00076",
+      "user_id": "u1",
+      "session_id": "u1-s006",
+      "timestamp": "2026-03-11T09:44:00Z",
+      "kind": "user_message",
+      "content": "We switched the database for billing-service to PostgreSQL 16.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00077",
+      "user_id": "u1",
+      "session_id": "u1-s006",
+      "timestamp": "2026-03-11T09:50:00Z",
+      "kind": "assistant_message",
+      "content": "Done. I opened a draft PR for billing-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00078",
+      "user_id": "u1",
+      "session_id": "u1-s006",
+      "timestamp": "2026-03-11T09:56:00Z",
+      "kind": "user_message",
+      "content": "Let's clean up the logging in billing-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00079",
+      "user_id": "u1",
+      "session_id": "u1-s006",
+      "timestamp": "2026-03-11T09:57:00Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00080",
+      "user_id": "u3",
+      "session_id": "u3-s008",
+      "timestamp": "2026-03-15T16:21:02Z",
+      "kind": "assistant_message",
+      "content": "Running `npm test` for inventory-service like last time.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00081",
+      "user_id": "u3",
+      "session_id": "u3-s008",
+      "timestamp": "2026-03-15T16:22:02Z",
+      "kind": "user_message",
+      "content": "Note for later: auth-service uses develop as its deploy branch.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00082",
+      "user_id": "u3",
+      "session_id": "u3-s008",
+      "timestamp": "2026-03-15T16:25:02Z",
+      "kind": "user_message",
+      "content": "Change of plan: gateway-service now uses gateway-stg-6.internal as its staging hostname.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00083",
+      "user_id": "u3",
+      "session_id": "u3-s008",
+      "timestamp": "2026-03-15T16:30:02Z",
+      "kind": "user_message",
+      "content": "We're on MongoDB 7.0 for auth-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00084",
+      "user_id": "u3",
+      "session_id": "u3-s008",
+      "timestamp": "2026-03-15T16:34:02Z",
+      "kind": "assistant_message",
+      "content": "The refactor is about halfway done.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00085",
+      "user_id": "u1",
+      "session_id": "u1-s007",
+      "timestamp": "2026-03-24T11:03:00Z",
+      "kind": "tool_call",
+      "content": "run_shell(\"git log -5 --oneline\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00086",
+      "user_id": "u1",
+      "session_id": "u1-s007",
+      "timestamp": "2026-03-24T11:04:00Z",
+      "kind": "user_message",
+      "content": "Let's not touch the billing-service message queue this sprint.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00087",
+      "user_id": "u1",
+      "session_id": "u1-s008",
+      "timestamp": "2026-03-26T10:25:00Z",
+      "kind": "tool_result",
+      "content": "3 files changed, 41 insertions(+), 7 deletions(-)",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00088",
+      "user_id": "u1",
+      "session_id": "u1-s008",
+      "timestamp": "2026-03-26T10:29:00Z",
+      "kind": "assistant_message",
+      "content": "Got it. I'll assume Buildkite for the CI provider of payments-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00089",
+      "user_id": "u3",
+      "session_id": "u3-s009",
+      "timestamp": "2026-03-31T16:10:02Z",
+      "kind": "user_message",
+      "content": "Just confirming, the test command for inventory-service is still ./gradlew test.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00090",
+      "user_id": "u3",
+      "session_id": "u3-s009",
+      "timestamp": "2026-03-31T16:15:02Z",
+      "kind": "user_message",
+      "content": "auth-service deploys from `stable` now.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00091",
+      "user_id": "u3",
+      "session_id": "u3-s009",
+      "timestamp": "2026-03-31T16:21:02Z",
+      "kind": "tool_call",
+      "content": "read_file(\"inventory/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00092",
+      "user_id": "u3",
+      "session_id": "u3-s009",
+      "timestamp": "2026-03-31T16:25:02Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00093",
+      "user_id": "u3",
+      "session_id": "u3-s009",
+      "timestamp": "2026-03-31T16:27:02Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"auth/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00094",
+      "user_id": "u2",
+      "session_id": "u2-s007",
+      "timestamp": "2026-04-01T11:36:01Z",
+      "kind": "tool_result",
+      "content": "config-sync: billing.deploy_branch = prod",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00095",
+      "user_id": "u2",
+      "session_id": "u2-s007",
+      "timestamp": "2026-04-01T11:41:01Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00096",
+      "user_id": "u2",
+      "session_id": "u2-s007",
+      "timestamp": "2026-04-01T11:43:01Z",
+      "kind": "tool_call",
+      "content": "read_file(\"notifications/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00097",
+      "user_id": "u2",
+      "session_id": "u2-s007",
+      "timestamp": "2026-04-01T11:47:01Z",
+      "kind": "user_message",
+      "content": "Can you summarise yesterday's changes?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00098",
+      "user_id": "u1",
+      "session_id": "u1-s009",
+      "timestamp": "2026-04-01T14:23:00Z",
+      "kind": "tool_result",
+      "content": "config-sync: billing.message_queue = Google Pub/Sub",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00099",
+      "user_id": "u1",
+      "session_id": "u1-s009",
+      "timestamp": "2026-04-01T14:28:00Z",
+      "kind": "assistant_message",
+      "content": "The refactor is about halfway done.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00100",
+      "user_id": "u1",
+      "session_id": "u1-s009",
+      "timestamp": "2026-04-01T14:34:00Z",
+      "kind": "tool_call",
+      "content": "run_shell(\"git log -5 --oneline\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00101",
+      "user_id": "u1",
+      "session_id": "u1-s009",
+      "timestamp": "2026-04-01T14:35:00Z",
+      "kind": "tool_call",
+      "content": "read_file(\"payments/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00102",
+      "user_id": "u1",
+      "session_id": "u1-s009",
+      "timestamp": "2026-04-01T14:37:00Z",
+      "kind": "user_message",
+      "content": "Can you look into the flaky checkout test in payments-service?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00103",
+      "user_id": "u3",
+      "session_id": "u3-s010",
+      "timestamp": "2026-04-02T17:01:02Z",
+      "kind": "assistant_message",
+      "content": "The refactor is about halfway done.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00104",
+      "user_id": "u3",
+      "session_id": "u3-s010",
+      "timestamp": "2026-04-02T17:03:02Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00105",
+      "user_id": "u3",
+      "session_id": "u3-s010",
+      "timestamp": "2026-04-02T17:06:02Z",
+      "kind": "code_change",
+      "content": "config-sync: gateway.runtime = Java 21",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00106",
+      "user_id": "u3",
+      "session_id": "u3-s010",
+      "timestamp": "2026-04-02T17:10:02Z",
+      "kind": "user_message",
+      "content": "Change of plan: auth-service now uses main as its deploy branch.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00107",
+      "user_id": "u3",
+      "session_id": "u3-s010",
+      "timestamp": "2026-04-02T17:13:02Z",
+      "kind": "user_message",
+      "content": "Can you summarise yesterday's changes?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00108",
+      "user_id": "u3",
+      "session_id": "u3-s011",
+      "timestamp": "2026-04-07T09:22:02Z",
+      "kind": "user_message",
+      "content": "inventory-service targets Python 3.12.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00109",
+      "user_id": "u3",
+      "session_id": "u3-s011",
+      "timestamp": "2026-04-07T09:27:02Z",
+      "kind": "user_message",
+      "content": "Can you summarise yesterday's changes?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00110",
+      "user_id": "u3",
+      "session_id": "u3-s011",
+      "timestamp": "2026-04-07T09:32:02Z",
+      "kind": "assistant_message",
+      "content": "The refactor is about halfway done.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00111",
+      "user_id": "u3",
+      "session_id": "u3-s012",
+      "timestamp": "2026-04-17T10:34:02Z",
+      "kind": "user_message",
+      "content": "Please forget the test command of inventory-service; don't store it.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00112",
+      "user_id": "u3",
+      "session_id": "u3-s012",
+      "timestamp": "2026-04-17T10:35:02Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00113",
+      "user_id": "u3",
+      "session_id": "u3-s012",
+      "timestamp": "2026-04-17T10:38:02Z",
+      "kind": "tool_call",
+      "content": "read_file(\"inventory/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00114",
+      "user_id": "u3",
+      "session_id": "u3-s012",
+      "timestamp": "2026-04-17T10:40:02Z",
+      "kind": "tool_result",
+      "content": "3 files changed, 41 insertions(+), 7 deletions(-)",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00115",
+      "user_id": "u3",
+      "session_id": "u3-s012",
+      "timestamp": "2026-04-17T10:45:02Z",
+      "kind": "document",
+      "content": "wiki/auth.md: database: PostgreSQL 13",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00116",
+      "user_id": "u3",
+      "session_id": "u3-s012",
+      "timestamp": "2026-04-17T10:47:02Z",
+      "kind": "tool_call",
+      "content": "read_file(\"inventory/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00117",
+      "user_id": "u3",
+      "session_id": "u3-s012",
+      "timestamp": "2026-04-17T10:52:02Z",
+      "kind": "document",
+      "content": "README.md (gateway-service): the on-call owner is Jonas Berg.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00118",
+      "user_id": "u3",
+      "session_id": "u3-s012",
+      "timestamp": "2026-04-17T10:55:02Z",
+      "kind": "user_message",
+      "content": "Reminder: auth-service still uses main as its deploy branch.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00119",
+      "user_id": "u2",
+      "session_id": "u2-s008",
+      "timestamp": "2026-04-26T15:14:01Z",
+      "kind": "user_message",
+      "content": "Please add type hints to the billing-service client.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00120",
+      "user_id": "u2",
+      "session_id": "u2-s008",
+      "timestamp": "2026-04-26T15:19:01Z",
+      "kind": "document",
+      "content": "wiki/cart.md: cloud region: eu-central-1",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00121",
+      "user_id": "u1",
+      "session_id": "u1-s010",
+      "timestamp": "2026-05-07T14:10:00Z",
+      "kind": "user_message",
+      "content": "Please add type hints to the billing-service client.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00122",
+      "user_id": "u1",
+      "session_id": "u1-s010",
+      "timestamp": "2026-05-07T14:12:00Z",
+      "kind": "assistant_message",
+      "content": "Done. I opened a draft PR for billing-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00123",
+      "user_id": "u1",
+      "session_id": "u1-s010",
+      "timestamp": "2026-05-07T14:16:00Z",
+      "kind": "user_message",
+      "content": "Change of plan: billing-service now uses Amazon SQS as its message queue.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00124",
+      "user_id": "u1",
+      "session_id": "u1-s010",
+      "timestamp": "2026-05-07T14:21:00Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"billing/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00125",
+      "user_id": "u3",
+      "session_id": "u3-s013",
+      "timestamp": "2026-05-10T10:28:02Z",
+      "kind": "user_message",
+      "content": "Reminder: gateway-service still uses gateway-stg-6.internal as its staging hostname.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00126",
+      "user_id": "u3",
+      "session_id": "u3-s013",
+      "timestamp": "2026-05-10T10:29:02Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00127",
+      "user_id": "u3",
+      "session_id": "u3-s013",
+      "timestamp": "2026-05-10T10:35:02Z",
+      "kind": "user_message",
+      "content": "Let's not touch the inventory-service test command this sprint.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00128",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T17:50:01Z",
+      "kind": "user_message",
+      "content": "Reminder: notifications-service still uses Kafka as its message queue.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00129",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T17:52:01Z",
+      "kind": "tool_call",
+      "content": "read_file(\"cart/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00130",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T17:56:01Z",
+      "kind": "user_message",
+      "content": "Thanks, that looks good.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00131",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T18:00:01Z",
+      "kind": "document",
+      "content": "README.md (cart-service): CI badge links to Buildkite.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00132",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T18:06:01Z",
+      "kind": "user_message",
+      "content": "Just confirming, the on-call owner for notifications-service is still Tomás Ruiz.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00133",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T18:10:01Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00134",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T18:13:01Z",
+      "kind": "user_message",
+      "content": "Can you summarise yesterday's changes?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00135",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T18:18:01Z",
+      "kind": "document",
+      "content": "README.md (billing-service): the deploy branch is main.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00136",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T18:23:01Z",
+      "kind": "tool_result",
+      "content": "config-sync: billing.test_command = bazel test //...",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00137",
+      "user_id": "u2",
+      "session_id": "u2-s009",
+      "timestamp": "2026-05-15T18:24:01Z",
+      "kind": "user_message",
+      "content": "Update: cart-service's database is MariaDB 10.11 from now on.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00138",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:02:01Z",
+      "kind": "user_message",
+      "content": "Please add type hints to the notifications-service client.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00139",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:06:01Z",
+      "kind": "user_message",
+      "content": "Reminder: notifications-service still uses Tomás Ruiz as its on-call owner.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00140",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:07:01Z",
+      "kind": "tool_result",
+      "content": "webhook: cart-service build #812 reported by GitHub Actions",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00141",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:13:01Z",
+      "kind": "user_message",
+      "content": "Don't keep billing-service's staging hostname in memory anymore.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00142",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:19:01Z",
+      "kind": "tool_result",
+      "content": "config-sync: cart.database = MariaDB 10.11",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00143",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:25:01Z",
+      "kind": "user_message",
+      "content": "Can you summarise yesterday's changes?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00144",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:27:01Z",
+      "kind": "tool_call",
+      "content": "run_shell(\"git log -5 --oneline\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00145",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:29:01Z",
+      "kind": "document",
+      "content": "wiki/cart.md: cloud region: eu-central-1",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00146",
+      "user_id": "u2",
+      "session_id": "u2-s010",
+      "timestamp": "2026-05-18T09:33:01Z",
+      "kind": "assistant_message",
+      "content": "I couldn't reproduce the failure locally.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00147",
+      "user_id": "u3",
+      "session_id": "u3-s014",
+      "timestamp": "2026-05-20T17:04:02Z",
+      "kind": "user_message",
+      "content": "Just confirming, the on-call owner for gateway-service is still Jonas Berg.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00148",
+      "user_id": "u3",
+      "session_id": "u3-s014",
+      "timestamp": "2026-05-20T17:06:02Z",
+      "kind": "assistant_message",
+      "content": "I couldn't reproduce the failure locally.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00149",
+      "user_id": "u3",
+      "session_id": "u3-s014",
+      "timestamp": "2026-05-20T17:11:02Z",
+      "kind": "tool_call",
+      "content": "run_shell(\"git log -5 --oneline\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00150",
+      "user_id": "u3",
+      "session_id": "u3-s014",
+      "timestamp": "2026-05-20T17:14:02Z",
+      "kind": "user_message",
+      "content": "Just confirming, the CI provider for gateway-service is still Jenkins.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00151",
+      "user_id": "u2",
+      "session_id": "u2-s011",
+      "timestamp": "2026-05-25T16:50:01Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00152",
+      "user_id": "u2",
+      "session_id": "u2-s011",
+      "timestamp": "2026-05-25T16:52:01Z",
+      "kind": "user_message",
+      "content": "We moved cart-service CI over to Drone CI.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00153",
+      "user_id": "u2",
+      "session_id": "u2-s011",
+      "timestamp": "2026-05-25T16:54:01Z",
+      "kind": "user_message",
+      "content": "Change of plan: notifications-service now uses Google Pub/Sub as its message queue.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00154",
+      "user_id": "u2",
+      "session_id": "u2-s011",
+      "timestamp": "2026-05-25T16:55:01Z",
+      "kind": "tool_result",
+      "content": "git: default branch of billing-service changed to 'prod'",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00155",
+      "user_id": "u1",
+      "session_id": "u1-s011",
+      "timestamp": "2026-06-02T09:30:00Z",
+      "kind": "document",
+      "content": "README.md (payments-service): CI badge links to GitLab CI.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00156",
+      "user_id": "u1",
+      "session_id": "u1-s011",
+      "timestamp": "2026-06-02T09:32:00Z",
+      "kind": "user_message",
+      "content": "For billing-service, the CI provider is Jenkins.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00157",
+      "user_id": "u1",
+      "session_id": "u1-s011",
+      "timestamp": "2026-06-02T09:38:00Z",
+      "kind": "tool_result",
+      "content": "3 files changed, 41 insertions(+), 7 deletions(-)",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00158",
+      "user_id": "u1",
+      "session_id": "u1-s011",
+      "timestamp": "2026-06-02T09:43:00Z",
+      "kind": "assistant_message",
+      "content": "Done. I opened a draft PR for payments-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00159",
+      "user_id": "u1",
+      "session_id": "u1-s011",
+      "timestamp": "2026-06-02T09:44:00Z",
+      "kind": "user_message",
+      "content": "Can you summarise yesterday's changes?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00160",
+      "user_id": "u3",
+      "session_id": "u3-s015",
+      "timestamp": "2026-06-03T10:47:02Z",
+      "kind": "document",
+      "content": "wiki/inventory.md: CI provider: CircleCI",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00161",
+      "user_id": "u3",
+      "session_id": "u3-s015",
+      "timestamp": "2026-06-03T10:48:02Z",
+      "kind": "tool_call",
+      "content": "read_file(\"auth/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00162",
+      "user_id": "u3",
+      "session_id": "u3-s015",
+      "timestamp": "2026-06-03T10:53:02Z",
+      "kind": "document",
+      "content": "wiki/gateway.md: test command: cargo test",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00163",
+      "user_id": "u3",
+      "session_id": "u3-s015",
+      "timestamp": "2026-06-03T10:56:02Z",
+      "kind": "assistant_message",
+      "content": "Okay, using pytest -n auto as the auth-service test command.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00164",
+      "user_id": "u1",
+      "session_id": "u1-s012",
+      "timestamp": "2026-06-05T17:18:00Z",
+      "kind": "tool_result",
+      "content": "3 files changed, 41 insertions(+), 7 deletions(-)",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00165",
+      "user_id": "u1",
+      "session_id": "u1-s012",
+      "timestamp": "2026-06-05T17:20:00Z",
+      "kind": "user_message",
+      "content": "Reminder: billing-service still uses Amazon SQS as its message queue.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00166",
+      "user_id": "u1",
+      "session_id": "u1-s012",
+      "timestamp": "2026-06-05T17:24:00Z",
+      "kind": "assistant_message",
+      "content": "I'll add a ActiveMQ consumer for payments-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00167",
+      "user_id": "u1",
+      "session_id": "u1-s012",
+      "timestamp": "2026-06-05T17:30:00Z",
+      "kind": "assistant_message",
+      "content": "Got it. I'll assume pytest -x for the test command of billing-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00168",
+      "user_id": "u1",
+      "session_id": "u1-s012",
+      "timestamp": "2026-06-05T17:33:00Z",
+      "kind": "tool_result",
+      "content": "db-check: billing-service server_version=MariaDB 11.4",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00169",
+      "user_id": "u1",
+      "session_id": "u1-s012",
+      "timestamp": "2026-06-05T17:38:00Z",
+      "kind": "user_message",
+      "content": "Can you look into the flaky checkout test in payments-service?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00170",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T09:30:02Z",
+      "kind": "tool_result",
+      "content": "config-sync: auth.test_command = pytest -x",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00171",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T09:34:02Z",
+      "kind": "user_message",
+      "content": "Don't keep gateway-service's on-call owner in memory anymore.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00172",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T09:38:02Z",
+      "kind": "user_message",
+      "content": "Just confirming, the deploy branch for auth-service is still main.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00173",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T09:43:02Z",
+      "kind": "tool_call",
+      "content": "run_shell(\"git log -5 --oneline\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00174",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T09:47:02Z",
+      "kind": "assistant_message",
+      "content": "Running `tox -e py312` for gateway-service like last time.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00175",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T09:52:02Z",
+      "kind": "user_message",
+      "content": "Can you summarise yesterday's changes?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00176",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T09:58:02Z",
+      "kind": "user_message",
+      "content": "Don't keep gateway-service's CI provider in memory anymore.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00177",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T10:02:02Z",
+      "kind": "tool_result",
+      "content": "config-sync: auth.database = MySQL 8.4",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00178",
+      "user_id": "u3",
+      "session_id": "u3-s016",
+      "timestamp": "2026-06-07T10:05:02Z",
+      "kind": "tool_call",
+      "content": "run_shell(\"git log -5 --oneline\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00179",
+      "user_id": "u1",
+      "session_id": "u1-s013",
+      "timestamp": "2026-06-14T15:30:00Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"billing/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00180",
+      "user_id": "u1",
+      "session_id": "u1-s013",
+      "timestamp": "2026-06-14T15:31:00Z",
+      "kind": "user_message",
+      "content": "For payments-service, the staging hostname is payments-stg-6.internal.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00181",
+      "user_id": "u1",
+      "session_id": "u1-s013",
+      "timestamp": "2026-06-14T15:32:00Z",
+      "kind": "user_message",
+      "content": "How is the payments-service refactor going?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00182",
+      "user_id": "u1",
+      "session_id": "u1-s013",
+      "timestamp": "2026-06-14T15:38:00Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"payments/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00183",
+      "user_id": "u2",
+      "session_id": "u2-s012",
+      "timestamp": "2026-06-15T08:49:01Z",
+      "kind": "user_message",
+      "content": "The on-call owner for cart-service came up in standup today.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00184",
+      "user_id": "u2",
+      "session_id": "u2-s012",
+      "timestamp": "2026-06-15T08:53:01Z",
+      "kind": "tool_call",
+      "content": "read_file(\"billing/src/handlers.py\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00185",
+      "user_id": "u2",
+      "session_id": "u2-s012",
+      "timestamp": "2026-06-15T08:54:01Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"notifications/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00186",
+      "user_id": "u2",
+      "session_id": "u2-s012",
+      "timestamp": "2026-06-15T08:56:01Z",
+      "kind": "assistant_message",
+      "content": "Okay, using ./gradlew test as the billing-service test command.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00187",
+      "user_id": "u2",
+      "session_id": "u2-s012",
+      "timestamp": "2026-06-15T09:02:01Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00188",
+      "user_id": "u2",
+      "session_id": "u2-s013",
+      "timestamp": "2026-06-17T10:46:01Z",
+      "kind": "code_change",
+      "content": "config-sync: billing.cloud_region = us-east-1",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00189",
+      "user_id": "u2",
+      "session_id": "u2-s013",
+      "timestamp": "2026-06-17T10:50:01Z",
+      "kind": "tool_result",
+      "content": "All checks passed.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00190",
+      "user_id": "u2",
+      "session_id": "u2-s013",
+      "timestamp": "2026-06-17T10:56:01Z",
+      "kind": "tool_result",
+      "content": "config-sync: billing.test_command = bazel test //...",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00191",
+      "user_id": "u2",
+      "session_id": "u2-s013",
+      "timestamp": "2026-06-17T11:02:01Z",
+      "kind": "document",
+      "content": "docs/architecture.md: notifications-service stores its data in MariaDB 11.4.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00192",
+      "user_id": "u1",
+      "session_id": "u1-s014",
+      "timestamp": "2026-06-22T08:50:00Z",
+      "kind": "user_message",
+      "content": "Let's not touch the billing-service test command this sprint.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00193",
+      "user_id": "u1",
+      "session_id": "u1-s014",
+      "timestamp": "2026-06-22T08:55:00Z",
+      "kind": "assistant_message",
+      "content": "I couldn't reproduce the failure locally.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00194",
+      "user_id": "u1",
+      "session_id": "u1-s015",
+      "timestamp": "2026-06-23T10:18:00Z",
+      "kind": "user_message",
+      "content": "The message queue for billing-service came up in standup today.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00195",
+      "user_id": "u1",
+      "session_id": "u1-s015",
+      "timestamp": "2026-06-23T10:22:00Z",
+      "kind": "document",
+      "content": "README.md (billing-service): the test command is pytest -x.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00196",
+      "user_id": "u1",
+      "session_id": "u1-s015",
+      "timestamp": "2026-06-23T10:23:00Z",
+      "kind": "user_message",
+      "content": "Just confirming, the message queue for billing-service is still Amazon SQS.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00197",
+      "user_id": "u1",
+      "session_id": "u1-s015",
+      "timestamp": "2026-06-23T10:24:00Z",
+      "kind": "tool_call",
+      "content": "run_shell(\"git log -5 --oneline\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00198",
+      "user_id": "u2",
+      "session_id": "u2-s014",
+      "timestamp": "2026-06-24T12:36:01Z",
+      "kind": "tool_result",
+      "content": "All checks passed.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00199",
+      "user_id": "u2",
+      "session_id": "u2-s014",
+      "timestamp": "2026-06-24T12:37:01Z",
+      "kind": "user_message",
+      "content": "How is the cart-service refactor going?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00200",
+      "user_id": "u2",
+      "session_id": "u2-s014",
+      "timestamp": "2026-06-24T12:40:01Z",
+      "kind": "code_change",
+      "content": "pagerduty: notifications-service escalation policy -> Jonas Berg",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00201",
+      "user_id": "u2",
+      "session_id": "u2-s014",
+      "timestamp": "2026-06-24T12:44:01Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00202",
+      "user_id": "u2",
+      "session_id": "u2-s014",
+      "timestamp": "2026-06-24T12:50:01Z",
+      "kind": "user_message",
+      "content": "How is the notifications-service refactor going?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00203",
+      "user_id": "u2",
+      "session_id": "u2-s015",
+      "timestamp": "2026-06-30T17:12:01Z",
+      "kind": "user_message",
+      "content": "How is the cart-service refactor going?",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00204",
+      "user_id": "u2",
+      "session_id": "u2-s015",
+      "timestamp": "2026-06-30T17:17:01Z",
+      "kind": "code_change",
+      "content": "terraform apply (cart-service): region = \"ap-southeast-2\"",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00205",
+      "user_id": "u2",
+      "session_id": "u2-s015",
+      "timestamp": "2026-06-30T17:18:01Z",
+      "kind": "assistant_message",
+      "content": "Got it. I'll assume Redis Streams for the message queue of cart-service.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00206",
+      "user_id": "u2",
+      "session_id": "u2-s015",
+      "timestamp": "2026-06-30T17:23:01Z",
+      "kind": "user_message",
+      "content": "Just confirming, the database for cart-service is still MariaDB 10.11.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00207",
+      "user_id": "u2",
+      "session_id": "u2-s015",
+      "timestamp": "2026-06-30T17:29:01Z",
+      "kind": "tool_call",
+      "content": "grep(\"TODO\", \"cart/\")",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00208",
+      "user_id": "u2",
+      "session_id": "u2-s015",
+      "timestamp": "2026-06-30T17:30:01Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00209",
+      "user_id": "u2",
+      "session_id": "u2-s016",
+      "timestamp": "2026-07-01T12:16:01Z",
+      "kind": "user_message",
+      "content": "Remove what you know about billing-service's deploy branch, please.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00210",
+      "user_id": "u2",
+      "session_id": "u2-s016",
+      "timestamp": "2026-07-01T12:18:01Z",
+      "kind": "tool_result",
+      "content": "No matches found.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00211",
+      "user_id": "u2",
+      "session_id": "u2-s016",
+      "timestamp": "2026-07-01T12:20:01Z",
+      "kind": "document",
+      "content": "wiki/cart.md: on-call owner: Aino Virtanen",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00212",
+      "user_id": "u2",
+      "session_id": "u2-s016",
+      "timestamp": "2026-07-01T12:21:01Z",
+      "kind": "user_message",
+      "content": "We switched the message queue for notifications-service to RabbitMQ.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00213",
+      "user_id": "u1",
+      "session_id": "u1-s016",
+      "timestamp": "2026-07-02T08:18:00Z",
+      "kind": "tool_result",
+      "content": "3 files changed, 41 insertions(+), 7 deletions(-)",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00214",
+      "user_id": "u1",
+      "session_id": "u1-s016",
+      "timestamp": "2026-07-02T08:23:00Z",
+      "kind": "code_change",
+      "content": "deploy.log: payments-service broker endpoint switched to RabbitMQ",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00215",
+      "user_id": "u1",
+      "session_id": "u1-s016",
+      "timestamp": "2026-07-02T08:28:00Z",
+      "kind": "assistant_message",
+      "content": "Looking into it now.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00216",
+      "user_id": "u1",
+      "session_id": "u1-s016",
+      "timestamp": "2026-07-02T08:33:00Z",
+      "kind": "user_message",
+      "content": "For billing-service, the cloud region is eu-west-1.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00217",
+      "user_id": "u1",
+      "session_id": "u1-s016",
+      "timestamp": "2026-07-02T08:37:00Z",
+      "kind": "assistant_message",
+      "content": "I've added the missing type hints.",
+      "metadata": {}
+    },
+    {
+      "event_id": "e00218",
+      "user_id": "u1",
+      "session_id": "u1-s016",
+      "timestamp": "2026-07-02T08:38:00Z",
+      "kind": "tool_result",
+      "content": "deploy.log: billing-service broker endpoint switched to Redis Streams",
+      "metadata": {}
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "u1/billing-service/ci_provider",
+      "user_id": "u1",
+      "entity": "billing-service",
+      "attribute": "ci_provider",
+      "category": "workflow",
+      "description": "CI provider of billing-service"
+    },
+    {
+      "fact_id": "u1/billing-service/cloud_region",
+      "user_id": "u1",
+      "entity": "billing-service",
+      "attribute": "cloud_region",
+      "category": "infrastructure",
+      "description": "cloud region of billing-service"
+    },
+    {
+      "fact_id": "u1/billing-service/test_command",
+      "user_id": "u1",
+      "entity": "billing-service",
+      "attribute": "test_command",
+      "category": "workflow",
+      "description": "test command of billing-service"
+    },
+    {
+      "fact_id": "u1/billing-service/database",
+      "user_id": "u1",
+      "entity": "billing-service",
+      "attribute": "database",
+      "category": "codebase",
+      "description": "database of billing-service"
+    },
+    {
+      "fact_id": "u1/billing-service/message_queue",
+      "user_id": "u1",
+      "entity": "billing-service",
+      "attribute": "message_queue",
+      "category": "infrastructure",
+      "description": "message queue of billing-service"
+    },
+    {
+      "fact_id": "u1/payments-service/ci_provider",
+      "user_id": "u1",
+      "entity": "payments-service",
+      "attribute": "ci_provider",
+      "category": "workflow",
+      "description": "CI provider of payments-service"
+    },
+    {
+      "fact_id": "u1/payments-service/staging_host",
+      "user_id": "u1",
+      "entity": "payments-service",
+      "attribute": "staging_host",
+      "category": "infrastructure",
+      "description": "staging hostname of payments-service"
+    },
+    {
+      "fact_id": "u1/payments-service/message_queue",
+      "user_id": "u1",
+      "entity": "payments-service",
+      "attribute": "message_queue",
+      "category": "infrastructure",
+      "description": "message queue of payments-service"
+    },
+    {
+      "fact_id": "u2/notifications-service/database",
+      "user_id": "u2",
+      "entity": "notifications-service",
+      "attribute": "database",
+      "category": "codebase",
+      "description": "database of notifications-service"
+    },
+    {
+      "fact_id": "u2/notifications-service/message_queue",
+      "user_id": "u2",
+      "entity": "notifications-service",
+      "attribute": "message_queue",
+      "category": "infrastructure",
+      "description": "message queue of notifications-service"
+    },
+    {
+      "fact_id": "u2/notifications-service/oncall",
+      "user_id": "u2",
+      "entity": "notifications-service",
+      "attribute": "oncall",
+      "category": "team",
+      "description": "on-call owner of notifications-service"
+    },
+    {
+      "fact_id": "u2/notifications-service/staging_host",
+      "user_id": "u2",
+      "entity": "notifications-service",
+      "attribute": "staging_host",
+      "category": "infrastructure",
+      "description": "staging hostname of notifications-service"
+    },
+    {
+      "fact_id": "u2/billing-service/staging_host",
+      "user_id": "u2",
+      "entity": "billing-service",
+      "attribute": "staging_host",
+      "category": "infrastructure",
+      "description": "staging hostname of billing-service"
+    },
+    {
+      "fact_id": "u2/billing-service/oncall",
+      "user_id": "u2",
+      "entity": "billing-service",
+      "attribute": "oncall",
+      "category": "team",
+      "description": "on-call owner of billing-service"
+    },
+    {
+      "fact_id": "u2/billing-service/cloud_region",
+      "user_id": "u2",
+      "entity": "billing-service",
+      "attribute": "cloud_region",
+      "category": "infrastructure",
+      "description": "cloud region of billing-service"
+    },
+    {
+      "fact_id": "u2/billing-service/deploy_branch",
+      "user_id": "u2",
+      "entity": "billing-service",
+      "attribute": "deploy_branch",
+      "category": "workflow",
+      "description": "deploy branch of billing-service"
+    },
+    {
+      "fact_id": "u2/billing-service/test_command",
+      "user_id": "u2",
+      "entity": "billing-service",
+      "attribute": "test_command",
+      "category": "workflow",
+      "description": "test command of billing-service"
+    },
+    {
+      "fact_id": "u2/cart-service/cloud_region",
+      "user_id": "u2",
+      "entity": "cart-service",
+      "attribute": "cloud_region",
+      "category": "infrastructure",
+      "description": "cloud region of cart-service"
+    },
+    {
+      "fact_id": "u2/cart-service/oncall",
+      "user_id": "u2",
+      "entity": "cart-service",
+      "attribute": "oncall",
+      "category": "team",
+      "description": "on-call owner of cart-service"
+    },
+    {
+      "fact_id": "u2/cart-service/database",
+      "user_id": "u2",
+      "entity": "cart-service",
+      "attribute": "database",
+      "category": "codebase",
+      "description": "database of cart-service"
+    },
+    {
+      "fact_id": "u2/cart-service/ci_provider",
+      "user_id": "u2",
+      "entity": "cart-service",
+      "attribute": "ci_provider",
+      "category": "workflow",
+      "description": "CI provider of cart-service"
+    },
+    {
+      "fact_id": "u2/cart-service/message_queue",
+      "user_id": "u2",
+      "entity": "cart-service",
+      "attribute": "message_queue",
+      "category": "infrastructure",
+      "description": "message queue of cart-service"
+    },
+    {
+      "fact_id": "u3/inventory-service/ci_provider",
+      "user_id": "u3",
+      "entity": "inventory-service",
+      "attribute": "ci_provider",
+      "category": "workflow",
+      "description": "CI provider of inventory-service"
+    },
+    {
+      "fact_id": "u3/inventory-service/test_command",
+      "user_id": "u3",
+      "entity": "inventory-service",
+      "attribute": "test_command",
+      "category": "workflow",
+      "description": "test command of inventory-service"
+    },
+    {
+      "fact_id": "u3/inventory-service/runtime",
+      "user_id": "u3",
+      "entity": "inventory-service",
+      "attribute": "runtime",
+      "category": "codebase",
+      "description": "runtime of inventory-service"
+    },
+    {
+      "fact_id": "u3/gateway-service/runtime",
+      "user_id": "u3",
+      "entity": "gateway-service",
+      "attribute": "runtime",
+      "category": "codebase",
+      "description": "runtime of gateway-service"
+    },
+    {
+      "fact_id": "u3/gateway-service/ci_provider",
+      "user_id": "u3",
+      "entity": "gateway-service",
+      "attribute": "ci_provider",
+      "category": "workflow",
+      "description": "CI provider of gateway-service"
+    },
+    {
+      "fact_id": "u3/gateway-service/oncall",
+      "user_id": "u3",
+      "entity": "gateway-service",
+      "attribute": "oncall",
+      "category": "team",
+      "description": "on-call owner of gateway-service"
+    },
+    {
+      "fact_id": "u3/gateway-service/test_command",
+      "user_id": "u3",
+      "entity": "gateway-service",
+      "attribute": "test_command",
+      "category": "workflow",
+      "description": "test command of gateway-service"
+    },
+    {
+      "fact_id": "u3/gateway-service/staging_host",
+      "user_id": "u3",
+      "entity": "gateway-service",
+      "attribute": "staging_host",
+      "category": "infrastructure",
+      "description": "staging hostname of gateway-service"
+    },
+    {
+      "fact_id": "u3/auth-service/test_command",
+      "user_id": "u3",
+      "entity": "auth-service",
+      "attribute": "test_command",
+      "category": "workflow",
+      "description": "test command of auth-service"
+    },
+    {
+      "fact_id": "u3/auth-service/oncall",
+      "user_id": "u3",
+      "entity": "auth-service",
+      "attribute": "oncall",
+      "category": "team",
+      "description": "on-call owner of auth-service"
+    },
+    {
+      "fact_id": "u3/auth-service/deploy_branch",
+      "user_id": "u3",
+      "entity": "auth-service",
+      "attribute": "deploy_branch",
+      "category": "workflow",
+      "description": "deploy branch of auth-service"
+    },
+    {
+      "fact_id": "u3/auth-service/database",
+      "user_id": "u3",
+      "entity": "auth-service",
+      "attribute": "database",
+      "category": "codebase",
+      "description": "database of auth-service"
+    }
+  ],
+  "mutations": [
+    {
+      "mutation_id": "m00001",
+      "fact_id": "u1/billing-service/database",
+      "kind": "introduce",
+      "at": "2026-01-14T17:01:00Z",
+      "value": "PostgreSQL 13",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00004"
+      ]
+    },
+    {
+      "mutation_id": "m00002",
+      "fact_id": "u1/payments-service/ci_provider",
+      "kind": "introduce",
+      "at": "2026-01-14T17:07:00Z",
+      "value": "CircleCI",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00005"
+      ]
+    },
+    {
+      "mutation_id": "m00003",
+      "fact_id": "u2/billing-service/staging_host",
+      "kind": "introduce",
+      "at": "2026-01-20T12:23:01Z",
+      "value": "billing-stg-1.internal",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00007"
+      ]
+    },
+    {
+      "mutation_id": "m00004",
+      "fact_id": "u2/cart-service/database",
+      "kind": "introduce",
+      "at": "2026-01-20T12:29:01Z",
+      "value": "MySQL 8.0",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00008"
+      ]
+    },
+    {
+      "mutation_id": "m00005",
+      "fact_id": "u2/billing-service/cloud_region",
+      "kind": "introduce",
+      "at": "2026-01-21T12:07:01Z",
+      "value": "us-west-2",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00012"
+      ]
+    },
+    {
+      "mutation_id": "m00006",
+      "fact_id": "u1/billing-service/test_command",
+      "kind": "introduce",
+      "at": "2026-01-26T12:00:00Z",
+      "value": "npm test",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00018"
+      ]
+    },
+    {
+      "mutation_id": "m00007",
+      "fact_id": "u3/auth-service/oncall",
+      "kind": "introduce",
+      "at": "2026-01-31T08:33:02Z",
+      "value": "Mikko Laine",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00019"
+      ]
+    },
+    {
+      "mutation_id": "m00008",
+      "fact_id": "u3/auth-service/database",
+      "kind": "introduce",
+      "at": "2026-01-31T08:40:02Z",
+      "value": "PostgreSQL 14",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00021"
+      ]
+    },
+    {
+      "mutation_id": "m00009",
+      "fact_id": "u3/inventory-service/ci_provider",
+      "kind": "introduce",
+      "at": "2026-01-31T08:43:02Z",
+      "value": "Travis CI",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00022"
+      ]
+    },
+    {
+      "mutation_id": "m00010",
+      "fact_id": "u1/payments-service/staging_host",
+      "kind": "introduce",
+      "at": "2026-01-31T14:40:00Z",
+      "value": "payments-stg-8.internal",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00026"
+      ]
+    },
+    {
+      "mutation_id": "m00011",
+      "fact_id": "u2/cart-service/message_queue",
+      "kind": "introduce",
+      "at": "2026-02-08T15:46:01Z",
+      "value": "NATS",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00028"
+      ]
+    },
+    {
+      "mutation_id": "m00012",
+      "fact_id": "u2/notifications-service/oncall",
+      "kind": "introduce",
+      "at": "2026-02-08T15:50:01Z",
+      "value": "Tomás Ruiz",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00029"
+      ]
+    },
+    {
+      "mutation_id": "m00013",
+      "fact_id": "u2/cart-service/cloud_region",
+      "kind": "introduce",
+      "at": "2026-02-08T15:58:01Z",
+      "value": "eu-north-1",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00031"
+      ]
+    },
+    {
+      "mutation_id": "m00014",
+      "fact_id": "u2/billing-service/test_command",
+      "kind": "introduce",
+      "at": "2026-02-08T15:59:01Z",
+      "value": "bazel test //...",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00032"
+      ]
+    },
+    {
+      "mutation_id": "m00015",
+      "fact_id": "u2/billing-service/staging_host",
+      "kind": "contradict",
+      "at": "2026-02-08T16:02:01Z",
+      "value": "billing-stg-8.internal",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00033"
+      ]
+    },
+    {
+      "mutation_id": "m00016",
+      "fact_id": "u2/cart-service/cloud_region",
+      "kind": "update",
+      "at": "2026-02-09T08:35:01Z",
+      "value": "eu-west-1",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00034"
+      ]
+    },
+    {
+      "mutation_id": "m00017",
+      "fact_id": "u2/notifications-service/staging_host",
+      "kind": "introduce",
+      "at": "2026-02-09T08:37:01Z",
+      "value": "notifications-stg-1.internal",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00035"
+      ]
+    },
+    {
+      "mutation_id": "m00018",
+      "fact_id": "u2/cart-service/database",
+      "kind": "restate",
+      "at": "2026-02-09T08:43:01Z",
+      "value": "MySQL 8.0",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00037"
+      ]
+    },
+    {
+      "mutation_id": "m00019",
+      "fact_id": "u2/notifications-service/database",
+      "kind": "introduce",
+      "at": "2026-02-09T08:48:01Z",
+      "value": "PostgreSQL 17",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00038"
+      ]
+    },
+    {
+      "mutation_id": "m00020",
+      "fact_id": "u3/gateway-service/staging_host",
+      "kind": "introduce",
+      "at": "2026-02-15T15:36:02Z",
+      "value": "gateway-stg-3.internal",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00040"
+      ]
+    },
+    {
+      "mutation_id": "m00021",
+      "fact_id": "u3/inventory-service/test_command",
+      "kind": "introduce",
+      "at": "2026-02-16T08:31:02Z",
+      "value": "make test",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00045"
+      ]
+    },
+    {
+      "mutation_id": "m00022",
+      "fact_id": "u3/auth-service/test_command",
+      "kind": "introduce",
+      "at": "2026-02-17T10:07:02Z",
+      "value": "go test ./...",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00049"
+      ]
+    },
+    {
+      "mutation_id": "m00023",
+      "fact_id": "u3/auth-service/oncall",
+      "kind": "update",
+      "at": "2026-02-17T10:10:02Z",
+      "value": "Sara Nyström",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00050"
+      ]
+    },
+    {
+      "mutation_id": "m00024",
+      "fact_id": "u3/gateway-service/runtime",
+      "kind": "introduce",
+      "at": "2026-02-17T10:13:02Z",
+      "value": "Node 20",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00051"
+      ]
+    },
+    {
+      "mutation_id": "m00025",
+      "fact_id": "u3/auth-service/database",
+      "kind": "delete",
+      "at": "2026-02-17T10:17:02Z",
+      "value": null,
+      "source": "user",
+      "carrier_event_ids": [
+        "e00052"
+      ]
+    },
+    {
+      "mutation_id": "m00026",
+      "fact_id": "u2/billing-service/deploy_branch",
+      "kind": "introduce",
+      "at": "2026-02-17T17:27:01Z",
+      "value": "master",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00053"
+      ]
+    },
+    {
+      "mutation_id": "m00027",
+      "fact_id": "u2/cart-service/message_queue",
+      "kind": "update",
+      "at": "2026-02-17T17:39:01Z",
+      "value": "Amazon SQS",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00056"
+      ]
+    },
+    {
+      "mutation_id": "m00028",
+      "fact_id": "u3/gateway-service/ci_provider",
+      "kind": "introduce",
+      "at": "2026-02-22T11:37:02Z",
+      "value": "Jenkins",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00058"
+      ]
+    },
+    {
+      "mutation_id": "m00029",
+      "fact_id": "u3/gateway-service/test_command",
+      "kind": "introduce",
+      "at": "2026-02-22T11:38:02Z",
+      "value": "bazel test //...",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00059"
+      ]
+    },
+    {
+      "mutation_id": "m00030",
+      "fact_id": "u2/billing-service/oncall",
+      "kind": "introduce",
+      "at": "2026-02-25T15:28:01Z",
+      "value": "Leena Koski",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00060"
+      ]
+    },
+    {
+      "mutation_id": "m00031",
+      "fact_id": "u2/cart-service/message_queue",
+      "kind": "update",
+      "at": "2026-02-25T15:37:01Z",
+      "value": "ActiveMQ",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00062"
+      ]
+    },
+    {
+      "mutation_id": "m00032",
+      "fact_id": "u2/billing-service/test_command",
+      "kind": "restate",
+      "at": "2026-02-25T15:44:01Z",
+      "value": "bazel test //...",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00064"
+      ]
+    },
+    {
+      "mutation_id": "m00033",
+      "fact_id": "u2/notifications-service/message_queue",
+      "kind": "introduce",
+      "at": "2026-02-25T15:48:01Z",
+      "value": "Kafka",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00065"
+      ]
+    },
+    {
+      "mutation_id": "m00034",
+      "fact_id": "u1/payments-service/ci_provider",
+      "kind": "contradict",
+      "at": "2026-02-28T10:39:00Z",
+      "value": "Buildkite",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00066"
+      ]
+    },
+    {
+      "mutation_id": "m00035",
+      "fact_id": "u1/payments-service/message_queue",
+      "kind": "introduce",
+      "at": "2026-03-06T15:49:00Z",
+      "value": "Kafka",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00070"
+      ]
+    },
+    {
+      "mutation_id": "m00036",
+      "fact_id": "u3/inventory-service/test_command",
+      "kind": "update",
+      "at": "2026-03-08T16:11:02Z",
+      "value": "./gradlew test",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00071"
+      ]
+    },
+    {
+      "mutation_id": "m00037",
+      "fact_id": "u1/payments-service/staging_host",
+      "kind": "delete",
+      "at": "2026-03-11T09:42:00Z",
+      "value": null,
+      "source": "user",
+      "carrier_event_ids": [
+        "e00075"
+      ]
+    },
+    {
+      "mutation_id": "m00038",
+      "fact_id": "u1/billing-service/database",
+      "kind": "update",
+      "at": "2026-03-11T09:44:00Z",
+      "value": "PostgreSQL 16",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00076"
+      ]
+    },
+    {
+      "mutation_id": "m00039",
+      "fact_id": "u3/inventory-service/test_command",
+      "kind": "contradict",
+      "at": "2026-03-15T16:21:02Z",
+      "value": "npm test",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00080"
+      ]
+    },
+    {
+      "mutation_id": "m00040",
+      "fact_id": "u3/auth-service/deploy_branch",
+      "kind": "introduce",
+      "at": "2026-03-15T16:22:02Z",
+      "value": "develop",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00081"
+      ]
+    },
+    {
+      "mutation_id": "m00041",
+      "fact_id": "u3/gateway-service/staging_host",
+      "kind": "update",
+      "at": "2026-03-15T16:25:02Z",
+      "value": "gateway-stg-6.internal",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00082"
+      ]
+    },
+    {
+      "mutation_id": "m00042",
+      "fact_id": "u3/auth-service/database",
+      "kind": "introduce",
+      "at": "2026-03-15T16:30:02Z",
+      "value": "MongoDB 7.0",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00083"
+      ]
+    },
+    {
+      "mutation_id": "m00043",
+      "fact_id": "u1/payments-service/ci_provider",
+      "kind": "contradict",
+      "at": "2026-03-26T10:29:00Z",
+      "value": "Buildkite",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00088"
+      ]
+    },
+    {
+      "mutation_id": "m00044",
+      "fact_id": "u3/inventory-service/test_command",
+      "kind": "restate",
+      "at": "2026-03-31T16:10:02Z",
+      "value": "./gradlew test",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00089"
+      ]
+    },
+    {
+      "mutation_id": "m00045",
+      "fact_id": "u3/auth-service/deploy_branch",
+      "kind": "update",
+      "at": "2026-03-31T16:15:02Z",
+      "value": "stable",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00090"
+      ]
+    },
+    {
+      "mutation_id": "m00046",
+      "fact_id": "u2/billing-service/deploy_branch",
+      "kind": "update",
+      "at": "2026-04-01T11:36:01Z",
+      "value": "prod",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00094"
+      ]
+    },
+    {
+      "mutation_id": "m00047",
+      "fact_id": "u1/billing-service/message_queue",
+      "kind": "introduce",
+      "at": "2026-04-01T14:23:00Z",
+      "value": "Google Pub/Sub",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00098"
+      ]
+    },
+    {
+      "mutation_id": "m00048",
+      "fact_id": "u3/gateway-service/runtime",
+      "kind": "update",
+      "at": "2026-04-02T17:06:02Z",
+      "value": "Java 21",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00105"
+      ]
+    },
+    {
+      "mutation_id": "m00049",
+      "fact_id": "u3/auth-service/deploy_branch",
+      "kind": "update",
+      "at": "2026-04-02T17:10:02Z",
+      "value": "main",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00106"
+      ]
+    },
+    {
+      "mutation_id": "m00050",
+      "fact_id": "u3/inventory-service/runtime",
+      "kind": "introduce",
+      "at": "2026-04-07T09:22:02Z",
+      "value": "Python 3.12",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00108"
+      ]
+    },
+    {
+      "mutation_id": "m00051",
+      "fact_id": "u3/inventory-service/test_command",
+      "kind": "delete",
+      "at": "2026-04-17T10:34:02Z",
+      "value": null,
+      "source": "user",
+      "carrier_event_ids": [
+        "e00111"
+      ]
+    },
+    {
+      "mutation_id": "m00052",
+      "fact_id": "u3/auth-service/database",
+      "kind": "contradict",
+      "at": "2026-04-17T10:45:02Z",
+      "value": "PostgreSQL 13",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00115"
+      ]
+    },
+    {
+      "mutation_id": "m00053",
+      "fact_id": "u3/gateway-service/oncall",
+      "kind": "introduce",
+      "at": "2026-04-17T10:52:02Z",
+      "value": "Jonas Berg",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00117"
+      ]
+    },
+    {
+      "mutation_id": "m00054",
+      "fact_id": "u3/auth-service/deploy_branch",
+      "kind": "restate",
+      "at": "2026-04-17T10:55:02Z",
+      "value": "main",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00118"
+      ]
+    },
+    {
+      "mutation_id": "m00055",
+      "fact_id": "u2/cart-service/cloud_region",
+      "kind": "contradict",
+      "at": "2026-04-26T15:19:01Z",
+      "value": "eu-central-1",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00120"
+      ]
+    },
+    {
+      "mutation_id": "m00056",
+      "fact_id": "u1/billing-service/message_queue",
+      "kind": "update",
+      "at": "2026-05-07T14:16:00Z",
+      "value": "Amazon SQS",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00123"
+      ]
+    },
+    {
+      "mutation_id": "m00057",
+      "fact_id": "u3/gateway-service/staging_host",
+      "kind": "restate",
+      "at": "2026-05-10T10:28:02Z",
+      "value": "gateway-stg-6.internal",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00125"
+      ]
+    },
+    {
+      "mutation_id": "m00058",
+      "fact_id": "u2/notifications-service/message_queue",
+      "kind": "restate",
+      "at": "2026-05-15T17:50:01Z",
+      "value": "Kafka",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00128"
+      ]
+    },
+    {
+      "mutation_id": "m00059",
+      "fact_id": "u2/cart-service/ci_provider",
+      "kind": "introduce",
+      "at": "2026-05-15T18:00:01Z",
+      "value": "Buildkite",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00131"
+      ]
+    },
+    {
+      "mutation_id": "m00060",
+      "fact_id": "u2/notifications-service/oncall",
+      "kind": "restate",
+      "at": "2026-05-15T18:06:01Z",
+      "value": "Tomás Ruiz",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00132"
+      ]
+    },
+    {
+      "mutation_id": "m00061",
+      "fact_id": "u2/billing-service/deploy_branch",
+      "kind": "contradict",
+      "at": "2026-05-15T18:18:01Z",
+      "value": "main",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00135"
+      ]
+    },
+    {
+      "mutation_id": "m00062",
+      "fact_id": "u2/billing-service/test_command",
+      "kind": "restate",
+      "at": "2026-05-15T18:23:01Z",
+      "value": "bazel test //...",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00136"
+      ]
+    },
+    {
+      "mutation_id": "m00063",
+      "fact_id": "u2/cart-service/database",
+      "kind": "update",
+      "at": "2026-05-15T18:24:01Z",
+      "value": "MariaDB 10.11",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00137"
+      ]
+    },
+    {
+      "mutation_id": "m00064",
+      "fact_id": "u2/notifications-service/oncall",
+      "kind": "restate",
+      "at": "2026-05-18T09:06:01Z",
+      "value": "Tomás Ruiz",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00139"
+      ]
+    },
+    {
+      "mutation_id": "m00065",
+      "fact_id": "u2/cart-service/ci_provider",
+      "kind": "update",
+      "at": "2026-05-18T09:07:01Z",
+      "value": "GitHub Actions",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00140"
+      ]
+    },
+    {
+      "mutation_id": "m00066",
+      "fact_id": "u2/billing-service/staging_host",
+      "kind": "delete",
+      "at": "2026-05-18T09:13:01Z",
+      "value": null,
+      "source": "user",
+      "carrier_event_ids": [
+        "e00141"
+      ]
+    },
+    {
+      "mutation_id": "m00067",
+      "fact_id": "u2/cart-service/database",
+      "kind": "restate",
+      "at": "2026-05-18T09:19:01Z",
+      "value": "MariaDB 10.11",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00142"
+      ]
+    },
+    {
+      "mutation_id": "m00068",
+      "fact_id": "u2/cart-service/cloud_region",
+      "kind": "contradict",
+      "at": "2026-05-18T09:29:01Z",
+      "value": "eu-central-1",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00145"
+      ]
+    },
+    {
+      "mutation_id": "m00069",
+      "fact_id": "u3/gateway-service/oncall",
+      "kind": "restate",
+      "at": "2026-05-20T17:04:02Z",
+      "value": "Jonas Berg",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00147"
+      ]
+    },
+    {
+      "mutation_id": "m00070",
+      "fact_id": "u3/gateway-service/ci_provider",
+      "kind": "restate",
+      "at": "2026-05-20T17:14:02Z",
+      "value": "Jenkins",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00150"
+      ]
+    },
+    {
+      "mutation_id": "m00071",
+      "fact_id": "u2/cart-service/ci_provider",
+      "kind": "update",
+      "at": "2026-05-25T16:52:01Z",
+      "value": "Drone CI",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00152"
+      ]
+    },
+    {
+      "mutation_id": "m00072",
+      "fact_id": "u2/notifications-service/message_queue",
+      "kind": "update",
+      "at": "2026-05-25T16:54:01Z",
+      "value": "Google Pub/Sub",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00153"
+      ]
+    },
+    {
+      "mutation_id": "m00073",
+      "fact_id": "u2/billing-service/deploy_branch",
+      "kind": "restate",
+      "at": "2026-05-25T16:55:01Z",
+      "value": "prod",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00154"
+      ]
+    },
+    {
+      "mutation_id": "m00074",
+      "fact_id": "u1/payments-service/ci_provider",
+      "kind": "contradict",
+      "at": "2026-06-02T09:30:00Z",
+      "value": "GitLab CI",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00155"
+      ]
+    },
+    {
+      "mutation_id": "m00075",
+      "fact_id": "u1/billing-service/ci_provider",
+      "kind": "introduce",
+      "at": "2026-06-02T09:32:00Z",
+      "value": "Jenkins",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00156"
+      ]
+    },
+    {
+      "mutation_id": "m00076",
+      "fact_id": "u3/inventory-service/ci_provider",
+      "kind": "contradict",
+      "at": "2026-06-03T10:47:02Z",
+      "value": "CircleCI",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00160"
+      ]
+    },
+    {
+      "mutation_id": "m00077",
+      "fact_id": "u3/gateway-service/test_command",
+      "kind": "contradict",
+      "at": "2026-06-03T10:53:02Z",
+      "value": "cargo test",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00162"
+      ]
+    },
+    {
+      "mutation_id": "m00078",
+      "fact_id": "u3/auth-service/test_command",
+      "kind": "contradict",
+      "at": "2026-06-03T10:56:02Z",
+      "value": "pytest -n auto",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00163"
+      ]
+    },
+    {
+      "mutation_id": "m00079",
+      "fact_id": "u1/billing-service/message_queue",
+      "kind": "restate",
+      "at": "2026-06-05T17:20:00Z",
+      "value": "Amazon SQS",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00165"
+      ]
+    },
+    {
+      "mutation_id": "m00080",
+      "fact_id": "u1/payments-service/message_queue",
+      "kind": "contradict",
+      "at": "2026-06-05T17:24:00Z",
+      "value": "ActiveMQ",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00166"
+      ]
+    },
+    {
+      "mutation_id": "m00081",
+      "fact_id": "u1/billing-service/test_command",
+      "kind": "contradict",
+      "at": "2026-06-05T17:30:00Z",
+      "value": "pytest -x",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00167"
+      ]
+    },
+    {
+      "mutation_id": "m00082",
+      "fact_id": "u1/billing-service/database",
+      "kind": "update",
+      "at": "2026-06-05T17:33:00Z",
+      "value": "MariaDB 11.4",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00168"
+      ]
+    },
+    {
+      "mutation_id": "m00083",
+      "fact_id": "u3/auth-service/test_command",
+      "kind": "update",
+      "at": "2026-06-07T09:30:02Z",
+      "value": "pytest -x",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00170"
+      ]
+    },
+    {
+      "mutation_id": "m00084",
+      "fact_id": "u3/gateway-service/oncall",
+      "kind": "delete",
+      "at": "2026-06-07T09:34:02Z",
+      "value": null,
+      "source": "user",
+      "carrier_event_ids": [
+        "e00171"
+      ]
+    },
+    {
+      "mutation_id": "m00085",
+      "fact_id": "u3/auth-service/deploy_branch",
+      "kind": "restate",
+      "at": "2026-06-07T09:38:02Z",
+      "value": "main",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00172"
+      ]
+    },
+    {
+      "mutation_id": "m00086",
+      "fact_id": "u3/gateway-service/test_command",
+      "kind": "contradict",
+      "at": "2026-06-07T09:47:02Z",
+      "value": "tox -e py312",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00174"
+      ]
+    },
+    {
+      "mutation_id": "m00087",
+      "fact_id": "u3/gateway-service/ci_provider",
+      "kind": "delete",
+      "at": "2026-06-07T09:58:02Z",
+      "value": null,
+      "source": "user",
+      "carrier_event_ids": [
+        "e00176"
+      ]
+    },
+    {
+      "mutation_id": "m00088",
+      "fact_id": "u3/auth-service/database",
+      "kind": "update",
+      "at": "2026-06-07T10:02:02Z",
+      "value": "MySQL 8.4",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00177"
+      ]
+    },
+    {
+      "mutation_id": "m00089",
+      "fact_id": "u1/payments-service/staging_host",
+      "kind": "introduce",
+      "at": "2026-06-14T15:31:00Z",
+      "value": "payments-stg-6.internal",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00180"
+      ]
+    },
+    {
+      "mutation_id": "m00090",
+      "fact_id": "u2/billing-service/test_command",
+      "kind": "contradict",
+      "at": "2026-06-15T08:56:01Z",
+      "value": "./gradlew test",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00186"
+      ]
+    },
+    {
+      "mutation_id": "m00091",
+      "fact_id": "u2/billing-service/cloud_region",
+      "kind": "update",
+      "at": "2026-06-17T10:46:01Z",
+      "value": "us-east-1",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00188"
+      ]
+    },
+    {
+      "mutation_id": "m00092",
+      "fact_id": "u2/billing-service/test_command",
+      "kind": "restate",
+      "at": "2026-06-17T10:56:01Z",
+      "value": "bazel test //...",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00190"
+      ]
+    },
+    {
+      "mutation_id": "m00093",
+      "fact_id": "u2/notifications-service/database",
+      "kind": "contradict",
+      "at": "2026-06-17T11:02:01Z",
+      "value": "MariaDB 11.4",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00191"
+      ]
+    },
+    {
+      "mutation_id": "m00094",
+      "fact_id": "u1/billing-service/test_command",
+      "kind": "contradict",
+      "at": "2026-06-23T10:22:00Z",
+      "value": "pytest -x",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00195"
+      ]
+    },
+    {
+      "mutation_id": "m00095",
+      "fact_id": "u1/billing-service/message_queue",
+      "kind": "restate",
+      "at": "2026-06-23T10:23:00Z",
+      "value": "Amazon SQS",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00196"
+      ]
+    },
+    {
+      "mutation_id": "m00096",
+      "fact_id": "u2/notifications-service/oncall",
+      "kind": "update",
+      "at": "2026-06-24T12:40:01Z",
+      "value": "Jonas Berg",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00200"
+      ]
+    },
+    {
+      "mutation_id": "m00097",
+      "fact_id": "u2/cart-service/cloud_region",
+      "kind": "update",
+      "at": "2026-06-30T17:17:01Z",
+      "value": "ap-southeast-2",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00204"
+      ]
+    },
+    {
+      "mutation_id": "m00098",
+      "fact_id": "u2/cart-service/message_queue",
+      "kind": "contradict",
+      "at": "2026-06-30T17:18:01Z",
+      "value": "Redis Streams",
+      "source": "model",
+      "carrier_event_ids": [
+        "e00205"
+      ]
+    },
+    {
+      "mutation_id": "m00099",
+      "fact_id": "u2/cart-service/database",
+      "kind": "restate",
+      "at": "2026-06-30T17:23:01Z",
+      "value": "MariaDB 10.11",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00206"
+      ]
+    },
+    {
+      "mutation_id": "m00100",
+      "fact_id": "u2/billing-service/deploy_branch",
+      "kind": "delete",
+      "at": "2026-07-01T12:16:01Z",
+      "value": null,
+      "source": "user",
+      "carrier_event_ids": [
+        "e00209"
+      ]
+    },
+    {
+      "mutation_id": "m00101",
+      "fact_id": "u2/cart-service/oncall",
+      "kind": "introduce",
+      "at": "2026-07-01T12:20:01Z",
+      "value": "Aino Virtanen",
+      "source": "document",
+      "carrier_event_ids": [
+        "e00211"
+      ]
+    },
+    {
+      "mutation_id": "m00102",
+      "fact_id": "u2/notifications-service/message_queue",
+      "kind": "update",
+      "at": "2026-07-01T12:21:01Z",
+      "value": "RabbitMQ",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00212"
+      ]
+    },
+    {
+      "mutation_id": "m00103",
+      "fact_id": "u1/payments-service/message_queue",
+      "kind": "update",
+      "at": "2026-07-02T08:23:00Z",
+      "value": "RabbitMQ",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00214"
+      ]
+    },
+    {
+      "mutation_id": "m00104",
+      "fact_id": "u1/billing-service/cloud_region",
+      "kind": "introduce",
+      "at": "2026-07-02T08:33:00Z",
+      "value": "eu-west-1",
+      "source": "user",
+      "carrier_event_ids": [
+        "e00216"
+      ]
+    },
+    {
+      "mutation_id": "m00105",
+      "fact_id": "u1/billing-service/message_queue",
+      "kind": "update",
+      "at": "2026-07-02T08:38:00Z",
+      "value": "Redis Streams",
+      "source": "tool",
+      "carrier_event_ids": [
+        "e00218"
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "name": "c1",
+      "fraction": 0.2477,
+      "at": "2026-02-17T17:32:01Z"
+    },
+    {
+      "name": "c2",
+      "fraction": 0.5,
+      "at": "2026-04-07T09:27:02Z"
+    },
+    {
+      "name": "c3",
+      "fraction": 0.7523,
+      "at": "2026-06-05T17:18:00Z"
+    },
+    {
+      "name": "c4",
+      "fraction": 1.0,
+      "at": "2026-07-02T08:38:00Z"
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "p0001",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "What DB version is billing-service running?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u1/billing-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 13",
+        "aliases": [
+          "Postgres 13",
+          "PG 13"
+        ],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0002",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "Remind me: billing-service's test command?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u1/billing-service/test_command"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "npm test",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0003",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "Remind me: billing-service's runtime?",
+      "checkpoint": "c1",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0004",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "What is the deploy branch of payments-service?",
+      "checkpoint": "c1",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0005",
+      "user_id": "u2",
+      "probe_type": "contamination",
+      "question": "Which staging hostname does billing-service use?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u2/billing-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "billing-stg-1.internal",
+        "aliases": [],
+        "forbidden": [
+          "billing-stg-8.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0006",
+      "user_id": "u2",
+      "probe_type": "current",
+      "question": "What DB version is cart-service running?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u2/cart-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MySQL 8.0",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0007",
+      "user_id": "u2",
+      "probe_type": "current",
+      "question": "Which message queue does cart-service use?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u2/cart-service/message_queue"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "NATS",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0008",
+      "user_id": "u2",
+      "probe_type": "post_update",
+      "question": "Remind me: cart-service's cloud region?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u2/cart-service/cloud_region"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-west-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0009",
+      "user_id": "u2",
+      "probe_type": "historical",
+      "question": "Back on February 9, 2026, which cloud region did cart-service use?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u2/cart-service/cloud_region"
+      ],
+      "as_of": "2026-02-09T05:13:26Z",
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-west-1"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0010",
+      "user_id": "u2",
+      "probe_type": "abstention",
+      "question": "Which runtime does billing-service use?",
+      "checkpoint": "c1",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0011",
+      "user_id": "u2",
+      "probe_type": "abstention",
+      "question": "What is the CI provider of billing-service?",
+      "checkpoint": "c1",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0012",
+      "user_id": "u3",
+      "probe_type": "post_update",
+      "question": "Who is on call for auth-service?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u3/auth-service/oncall"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Sara Nyström",
+        "aliases": [],
+        "forbidden": [
+          "Mikko Laine"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0013",
+      "user_id": "u3",
+      "probe_type": "historical",
+      "question": "What was the on-call owner of auth-service on February 10, 2026?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u3/auth-service/oncall"
+      ],
+      "as_of": "2026-02-10T23:58:58Z",
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": [
+          "Sara Nyström"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0014",
+      "user_id": "u3",
+      "probe_type": "post_delete",
+      "question": "Which database does auth-service use?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u3/auth-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "PostgreSQL 14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0015",
+      "user_id": "u3",
+      "probe_type": "current",
+      "question": "Remind me: gateway-service's staging hostname?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u3/gateway-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "gateway-stg-3.internal",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0016",
+      "user_id": "u3",
+      "probe_type": "current",
+      "question": "How do I run the auth-service test suite?",
+      "checkpoint": "c1",
+      "fact_ids": [
+        "u3/auth-service/test_command"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "go test ./...",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0017",
+      "user_id": "u3",
+      "probe_type": "abstention",
+      "question": "Remind me: auth-service's CI provider?",
+      "checkpoint": "c1",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0018",
+      "user_id": "u3",
+      "probe_type": "abstention",
+      "question": "Remind me: inventory-service's on-call owner?",
+      "checkpoint": "c1",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0019",
+      "user_id": "u1",
+      "probe_type": "post_update",
+      "question": "What DB version is billing-service running?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u1/billing-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 16",
+        "aliases": [
+          "Postgres 16",
+          "PG 16"
+        ],
+        "forbidden": [
+          "PostgreSQL 13"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0020",
+      "user_id": "u1",
+      "probe_type": "historical",
+      "question": "Back on February 27, 2026, which database did billing-service use?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u1/billing-service/database"
+      ],
+      "as_of": "2026-02-27T22:44:01Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 13",
+        "aliases": [
+          "Postgres 13",
+          "PG 13"
+        ],
+        "forbidden": [
+          "PostgreSQL 16"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0021",
+      "user_id": "u1",
+      "probe_type": "contamination",
+      "question": "What is the CI provider of payments-service?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u1/payments-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "Buildkite"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0022",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "How do I run the billing-service test suite?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u1/billing-service/test_command"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "npm test",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0023",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "Remind me: payments-service's message queue?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u1/payments-service/message_queue"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Kafka",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0024",
+      "user_id": "u1",
+      "probe_type": "post_delete",
+      "question": "Which staging hostname does payments-service use?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u1/payments-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-8.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0025",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "What is the deploy branch of payments-service?",
+      "checkpoint": "c2",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0026",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "Remind me: payments-service's runtime?",
+      "checkpoint": "c2",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0027",
+      "user_id": "u2",
+      "probe_type": "contamination",
+      "question": "Which staging hostname does billing-service use?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u2/billing-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "billing-stg-1.internal",
+        "aliases": [],
+        "forbidden": [
+          "billing-stg-8.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0028",
+      "user_id": "u2",
+      "probe_type": "current",
+      "question": "What is the message queue of notifications-service?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u2/notifications-service/message_queue"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Kafka",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0029",
+      "user_id": "u2",
+      "probe_type": "current",
+      "question": "What is the database of notifications-service?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u2/notifications-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 17",
+        "aliases": [
+          "Postgres 17",
+          "PG 17"
+        ],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0030",
+      "user_id": "u2",
+      "probe_type": "post_update",
+      "question": "What's the deploy branch for billing-service?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u2/billing-service/deploy_branch"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "prod",
+        "aliases": [],
+        "forbidden": [
+          "master"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0031",
+      "user_id": "u2",
+      "probe_type": "post_update",
+      "question": "What is the cloud region of cart-service?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u2/cart-service/cloud_region"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-west-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0032",
+      "user_id": "u2",
+      "probe_type": "historical",
+      "question": "What was the message queue of cart-service on February 21, 2026?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u2/cart-service/message_queue"
+      ],
+      "as_of": "2026-02-21T04:34:59Z",
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "NATS"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0033",
+      "user_id": "u2",
+      "probe_type": "historical",
+      "question": "What was the deploy branch of billing-service on February 28, 2026?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u2/billing-service/deploy_branch"
+      ],
+      "as_of": "2026-02-28T02:01:02Z",
+      "expected": {
+        "kind": "value",
+        "value": "master",
+        "aliases": [],
+        "forbidden": [
+          "prod"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0034",
+      "user_id": "u2",
+      "probe_type": "abstention",
+      "question": "Which runtime does cart-service use?",
+      "checkpoint": "c2",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0035",
+      "user_id": "u2",
+      "probe_type": "abstention",
+      "question": "What's the deploy branch for cart-service?",
+      "checkpoint": "c2",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0036",
+      "user_id": "u3",
+      "probe_type": "post_update",
+      "question": "Remind me: gateway-service's staging hostname?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u3/gateway-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "gateway-stg-6.internal",
+        "aliases": [],
+        "forbidden": [
+          "gateway-stg-3.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0037",
+      "user_id": "u3",
+      "probe_type": "post_update",
+      "question": "Remind me: auth-service's deploy branch?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u3/auth-service/deploy_branch"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "develop",
+          "stable"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0038",
+      "user_id": "u3",
+      "probe_type": "historical",
+      "question": "Back on February 13, 2026, which on-call owner did auth-service use?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u3/auth-service/oncall"
+      ],
+      "as_of": "2026-02-13T19:58:10Z",
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": [
+          "Sara Nyström"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0039",
+      "user_id": "u3",
+      "probe_type": "historical",
+      "question": "Back on March 27, 2026, which deploy branch did auth-service use?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u3/auth-service/deploy_branch"
+      ],
+      "as_of": "2026-03-27T11:15:46Z",
+      "expected": {
+        "kind": "value",
+        "value": "develop",
+        "aliases": [],
+        "forbidden": [
+          "main",
+          "stable"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0040",
+      "user_id": "u3",
+      "probe_type": "current",
+      "question": "Remind me: inventory-service's runtime?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u3/inventory-service/runtime"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Python 3.12",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0041",
+      "user_id": "u3",
+      "probe_type": "current",
+      "question": "Remind me: gateway-service's CI provider?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u3/gateway-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jenkins",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0042",
+      "user_id": "u3",
+      "probe_type": "contamination",
+      "question": "Remind me: inventory-service's test command?",
+      "checkpoint": "c2",
+      "fact_ids": [
+        "u3/inventory-service/test_command"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "./gradlew test",
+        "aliases": [],
+        "forbidden": [
+          "make test",
+          "npm test"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0043",
+      "user_id": "u3",
+      "probe_type": "abstention",
+      "question": "Where is auth-service hosted?",
+      "checkpoint": "c2",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0044",
+      "user_id": "u3",
+      "probe_type": "abstention",
+      "question": "Which CI does auth-service use?",
+      "checkpoint": "c2",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0045",
+      "user_id": "u1",
+      "probe_type": "post_update",
+      "question": "Which database does billing-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u1/billing-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 16",
+        "aliases": [
+          "Postgres 16",
+          "PG 16"
+        ],
+        "forbidden": [
+          "PostgreSQL 13"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0046",
+      "user_id": "u1",
+      "probe_type": "post_update",
+      "question": "What is the message queue of billing-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u1/billing-service/message_queue"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0047",
+      "user_id": "u1",
+      "probe_type": "historical",
+      "question": "What was the database of billing-service on February 1, 2026?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u1/billing-service/database"
+      ],
+      "as_of": "2026-02-01T02:47:26Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 13",
+        "aliases": [
+          "Postgres 13",
+          "PG 13"
+        ],
+        "forbidden": [
+          "PostgreSQL 16"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0048",
+      "user_id": "u1",
+      "probe_type": "historical",
+      "question": "What was the message queue of billing-service on April 13, 2026?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u1/billing-service/message_queue"
+      ],
+      "as_of": "2026-04-13T01:50:46Z",
+      "expected": {
+        "kind": "value",
+        "value": "Google Pub/Sub",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0049",
+      "user_id": "u1",
+      "probe_type": "contamination",
+      "question": "Remind me: payments-service's CI provider?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u1/payments-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "Buildkite",
+          "GitLab CI"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0050",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "Which message queue does payments-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u1/payments-service/message_queue"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Kafka",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0051",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "What is the CI provider of billing-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u1/billing-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jenkins",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0052",
+      "user_id": "u1",
+      "probe_type": "post_delete",
+      "question": "Where does payments-service staging live?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u1/payments-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-8.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0053",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "What's the deploy branch for payments-service?",
+      "checkpoint": "c3",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0054",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "Which database does payments-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0055",
+      "user_id": "u2",
+      "probe_type": "post_delete",
+      "question": "Where does billing-service staging live?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/billing-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "billing-stg-1.internal",
+          "billing-stg-8.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0056",
+      "user_id": "u2",
+      "probe_type": "post_update",
+      "question": "What is the cloud region of cart-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/cart-service/cloud_region"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-west-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1",
+          "eu-north-1"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0057",
+      "user_id": "u2",
+      "probe_type": "post_update",
+      "question": "Remind me: cart-service's database?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/cart-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MariaDB 10.11",
+        "aliases": [],
+        "forbidden": [
+          "MySQL 8.0"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0058",
+      "user_id": "u2",
+      "probe_type": "historical",
+      "question": "Back on April 9, 2026, which database did cart-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/cart-service/database"
+      ],
+      "as_of": "2026-04-09T23:33:29Z",
+      "expected": {
+        "kind": "value",
+        "value": "MySQL 8.0",
+        "aliases": [],
+        "forbidden": [
+          "MariaDB 10.11"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0059",
+      "user_id": "u2",
+      "probe_type": "historical",
+      "question": "Back on May 16, 2026, which CI provider did cart-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/cart-service/ci_provider"
+      ],
+      "as_of": "2026-05-16T21:27:57Z",
+      "expected": {
+        "kind": "value",
+        "value": "Buildkite",
+        "aliases": [],
+        "forbidden": [
+          "Drone CI",
+          "GitHub Actions"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0060",
+      "user_id": "u2",
+      "probe_type": "current",
+      "question": "What is the on-call owner of billing-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/billing-service/oncall"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Leena Koski",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0061",
+      "user_id": "u2",
+      "probe_type": "current",
+      "question": "Remind me: notifications-service's staging hostname?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/notifications-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "notifications-stg-1.internal",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0062",
+      "user_id": "u2",
+      "probe_type": "contamination",
+      "question": "What is the cloud region of cart-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/cart-service/cloud_region"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-west-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1",
+          "eu-north-1"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0063",
+      "user_id": "u2",
+      "probe_type": "contamination",
+      "question": "Which deploy branch does billing-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u2/billing-service/deploy_branch"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "prod",
+        "aliases": [],
+        "forbidden": [
+          "main",
+          "master"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0064",
+      "user_id": "u2",
+      "probe_type": "abstention",
+      "question": "Which runtime does cart-service target?",
+      "checkpoint": "c3",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0065",
+      "user_id": "u2",
+      "probe_type": "abstention",
+      "question": "Which deploy branch does cart-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0066",
+      "user_id": "u3",
+      "probe_type": "post_update",
+      "question": "Who is on call for auth-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/auth-service/oncall"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Sara Nyström",
+        "aliases": [],
+        "forbidden": [
+          "Mikko Laine"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0067",
+      "user_id": "u3",
+      "probe_type": "post_update",
+      "question": "Which deploy branch does auth-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/auth-service/deploy_branch"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "develop",
+          "stable"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0068",
+      "user_id": "u3",
+      "probe_type": "historical",
+      "question": "Back on April 2, 2026, which deploy branch did auth-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/auth-service/deploy_branch"
+      ],
+      "as_of": "2026-04-02T06:03:45Z",
+      "expected": {
+        "kind": "value",
+        "value": "stable",
+        "aliases": [],
+        "forbidden": [
+          "develop",
+          "main"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0069",
+      "user_id": "u3",
+      "probe_type": "historical",
+      "question": "What was the runtime of gateway-service on March 21, 2026?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/gateway-service/runtime"
+      ],
+      "as_of": "2026-03-21T15:02:20Z",
+      "expected": {
+        "kind": "value",
+        "value": "Node 20",
+        "aliases": [
+          "Node.js 20"
+        ],
+        "forbidden": [
+          "Java 21"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0070",
+      "user_id": "u3",
+      "probe_type": "contamination",
+      "question": "What is the test command of gateway-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/gateway-service/test_command"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "bazel test //...",
+        "aliases": [],
+        "forbidden": [
+          "cargo test"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0071",
+      "user_id": "u3",
+      "probe_type": "contamination",
+      "question": "What is the database of auth-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/auth-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MongoDB 7.0",
+        "aliases": [],
+        "forbidden": [
+          "PostgreSQL 13",
+          "PostgreSQL 14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0072",
+      "user_id": "u3",
+      "probe_type": "post_delete",
+      "question": "Remind me: inventory-service's test command?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/inventory-service/test_command"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "./gradlew test",
+          "make test",
+          "npm test"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0073",
+      "user_id": "u3",
+      "probe_type": "current",
+      "question": "Which CI provider does gateway-service use?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/gateway-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jenkins",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0074",
+      "user_id": "u3",
+      "probe_type": "current",
+      "question": "Who is on call for gateway-service?",
+      "checkpoint": "c3",
+      "fact_ids": [
+        "u3/gateway-service/oncall"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jonas Berg",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0075",
+      "user_id": "u3",
+      "probe_type": "abstention",
+      "question": "Where does auth-service publish its events?",
+      "checkpoint": "c3",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0076",
+      "user_id": "u3",
+      "probe_type": "abstention",
+      "question": "Remind me: gateway-service's database?",
+      "checkpoint": "c3",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0077",
+      "user_id": "u1",
+      "probe_type": "post_update",
+      "question": "Which database does billing-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u1/billing-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MariaDB 11.4",
+        "aliases": [],
+        "forbidden": [
+          "PostgreSQL 13",
+          "PostgreSQL 16"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0078",
+      "user_id": "u1",
+      "probe_type": "post_update",
+      "question": "Which message queue does billing-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u1/billing-service/message_queue"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Redis Streams",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS",
+          "Google Pub/Sub"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0079",
+      "user_id": "u1",
+      "probe_type": "historical",
+      "question": "Back on February 3, 2026, which database did billing-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u1/billing-service/database"
+      ],
+      "as_of": "2026-02-03T00:17:24Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 13",
+        "aliases": [
+          "Postgres 13",
+          "PG 13"
+        ],
+        "forbidden": [
+          "MariaDB 11.4",
+          "PostgreSQL 16"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0080",
+      "user_id": "u1",
+      "probe_type": "historical",
+      "question": "What was the message queue of billing-service on June 12, 2026?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u1/billing-service/message_queue"
+      ],
+      "as_of": "2026-06-12T12:59:20Z",
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub",
+          "Redis Streams"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0081",
+      "user_id": "u1",
+      "probe_type": "contamination",
+      "question": "Where does payments-service publish its events?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u1/payments-service/message_queue"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "RabbitMQ",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "Kafka"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0082",
+      "user_id": "u1",
+      "probe_type": "contamination",
+      "question": "What is the CI provider of payments-service?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u1/payments-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "Buildkite",
+          "GitLab CI"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0083",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "Where do the billing-service builds run?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u1/billing-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jenkins",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0084",
+      "user_id": "u1",
+      "probe_type": "current",
+      "question": "What is the staging hostname of payments-service?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u1/payments-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "payments-stg-6.internal",
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-8.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0085",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "Which runtime does billing-service target?",
+      "checkpoint": "c4",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0086",
+      "user_id": "u1",
+      "probe_type": "abstention",
+      "question": "Remind me: payments-service's runtime?",
+      "checkpoint": "c4",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0087",
+      "user_id": "u2",
+      "probe_type": "post_delete",
+      "question": "Remind me: billing-service's deploy branch?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/billing-service/deploy_branch"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "main",
+          "master",
+          "prod"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0088",
+      "user_id": "u2",
+      "probe_type": "post_delete",
+      "question": "Which staging hostname does billing-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/billing-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "billing-stg-1.internal",
+          "billing-stg-8.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0089",
+      "user_id": "u2",
+      "probe_type": "post_update",
+      "question": "Which region is cart-service deployed in?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/cart-service/cloud_region"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "ap-southeast-2",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1",
+          "eu-north-1",
+          "eu-west-1"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0090",
+      "user_id": "u2",
+      "probe_type": "post_update",
+      "question": "Which region is billing-service deployed in?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/billing-service/cloud_region"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "us-west-2"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0091",
+      "user_id": "u2",
+      "probe_type": "historical",
+      "question": "What was the cloud region of billing-service on March 17, 2026?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/billing-service/cloud_region"
+      ],
+      "as_of": "2026-03-17T09:03:17Z",
+      "expected": {
+        "kind": "value",
+        "value": "us-west-2",
+        "aliases": [],
+        "forbidden": [
+          "us-east-1"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0092",
+      "user_id": "u2",
+      "probe_type": "historical",
+      "question": "What was the cloud region of cart-service on February 9, 2026?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/cart-service/cloud_region"
+      ],
+      "as_of": "2026-02-09T01:14:56Z",
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "ap-southeast-2",
+          "eu-central-1",
+          "eu-west-1"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0093",
+      "user_id": "u2",
+      "probe_type": "contamination",
+      "question": "What DB version is notifications-service running?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/notifications-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 17",
+        "aliases": [
+          "Postgres 17",
+          "PG 17"
+        ],
+        "forbidden": [
+          "MariaDB 11.4"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0094",
+      "user_id": "u2",
+      "probe_type": "contamination",
+      "question": "Which test command does billing-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/billing-service/test_command"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "bazel test //...",
+        "aliases": [],
+        "forbidden": [
+          "./gradlew test"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0095",
+      "user_id": "u2",
+      "probe_type": "current",
+      "question": "Remind me: billing-service's on-call owner?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/billing-service/oncall"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Leena Koski",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0096",
+      "user_id": "u2",
+      "probe_type": "current",
+      "question": "What is the on-call owner of cart-service?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u2/cart-service/oncall"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Aino Virtanen",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0097",
+      "user_id": "u2",
+      "probe_type": "abstention",
+      "question": "What language version is billing-service on?",
+      "checkpoint": "c4",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0098",
+      "user_id": "u2",
+      "probe_type": "abstention",
+      "question": "Which deploy branch does cart-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0099",
+      "user_id": "u3",
+      "probe_type": "post_update",
+      "question": "What is the deploy branch of auth-service?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/auth-service/deploy_branch"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "develop",
+          "stable"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0100",
+      "user_id": "u3",
+      "probe_type": "post_update",
+      "question": "What's the staging hostname for gateway-service?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/gateway-service/staging_host"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "gateway-stg-6.internal",
+        "aliases": [],
+        "forbidden": [
+          "gateway-stg-3.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0101",
+      "user_id": "u3",
+      "probe_type": "historical",
+      "question": "Back on February 10, 2026, which on-call owner did auth-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/auth-service/oncall"
+      ],
+      "as_of": "2026-02-10T14:05:41Z",
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": [
+          "Sara Nyström"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0102",
+      "user_id": "u3",
+      "probe_type": "historical",
+      "question": "What was the staging hostname of gateway-service on February 28, 2026?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/gateway-service/staging_host"
+      ],
+      "as_of": "2026-02-28T17:55:52Z",
+      "expected": {
+        "kind": "value",
+        "value": "gateway-stg-3.internal",
+        "aliases": [],
+        "forbidden": [
+          "gateway-stg-6.internal"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0103",
+      "user_id": "u3",
+      "probe_type": "contamination",
+      "question": "Which database does auth-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/auth-service/database"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MySQL 8.4",
+        "aliases": [],
+        "forbidden": [
+          "MongoDB 7.0",
+          "PostgreSQL 13",
+          "PostgreSQL 14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0104",
+      "user_id": "u3",
+      "probe_type": "contamination",
+      "question": "Which CI provider does inventory-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/inventory-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Travis CI",
+        "aliases": [],
+        "forbidden": [
+          "CircleCI"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0105",
+      "user_id": "u3",
+      "probe_type": "post_delete",
+      "question": "Who owns gateway-service incidents?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/gateway-service/oncall"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "Jonas Berg"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0106",
+      "user_id": "u3",
+      "probe_type": "post_delete",
+      "question": "Remind me: gateway-service's CI provider?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/gateway-service/ci_provider"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "Jenkins"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0107",
+      "user_id": "u3",
+      "probe_type": "current",
+      "question": "Which runtime does inventory-service use?",
+      "checkpoint": "c4",
+      "fact_ids": [
+        "u3/inventory-service/runtime"
+      ],
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Python 3.12",
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0108",
+      "user_id": "u3",
+      "probe_type": "abstention",
+      "question": "What is the message queue of auth-service?",
+      "checkpoint": "c4",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    },
+    {
+      "probe_id": "p0109",
+      "user_id": "u3",
+      "probe_type": "abstention",
+      "question": "Remind me: inventory-service's deploy branch?",
+      "checkpoint": "c4",
+      "fact_ids": [],
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      }
+    }
+  ]
+}

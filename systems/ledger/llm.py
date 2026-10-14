@@ -21,6 +21,7 @@ enforces the schema.
 
 from __future__ import annotations
 
+import copy
 import hashlib
 import json
 import re
@@ -95,6 +96,15 @@ CLAIMS_SCHEMA: dict[str, Any] = {
 }
 
 
+def _claims_schema(event_ids: Sequence[str]) -> dict[str, Any]:
+    """``CLAIMS_SCHEMA`` with ``event_id`` limited to the batch's ids: a model
+    copying an id wrongly ("e0014" for "e00014") would otherwise lose the
+    claim."""
+    schema = copy.deepcopy(CLAIMS_SCHEMA)
+    schema["properties"]["claims"]["items"]["properties"]["event_id"]["enum"] = list(event_ids)
+    return schema
+
+
 def slot_key(entity: str, attribute: str) -> str:
     norm = lambda s: re.sub(r"\s+", "-", s.strip().lower())
     return f"{norm(entity)}/{norm(attribute).replace('-', '_')}"
@@ -108,11 +118,11 @@ def _known_block(known: Mapping[str, str]) -> str:
 
 class LLMExtractor:
     name = "llm"
-    version = "3"
+    version = "4"
 
     def __init__(self, backend: Backend | None = None, cache_dir: Path | None = DEFAULT_CACHE) -> None:
         self._backend, self.cache_dir = backend, cache_dir
-        self.calls = self.cache_hits = self.refusals = 0
+        self.calls = self.cache_hits = self.refusals = self.dropped = 0
 
     @property
     def backend(self) -> Backend:
@@ -127,13 +137,16 @@ class LLMExtractor:
             return [], Usage()
         lines = [f"[{e.event_id}] {e.timestamp:%Y-%m-%d %H:%M} {e.kind.value}: {e.content}" for e in events]
         prompt = f"{_known_block(known)}\n\nEvents:\n" + "\n".join(lines)
-        data, usage = self._call(EXTRACT_SYSTEM, prompt, CLAIMS_SCHEMA, "claims")
-        ids = {e.event_id for e in events}
+        ids = [e.event_id for e in events]
+        data, usage = self._call(EXTRACT_SYSTEM, prompt, _claims_schema(ids), "claims")
         out = []
         for c in data.get("claims", []) if isinstance(data.get("claims"), list) else []:
             if not (isinstance(c, dict) and all(isinstance(c.get(k), str) for k in CLAIM_FIELDS)):
+                self.dropped += 1
                 continue
-            if c["event_id"] in ids and c["value"].strip() and c["entity"].strip() and c["attribute"].strip():
+            if not (c["event_id"] in ids and c["value"].strip() and c["entity"].strip() and c["attribute"].strip()):
+                self.dropped += 1  # an empty field, or an id from an endpoint not enforcing the schema
+            else:
                 key = slot_key(c["entity"], c["attribute"])
                 label = f"{c['attribute'].strip().replace('_', ' ')} of {c['entity'].strip()}"
                 out.append(Claim(event_id=c["event_id"], slot=key, value=c["value"].strip(), label=label))
@@ -156,7 +169,7 @@ class LLMExtractor:
         digest = hashlib.sha256((EXTRACT_SYSTEM + SLOTS_SYSTEM).encode()).hexdigest()[:12]
         return {"name": self.name, "version": self.version, **self.backend.config(),
                 "prompt_sha": digest, "calls": self.calls, "cache_hits": self.cache_hits,
-                "refusals": self.refusals}
+                "refusals": self.refusals, "dropped_claims": self.dropped}
 
     # ---- caching --------------------------------------------------------------
 

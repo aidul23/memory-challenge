@@ -1,0 +1,6581 @@
+{
+  "workload_id": "synthetic-small-s4",
+  "generator": "synthetic/0.1",
+  "seed": 4,
+  "system": "ledger",
+  "system_version": "1",
+  "system_config": {
+    "name": "ledger",
+    "version": "1",
+    "extractor": {
+      "name": "llm",
+      "version": "4",
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "effort": null,
+      "base_url": null,
+      "temperature": 0.0,
+      "seed": 0,
+      "prompt_sha": "3c7afa1ed373",
+      "calls": 0,
+      "cache_hits": 166,
+      "refusals": 0,
+      "dropped_claims": 3
+    },
+    "trust": {
+      "user_message": 3,
+      "tool_result": 3,
+      "code_change": 3,
+      "document": 2,
+      "assistant_message": 1,
+      "tool_call": 1
+    }
+  },
+  "capabilities": {
+    "provenance": true,
+    "temporal_query": true,
+    "deletion": true,
+    "abstention": true,
+    "persistence": true,
+    "export": true
+  },
+  "settings": {
+    "token_budget": 2000,
+    "delete_with_sources": true,
+    "tokenizer": "regex-words/1"
+  },
+  "started_at": "2026-10-14T11:56:40.421164Z",
+  "ops": [
+    {
+      "op": "ingest",
+      "at": "2026-01-06T08:28:02Z",
+      "ref": "u3-s001",
+      "event_ids": [
+        "e00001",
+        "e00002",
+        "e00003"
+      ],
+      "latency_s": 0.0024819170066621155,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 457,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-14T17:08:00Z",
+      "ref": "u1-s001",
+      "event_ids": [
+        "e00004",
+        "e00005",
+        "e00006"
+      ],
+      "latency_s": 0.0006318340019788593,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 466,
+        "llm_output_tokens": 50,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-20T12:34:01Z",
+      "ref": "u2-s001",
+      "event_ids": [
+        "e00007",
+        "e00008",
+        "e00009",
+        "e00010"
+      ],
+      "latency_s": 0.000692749978043139,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 503,
+        "llm_output_tokens": 58,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-21T12:08:01Z",
+      "ref": "u2-s002",
+      "event_ids": [
+        "e00011",
+        "e00012",
+        "e00013"
+      ],
+      "latency_s": 0.0003549579996615648,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 505,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-26T12:00:00Z",
+      "ref": "u1-s002",
+      "event_ids": [
+        "e00014",
+        "e00015",
+        "e00016",
+        "e00017",
+        "e00018"
+      ],
+      "latency_s": 0.0005336249887477607,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 562,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-31T08:49:02Z",
+      "ref": "u3-s002",
+      "event_ids": [
+        "e00019",
+        "e00020",
+        "e00021",
+        "e00022",
+        "e00023",
+        "e00024",
+        "e00025"
+      ],
+      "latency_s": 0.0005782500084023923,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 586,
+        "llm_output_tokens": 79,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-31T14:44:00Z",
+      "ref": "u1-s003",
+      "event_ids": [
+        "e00026",
+        "e00027"
+      ],
+      "latency_s": 0.0003480000013951212,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 479,
+        "llm_output_tokens": 32,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-08T16:02:01Z",
+      "ref": "u2-s003",
+      "event_ids": [
+        "e00028",
+        "e00029",
+        "e00030",
+        "e00031",
+        "e00032",
+        "e00033"
+      ],
+      "latency_s": 0.00031341699650511146,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 640,
+        "llm_output_tokens": 129,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 4,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-09T08:48:01Z",
+      "ref": "u2-s004",
+      "event_ids": [
+        "e00034",
+        "e00035",
+        "e00036",
+        "e00037",
+        "e00038"
+      ],
+      "latency_s": 0.0008593750244472176,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 670,
+        "llm_output_tokens": 82,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-15T15:45:02Z",
+      "ref": "u3-s003",
+      "event_ids": [
+        "e00039",
+        "e00040",
+        "e00041",
+        "e00042",
+        "e00043"
+      ],
+      "latency_s": 0.0005108339828439057,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 579,
+        "llm_output_tokens": 32,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-16T08:34:02Z",
+      "ref": "u3-s004",
+      "event_ids": [
+        "e00044",
+        "e00045",
+        "e00046"
+      ],
+      "latency_s": 0.0004750840016640723,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 548,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-17T10:17:02Z",
+      "ref": "u3-s005",
+      "event_ids": [
+        "e00047",
+        "e00048",
+        "e00049",
+        "e00050",
+        "e00051",
+        "e00052"
+      ],
+      "latency_s": 0.0005348330014385283,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 660,
+        "llm_output_tokens": 101,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 4,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-02-17T10:17:02Z",
+      "ref": "m00025",
+      "event_ids": [
+        "e00021"
+      ],
+      "latency_s": 0.000013125012628734112,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-17T17:32:01Z",
+      "ref": "u2-s005",
+      "event_ids": [
+        "e00053",
+        "e00054"
+      ],
+      "latency_s": 0.00038225000025704503,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 612,
+        "llm_output_tokens": 26,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-17T17:39:01Z",
+      "ref": "u2-s005",
+      "event_ids": [
+        "e00055",
+        "e00056"
+      ],
+      "latency_s": 0.00035879199276678264,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 626,
+        "llm_output_tokens": 28,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-22T11:38:02Z",
+      "ref": "u3-s006",
+      "event_ids": [
+        "e00057",
+        "e00058",
+        "e00059"
+      ],
+      "latency_s": 0.00045879199751652777,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 597,
+        "llm_output_tokens": 52,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-25T15:48:01Z",
+      "ref": "u2-s006",
+      "event_ids": [
+        "e00060",
+        "e00061",
+        "e00062",
+        "e00063",
+        "e00064",
+        "e00065"
+      ],
+      "latency_s": 0.00044991698814556,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 769,
+        "llm_output_tokens": 73,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-28T10:43:00Z",
+      "ref": "u1-s004",
+      "event_ids": [
+        "e00066",
+        "e00067",
+        "e00068"
+      ],
+      "latency_s": 0.0004131250025238842,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 528,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-06T15:49:00Z",
+      "ref": "u1-s005",
+      "event_ids": [
+        "e00069",
+        "e00070"
+      ],
+      "latency_s": 0.0003702500252984464,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 502,
+        "llm_output_tokens": 26,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-08T16:20:02Z",
+      "ref": "u3-s007",
+      "event_ids": [
+        "e00071",
+        "e00072",
+        "e00073",
+        "e00074"
+      ],
+      "latency_s": 0.0003437089908402413,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 660,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-11T09:42:00Z",
+      "ref": "u1-s006",
+      "event_ids": [
+        "e00075"
+      ],
+      "latency_s": 0.00034654198680073023,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 489,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-11T09:42:00Z",
+      "ref": "m00037",
+      "event_ids": [
+        "e00026"
+      ],
+      "latency_s": 7.832975825294852e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-11T09:57:00Z",
+      "ref": "u1-s006",
+      "event_ids": [
+        "e00076",
+        "e00077",
+        "e00078",
+        "e00079"
+      ],
+      "latency_s": 0.0003381660208106041,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 567,
+        "llm_output_tokens": 28,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-15T16:34:02Z",
+      "ref": "u3-s008",
+      "event_ids": [
+        "e00080",
+        "e00081",
+        "e00082",
+        "e00083",
+        "e00084"
+      ],
+      "latency_s": 0.00037987501127645373,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 717,
+        "llm_output_tokens": 78,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 0,
+        "items_superseded": 2,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-24T11:04:00Z",
+      "ref": "u1-s007",
+      "event_ids": [
+        "e00085",
+        "e00086"
+      ],
+      "latency_s": 0.00036054098745808005,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 508,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-26T10:29:00Z",
+      "ref": "u1-s008",
+      "event_ids": [
+        "e00087",
+        "e00088"
+      ],
+      "latency_s": 0.00044183299178257585,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 518,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-31T16:27:02Z",
+      "ref": "u3-s009",
+      "event_ids": [
+        "e00089",
+        "e00090",
+        "e00091",
+        "e00092",
+        "e00093"
+      ],
+      "latency_s": 0.00027087502530775964,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 723,
+        "llm_output_tokens": 50,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 1,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-01T11:47:01Z",
+      "ref": "u2-s007",
+      "event_ids": [
+        "e00094",
+        "e00095",
+        "e00096",
+        "e00097"
+      ],
+      "latency_s": 0.00025929100229404867,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 721,
+        "llm_output_tokens": 26,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-01T14:37:00Z",
+      "ref": "u1-s009",
+      "event_ids": [
+        "e00098",
+        "e00099",
+        "e00100",
+        "e00101",
+        "e00102"
+      ],
+      "latency_s": 0.0002944589941762388,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 603,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-02T17:13:02Z",
+      "ref": "u3-s010",
+      "event_ids": [
+        "e00103",
+        "e00104",
+        "e00105",
+        "e00106",
+        "e00107"
+      ],
+      "latency_s": 0.00026945798890665174,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 720,
+        "llm_output_tokens": 48,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 2,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-07T09:27:02Z",
+      "ref": "u3-s011",
+      "event_ids": [
+        "e00108",
+        "e00109"
+      ],
+      "latency_s": 0.0002929579932242632,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 624,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-07T09:32:02Z",
+      "ref": "u3-s011",
+      "event_ids": [
+        "e00110"
+      ],
+      "latency_s": 0.00024245798704214394,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 611,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-17T10:34:02Z",
+      "ref": "u3-s012",
+      "event_ids": [
+        "e00111"
+      ],
+      "latency_s": 0.0002547919866628945,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 616,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-04-17T10:34:02Z",
+      "ref": "m00051",
+      "event_ids": [
+        "e00045",
+        "e00071",
+        "e00080",
+        "e00089"
+      ],
+      "latency_s": 0.000010417017620056868,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 2
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-17T10:55:02Z",
+      "ref": "u3-s012",
+      "event_ids": [
+        "e00112",
+        "e00113",
+        "e00114",
+        "e00115",
+        "e00116",
+        "e00117",
+        "e00118"
+      ],
+      "latency_s": 0.000357625016476959,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 799,
+        "llm_output_tokens": 74,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-26T15:19:01Z",
+      "ref": "u2-s008",
+      "event_ids": [
+        "e00119",
+        "e00120"
+      ],
+      "latency_s": 0.0002395000192336738,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 667,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-07T14:21:00Z",
+      "ref": "u1-s010",
+      "event_ids": [
+        "e00121",
+        "e00122",
+        "e00123",
+        "e00124"
+      ],
+      "latency_s": 0.0002687079831957817,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 591,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-10T10:35:02Z",
+      "ref": "u3-s013",
+      "event_ids": [
+        "e00125",
+        "e00126",
+        "e00127"
+      ],
+      "latency_s": 0.00026404199888929725,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 688,
+        "llm_output_tokens": 32,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-15T18:24:01Z",
+      "ref": "u2-s009",
+      "event_ids": [
+        "e00128",
+        "e00129",
+        "e00130",
+        "e00131",
+        "e00132",
+        "e00133",
+        "e00134",
+        "e00135",
+        "e00136",
+        "e00137"
+      ],
+      "latency_s": 0.00028587502310983837,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 930,
+        "llm_output_tokens": 121,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 2,
+        "items_superseded": 1,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-18T09:13:01Z",
+      "ref": "u2-s010",
+      "event_ids": [
+        "e00138",
+        "e00139",
+        "e00140",
+        "e00141"
+      ],
+      "latency_s": 0.00027866699383594096,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 760,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-05-18T09:13:01Z",
+      "ref": "m00066",
+      "event_ids": [
+        "e00007",
+        "e00033"
+      ],
+      "latency_s": 8.708011591807008e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 2
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-18T09:33:01Z",
+      "ref": "u2-s010",
+      "event_ids": [
+        "e00142",
+        "e00143",
+        "e00144",
+        "e00145",
+        "e00146"
+      ],
+      "latency_s": 0.0002429999876767397,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 769,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-20T17:14:02Z",
+      "ref": "u3-s014",
+      "event_ids": [
+        "e00147",
+        "e00148",
+        "e00149",
+        "e00150"
+      ],
+      "latency_s": 0.000276917009614408,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 724,
+        "llm_output_tokens": 51,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 2,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-25T16:55:01Z",
+      "ref": "u2-s011",
+      "event_ids": [
+        "e00151",
+        "e00152",
+        "e00153",
+        "e00154"
+      ],
+      "latency_s": 0.00034308398608118296,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 742,
+        "llm_output_tokens": 71,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 1,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-02T09:44:00Z",
+      "ref": "u1-s011",
+      "event_ids": [
+        "e00155",
+        "e00156",
+        "e00157",
+        "e00158",
+        "e00159"
+      ],
+      "latency_s": 0.000282666995190084,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 627,
+        "llm_output_tokens": 50,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-03T10:56:02Z",
+      "ref": "u3-s015",
+      "event_ids": [
+        "e00160",
+        "e00161",
+        "e00162",
+        "e00163"
+      ],
+      "latency_s": 0.0002697500167414546,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 721,
+        "llm_output_tokens": 72,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 3
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-05T17:18:00Z",
+      "ref": "u1-s012",
+      "event_ids": [
+        "e00164"
+      ],
+      "latency_s": 0.00029799999902024865,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 514,
+        "llm_output_tokens": 51,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 2,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-05T17:38:00Z",
+      "ref": "u1-s012",
+      "event_ids": [
+        "e00165",
+        "e00166",
+        "e00167",
+        "e00168",
+        "e00169"
+      ],
+      "latency_s": 0.00028966600075364113,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 655,
+        "llm_output_tokens": 77,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-07T09:34:02Z",
+      "ref": "u3-s016",
+      "event_ids": [
+        "e00170",
+        "e00171"
+      ],
+      "latency_s": 0.0003014169924426824,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 657,
+        "llm_output_tokens": 50,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-06-07T09:34:02Z",
+      "ref": "m00084",
+      "event_ids": [
+        "e00117",
+        "e00147"
+      ],
+      "latency_s": 9.99998883344233e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-07T09:58:02Z",
+      "ref": "u3-s016",
+      "event_ids": [
+        "e00172",
+        "e00173",
+        "e00174",
+        "e00175",
+        "e00176"
+      ],
+      "latency_s": 0.0002728750114329159,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 749,
+        "llm_output_tokens": 47,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-06-07T09:58:02Z",
+      "ref": "m00087",
+      "event_ids": [
+        "e00058",
+        "e00150"
+      ],
+      "latency_s": 7.95800588093698e-6,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-07T10:05:02Z",
+      "ref": "u3-s016",
+      "event_ids": [
+        "e00177",
+        "e00178"
+      ],
+      "latency_s": 0.0002640410093590617,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 642,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-14T15:38:00Z",
+      "ref": "u1-s013",
+      "event_ids": [
+        "e00179",
+        "e00180",
+        "e00181",
+        "e00182"
+      ],
+      "latency_s": 0.0002668329980224371,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 662,
+        "llm_output_tokens": 32,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-15T09:02:01Z",
+      "ref": "u2-s012",
+      "event_ids": [
+        "e00183",
+        "e00184",
+        "e00185",
+        "e00186",
+        "e00187"
+      ],
+      "latency_s": 0.0002483749995008111,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 787,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-17T11:02:01Z",
+      "ref": "u2-s013",
+      "event_ids": [
+        "e00188",
+        "e00189",
+        "e00190",
+        "e00191"
+      ],
+      "latency_s": 0.000380458019208163,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 762,
+        "llm_output_tokens": 79,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 1,
+        "items_superseded": 1,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-22T08:55:00Z",
+      "ref": "u1-s014",
+      "event_ids": [
+        "e00192",
+        "e00193"
+      ],
+      "latency_s": 0.00023270800011232495,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 609,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-23T10:24:00Z",
+      "ref": "u1-s015",
+      "event_ids": [
+        "e00194",
+        "e00195",
+        "e00196",
+        "e00197"
+      ],
+      "latency_s": 0.0002705420192796737,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 687,
+        "llm_output_tokens": 52,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 2,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-24T12:50:01Z",
+      "ref": "u2-s014",
+      "event_ids": [
+        "e00198",
+        "e00199",
+        "e00200",
+        "e00201",
+        "e00202"
+      ],
+      "latency_s": 0.0002519169938750565,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 777,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-30T17:30:01Z",
+      "ref": "u2-s015",
+      "event_ids": [
+        "e00203",
+        "e00204",
+        "e00205",
+        "e00206",
+        "e00207",
+        "e00208"
+      ],
+      "latency_s": 0.0002846249844878912,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 831,
+        "llm_output_tokens": 78,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 1,
+        "items_superseded": 1,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-07-01T12:16:01Z",
+      "ref": "u2-s016",
+      "event_ids": [
+        "e00209"
+      ],
+      "latency_s": 0.00022899999748915434,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 665,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-07-01T12:16:01Z",
+      "ref": "m00100",
+      "event_ids": [
+        "e00053",
+        "e00094",
+        "e00135",
+        "e00154"
+      ],
+      "latency_s": 0.000011167023330926895,
+      "usage": {
+        "llm_calls": 0,
+        "llm_input_tokens": 0,
+        "llm_output_tokens": 0,
+        "embedding_tokens": 0,
+        "model_ids": []
+      },
+      "report": {
+        "items_deleted": 3
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-07-01T12:21:01Z",
+      "ref": "u2-s016",
+      "event_ids": [
+        "e00210",
+        "e00211",
+        "e00212"
+      ],
+      "latency_s": 0.00027904199669137597,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 717,
+        "llm_output_tokens": 52,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-07-02T08:38:00Z",
+      "ref": "u1-s016",
+      "event_ids": [
+        "e00213",
+        "e00214",
+        "e00215",
+        "e00216",
+        "e00217",
+        "e00218"
+      ],
+      "latency_s": 0.0003337500093039125,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 744,
+        "llm_output_tokens": 73,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 0,
+        "items_superseded": 2,
+        "items_rejected": 0
+      },
+      "error": null
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "p0001",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "What DB version is billing-service running?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 13",
+        "aliases": [
+          "Postgres 13",
+          "PG 13"
+        ],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of billing: PostgreSQL 13 (since 2026-01-14; source: code_change)",
+          "memory_id": "L000001",
+          "source_event_ids": [
+            "e00004"
+          ],
+          "valid_from": "2026-01-14T17:01:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-14T17:01:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 18,
+      "injected_tokens": 18,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 13",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005074579967185855,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 299,
+        "llm_output_tokens": 7,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0002",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Remind me: billing-service's test command?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "npm test",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00039629198727197945,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 301,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0003",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "Remind me: billing-service's runtime?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00033245899248868227,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 300,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0004",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What is the deploy branch of payments-service?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002952920040115714,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 300,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0005",
+      "probe_type": "contamination",
+      "checkpoint": "c1",
+      "question": "Which staging hostname does billing-service use?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "billing-stg-1.internal",
+        "aliases": [],
+        "forbidden": [
+          "billing-stg-8.internal"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "dns a record of billing-service staging: billing-stg-1.internal (since 2026-01-20; source: code_change)",
+          "memory_id": "L000003",
+          "source_event_ids": [
+            "e00007"
+          ],
+          "valid_from": "2026-01-20T12:23:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-20T12:23:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 28,
+      "injected_tokens": 28,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "billing-stg-1.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004537089844234288,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 463,
+        "llm_output_tokens": 13,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0006",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "What DB version is cart-service running?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MySQL 8.0",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of cart-service: MySQL 8.0 (since 2026-01-20; source: user_message)",
+          "memory_id": "L000004",
+          "source_event_ids": [
+            "e00008"
+          ],
+          "valid_from": "2026-01-20T12:29:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-20T12:29:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MySQL 8.0",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003628330014180392,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 463,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0007",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which message queue does cart-service use?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "NATS",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of cart-service: NATS (since 2026-02-08; source: user_message)",
+          "memory_id": "L000011",
+          "source_event_ids": [
+            "e00028"
+          ],
+          "valid_from": "2026-02-08T15:46:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-08T15:46:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "NATS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00034041699836961925,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 463,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0008",
+      "probe_type": "post_update",
+      "checkpoint": "c1",
+      "question": "Remind me: cart-service's cloud region?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-west-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of cart-service: eu-west-1 (since 2026-02-09; source: user_message)",
+          "memory_id": "L000016",
+          "source_event_ids": [
+            "e00034"
+          ],
+          "valid_from": "2026-02-09T08:35:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T08:35:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 24,
+      "injected_tokens": 24,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-west-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00030095799593254924,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 465,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0009",
+      "probe_type": "historical",
+      "checkpoint": "c1",
+      "question": "Back on February 9, 2026, which cloud region did cart-service use?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": "2026-02-09T05:13:26Z",
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-west-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of cart-service: eu-north-1 (since 2026-02-08 until 2026-02-09; source: user_message)",
+          "memory_id": "L000013",
+          "source_event_ids": [
+            "e00031"
+          ],
+          "valid_from": "2026-02-08T15:58:01Z",
+          "valid_to": "2026-02-09T08:35:01Z",
+          "recorded_at": "2026-02-08T15:58:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 30,
+      "injected_tokens": 30,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-north-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004919589846394956,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 473,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0010",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "Which runtime does billing-service use?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00043112499406561255,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 462,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0011",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What is the CI provider of billing-service?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00044237502152100205,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 464,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0012",
+      "probe_type": "post_update",
+      "checkpoint": "c1",
+      "question": "Who is on call for auth-service?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Sara Nyström",
+        "aliases": [],
+        "forbidden": [
+          "Mikko Laine"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "pagerduty escalation policy of auth-service: Sara Nyström (since 2026-02-17; source: code_change)",
+          "memory_id": "L000022",
+          "source_event_ids": [
+            "e00050"
+          ],
+          "valid_from": "2026-02-17T10:10:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-17T10:10:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Sara Nyström",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004242919967509806,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 388,
+        "llm_output_tokens": 15,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0013",
+      "probe_type": "historical",
+      "checkpoint": "c1",
+      "question": "What was the on-call owner of auth-service on February 10, 2026?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": "2026-02-10T23:58:58Z",
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": [
+          "Sara Nyström"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "pagerduty escalation policy of auth-service: Mikko Laine (since 2026-01-31 until 2026-02-17; source: code_change)",
+          "memory_id": "L000007",
+          "source_event_ids": [
+            "e00019"
+          ],
+          "valid_from": "2026-01-31T08:33:02Z",
+          "valid_to": "2026-02-17T10:10:02Z",
+          "recorded_at": "2026-01-31T08:33:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 28,
+      "injected_tokens": 28,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Mikko Laine",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004048330010846257,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 398,
+        "llm_output_tokens": 15,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0014",
+      "probe_type": "post_delete",
+      "checkpoint": "c1",
+      "question": "Which database does auth-service use?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "PostgreSQL 14"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of auth-service: not in memory (since 2026-02-17; source: user_message)",
+          "memory_id": "L000024",
+          "source_event_ids": [
+            "e00052"
+          ],
+          "valid_from": "2026-02-17T10:17:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-17T10:17:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "no_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00037520797923207283,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 387,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0015",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Remind me: gateway-service's staging hostname?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "gateway-stg-3.internal",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging host of gateway-service: gateway-stg-3.internal (since 2026-02-15; source: document)",
+          "memory_id": "L000019",
+          "source_event_ids": [
+            "e00040"
+          ],
+          "valid_from": "2026-02-15T15:36:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-15T15:36:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "gateway-stg-3.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003523330087773502,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 390,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0016",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "How do I run the auth-service test suite?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "go test ./...",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "test command of auth-service: go test ./... (since 2026-02-17; source: user_message)",
+          "memory_id": "L000021",
+          "source_event_ids": [
+            "e00049"
+          ],
+          "valid_from": "2026-02-17T10:07:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-17T10:07:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "go test ./...",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00039141601882874966,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 390,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0017",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "Remind me: auth-service's CI provider?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00035275000846013427,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 390,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0018",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "Remind me: inventory-service's on-call owner?",
+      "asked_at": "2026-02-17T17:32:01Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003672079765237868,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 391,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0019",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "What DB version is billing-service running?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 16",
+        "aliases": [
+          "Postgres 16",
+          "PG 16"
+        ],
+        "forbidden": [
+          "PostgreSQL 13"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of billing: PostgreSQL 16 (since 2026-03-11; source: user_message)",
+          "memory_id": "L000034",
+          "source_event_ids": [
+            "e00076"
+          ],
+          "valid_from": "2026-03-11T09:44:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-11T09:44:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 18,
+      "injected_tokens": 18,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 16",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00041145802242681384,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 328,
+        "llm_output_tokens": 7,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0020",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "Back on February 27, 2026, which database did billing-service use?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": "2026-02-27T22:44:01Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 13",
+        "aliases": [
+          "Postgres 13",
+          "PG 13"
+        ],
+        "forbidden": [
+          "PostgreSQL 16"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of billing: PostgreSQL 13 (since 2026-01-14 until 2026-03-11; source: code_change)",
+          "memory_id": "L000001",
+          "source_event_ids": [
+            "e00004"
+          ],
+          "valid_from": "2026-01-14T17:01:00Z",
+          "valid_to": "2026-03-11T09:44:00Z",
+          "recorded_at": "2026-01-14T17:01:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 24,
+      "injected_tokens": 24,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 13",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004379160236567259,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 337,
+        "llm_output_tokens": 7,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0021",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "What is the CI provider of payments-service?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "Buildkite"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of payments-service: CircleCI (since 2026-01-14; source: user_message)",
+          "memory_id": "L000002",
+          "source_event_ids": [
+            "e00005"
+          ],
+          "valid_from": "2026-01-14T17:07:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-14T17:07:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "CircleCI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002932090137619525,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 329,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0022",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "How do I run the billing-service test suite?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "npm test",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci workflow of billing: npm test (since 2026-01-26; source: code_change)",
+          "memory_id": "L000006",
+          "source_event_ids": [
+            "e00018"
+          ],
+          "valid_from": "2026-01-26T12:00:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-26T12:00:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 19,
+      "injected_tokens": 19,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "npm test",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002805840049404651,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 330,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0023",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Remind me: payments-service's message queue?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Kafka",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: Kafka (since 2026-03-06; source: user_message)",
+          "memory_id": "L000032",
+          "source_event_ids": [
+            "e00070"
+          ],
+          "valid_from": "2026-03-06T15:49:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-06T15:49:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Kafka",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00028329199994914234,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 330,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0024",
+      "probe_type": "post_delete",
+      "checkpoint": "c2",
+      "question": "Which staging hostname does payments-service use?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-8.internal"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003012079978361726,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 328,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0025",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "What is the deploy branch of payments-service?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00024099997244775295,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 329,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0026",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Remind me: payments-service's runtime?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002311249845661223,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 329,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0027",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "Which staging hostname does billing-service use?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "billing-stg-1.internal",
+        "aliases": [],
+        "forbidden": [
+          "billing-stg-8.internal"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "dns a record of billing-service staging: billing-stg-1.internal (since 2026-01-20; source: code_change)",
+          "memory_id": "L000003",
+          "source_event_ids": [
+            "e00007"
+          ],
+          "valid_from": "2026-01-20T12:23:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-20T12:23:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 28,
+      "injected_tokens": 28,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "billing-stg-1.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002699999895412475,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 511,
+        "llm_output_tokens": 13,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0028",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "What is the message queue of notifications-service?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Kafka",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of notifications-service: Kafka (since 2026-02-25; source: user_message)",
+          "memory_id": "L000031",
+          "source_event_ids": [
+            "e00065"
+          ],
+          "valid_from": "2026-02-25T15:48:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-25T15:48:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Kafka",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004082079976797104,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 512,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0029",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "What is the database of notifications-service?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 17",
+        "aliases": [
+          "Postgres 17",
+          "PG 17"
+        ],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of notifications-service: PostgreSQL 17 (since 2026-02-09; source: user_message)",
+          "memory_id": "L000018",
+          "source_event_ids": [
+            "e00038"
+          ],
+          "valid_from": "2026-02-09T08:48:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T08:48:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 17",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002610420051496476,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 511,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0030",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "What's the deploy branch for billing-service?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "prod",
+        "aliases": [],
+        "forbidden": [
+          "master"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of billing-service: prod (since 2026-04-01; source: tool_result)",
+          "memory_id": "L000040",
+          "source_event_ids": [
+            "e00094"
+          ],
+          "valid_from": "2026-04-01T11:36:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-01T11:36:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "prod",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00022591699962504208,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 511,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0031",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "What is the cloud region of cart-service?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-west-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of cart-service: eu-west-1 (since 2026-02-09; source: user_message)",
+          "memory_id": "L000016",
+          "source_event_ids": [
+            "e00034"
+          ],
+          "valid_from": "2026-02-09T08:35:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T08:35:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 24,
+      "injected_tokens": 24,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-west-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002487500023562461,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 512,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0032",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "What was the message queue of cart-service on February 21, 2026?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": "2026-02-21T04:34:59Z",
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "NATS"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of cart-service: Amazon SQS (since 2026-02-17 until 2026-02-25; source: tool_result)",
+          "memory_id": "L000026",
+          "source_event_ids": [
+            "e00056"
+          ],
+          "valid_from": "2026-02-17T17:39:01Z",
+          "valid_to": "2026-02-25T15:37:01Z",
+          "recorded_at": "2026-02-17T17:39:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Amazon SQS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002239589812234044,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 520,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0033",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "What was the deploy branch of billing-service on February 28, 2026?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": "2026-02-28T02:01:02Z",
+      "expected": {
+        "kind": "value",
+        "value": "master",
+        "aliases": [],
+        "forbidden": [
+          "prod"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of billing-service: master (since 2026-02-17 until 2026-04-01; source: user_message)",
+          "memory_id": "L000025",
+          "source_event_ids": [
+            "e00053"
+          ],
+          "valid_from": "2026-02-17T17:27:01Z",
+          "valid_to": "2026-04-01T11:36:01Z",
+          "recorded_at": "2026-02-17T17:27:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "master",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003254589973948896,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 520,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0034",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Which runtime does cart-service use?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00034649998997338116,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 510,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0035",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "What's the deploy branch for cart-service?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00027395799406804144,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 511,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0036",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Remind me: gateway-service's staging hostname?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "gateway-stg-6.internal",
+        "aliases": [],
+        "forbidden": [
+          "gateway-stg-3.internal"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging host of gateway-service: gateway-stg-6.internal (since 2026-03-15; source: user_message)",
+          "memory_id": "L000036",
+          "source_event_ids": [
+            "e00082"
+          ],
+          "valid_from": "2026-03-15T16:25:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-15T16:25:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "gateway-stg-6.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002766250108834356,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 487,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0037",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Remind me: auth-service's deploy branch?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "develop",
+          "stable"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of auth-service: main (since 2026-04-02; source: user_message)",
+          "memory_id": "L000043",
+          "source_event_ids": [
+            "e00106"
+          ],
+          "valid_from": "2026-04-02T17:10:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-02T17:10:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "main",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00031016601133160293,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 487,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0038",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "Back on February 13, 2026, which on-call owner did auth-service use?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": "2026-02-13T19:58:10Z",
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": [
+          "Sara Nyström"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00023337500169873238,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 496,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0039",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "Back on March 27, 2026, which deploy branch did auth-service use?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": "2026-03-27T11:15:46Z",
+      "expected": {
+        "kind": "value",
+        "value": "develop",
+        "aliases": [],
+        "forbidden": [
+          "main",
+          "stable"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of auth-service: develop (since 2026-03-15 until 2026-03-31; source: user_message)",
+          "memory_id": "L000035",
+          "source_event_ids": [
+            "e00081"
+          ],
+          "valid_from": "2026-03-15T16:22:02Z",
+          "valid_to": "2026-03-31T16:15:02Z",
+          "recorded_at": "2026-03-15T16:22:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "develop",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002903339918702841,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 495,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0040",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Remind me: inventory-service's runtime?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Python 3.12",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of inventory-service: Python 3.12 (since 2026-04-07; source: user_message)",
+          "memory_id": "L000044",
+          "source_event_ids": [
+            "e00108"
+          ],
+          "valid_from": "2026-04-07T09:22:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-07T09:22:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Python 3.12",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002068330068141222,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 486,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0041",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Remind me: gateway-service's CI provider?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jenkins",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of gateway-service: Jenkins (since 2026-02-22; source: user_message)",
+          "memory_id": "L000027",
+          "source_event_ids": [
+            "e00058"
+          ],
+          "valid_from": "2026-02-22T11:37:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-22T11:37:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Jenkins",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00024508399656042457,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 487,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0042",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "Remind me: inventory-service's test command?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "./gradlew test",
+        "aliases": [],
+        "forbidden": [
+          "make test",
+          "npm test"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "test command of inventory-service: ./gradlew test (since 2026-03-08; source: user_message)",
+          "memory_id": "L000033",
+          "source_event_ids": [
+            "e00071",
+            "e00089"
+          ],
+          "valid_from": "2026-03-08T16:11:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-08T16:11:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 23,
+      "injected_tokens": 23,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "./gradlew test",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002444580022711307,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 487,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0043",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Where is auth-service hosted?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00020141698769293725,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 483,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0044",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Which CI does auth-service use?",
+      "asked_at": "2026-04-07T09:27:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00025312500656582415,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 484,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0045",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Which database does billing-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 16",
+        "aliases": [
+          "Postgres 16",
+          "PG 16"
+        ],
+        "forbidden": [
+          "PostgreSQL 13"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of billing: PostgreSQL 16 (since 2026-03-11; source: user_message)",
+          "memory_id": "L000034",
+          "source_event_ids": [
+            "e00076"
+          ],
+          "valid_from": "2026-03-11T09:44:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-11T09:44:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 18,
+      "injected_tokens": 18,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 16",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00027166600921191275,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 353,
+        "llm_output_tokens": 7,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0046",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "What is the message queue of billing-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of billing: Amazon SQS (since 2026-05-07; source: user_message)",
+          "memory_id": "L000048",
+          "source_event_ids": [
+            "e00123"
+          ],
+          "valid_from": "2026-05-07T14:16:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-07T14:16:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 19,
+      "injected_tokens": 19,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Amazon SQS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003456250124145299,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 355,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0047",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the database of billing-service on February 1, 2026?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": "2026-02-01T02:47:26Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 13",
+        "aliases": [
+          "Postgres 13",
+          "PG 13"
+        ],
+        "forbidden": [
+          "PostgreSQL 16"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of billing: PostgreSQL 13 (since 2026-01-14 until 2026-03-11; source: code_change)",
+          "memory_id": "L000001",
+          "source_event_ids": [
+            "e00004"
+          ],
+          "valid_from": "2026-01-14T17:01:00Z",
+          "valid_to": "2026-03-11T09:44:00Z",
+          "recorded_at": "2026-01-14T17:01:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 24,
+      "injected_tokens": 24,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 13",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002954580122604966,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 362,
+        "llm_output_tokens": 7,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0048",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the message queue of billing-service on April 13, 2026?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": "2026-04-13T01:50:46Z",
+      "expected": {
+        "kind": "value",
+        "value": "Google Pub/Sub",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of billing: Google Pub/Sub (since 2026-04-01 until 2026-05-07; source: tool_result)",
+          "memory_id": "L000041",
+          "source_event_ids": [
+            "e00098"
+          ],
+          "valid_from": "2026-04-01T14:23:00Z",
+          "valid_to": "2026-05-07T14:16:00Z",
+          "recorded_at": "2026-04-01T14:23:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Google Pub/Sub",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002967500186059624,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 363,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0049",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Remind me: payments-service's CI provider?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "Buildkite",
+          "GitLab CI"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of payments-service: CircleCI (since 2026-01-14; source: user_message)",
+          "memory_id": "L000002",
+          "source_event_ids": [
+            "e00005"
+          ],
+          "valid_from": "2026-01-14T17:07:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-14T17:07:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "CircleCI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00026545801665633917,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 356,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0050",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Kafka",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: Kafka (since 2026-03-06; source: user_message)",
+          "memory_id": "L000032",
+          "source_event_ids": [
+            "e00070"
+          ],
+          "valid_from": "2026-03-06T15:49:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-06T15:49:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Kafka",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003848340129479766,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 354,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0051",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "What is the CI provider of billing-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jenkins",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of billing-service: GitHub Actions (since 2026-06-05; source: tool_result)",
+          "memory_id": "L000060",
+          "source_event_ids": [
+            "e00164"
+          ],
+          "valid_from": "2026-06-05T17:18:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-05T17:18:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "missed",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [
+        "GitHub Actions"
+      ],
+      "latency_s": 0.0002507080207578838,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 355,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0052",
+      "probe_type": "post_delete",
+      "checkpoint": "c3",
+      "question": "Where does payments-service staging live?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-8.internal"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00023162501747719944,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 353,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0053",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "What's the deploy branch for payments-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00024537500576116145,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 354,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0054",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which database does payments-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00025516599998809397,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 353,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0055",
+      "probe_type": "post_delete",
+      "checkpoint": "c3",
+      "question": "Where does billing-service staging live?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "billing-stg-1.internal",
+          "billing-stg-8.internal"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "deleted at the user's request",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00034629099536687136,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 548,
+        "llm_output_tokens": 13,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0056",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "What is the cloud region of cart-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-west-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1",
+          "eu-north-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of cart-service: eu-west-1 (since 2026-02-09; source: user_message)",
+          "memory_id": "L000016",
+          "source_event_ids": [
+            "e00034"
+          ],
+          "valid_from": "2026-02-09T08:35:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T08:35:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 24,
+      "injected_tokens": 24,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-west-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002504159929230809,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 550,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0057",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Remind me: cart-service's database?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MariaDB 10.11",
+        "aliases": [],
+        "forbidden": [
+          "MySQL 8.0"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of cart-service: MariaDB 10.11 (since 2026-05-15; source: user_message)",
+          "memory_id": "L000051",
+          "source_event_ids": [
+            "e00137"
+          ],
+          "valid_from": "2026-05-15T18:24:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-15T18:24:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MariaDB 10.11",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00021033399389125407,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 550,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0058",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on April 9, 2026, which database did cart-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": "2026-04-09T23:33:29Z",
+      "expected": {
+        "kind": "value",
+        "value": "MySQL 8.0",
+        "aliases": [],
+        "forbidden": [
+          "MariaDB 10.11"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of cart-service: MySQL 8.0 (since 2026-01-20 until 2026-05-15; source: user_message)",
+          "memory_id": "L000004",
+          "source_event_ids": [
+            "e00008"
+          ],
+          "valid_from": "2026-01-20T12:29:01Z",
+          "valid_to": "2026-05-15T18:24:01Z",
+          "recorded_at": "2026-01-20T12:29:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 28,
+      "injected_tokens": 28,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MySQL 8.0",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003549999964889139,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 558,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0059",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on May 16, 2026, which CI provider did cart-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": "2026-05-16T21:27:57Z",
+      "expected": {
+        "kind": "value",
+        "value": "Buildkite",
+        "aliases": [],
+        "forbidden": [
+          "Drone CI",
+          "GitHub Actions"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-05-16",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002080830163322389,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 559,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0060",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "What is the on-call owner of billing-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Leena Koski",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of billing-service: Leena Koski (since 2026-02-25; source: user_message)",
+          "memory_id": "L000029",
+          "source_event_ids": [
+            "e00060"
+          ],
+          "valid_from": "2026-02-25T15:28:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-25T15:28:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Leena Koski",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00024370799656026065,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 551,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0061",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Remind me: notifications-service's staging hostname?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "notifications-stg-1.internal",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "dns a record of notifications-service-staging: notifications-stg-1.internal (since 2026-02-09; source: user_message)",
+          "memory_id": "L000017",
+          "source_event_ids": [
+            "e00035"
+          ],
+          "valid_from": "2026-02-09T08:37:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T08:37:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 29,
+      "injected_tokens": 29,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "notifications-stg-1.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002460830146446824,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 551,
+        "llm_output_tokens": 13,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0062",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "What is the cloud region of cart-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-west-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1",
+          "eu-north-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of cart-service: eu-west-1 (since 2026-02-09; source: user_message)",
+          "memory_id": "L000016",
+          "source_event_ids": [
+            "e00034"
+          ],
+          "valid_from": "2026-02-09T08:35:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T08:35:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 24,
+      "injected_tokens": 24,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-west-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00004420799086801708,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 550,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0063",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which deploy branch does billing-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "prod",
+        "aliases": [],
+        "forbidden": [
+          "main",
+          "master"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of billing-service: prod (since 2026-04-01; source: tool_result)",
+          "memory_id": "L000040",
+          "source_event_ids": [
+            "e00094",
+            "e00154"
+          ],
+          "valid_from": "2026-04-01T11:36:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-01T11:36:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "prod",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002770420105662197,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 549,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0064",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which runtime does cart-service target?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002379580109845847,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 548,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0065",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which deploy branch does cart-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00021112497779540718,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 549,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0066",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Who is on call for auth-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Sara Nyström",
+        "aliases": [],
+        "forbidden": [
+          "Mikko Laine"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002461250114720315,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 500,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0067",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Which deploy branch does auth-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "develop",
+          "stable"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of auth-service: main (since 2026-04-02; source: user_message)",
+          "memory_id": "L000043",
+          "source_event_ids": [
+            "e00106",
+            "e00118"
+          ],
+          "valid_from": "2026-04-02T17:10:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-02T17:10:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "main",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000218625005800277,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 500,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0068",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on April 2, 2026, which deploy branch did auth-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": "2026-04-02T06:03:45Z",
+      "expected": {
+        "kind": "value",
+        "value": "stable",
+        "aliases": [],
+        "forbidden": [
+          "develop",
+          "main"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of auth-service: stable (since 2026-03-31 until 2026-04-02; source: user_message)",
+          "memory_id": "L000039",
+          "source_event_ids": [
+            "e00090"
+          ],
+          "valid_from": "2026-03-31T16:15:02Z",
+          "valid_to": "2026-04-02T17:10:02Z",
+          "recorded_at": "2026-03-31T16:15:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "stable",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00024058300186879933,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 510,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0069",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the runtime of gateway-service on March 21, 2026?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": "2026-03-21T15:02:20Z",
+      "expected": {
+        "kind": "value",
+        "value": "Node 20",
+        "aliases": [
+          "Node.js 20"
+        ],
+        "forbidden": [
+          "Java 21"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of gateway-service: Node 20 (since 2026-02-17 until 2026-04-02; source: user_message)",
+          "memory_id": "L000023",
+          "source_event_ids": [
+            "e00051"
+          ],
+          "valid_from": "2026-02-17T10:13:02Z",
+          "valid_to": "2026-04-02T17:06:02Z",
+          "recorded_at": "2026-02-17T10:13:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Node 20",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002600419975351542,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 508,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0070",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "What is the test command of gateway-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "bazel test //...",
+        "aliases": [],
+        "forbidden": [
+          "cargo test"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "test command of gateway-service: bazel test //... (since 2026-02-22; source: user_message)",
+          "memory_id": "L000028",
+          "source_event_ids": [
+            "e00059"
+          ],
+          "valid_from": "2026-02-22T11:38:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-22T11:38:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "bazel test //...",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00035041701630689204,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 501,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0071",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "What is the database of auth-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MongoDB 7.0",
+        "aliases": [],
+        "forbidden": [
+          "PostgreSQL 13",
+          "PostgreSQL 14"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of auth-service: MongoDB 7.0 (since 2026-03-15; source: user_message)",
+          "memory_id": "L000037",
+          "source_event_ids": [
+            "e00083"
+          ],
+          "valid_from": "2026-03-15T16:30:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-15T16:30:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MongoDB 7.0",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00033233300200663507,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 500,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0072",
+      "probe_type": "post_delete",
+      "checkpoint": "c3",
+      "question": "Remind me: inventory-service's test command?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "./gradlew test",
+          "make test",
+          "npm test"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002819579967763275,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 502,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0073",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Which CI provider does gateway-service use?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jenkins",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of gateway-service: Jenkins (since 2026-02-22; source: user_message)",
+          "memory_id": "L000027",
+          "source_event_ids": [
+            "e00058",
+            "e00150"
+          ],
+          "valid_from": "2026-02-22T11:37:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-22T11:37:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Jenkins",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000272540986770764,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 500,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0074",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Who is on call for gateway-service?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jonas Berg",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of gateway-service: Jonas Berg (since 2026-04-17; source: document)",
+          "memory_id": "L000046",
+          "source_event_ids": [
+            "e00117",
+            "e00147"
+          ],
+          "valid_from": "2026-04-17T10:52:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-17T10:52:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Jonas Berg",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00030949999927543104,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 500,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0075",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Where does auth-service publish its events?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002545829920563847,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 500,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0076",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Remind me: gateway-service's database?",
+      "asked_at": "2026-06-05T17:18:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00021483399905264378,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 501,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0077",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "Which database does billing-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MariaDB 11.4",
+        "aliases": [],
+        "forbidden": [
+          "PostgreSQL 13",
+          "PostgreSQL 16"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of billing-service: MariaDB 11.4 (since 2026-06-05; source: tool_result)",
+          "memory_id": "L000064",
+          "source_event_ids": [
+            "e00168"
+          ],
+          "valid_from": "2026-06-05T17:33:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-05T17:33:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MariaDB 11.4",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002579169813543558,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 462,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0078",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "Which message queue does billing-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Redis Streams",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS",
+          "Google Pub/Sub"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of billing-service: Redis Streams (since 2026-07-02; source: tool_result)",
+          "memory_id": "L000078",
+          "source_event_ids": [
+            "e00218"
+          ],
+          "valid_from": "2026-07-02T08:38:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-07-02T08:38:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Redis Streams",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000402832985855639,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 463,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0079",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on February 3, 2026, which database did billing-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": "2026-02-03T00:17:24Z",
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 13",
+        "aliases": [
+          "Postgres 13",
+          "PG 13"
+        ],
+        "forbidden": [
+          "MariaDB 11.4",
+          "PostgreSQL 16"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-02-03",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002675830037333071,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 472,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0080",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "What was the message queue of billing-service on June 12, 2026?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": "2026-06-12T12:59:20Z",
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub",
+          "Redis Streams"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of billing-service: Amazon SQS (since 2026-06-05 until 2026-07-02; source: user_message)",
+          "memory_id": "L000062",
+          "source_event_ids": [
+            "e00165",
+            "e00196"
+          ],
+          "valid_from": "2026-06-05T17:20:00Z",
+          "valid_to": "2026-07-02T08:38:00Z",
+          "recorded_at": "2026-06-05T17:20:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Amazon SQS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00033370801247656345,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 472,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0081",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Where does payments-service publish its events?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "RabbitMQ",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "Kafka"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: RabbitMQ (since 2026-07-02; source: code_change)",
+          "memory_id": "L000076",
+          "source_event_ids": [
+            "e00214"
+          ],
+          "valid_from": "2026-07-02T08:23:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-07-02T08:23:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "RabbitMQ",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00027366599533706903,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 463,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0082",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "What is the CI provider of payments-service?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "Buildkite",
+          "GitLab CI"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of payments-service: CircleCI (since 2026-01-14; source: user_message)",
+          "memory_id": "L000002",
+          "source_event_ids": [
+            "e00005"
+          ],
+          "valid_from": "2026-01-14T17:07:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-14T17:07:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "CircleCI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00020133302314206958,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 464,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0083",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Where do the billing-service builds run?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jenkins",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002264169743284583,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 463,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0084",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "What is the staging hostname of payments-service?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "payments-stg-6.internal",
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-8.internal"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging hostname of payments-service: payments-stg-6.internal (since 2026-06-14; source: user_message)",
+          "memory_id": "L000067",
+          "source_event_ids": [
+            "e00180"
+          ],
+          "valid_from": "2026-06-14T15:31:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-14T15:31:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "payments-stg-6.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00022112499573267996,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 464,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0085",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which runtime does billing-service target?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003459579893387854,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 462,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0086",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Remind me: payments-service's runtime?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00021058297716081142,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 464,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0087",
+      "probe_type": "post_delete",
+      "checkpoint": "c4",
+      "question": "Remind me: billing-service's deploy branch?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "main",
+          "master",
+          "prod"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "deleted at the user's request",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00026450000586919487,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 571,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0088",
+      "probe_type": "post_delete",
+      "checkpoint": "c4",
+      "question": "Which staging hostname does billing-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "billing-stg-1.internal",
+          "billing-stg-8.internal"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "deleted at the user's request",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002492500061634928,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 13,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0089",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "Which region is cart-service deployed in?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "ap-southeast-2",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1",
+          "eu-north-1",
+          "eu-west-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of cart-service: ap-southeast-2 (since 2026-06-30; source: code_change)",
+          "memory_id": "L000072",
+          "source_event_ids": [
+            "e00204"
+          ],
+          "valid_from": "2026-06-30T17:17:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-30T17:17:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 24,
+      "injected_tokens": 24,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "ap-southeast-2",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00022524999803863466,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0090",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "Which region is billing-service deployed in?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "us-west-2"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of billing-service: us-east-1 (since 2026-06-17; source: code_change)",
+          "memory_id": "L000069",
+          "source_event_ids": [
+            "e00188"
+          ],
+          "valid_from": "2026-06-17T10:46:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-17T10:46:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 24,
+      "injected_tokens": 24,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-east-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002434579946566373,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0091",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "What was the cloud region of billing-service on March 17, 2026?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": "2026-03-17T09:03:17Z",
+      "expected": {
+        "kind": "value",
+        "value": "us-west-2",
+        "aliases": [],
+        "forbidden": [
+          "us-east-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of billing-service: us-west-2 (since 2026-01-21 until 2026-06-17; source: tool_result)",
+          "memory_id": "L000005",
+          "source_event_ids": [
+            "e00012"
+          ],
+          "valid_from": "2026-01-21T12:07:01Z",
+          "valid_to": "2026-06-17T10:46:01Z",
+          "recorded_at": "2026-01-21T12:07:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 30,
+      "injected_tokens": 30,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-west-2",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002584580215625465,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 578,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0092",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "What was the cloud region of cart-service on February 9, 2026?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": "2026-02-09T01:14:56Z",
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "ap-southeast-2",
+          "eu-central-1",
+          "eu-west-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "cloud region of cart-service: eu-north-1 (since 2026-02-08 until 2026-02-09; source: user_message)",
+          "memory_id": "L000013",
+          "source_event_ids": [
+            "e00031"
+          ],
+          "valid_from": "2026-02-08T15:58:01Z",
+          "valid_to": "2026-02-09T08:35:01Z",
+          "recorded_at": "2026-02-08T15:58:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 30,
+      "injected_tokens": 30,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-north-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00020958398818038404,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 578,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0093",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "What DB version is notifications-service running?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 17",
+        "aliases": [
+          "Postgres 17",
+          "PG 17"
+        ],
+        "forbidden": [
+          "MariaDB 11.4"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of notifications-service: PostgreSQL 17 (since 2026-02-09; source: user_message)",
+          "memory_id": "L000018",
+          "source_event_ids": [
+            "e00038"
+          ],
+          "valid_from": "2026-02-09T08:48:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T08:48:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 17",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002315829915460199,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0094",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Which test command does billing-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "bazel test //...",
+        "aliases": [],
+        "forbidden": [
+          "./gradlew test"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "test command of billing-service: bazel test //... (since 2026-02-08; source: user_message)",
+          "memory_id": "L000014",
+          "source_event_ids": [
+            "e00032",
+            "e00136",
+            "e00190"
+          ],
+          "valid_from": "2026-02-08T15:59:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-08T15:59:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "bazel test //...",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002124170132447034,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0095",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Remind me: billing-service's on-call owner?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Leena Koski",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of billing-service: Leena Koski (since 2026-02-25; source: user_message)",
+          "memory_id": "L000029",
+          "source_event_ids": [
+            "e00060"
+          ],
+          "valid_from": "2026-02-25T15:28:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-25T15:28:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Leena Koski",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00025216699577867985,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 572,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0096",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "What is the on-call owner of cart-service?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Aino Virtanen",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of cart-service: Aino Virtanen (since 2026-07-01; source: document)",
+          "memory_id": "L000074",
+          "source_event_ids": [
+            "e00211"
+          ],
+          "valid_from": "2026-07-01T12:20:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-07-01T12:20:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Aino Virtanen",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00027637500897981226,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 571,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0097",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "What language version is billing-service on?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00023887501447461545,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0098",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which deploy branch does cart-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00021487500634975731,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0099",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "What is the deploy branch of auth-service?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": [
+          "develop",
+          "stable"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of auth-service: main (since 2026-04-02; source: user_message)",
+          "memory_id": "L000043",
+          "source_event_ids": [
+            "e00106",
+            "e00118",
+            "e00172"
+          ],
+          "valid_from": "2026-04-02T17:10:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-02T17:10:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "main",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00025504198856651783,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 495,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0100",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "What's the staging hostname for gateway-service?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "gateway-stg-6.internal",
+        "aliases": [],
+        "forbidden": [
+          "gateway-stg-3.internal"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging host of gateway-service: gateway-stg-6.internal (since 2026-03-15; source: user_message)",
+          "memory_id": "L000036",
+          "source_event_ids": [
+            "e00082",
+            "e00125"
+          ],
+          "valid_from": "2026-03-15T16:25:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-15T16:25:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "gateway-stg-6.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00020491701434366405,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 494,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0101",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on February 10, 2026, which on-call owner did auth-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": "2026-02-10T14:05:41Z",
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": [
+          "Sara Nyström"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00022783299209550023,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 505,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0102",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "What was the staging hostname of gateway-service on February 28, 2026?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": "2026-02-28T17:55:52Z",
+      "expected": {
+        "kind": "value",
+        "value": "gateway-stg-3.internal",
+        "aliases": [],
+        "forbidden": [
+          "gateway-stg-6.internal"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging host of gateway-service: gateway-stg-3.internal (since 2026-02-15 until 2026-03-15; source: document)",
+          "memory_id": "L000019",
+          "source_event_ids": [
+            "e00040"
+          ],
+          "valid_from": "2026-02-15T15:36:02Z",
+          "valid_to": "2026-03-15T16:25:02Z",
+          "recorded_at": "2026-02-15T15:36:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 32,
+      "injected_tokens": 32,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "gateway-stg-3.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00024170801043510437,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 503,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0103",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Which database does auth-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MySQL 8.4",
+        "aliases": [],
+        "forbidden": [
+          "MongoDB 7.0",
+          "PostgreSQL 13",
+          "PostgreSQL 14"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of auth-service: MongoDB 7.0 (since 2026-03-15; source: user_message)",
+          "memory_id": "L000037",
+          "source_event_ids": [
+            "e00083"
+          ],
+          "valid_from": "2026-03-15T16:30:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-15T16:30:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "wrong",
+      "matched": null,
+      "forbidden_hits": [
+        {
+          "value": "MongoDB 7.0",
+          "error_types": [
+            "stale"
+          ],
+          "source_event_ids": [
+            "e00083"
+          ]
+        }
+      ],
+      "foreign_hits": [],
+      "latency_s": 0.000328667025314644,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 493,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0104",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Which CI provider does inventory-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Travis CI",
+        "aliases": [],
+        "forbidden": [
+          "CircleCI"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of inventory: Travis CI (since 2026-01-31; source: tool_result)",
+          "memory_id": "L000009",
+          "source_event_ids": [
+            "e00022"
+          ],
+          "valid_from": "2026-01-31T08:43:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-31T08:43:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 19,
+      "injected_tokens": 19,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Travis CI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00023979099933058023,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 494,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0105",
+      "probe_type": "post_delete",
+      "checkpoint": "c4",
+      "question": "Who owns gateway-service incidents?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "Jonas Berg"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00023162501747719944,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 492,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0106",
+      "probe_type": "post_delete",
+      "checkpoint": "c4",
+      "question": "Remind me: gateway-service's CI provider?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "Jenkins"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00020329200197011232,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 496,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0107",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Which runtime does inventory-service use?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Python 3.12",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of inventory-service: Python 3.12 (since 2026-04-07; source: user_message)",
+          "memory_id": "L000044",
+          "source_event_ids": [
+            "e00108"
+          ],
+          "valid_from": "2026-04-07T09:22:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-07T09:22:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Python 3.12",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00024279201170429587,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 493,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0108",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "What is the message queue of auth-service?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00023004101240076125,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 495,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0109",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Remind me: inventory-service's deploy branch?",
+      "asked_at": "2026-07-02T08:38:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00031504101934842765,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 496,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    }
+  ],
+  "checkpoint_stats": {
+    "c1": {
+      "user_id": null,
+      "n_items": 23,
+      "storage_bytes": 286,
+      "extra": {
+        "active": 21,
+        "disputes": 1,
+        "tombstones": 1
+      }
+    },
+    "c2": {
+      "user_id": null,
+      "n_items": 40,
+      "storage_bytes": 438,
+      "extra": {
+        "active": 28,
+        "disputes": 2,
+        "tombstones": 2
+      }
+    },
+    "c3": {
+      "user_id": null,
+      "n_items": 46,
+      "storage_bytes": 492,
+      "extra": {
+        "active": 30,
+        "disputes": 9,
+        "tombstones": 4
+      }
+    },
+    "c4": {
+      "user_id": null,
+      "n_items": 56,
+      "storage_bytes": 621,
+      "extra": {
+        "active": 34,
+        "disputes": 11,
+        "tombstones": 7
+      }
+    }
+  }
+}

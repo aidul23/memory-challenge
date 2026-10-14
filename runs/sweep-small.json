@@ -1,0 +1,409 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "systems": {
+    "no_memory": {
+      "accuracy_pct": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "correct": {
+        "0": [
+          0
+        ],
+        "1": [
+          0
+        ],
+        "2": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          0
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "missed": 361,
+        "no_abstention": 151
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          120
+        ],
+        "contamination": [
+          0,
+          67
+        ],
+        "current": [
+          0,
+          112
+        ],
+        "historical": [
+          0,
+          93
+        ],
+        "post_delete": [
+          0,
+          31
+        ],
+        "post_update": [
+          0,
+          89
+        ]
+      }
+    },
+    "full_replay": {
+      "accuracy_pct": [
+        24.242424242424242,
+        19.387755102040817,
+        22.22222222222222,
+        22.429906542056074,
+        21.10091743119266
+      ],
+      "correct": {
+        "0": [
+          24
+        ],
+        "1": [
+          19
+        ],
+        "2": [
+          22
+        ],
+        "3": [
+          24
+        ],
+        "4": [
+          23
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 112,
+        "polluted": 249,
+        "no_abstention": 151
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          120
+        ],
+        "contamination": [
+          0,
+          67
+        ],
+        "current": [
+          112,
+          112
+        ],
+        "historical": [
+          0,
+          93
+        ],
+        "post_delete": [
+          0,
+          31
+        ],
+        "post_update": [
+          0,
+          89
+        ]
+      }
+    },
+    "transcript_rag": {
+      "accuracy_pct": [
+        34.343434343434346,
+        20.408163265306122,
+        27.272727272727273,
+        25.233644859813083,
+        27.522935779816514
+      ],
+      "correct": {
+        "0": [
+          34
+        ],
+        "1": [
+          20
+        ],
+        "2": [
+          27
+        ],
+        "3": [
+          27
+        ],
+        "4": [
+          30
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 138,
+        "polluted": 139,
+        "wrong": 56,
+        "no_abstention": 151,
+        "missed": 28
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          120
+        ],
+        "contamination": [
+          14,
+          67
+        ],
+        "current": [
+          102,
+          112
+        ],
+        "historical": [
+          17,
+          93
+        ],
+        "post_delete": [
+          0,
+          31
+        ],
+        "post_update": [
+          5,
+          89
+        ]
+      }
+    },
+    "ledger": {
+      "accuracy_pct": [
+        29.292929292929294,
+        41.83673469387755,
+        45.45454545454545,
+        35.51401869158879,
+        41.28440366972477
+      ],
+      "correct": {
+        "0": [
+          29
+        ],
+        "1": [
+          41
+        ],
+        "2": [
+          45
+        ],
+        "3": [
+          38
+        ],
+        "4": [
+          45
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 198,
+        "false_abstention": 264,
+        "no_abstention": 13,
+        "missed": 28,
+        "wrong": 9
+      },
+      "by_type": {
+        "abstention": [
+          108,
+          120
+        ],
+        "contamination": [
+          6,
+          67
+        ],
+        "current": [
+          27,
+          112
+        ],
+        "historical": [
+          14,
+          93
+        ],
+        "post_delete": [
+          30,
+          31
+        ],
+        "post_update": [
+          13,
+          89
+        ]
+      }
+    },
+    "ledger_llm": {
+      "accuracy_pct": [
+        92.92929292929293,
+        89.79591836734694,
+        97.97979797979798,
+        87.85046728971963,
+        90.8256880733945
+      ],
+      "correct": {
+        "0": [
+          92
+        ],
+        "1": [
+          88
+        ],
+        "2": [
+          97
+        ],
+        "3": [
+          94
+        ],
+        "4": [
+          99
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 470,
+        "false_abstention": 30,
+        "no_abstention": 4,
+        "wrong": 6,
+        "missed": 2
+      },
+      "by_type": {
+        "abstention": [
+          117,
+          120
+        ],
+        "contamination": [
+          64,
+          67
+        ],
+        "current": [
+          102,
+          112
+        ],
+        "historical": [
+          74,
+          93
+        ],
+        "post_delete": [
+          30,
+          31
+        ],
+        "post_update": [
+          83,
+          89
+        ]
+      }
+    }
+  },
+  "preset": "small",
+  "budget": 2000,
+  "repeats": 1,
+  "configs": {
+    "no_memory": {
+      "name": "no_memory",
+      "version": "1"
+    },
+    "full_replay": {
+      "name": "full_replay",
+      "version": "1",
+      "order": "chronological"
+    },
+    "transcript_rag": {
+      "name": "transcript_rag",
+      "version": "1",
+      "retriever": "bm25",
+      "unit": "event",
+      "top_k": 5,
+      "k1": 1.5,
+      "b": 0.75,
+      "stopwords": 52
+    },
+    "ledger": {
+      "name": "ledger",
+      "version": "1",
+      "extractor": {
+        "name": "rules",
+        "version": "1",
+        "slots": [
+          "database",
+          "test_command",
+          "deploy_branch",
+          "staging_hostname"
+        ]
+      },
+      "trust": {
+        "user_message": 3,
+        "tool_result": 3,
+        "code_change": 3,
+        "document": 2,
+        "assistant_message": 1,
+        "tool_call": 1
+      }
+    },
+    "ledger_llm": {
+      "name": "ledger",
+      "version": "1",
+      "extractor": {
+        "name": "llm",
+        "version": "4",
+        "provider": "openai",
+        "model": "gpt-4.1-mini",
+        "effort": null,
+        "base_url": null,
+        "temperature": 0.0,
+        "seed": 0,
+        "prompt_sha": "3c7afa1ed373",
+        "calls": 0,
+        "cache_hits": 153,
+        "refusals": 0,
+        "dropped_claims": 1
+      },
+      "trust": {
+        "user_message": 3,
+        "tool_result": 3,
+        "code_change": 3,
+        "document": 2,
+        "assistant_message": 1,
+        "tool_call": 1
+      }
+    }
+  }
+}

@@ -141,6 +141,19 @@ def test_slots_for_uses_enum_and_skips_call_when_nothing_known(make, tmp_path):
 
 
 @pytest.mark.parametrize("make", PROVIDERS)
+def test_event_ids_are_enumerated_and_bad_ones_counted(make, tmp_path):
+    # Seen with gpt-4.1-mini: "e0014" for "e00014" silently lost a whole batch.
+    x, client = make(lambda s, p: {"claims": [
+        {"event_id": "e0014", "entity": "a", "attribute": "db", "value": "x"},
+        {"event_id": "e00014", "entity": "a", "attribute": "db", "value": "y"},
+    ]}, tmp_path)
+    claims, _ = x.claims([ev("e00014", 1, "a uses y"), ev("e00015", 1, "hi")])
+    assert [c.value for c in claims] == ["y"]
+    assert x.dropped == 1 and x.config()["dropped_claims"] == 1
+    assert '"enum": ["e00014", "e00015"]' in json.dumps(client.requests[0])
+
+
+@pytest.mark.parametrize("make", PROVIDERS)
 def test_refusal_yields_nothing_and_is_not_cached(make, tmp_path):
     x, client = make(lambda s, p: "refusal", tmp_path)
     assert x.claims([ev("a", 1, "hi")])[0] == []
@@ -152,7 +165,8 @@ def test_refusal_yields_nothing_and_is_not_cached(make, tmp_path):
 def env(monkeypatch, tmp_path):
     """A clean LLM environment that never reads the developer's real .env."""
     monkeypatch.setattr("systems.ledger.backends.ROOT", tmp_path)
-    for k in ("LLM_PROVIDER", "LLM_MODEL", "LLM_EFFORT", "ANTHROPIC_API_KEY", "OPENAI_API_KEY", "OPENAI_BASE_URL"):
+    for k in ("LLM_PROVIDER", "LLM_MODEL", "LLM_EFFORT", "LLM_TEMPERATURE", "ANTHROPIC_API_KEY",
+              "OPENAI_API_KEY", "OPENAI_BASE_URL"):
         monkeypatch.setenv(k, "")
     return monkeypatch
 
@@ -181,6 +195,31 @@ def test_blank_env_values_are_unset(env):
     b = backend_from_env()  # OPENAI_BASE_URL is "" in the fixture
     assert "OPENAI_BASE_URL" not in __import__("os").environ
     assert str(b.client.base_url).startswith("https://api.openai.com")
+
+
+def test_openai_sampling_is_pinned_unless_reasoning(env, tmp_path):
+    x, client = openai_x(lambda s, p: {"claims": []}, tmp_path)
+    x.claims([ev("a", 1, "hello")])
+    assert (client.requests[0]["temperature"], client.requests[0]["seed"]) == (0.0, 0)
+    assert x.backend.config()["temperature"] == 0.0  # so it is part of the cache key
+
+    client = FakeOpenAI(lambda s, p: {"claims": []})
+    LLMExtractor(OpenAIBackend("o-test", effort="low", client=client, temperature=None),
+                 cache_dir=tmp_path).claims([ev("a", 1, "hello")])
+    assert "temperature" not in client.requests[0] and "seed" not in client.requests[0]
+
+    env.setenv("OPENAI_API_KEY", "sk-test")
+    env.setenv("LLM_MODEL", "gpt-test")
+    assert backend_from_env().temperature == 0.0
+    env.setenv("LLM_EFFORT", "low")
+    assert backend_from_env().temperature is None
+    env.setenv("LLM_TEMPERATURE", "0.7")
+    assert backend_from_env().temperature == 0.7
+    env.setenv("LLM_TEMPERATURE", "none")
+    assert backend_from_env().temperature is None
+    env.setenv("LLM_TEMPERATURE", "cold")
+    with pytest.raises(RuntimeError, match="LLM_TEMPERATURE"):
+        backend_from_env()
 
 
 def test_backend_from_env_errors(env):
