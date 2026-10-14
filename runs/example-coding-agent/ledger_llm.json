@@ -9,14 +9,14 @@
     "version": "1",
     "extractor": {
       "name": "llm",
-      "version": "2",
+      "version": "3",
       "provider": "openai",
       "model": "gpt-4.1-mini",
       "effort": null,
       "base_url": null,
-      "prompt_sha": "a3a56460b701",
-      "calls": 14,
-      "cache_hits": 0,
+      "prompt_sha": "3c7afa1ed373",
+      "calls": 8,
+      "cache_hits": 6,
       "refusals": 0
     },
     "trust": {
@@ -41,7 +41,7 @@
     "delete_with_sources": true,
     "tokenizer": "regex-words/1"
   },
-  "started_at": "2026-10-08T19:12:11.524988Z",
+  "started_at": "2026-10-13T13:48:49.973909Z",
   "ops": [
     {
       "op": "ingest",
@@ -53,7 +53,7 @@
         "e03",
         "e04"
       ],
-      "latency_s": 2.408408874995075,
+      "latency_s": 0.37290341599145904,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 468,
@@ -80,7 +80,7 @@
         "e06",
         "e07"
       ],
-      "latency_s": 1.4512397090002196,
+      "latency_s": 0.00784412500797771,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 500,
@@ -106,7 +106,7 @@
         "e08",
         "e09"
       ],
-      "latency_s": 1.2853318750130711,
+      "latency_s": 0.011599541991017759,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 488,
@@ -131,7 +131,7 @@
       "event_ids": [
         "e10"
       ],
-      "latency_s": 0.8073414999962552,
+      "latency_s": 0.012063417001627386,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 459,
@@ -156,7 +156,7 @@
       "event_ids": [
         "e06"
       ],
-      "latency_s": 0.00004004199581686407,
+      "latency_s": 0.00007483400986529887,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -176,7 +176,7 @@
       "event_ids": [
         "e11"
       ],
-      "latency_s": 1.0847168340114877,
+      "latency_s": 0.00811420800164342,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 452,
@@ -201,7 +201,7 @@
       "event_ids": [
         "e12"
       ],
-      "latency_s": 0.566848457994638,
+      "latency_s": 0.006260417023440823,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 448,
@@ -259,10 +259,10 @@
       "matched": "Postgres 14",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.6602862919971813,
+      "latency_s": 0.9478002919931896,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 212,
+        "llm_input_tokens": 294,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -307,10 +307,10 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.9660191250004573,
+      "latency_s": 0.5788340419821907,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 211,
+        "llm_input_tokens": 293,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -358,10 +358,10 @@
       "matched": "PostgreSQL 16",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.9903085420082789,
+      "latency_s": 0.7316642919904552,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 211,
+        "llm_input_tokens": 293,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -406,10 +406,10 @@
       "matched": "make test",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 1.0876204590022098,
+      "latency_s": 0.6473972919920925,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 211,
+        "llm_input_tokens": 293,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -457,10 +457,10 @@
       "matched": "Postgres 14",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.9387029999925289,
+      "latency_s": 0.7767472919949796,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 208,
+        "llm_input_tokens": 290,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -493,10 +493,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.8538583329936955,
+      "latency_s": 0.6036288340110332,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 200,
+        "llm_input_tokens": 282,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -541,10 +541,10 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.6338207080116263,
+      "latency_s": 0.7618500840035267,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 202,
+        "llm_input_tokens": 284,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -575,10 +575,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.6139676669990877,
+      "latency_s": 0.6232040000031702,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 203,
+        "llm_input_tokens": 285,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [

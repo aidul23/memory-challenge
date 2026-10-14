@@ -62,6 +62,12 @@ You route a question, or a request to forget something, to the memory slots it
 is about. Choose only from the listed slot keys. Return every slot the text
 asks about, and an empty list when none of them matches: a slot about a
 different service or a different property does not match.
+
+Match on meaning, not wording: "cloud region" or "where it is deployed" is a
+region slot, and "where it publishes events" is a message queue slot. A
+question about an earlier date matches the same slot as one about now. Never
+return a slot just because it is about the same service: if no slot holds the
+property asked about, return an empty list.
 """
 
 CLAIM_FIELDS = ("event_id", "entity", "attribute", "value")
@@ -102,7 +108,7 @@ def _known_block(known: Mapping[str, str]) -> str:
 
 class LLMExtractor:
     name = "llm"
-    version = "2"
+    version = "3"
 
     def __init__(self, backend: Backend | None = None, cache_dir: Path | None = DEFAULT_CACHE) -> None:
         self._backend, self.cache_dir = backend, cache_dir

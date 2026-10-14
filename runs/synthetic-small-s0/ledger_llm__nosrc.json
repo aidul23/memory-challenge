@@ -1,0 +1,6018 @@
+{
+  "workload_id": "synthetic-small-s0",
+  "generator": "synthetic/0.1",
+  "seed": 0,
+  "system": "ledger",
+  "system_version": "1",
+  "system_config": {
+    "name": "ledger",
+    "version": "1",
+    "extractor": {
+      "name": "llm",
+      "version": "3",
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "effort": null,
+      "base_url": null,
+      "prompt_sha": "3c7afa1ed373",
+      "calls": 5,
+      "cache_hits": 153,
+      "refusals": 0
+    },
+    "trust": {
+      "user_message": 3,
+      "tool_result": 3,
+      "code_change": 3,
+      "document": 2,
+      "assistant_message": 1,
+      "tool_call": 1
+    }
+  },
+  "capabilities": {
+    "provenance": true,
+    "temporal_query": true,
+    "deletion": true,
+    "abstention": true,
+    "persistence": true,
+    "export": true
+  },
+  "settings": {
+    "token_budget": 2000,
+    "delete_with_sources": false,
+    "tokenizer": "regex-words/1"
+  },
+  "started_at": "2026-10-13T13:48:56.280153Z",
+  "ops": [
+    {
+      "op": "ingest",
+      "at": "2026-01-07T11:29:00Z",
+      "ref": "u1-s001",
+      "event_ids": [
+        "e00001",
+        "e00002",
+        "e00003",
+        "e00004",
+        "e00005"
+      ],
+      "latency_s": 0.3083072089939378,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 496,
+        "llm_output_tokens": 49,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-10T14:31:02Z",
+      "ref": "u3-s001",
+      "event_ids": [
+        "e00006",
+        "e00007",
+        "e00008",
+        "e00009",
+        "e00010"
+      ],
+      "latency_s": 0.00044070801232010126,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 504,
+        "llm_output_tokens": 71,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-14T08:23:00Z",
+      "ref": "u1-s002",
+      "event_ids": [
+        "e00011",
+        "e00012",
+        "e00013",
+        "e00014",
+        "e00015",
+        "e00016"
+      ],
+      "latency_s": 0.0003292920009698719,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 563,
+        "llm_output_tokens": 54,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-21T10:39:00Z",
+      "ref": "u1-s003",
+      "event_ids": [
+        "e00017",
+        "e00018",
+        "e00019",
+        "e00020"
+      ],
+      "latency_s": 0.00033629199606366456,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 543,
+        "llm_output_tokens": 28,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-25T14:19:02Z",
+      "ref": "u3-s002",
+      "event_ids": [
+        "e00021",
+        "e00022",
+        "e00023"
+      ],
+      "latency_s": 0.0003234999894630164,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 497,
+        "llm_output_tokens": 52,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-26T08:10:00Z",
+      "ref": "u1-s004",
+      "event_ids": [
+        "e00024",
+        "e00025",
+        "e00026",
+        "e00027"
+      ],
+      "latency_s": 0.00031358300475403666,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 559,
+        "llm_output_tokens": 53,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-01-31T12:57:01Z",
+      "ref": "u2-s001",
+      "event_ids": [
+        "e00028",
+        "e00029",
+        "e00030",
+        "e00031",
+        "e00032"
+      ],
+      "latency_s": 0.00035074999323114753,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 504,
+        "llm_output_tokens": 28,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-09T10:40:01Z",
+      "ref": "u2-s002",
+      "event_ids": [
+        "e00033",
+        "e00034",
+        "e00035",
+        "e00036"
+      ],
+      "latency_s": 0.00023416700423695147,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 487,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-09T12:33:02Z",
+      "ref": "u3-s003",
+      "event_ids": [
+        "e00037",
+        "e00038",
+        "e00039",
+        "e00040"
+      ],
+      "latency_s": 0.00028574999305419624,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 559,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-11T14:18:00Z",
+      "ref": "u1-s005",
+      "event_ids": [
+        "e00041",
+        "e00042",
+        "e00043",
+        "e00044",
+        "e00045",
+        "e00046"
+      ],
+      "latency_s": 0.0005619169969577342,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 656,
+        "llm_output_tokens": 77,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-11T15:51:02Z",
+      "ref": "u3-s004",
+      "event_ids": [
+        "e00047",
+        "e00048",
+        "e00049"
+      ],
+      "latency_s": 0.0002727920073084533,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 560,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-13T11:33:00Z",
+      "ref": "u1-s006",
+      "event_ids": [
+        "e00050",
+        "e00051",
+        "e00052",
+        "e00053",
+        "e00054"
+      ],
+      "latency_s": 0.00026345800142735243,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 664,
+        "llm_output_tokens": 52,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-13T11:36:00Z",
+      "ref": "u1-s006",
+      "event_ids": [
+        "e00055",
+        "e00056"
+      ],
+      "latency_s": 0.00033091698423959315,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 613,
+        "llm_output_tokens": 28,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-14T09:27:01Z",
+      "ref": "u2-s003",
+      "event_ids": [
+        "e00057",
+        "e00058",
+        "e00059",
+        "e00060",
+        "e00061"
+      ],
+      "latency_s": 0.0002558339911047369,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 522,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-17T14:28:02Z",
+      "ref": "u3-s005",
+      "event_ids": [
+        "e00062",
+        "e00063",
+        "e00064",
+        "e00065",
+        "e00066"
+      ],
+      "latency_s": 0.00025837498833425343,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 617,
+        "llm_output_tokens": 50,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-19T18:01:02Z",
+      "ref": "u3-s006",
+      "event_ids": [
+        "e00067",
+        "e00068",
+        "e00069",
+        "e00070",
+        "e00071",
+        "e00072"
+      ],
+      "latency_s": 0.0002981669967994094,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 684,
+        "llm_output_tokens": 77,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-02-27T16:59:01Z",
+      "ref": "u2-s004",
+      "event_ids": [
+        "e00073",
+        "e00074",
+        "e00075",
+        "e00076"
+      ],
+      "latency_s": 0.00031891700928099453,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 532,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-06T14:09:02Z",
+      "ref": "u3-s007",
+      "event_ids": [
+        "e00077",
+        "e00078"
+      ],
+      "latency_s": 0.00028091701096855104,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 584,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-09T12:20:02Z",
+      "ref": "u3-s008",
+      "event_ids": [
+        "e00079",
+        "e00080"
+      ],
+      "latency_s": 0.0002773329906631261,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 584,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-09T12:20:02Z",
+      "ref": "m00032",
+      "event_ids": [],
+      "latency_s": 0.7936160420067608,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 415,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_deleted": 2
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-09T12:28:02Z",
+      "ref": "u3-s008",
+      "event_ids": [
+        "e00081",
+        "e00082"
+      ],
+      "latency_s": 0.00294716699863784,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 578,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-11T08:40:00Z",
+      "ref": "u1-s007",
+      "event_ids": [
+        "e00083",
+        "e00084"
+      ],
+      "latency_s": 0.0007422920025419444,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 638,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-17T15:01:01Z",
+      "ref": "u2-s005",
+      "event_ids": [
+        "e00085",
+        "e00086",
+        "e00087",
+        "e00088",
+        "e00089",
+        "e00090"
+      ],
+      "latency_s": 0.0005360410141292959,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 584,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-17T15:01:01Z",
+      "ref": "m00035",
+      "event_ids": [],
+      "latency_s": 0.6587639169883914,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 302,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_deleted": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-20T13:22:01Z",
+      "ref": "u2-s006",
+      "event_ids": [
+        "e00091",
+        "e00092",
+        "e00093"
+      ],
+      "latency_s": 0.0024937919806689024,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 508,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-21T13:41:00Z",
+      "ref": "u1-s008",
+      "event_ids": [
+        "e00094",
+        "e00095",
+        "e00096",
+        "e00097"
+      ],
+      "latency_s": 0.0009391669882461429,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 686,
+        "llm_output_tokens": 53,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-27T11:56:00Z",
+      "ref": "u1-s009",
+      "event_ids": [
+        "e00098",
+        "e00099",
+        "e00100",
+        "e00101"
+      ],
+      "latency_s": 0.0008165000181179494,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 703,
+        "llm_output_tokens": 28,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-28T14:10:00Z",
+      "ref": "u1-s010",
+      "event_ids": [
+        "e00102",
+        "e00103"
+      ],
+      "latency_s": 0.0006426250038202852,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 649,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-03-28T14:10:00Z",
+      "ref": "m00040",
+      "event_ids": [],
+      "latency_s": 0.691211375000421,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 507,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_deleted": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-03-30T11:56:02Z",
+      "ref": "u3-s009",
+      "event_ids": [
+        "e00104",
+        "e00105",
+        "e00106"
+      ],
+      "latency_s": 0.002915124990977347,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 600,
+        "llm_output_tokens": 52,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-02T09:19:00Z",
+      "ref": "u1-s011",
+      "event_ids": [
+        "e00107",
+        "e00108"
+      ],
+      "latency_s": 0.0013216249935794622,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 636,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-02T09:28:00Z",
+      "ref": "u1-s011",
+      "event_ids": [
+        "e00109",
+        "e00110"
+      ],
+      "latency_s": 0.0010650000185705721,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 638,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-10T12:28:01Z",
+      "ref": "u2-s007",
+      "event_ids": [
+        "e00111",
+        "e00112",
+        "e00113"
+      ],
+      "latency_s": 0.0010009999969042838,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 528,
+        "llm_output_tokens": 28,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-12T14:46:00Z",
+      "ref": "u1-s012",
+      "event_ids": [
+        "e00114"
+      ],
+      "latency_s": 0.0009399999980814755,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 617,
+        "llm_output_tokens": 26,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-18T11:24:01Z",
+      "ref": "u2-s008",
+      "event_ids": [
+        "e00115",
+        "e00116",
+        "e00117",
+        "e00118",
+        "e00119",
+        "e00120",
+        "e00121"
+      ],
+      "latency_s": 0.0010169589950237423,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 638,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-20T13:07:01Z",
+      "ref": "u2-s009",
+      "event_ids": [
+        "e00122",
+        "e00123",
+        "e00124",
+        "e00125",
+        "e00126"
+      ],
+      "latency_s": 0.0009235420147888362,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 594,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-24T09:34:02Z",
+      "ref": "u3-s010",
+      "event_ids": [
+        "e00127",
+        "e00128",
+        "e00129",
+        "e00130",
+        "e00131",
+        "e00132"
+      ],
+      "latency_s": 0.000961042009294033,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 688,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-28T16:36:01Z",
+      "ref": "u2-s010",
+      "event_ids": [
+        "e00133",
+        "e00134"
+      ],
+      "latency_s": 0.0009272079914808273,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 507,
+        "llm_output_tokens": 26,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-04-28T16:36:01Z",
+      "ref": "m00052",
+      "event_ids": [],
+      "latency_s": 0.6446879169961903,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 318,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_deleted": 2
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-04-28T16:38:01Z",
+      "ref": "u2-s010",
+      "event_ids": [
+        "e00135",
+        "e00136"
+      ],
+      "latency_s": 0.0014113750075921416,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 507,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-05T15:47:00Z",
+      "ref": "u1-s013",
+      "event_ids": [
+        "e00137",
+        "e00138",
+        "e00139",
+        "e00140",
+        "e00141",
+        "e00142",
+        "e00143"
+      ],
+      "latency_s": 0.0013260419946163893,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 778,
+        "llm_output_tokens": 53,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-16T10:55:02Z",
+      "ref": "u3-s011",
+      "event_ids": [
+        "e00144",
+        "e00145",
+        "e00146",
+        "e00147",
+        "e00148",
+        "e00149"
+      ],
+      "latency_s": 0.0012465830077417195,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 693,
+        "llm_output_tokens": 54,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-18T15:33:01Z",
+      "ref": "u2-s011",
+      "event_ids": [
+        "e00150",
+        "e00151",
+        "e00152",
+        "e00153",
+        "e00154",
+        "e00155"
+      ],
+      "latency_s": 0.0011605829931795597,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 625,
+        "llm_output_tokens": 76,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 2,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-19T11:52:00Z",
+      "ref": "u1-s014",
+      "event_ids": [
+        "e00156",
+        "e00157",
+        "e00158",
+        "e00159",
+        "e00160",
+        "e00161",
+        "e00162"
+      ],
+      "latency_s": 0.0012479579891078174,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 802,
+        "llm_output_tokens": 103,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 3,
+        "items_updated": 1,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-19T11:58:00Z",
+      "ref": "u1-s014",
+      "event_ids": [
+        "e00163"
+      ],
+      "latency_s": 0.0006377089885063469,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 675,
+        "llm_output_tokens": 31,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-21T12:07:01Z",
+      "ref": "u2-s012",
+      "event_ids": [
+        "e00164",
+        "e00165",
+        "e00166",
+        "e00167",
+        "e00168",
+        "e00169"
+      ],
+      "latency_s": 0.0006317090010270476,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 646,
+        "llm_output_tokens": 51,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 1,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-24T12:25:01Z",
+      "ref": "u2-s013",
+      "event_ids": [
+        "e00170",
+        "e00171",
+        "e00172",
+        "e00173",
+        "e00174"
+      ],
+      "latency_s": 0.0006127090018708259,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 601,
+        "llm_output_tokens": 26,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 1,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-28T09:40:02Z",
+      "ref": "u3-s012",
+      "event_ids": [
+        "e00175",
+        "e00176",
+        "e00177"
+      ],
+      "latency_s": 0.0006697910139337182,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 618,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-05-30T12:33:01Z",
+      "ref": "u2-s014",
+      "event_ids": [
+        "e00178",
+        "e00179",
+        "e00180",
+        "e00181"
+      ],
+      "latency_s": 0.0005876249924767762,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 584,
+        "llm_output_tokens": 30,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-03T12:25:00Z",
+      "ref": "u1-s015",
+      "event_ids": [
+        "e00182",
+        "e00183"
+      ],
+      "latency_s": 0.0006556669832207263,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 704,
+        "llm_output_tokens": 31,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "delete",
+      "at": "2026-06-03T12:25:00Z",
+      "ref": "m00074",
+      "event_ids": [],
+      "latency_s": 0.6795312920003198,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 572,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_deleted": 3
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-03T12:33:00Z",
+      "ref": "u1-s015",
+      "event_ids": [
+        "e00184",
+        "e00185"
+      ],
+      "latency_s": 0.0025754160014912486,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 686,
+        "llm_output_tokens": 27,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-08T10:21:00Z",
+      "ref": "u1-s016",
+      "event_ids": [
+        "e00186",
+        "e00187",
+        "e00188",
+        "e00189",
+        "e00190",
+        "e00191"
+      ],
+      "latency_s": 0.0015507919888477772,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 820,
+        "llm_output_tokens": 100,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 4,
+        "items_updated": 0,
+        "items_superseded": 2,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-13T13:21:02Z",
+      "ref": "u3-s013",
+      "event_ids": [
+        "e00192",
+        "e00193",
+        "e00194",
+        "e00195",
+        "e00196"
+      ],
+      "latency_s": 0.0009750830067787319,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 678,
+        "llm_output_tokens": 53,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 2,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-14T11:46:01Z",
+      "ref": "u2-s015",
+      "event_ids": [
+        "e00197",
+        "e00198",
+        "e00199",
+        "e00200"
+      ],
+      "latency_s": 0.0009652920125517994,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 606,
+        "llm_output_tokens": 29,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-16T08:48:01Z",
+      "ref": "u2-s016",
+      "event_ids": [
+        "e00201",
+        "e00202",
+        "e00203",
+        "e00204",
+        "e00205",
+        "e00206"
+      ],
+      "latency_s": 0.0008512499916832894,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 671,
+        "llm_output_tokens": 32,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-23T17:40:02Z",
+      "ref": "u3-s014",
+      "event_ids": [
+        "e00207",
+        "e00208",
+        "e00209",
+        "e00210"
+      ],
+      "latency_s": 0.0007612910121679306,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 628,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 0,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-06-29T08:29:02Z",
+      "ref": "u3-s015",
+      "event_ids": [
+        "e00211",
+        "e00212",
+        "e00213",
+        "e00214"
+      ],
+      "latency_s": 0.0006911669916007668,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 649,
+        "llm_output_tokens": 78,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 1,
+        "items_updated": 1,
+        "items_superseded": 1,
+        "items_rejected": 1
+      },
+      "error": null
+    },
+    {
+      "op": "ingest",
+      "at": "2026-07-03T13:08:02Z",
+      "ref": "u3-s016",
+      "event_ids": [
+        "e00215",
+        "e00216"
+      ],
+      "latency_s": 0.0006697499775327742,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 599,
+        "llm_output_tokens": 30,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      },
+      "report": {
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
+        "items_rejected": 0
+      },
+      "error": null
+    }
+  ],
+  "probes": [
+    {
+      "probe_id": "p0001",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "What is the staging hostname of notifications-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "notifications-stg-5.internal",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging host of notifications-service: notifications-stg-5.internal (since 2026-02-11; source: user_message)",
+          "memory_id": "L000018",
+          "source_event_ids": [
+            "e00046"
+          ],
+          "valid_from": "2026-02-11T14:18:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:18:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "notifications-stg-5.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00041187499300576746,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 455,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0002",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Remind me: payments-service's CI provider?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Travis CI",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of payments-service: Travis CI (since 2026-01-21; source: user_message)",
+          "memory_id": "L000008",
+          "source_event_ids": [
+            "e00020"
+          ],
+          "valid_from": "2026-01-21T10:39:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-21T10:39:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Travis CI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00034608400892466307,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 456,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0003",
+      "probe_type": "post_update",
+      "checkpoint": "c1",
+      "question": "Where is notifications-service hosted?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "us-west-2"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of notifications-service: eu-north-1 (since 2026-01-26; source: code_change)",
+          "memory_id": "L000012",
+          "source_event_ids": [
+            "e00025"
+          ],
+          "valid_from": "2026-01-26T08:06:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-26T08:06:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 23,
+      "injected_tokens": 23,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-north-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003539999888744205,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 452,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0004",
+      "probe_type": "post_update",
+      "checkpoint": "c1",
+      "question": "Which CI does notifications-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "GitHub Actions"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of notifications-service: CircleCI (since 2026-02-11; source: code_change)",
+          "memory_id": "L000016",
+          "source_event_ids": [
+            "e00043"
+          ],
+          "valid_from": "2026-02-11T14:09:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:09:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "CircleCI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00031383297755382955,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 453,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0005",
+      "probe_type": "historical",
+      "checkpoint": "c1",
+      "question": "What was the cloud region of notifications-service on January 21, 2026?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": "2026-01-21T02:11:52Z",
+      "expected": {
+        "kind": "value",
+        "value": "us-west-2",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of notifications-service: us-west-2 (since 2026-01-14 until 2026-01-26; source: tool_result)",
+          "memory_id": "L000007",
+          "source_event_ids": [
+            "e00015"
+          ],
+          "valid_from": "2026-01-14T08:20:00Z",
+          "valid_to": "2026-01-26T08:06:00Z",
+          "recorded_at": "2026-01-14T08:20:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 29,
+      "injected_tokens": 29,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-west-2",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00034883301123045385,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 463,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0006",
+      "probe_type": "historical",
+      "checkpoint": "c1",
+      "question": "Back on January 23, 2026, which CI provider did notifications-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": "2026-01-23T18:49:44Z",
+      "expected": {
+        "kind": "value",
+        "value": "GitHub Actions",
+        "aliases": [],
+        "forbidden": [
+          "CircleCI"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of notifications-service: GitHub Actions (since 2026-01-07 until 2026-02-11; source: user_message)",
+          "memory_id": "L000002",
+          "source_event_ids": [
+            "e00004"
+          ],
+          "valid_from": "2026-01-07T11:28:00Z",
+          "valid_to": "2026-02-11T14:09:00Z",
+          "recorded_at": "2026-01-07T11:28:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "GitHub Actions",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00031883298652246594,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 464,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0007",
+      "probe_type": "contamination",
+      "checkpoint": "c1",
+      "question": "What is the cloud region of auth-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of auth-service: us-east-1 (since 2026-02-11; source: user_message)",
+          "memory_id": "L000017",
+          "source_event_ids": [
+            "e00045"
+          ],
+          "valid_from": "2026-02-11T14:17:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:17:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 23,
+      "injected_tokens": 23,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-east-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002483749995008111,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 455,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0008",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "Which runtime does auth-service target?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00025462498888373375,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 453,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0009",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What is the cloud region of payments-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00022466701921075583,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 455,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0010",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which message queue does notifications-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Google Pub/Sub",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of notifications-service: Google Pub/Sub (since 2026-01-31; source: user_message)",
+          "memory_id": "L000013",
+          "source_event_ids": [
+            "e00031"
+          ],
+          "valid_from": "2026-01-31T12:55:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-31T12:55:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 23,
+      "injected_tokens": 23,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Google Pub/Sub",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002404589904472232,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 251,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0011",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Remind me: auth-service's message queue?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "NATS",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of auth-service: NATS (since 2026-02-09; source: user_message)",
+          "memory_id": "L000014",
+          "source_event_ids": [
+            "e00035"
+          ],
+          "valid_from": "2026-02-09T10:38:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T10:38:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "NATS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003020830044988543,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 253,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0012",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What is the cloud region of notifications-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00022520899074152112,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 252,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0013",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "Which test command does auth-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002619589795358479,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 251,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0014",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which runtime does payments-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Java 21 (since 2026-02-11; source: user_message)",
+          "memory_id": "L000019",
+          "source_event_ids": [
+            "e00048"
+          ],
+          "valid_from": "2026-02-11T15:48:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T15:48:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Java 21",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002996250113938004,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 361,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0015",
+      "probe_type": "current",
+      "checkpoint": "c1",
+      "question": "Which CI does cart-service use?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Drone CI",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of cart-service: Drone CI (since 2026-02-09; source: user_message)",
+          "memory_id": "L000015",
+          "source_event_ids": [
+            "e00037"
+          ],
+          "valid_from": "2026-02-09T12:20:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-09T12:20:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Drone CI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00034795800456777215,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 361,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0016",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What is the database of cart-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0002868750016205013,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 362,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0017",
+      "probe_type": "abstention",
+      "checkpoint": "c1",
+      "question": "What's the staging hostname for payments-service?",
+      "asked_at": "2026-02-13T11:33:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00033741601509973407,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 362,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0018",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "What is the on-call owner of notifications-service?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Tomás Ruiz",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0013239580148365349,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 493,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0019",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "What is the deploy branch of auth-service?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "main",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of auth-service: main (since 2026-01-07; source: user_message)",
+          "memory_id": "L000001",
+          "source_event_ids": [
+            "e00001"
+          ],
+          "valid_from": "2026-01-07T11:18:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-07T11:18:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "main",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0026844170060940087,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 492,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0020",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Which CI does notifications-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "GitHub Actions"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of notifications-service: CircleCI (since 2026-02-11; source: code_change)",
+          "memory_id": "L000016",
+          "source_event_ids": [
+            "e00043"
+          ],
+          "valid_from": "2026-02-11T14:09:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:09:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "CircleCI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.002804417017614469,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 490,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0021",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Where is notifications-service hosted?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "us-west-2"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of notifications-service: eu-north-1 (since 2026-01-26; source: code_change)",
+          "memory_id": "L000012",
+          "source_event_ids": [
+            "e00025"
+          ],
+          "valid_from": "2026-01-26T08:06:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-26T08:06:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 23,
+      "injected_tokens": 23,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-north-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.001082583999959752,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 489,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0022",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "NATS"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: Amazon SQS (since 2026-02-13; source: user_message)",
+          "memory_id": "L000020",
+          "source_event_ids": [
+            "e00050",
+            "e00099"
+          ],
+          "valid_from": "2026-02-13T11:23:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-13T11:23:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Amazon SQS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000976208015345037,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 491,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0023",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "Which region is auth-service deployed in?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of auth-service: us-east-1 (since 2026-02-11; source: user_message)",
+          "memory_id": "L000017",
+          "source_event_ids": [
+            "e00045"
+          ],
+          "valid_from": "2026-02-11T14:17:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:17:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 23,
+      "injected_tokens": 23,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-east-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008677910082042217,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 491,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0024",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "What was the cloud region of notifications-service on January 17, 2026?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": "2026-01-17T10:24:48Z",
+      "expected": {
+        "kind": "value",
+        "value": "us-west-2",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of notifications-service: us-west-2 (since 2026-01-14 until 2026-01-26; source: tool_result)",
+          "memory_id": "L000007",
+          "source_event_ids": [
+            "e00015"
+          ],
+          "valid_from": "2026-01-14T08:20:00Z",
+          "valid_to": "2026-01-26T08:06:00Z",
+          "recorded_at": "2026-01-14T08:20:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 29,
+      "injected_tokens": 29,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-west-2",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009502499888185412,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 500,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0025",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "What was the CI provider of notifications-service on January 28, 2026?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": "2026-01-28T03:38:14Z",
+      "expected": {
+        "kind": "value",
+        "value": "GitHub Actions",
+        "aliases": [],
+        "forbidden": [
+          "CircleCI"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of notifications-service: GitHub Actions (since 2026-01-07 until 2026-02-11; source: user_message)",
+          "memory_id": "L000002",
+          "source_event_ids": [
+            "e00004"
+          ],
+          "valid_from": "2026-01-07T11:28:00Z",
+          "valid_to": "2026-02-11T14:09:00Z",
+          "recorded_at": "2026-01-07T11:28:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "GitHub Actions",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009547499939799309,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 500,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0026",
+      "probe_type": "post_delete",
+      "checkpoint": "c2",
+      "question": "Where does payments-service staging live?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-9.internal"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008872910111676902,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 490,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0027",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Where does auth-service publish its events?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009072500106412917,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 491,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0028",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Remind me: payments-service's deploy branch?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009506250207778066,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 493,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0029",
+      "probe_type": "post_delete",
+      "checkpoint": "c2",
+      "question": "Which message queue does notifications-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008113329822663218,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 309,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0030",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "Which message queue does auth-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Redis Streams",
+        "aliases": [],
+        "forbidden": [
+          "NATS"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of auth-service: Redis Streams (since 2026-02-27; source: code_change)",
+          "memory_id": "L000028",
+          "source_event_ids": [
+            "e00074"
+          ],
+          "valid_from": "2026-02-27T16:48:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-27T16:48:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Redis Streams",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008809170103631914,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 309,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0031",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "What was the message queue of auth-service on February 16, 2026?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": "2026-02-16T16:34:09Z",
+      "expected": {
+        "kind": "value",
+        "value": "NATS",
+        "aliases": [],
+        "forbidden": [
+          "Redis Streams"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of auth-service: NATS (since 2026-02-09 until 2026-02-27; source: user_message)",
+          "memory_id": "L000014",
+          "source_event_ids": [
+            "e00035"
+          ],
+          "valid_from": "2026-02-09T10:38:01Z",
+          "valid_to": "2026-02-27T16:48:01Z",
+          "recorded_at": "2026-02-09T10:38:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "NATS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009737079963088036,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 318,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0032",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Who owns notifications-service incidents?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Tomás Ruiz",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of notifications-service: Tomás Ruiz (since 2026-03-17; source: user_message)",
+          "memory_id": "L000031",
+          "source_event_ids": [
+            "e00085"
+          ],
+          "valid_from": "2026-03-17T14:43:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-17T14:43:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Tomás Ruiz",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009597919997759163,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 307,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0033",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "What's the command to test notifications-service?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "pnpm vitest run",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008674999990034848,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 309,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0034",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Who owns auth-service incidents?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009246669942513108,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 307,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0035",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Which CI provider does auth-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008312909922096878,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 309,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0036",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Which runtime does cart-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Java 17",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of cart-service: Java 17 (since 2026-02-17; source: user_message)",
+          "memory_id": "L000024",
+          "source_event_ids": [
+            "e00064",
+            "e00078"
+          ],
+          "valid_from": "2026-02-17T14:23:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-17T14:23:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Java 17",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008779999916441739,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 411,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0037",
+      "probe_type": "current",
+      "checkpoint": "c2",
+      "question": "Remind me: cart-service's on-call owner?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of cart-service: Mikko Laine (since 2026-01-25; source: user_message)",
+          "memory_id": "L000009",
+          "source_event_ids": [
+            "e00022",
+            "e00068"
+          ],
+          "valid_from": "2026-01-25T14:18:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-25T14:18:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Mikko Laine",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008720000041648746,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 415,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0038",
+      "probe_type": "post_update",
+      "checkpoint": "c2",
+      "question": "What language version is payments-service on?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Node 20",
+        "aliases": [
+          "Node.js 20"
+        ],
+        "forbidden": [
+          "Java 21"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Node 20 (since 2026-03-09; source: tool_result)",
+          "memory_id": "L000029",
+          "source_event_ids": [
+            "e00079"
+          ],
+          "valid_from": "2026-03-09T12:16:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-09T12:16:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Node 20",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009444169991184026,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 412,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0039",
+      "probe_type": "historical",
+      "checkpoint": "c2",
+      "question": "Back on February 24, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": "2026-02-24T00:13:18Z",
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": [
+          "Node 20"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Java 21 (since 2026-02-11 until 2026-03-09; source: user_message)",
+          "memory_id": "L000019",
+          "source_event_ids": [
+            "e00048"
+          ],
+          "valid_from": "2026-02-11T15:48:02Z",
+          "valid_to": "2026-03-09T12:16:02Z",
+          "recorded_at": "2026-02-11T15:48:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Java 21",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009501249878667295,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 421,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0040",
+      "probe_type": "contamination",
+      "checkpoint": "c2",
+      "question": "Who owns payments-service incidents?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jonas Berg",
+        "aliases": [],
+        "forbidden": [
+          "Leena Koski"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of payments-service: Jonas Berg (since 2026-02-19; source: user_message)",
+          "memory_id": "L000026",
+          "source_event_ids": [
+            "e00069"
+          ],
+          "valid_from": "2026-02-19T17:51:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-19T17:51:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Jonas Berg",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009171249985229224,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 410,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0041",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "What is the database of cart-service?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008372919983230531,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 412,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0042",
+      "probe_type": "abstention",
+      "checkpoint": "c2",
+      "question": "Remind me: payments-service's cloud region?",
+      "asked_at": "2026-04-02T09:19:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008620419830549508,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 414,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0043",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Which CI does notifications-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "GitHub Actions"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of notifications-service: CircleCI (since 2026-02-11; source: code_change)",
+          "memory_id": "L000016",
+          "source_event_ids": [
+            "e00043"
+          ],
+          "valid_from": "2026-02-11T14:09:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:09:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "CircleCI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0011159999994561076,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 568,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0044",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Which runtime does payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Python 3.12",
+        "aliases": [],
+        "forbidden": [
+          "Java 21"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009558330057188869,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 568,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0045",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the runtime of payments-service on March 21, 2026?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-03-21T08:15:50Z",
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": [
+          "Python 3.12"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0011144590098410845,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 577,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0046",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the cloud region of notifications-service on January 23, 2026?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-01-23T09:41:36Z",
+      "expected": {
+        "kind": "value",
+        "value": "us-west-2",
+        "aliases": [],
+        "forbidden": [
+          "eu-north-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of notifications-service: us-west-2 (since 2026-01-14 until 2026-01-26; source: tool_result)",
+          "memory_id": "L000007",
+          "source_event_ids": [
+            "e00015"
+          ],
+          "valid_from": "2026-01-14T08:20:00Z",
+          "valid_to": "2026-01-26T08:06:00Z",
+          "recorded_at": "2026-01-14T08:20:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 29,
+      "injected_tokens": 29,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-west-2",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0011662920005619526,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 578,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0047",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Remind me: auth-service's cloud region?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of auth-service: us-east-1 (since 2026-02-11; source: user_message)",
+          "memory_id": "L000017",
+          "source_event_ids": [
+            "e00045"
+          ],
+          "valid_from": "2026-02-11T14:17:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:17:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 23,
+      "injected_tokens": 23,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-east-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0010546249977778643,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 571,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0048",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which CI provider does notifications-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "CircleCI",
+        "aliases": [],
+        "forbidden": [
+          "GitHub Actions"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of notifications-service: CircleCI (since 2026-02-11; source: code_change)",
+          "memory_id": "L000016",
+          "source_event_ids": [
+            "e00043"
+          ],
+          "valid_from": "2026-02-11T14:09:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:09:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "CircleCI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0010907499818131328,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0049",
+      "probe_type": "post_delete",
+      "checkpoint": "c3",
+      "question": "Where does payments-service staging live?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": [
+          "payments-stg-9.internal"
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008731669804546982,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 568,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0050",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "What is the database of auth-service?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MySQL 8.4",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of auth-service: MySQL 8.4 (since 2026-03-21; source: user_message)",
+          "memory_id": "L000033",
+          "source_event_ids": [
+            "e00095"
+          ],
+          "valid_from": "2026-03-21T13:33:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-21T13:33:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MySQL 8.4",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009325830033048987,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0051",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Who is on call for notifications-service?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Tomás Ruiz",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of notifications-service: Tomás Ruiz (since 2026-05-19; source: user_message)",
+          "memory_id": "L000051",
+          "source_event_ids": [
+            "e00159"
+          ],
+          "valid_from": "2026-05-19T11:47:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-19T11:47:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Tomás Ruiz",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009138750028796494,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0052",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "What language version is notifications-service on?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008624589827377349,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0053",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which cloud region does payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008466670115012676,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 569,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0054",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "What is the message queue of notifications-service?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "ActiveMQ",
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of notifications-service: ActiveMQ (since 2026-04-18; source: user_message)",
+          "memory_id": "L000040",
+          "source_event_ids": [
+            "e00116",
+            "e00154"
+          ],
+          "valid_from": "2026-04-18T11:08:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-18T11:08:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "ActiveMQ",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008879169763531536,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 343,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0055",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Remind me: notifications-service's on-call owner?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Tomás Ruiz",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of notifications-service: Tomás Ruiz (since 2026-03-17; source: user_message)",
+          "memory_id": "L000031",
+          "source_event_ids": [
+            "e00085"
+          ],
+          "valid_from": "2026-03-17T14:43:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-03-17T14:43:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Tomás Ruiz",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008847500139381737,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 345,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0056",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Remind me: auth-service's runtime?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": [
+          "Java 17"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of auth-service: Java 21 (since 2026-04-20; source: user_message)",
+          "memory_id": "L000041",
+          "source_event_ids": [
+            "e00123",
+            "e00135"
+          ],
+          "valid_from": "2026-04-20T12:53:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-20T12:53:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Java 21",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009372080094181001,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 343,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0057",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "Remind me: auth-service's message queue?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "NATS",
+          "Redis Streams"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of auth-service: Amazon SQS (since 2026-04-10; source: user_message)",
+          "memory_id": "L000038",
+          "source_event_ids": [
+            "e00113"
+          ],
+          "valid_from": "2026-04-10T12:28:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-10T12:28:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Amazon SQS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009100419993046671,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 344,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0058",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on March 24, 2026, which test command did notifications-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-03-24T00:30:32Z",
+      "expected": {
+        "kind": "value",
+        "value": "pnpm vitest run",
+        "aliases": [],
+        "forbidden": [
+          "go test ./..."
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008598749991506338,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 352,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0059",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "What was the message queue of auth-service on February 17, 2026?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-02-17T06:37:53Z",
+      "expected": {
+        "kind": "value",
+        "value": "NATS",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS",
+          "Redis Streams"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of auth-service: NATS (since 2026-02-09 until 2026-02-27; source: user_message)",
+          "memory_id": "L000014",
+          "source_event_ids": [
+            "e00035"
+          ],
+          "valid_from": "2026-02-09T10:38:01Z",
+          "valid_to": "2026-02-27T16:48:01Z",
+          "recorded_at": "2026-02-09T10:38:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "NATS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008452499751001596,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 351,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0060",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which CI provider does notifications-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000782167015131563,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 342,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0061",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Who is on call for auth-service?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008032499754335731,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 342,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0062",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which on-call owner does cart-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Mikko Laine",
+        "aliases": [],
+        "forbidden": [
+          "Priya Nair"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of cart-service: Mikko Laine (since 2026-01-25; source: user_message)",
+          "memory_id": "L000009",
+          "source_event_ids": [
+            "e00022",
+            "e00068"
+          ],
+          "valid_from": "2026-01-25T14:18:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-25T14:18:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Mikko Laine",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008640829764772207,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 415,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0063",
+      "probe_type": "contamination",
+      "checkpoint": "c3",
+      "question": "Which database does payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "PostgreSQL 12",
+        "aliases": [
+          "Postgres 12",
+          "PG 12"
+        ],
+        "forbidden": [
+          "MongoDB 6.0"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of payments-service: PostgreSQL 12 (since 2026-01-10; source: user_message)",
+          "memory_id": "L000005",
+          "source_event_ids": [
+            "e00010"
+          ],
+          "valid_from": "2026-01-10T14:31:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-10T14:31:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "PostgreSQL 12",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0008513749926351011,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 413,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0064",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: Amazon SQS (since 2026-02-17; source: user_message)",
+          "memory_id": "L000025",
+          "source_event_ids": [
+            "e00065"
+          ],
+          "valid_from": "2026-02-17T14:24:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-17T14:24:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Amazon SQS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0009239170176442713,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 414,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0065",
+      "probe_type": "current",
+      "checkpoint": "c3",
+      "question": "Remind me: payments-service's deploy branch?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "trunk",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of payments-service: trunk (since 2026-01-25; source: user_message)",
+          "memory_id": "L000010",
+          "source_event_ids": [
+            "e00023"
+          ],
+          "valid_from": "2026-01-25T14:19:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-25T14:19:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "trunk",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0006121670012362301,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 416,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0066",
+      "probe_type": "post_update",
+      "checkpoint": "c3",
+      "question": "What language version is payments-service on?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Go 1.22",
+        "aliases": [],
+        "forbidden": [
+          "Java 21",
+          "Node 18",
+          "Node 20"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Go 1.22 (since 2026-05-16; source: tool_result)",
+          "memory_id": "L000047",
+          "source_event_ids": [
+            "e00147"
+          ],
+          "valid_from": "2026-05-16T10:48:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-16T10:48:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Go 1.22",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005623330071102828,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 414,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0067",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on February 25, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-02-25T02:52:01Z",
+      "expected": {
+        "kind": "value",
+        "value": "Java 21",
+        "aliases": [],
+        "forbidden": [
+          "Go 1.22",
+          "Node 18",
+          "Node 20"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Java 21 (since 2026-02-11 until 2026-03-09; source: user_message)",
+          "memory_id": "L000019",
+          "source_event_ids": [
+            "e00048"
+          ],
+          "valid_from": "2026-02-11T15:48:02Z",
+          "valid_to": "2026-03-09T12:16:02Z",
+          "recorded_at": "2026-02-11T15:48:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Java 21",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005456670187413692,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 423,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0068",
+      "probe_type": "historical",
+      "checkpoint": "c3",
+      "question": "Back on April 11, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": "2026-04-11T03:53:00Z",
+      "expected": {
+        "kind": "value",
+        "value": "Node 20",
+        "aliases": [
+          "Node.js 20"
+        ],
+        "forbidden": [
+          "Go 1.22",
+          "Java 21",
+          "Node 18"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Node 20 (since 2026-03-09 until 2026-04-24; source: tool_result)",
+          "memory_id": "L000029",
+          "source_event_ids": [
+            "e00079"
+          ],
+          "valid_from": "2026-03-09T12:16:02Z",
+          "valid_to": "2026-04-24T09:34:02Z",
+          "recorded_at": "2026-03-09T12:16:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Node 20",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004893750010523945,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 423,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0069",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Remind me: cart-service's deploy branch?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005782080115750432,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 416,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0070",
+      "probe_type": "abstention",
+      "checkpoint": "c3",
+      "question": "Which region is cart-service deployed in?",
+      "asked_at": "2026-05-19T11:52:00Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000488290999783203,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 414,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0071",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "What is the deploy branch of auth-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "trunk",
+        "aliases": [],
+        "forbidden": [
+          "main"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of auth-service: trunk (since 2026-06-08; source: user_message)",
+          "memory_id": "L000060",
+          "source_event_ids": [
+            "e00190"
+          ],
+          "valid_from": "2026-06-08T10:19:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-08T10:19:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "trunk",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0007096669869497418,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 598,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0072",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "Where does payments-service publish its events?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "RabbitMQ",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "Amazon SQS",
+          "NATS"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: RabbitMQ (since 2026-05-19; source: tool_result)",
+          "memory_id": "L000050",
+          "source_event_ids": [
+            "e00157"
+          ],
+          "valid_from": "2026-05-19T11:38:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-19T11:38:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "RabbitMQ",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0006430000066757202,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 597,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0073",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on April 9, 2026, which message queue did payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-04-09T09:44:12Z",
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "NATS",
+          "RabbitMQ"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: Amazon SQS (since 2026-02-13 until 2026-05-19; source: user_message)",
+          "memory_id": "L000020",
+          "source_event_ids": [
+            "e00050",
+            "e00099"
+          ],
+          "valid_from": "2026-02-13T11:23:00Z",
+          "valid_to": "2026-05-19T11:38:00Z",
+          "recorded_at": "2026-02-13T11:23:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Amazon SQS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0006123330094851553,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 607,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0074",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on April 13, 2026, which cloud region did notifications-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-04-13T03:36:22Z",
+      "expected": {
+        "kind": "value",
+        "value": "eu-north-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-west-1",
+          "us-west-2"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of notifications-service: eu-north-1 (since 2026-01-26 until 2026-06-08; source: code_change)",
+          "memory_id": "L000012",
+          "source_event_ids": [
+            "e00025"
+          ],
+          "valid_from": "2026-01-26T08:06:00Z",
+          "valid_to": "2026-06-08T10:11:00Z",
+          "recorded_at": "2026-01-26T08:06:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 29,
+      "injected_tokens": 29,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "eu-north-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0006972500123083591,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 607,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0075",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Remind me: notifications-service's CI provider?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "GitLab CI",
+        "aliases": [],
+        "forbidden": [
+          "CircleCI",
+          "GitHub Actions"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci provider of notifications-service: GitLab CI (since 2026-06-08; source: user_message)",
+          "memory_id": "L000058",
+          "source_event_ids": [
+            "e00186"
+          ],
+          "valid_from": "2026-06-08T10:04:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-08T10:04:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "GitLab CI",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005829590081702918,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 599,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0076",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Which deploy branch does notifications-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "release-train",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of notifications-service: release-train (since 2026-02-13; source: user_message)",
+          "memory_id": "L000022",
+          "source_event_ids": [
+            "e00055"
+          ],
+          "valid_from": "2026-02-13T11:34:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-13T11:34:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "release-train",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000568667019251734,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 597,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0077",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "What is the cloud region of auth-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "us-east-1",
+        "aliases": [],
+        "forbidden": [
+          "eu-central-1"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "region of auth-service: us-east-1 (since 2026-02-11; source: user_message)",
+          "memory_id": "L000017",
+          "source_event_ids": [
+            "e00045"
+          ],
+          "valid_from": "2026-02-11T14:17:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-11T14:17:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 23,
+      "injected_tokens": 23,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "us-east-1",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00047020899364724755,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 598,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0078",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Which message queue does payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "RabbitMQ",
+        "aliases": [],
+        "forbidden": [
+          "ActiveMQ",
+          "Amazon SQS",
+          "NATS"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: RabbitMQ (since 2026-05-19; source: tool_result)",
+          "memory_id": "L000050",
+          "source_event_ids": [
+            "e00157"
+          ],
+          "valid_from": "2026-05-19T11:38:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-19T11:38:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "RabbitMQ",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0006457919953390956,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 597,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0079",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "What is the cloud region of payments-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005298750184010714,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 598,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0080",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Who owns auth-service incidents?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004897500039078295,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 595,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0081",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Which runtime does notifications-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Python 3.10",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of notifications-service: Python 3.10 (since 2026-05-18; source: document)",
+          "memory_id": "L000048",
+          "source_event_ids": [
+            "e00151"
+          ],
+          "valid_from": "2026-05-18T15:23:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-18T15:23:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Python 3.10",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00046887501957826316,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 424,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0082",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Remind me: notifications-service's message queue?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "ActiveMQ",
+        "aliases": [],
+        "forbidden": [
+          "Google Pub/Sub"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of notifications-service: ActiveMQ (since 2026-04-18; source: user_message)",
+          "memory_id": "L000040",
+          "source_event_ids": [
+            "e00116",
+            "e00154"
+          ],
+          "valid_from": "2026-04-18T11:08:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-18T11:08:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "ActiveMQ",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.000499500019941479,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 427,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0083",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "What's the command to test notifications-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "go test ./...",
+        "aliases": [],
+        "forbidden": [
+          "pnpm vitest run"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci test command of notifications-service: go test ./... (since 2026-05-30; source: tool_result)",
+          "memory_id": "L000056",
+          "source_event_ids": [
+            "e00179"
+          ],
+          "valid_from": "2026-05-30T12:28:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-30T12:28:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "go test ./...",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00047462500515393913,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 425,
+        "llm_output_tokens": 11,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0084",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "Where does auth-service publish its events?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Kafka",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS",
+          "NATS",
+          "RabbitMQ",
+          "Redis Streams"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of auth-service: Kafka (since 2026-05-24; source: user_message)",
+          "memory_id": "L000054",
+          "source_event_ids": [
+            "e00171"
+          ],
+          "valid_from": "2026-05-24T12:13:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-24T12:13:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Kafka",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004820830072276294,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 425,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0085",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "What was the message queue of auth-service on March 23, 2026?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-03-23T10:45:35Z",
+      "expected": {
+        "kind": "value",
+        "value": "Redis Streams",
+        "aliases": [],
+        "forbidden": [
+          "Amazon SQS",
+          "Kafka",
+          "NATS",
+          "RabbitMQ"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of auth-service: Redis Streams (since 2026-02-27 until 2026-04-10; source: code_change)",
+          "memory_id": "L000028",
+          "source_event_ids": [
+            "e00074"
+          ],
+          "valid_from": "2026-02-27T16:48:01Z",
+          "valid_to": "2026-04-10T12:28:01Z",
+          "recorded_at": "2026-02-27T16:48:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Redis Streams",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00042708401451818645,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 434,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0086",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "What was the test command of notifications-service on March 30, 2026?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-03-30T21:00:53Z",
+      "expected": {
+        "kind": "value",
+        "value": "pnpm vitest run",
+        "aliases": [],
+        "forbidden": [
+          "go test ./..."
+        ]
+      },
+      "abstained": true,
+      "abstain_reason": "no value held at 2026-03-30",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "false_abstention",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004679169796872884,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 434,
+        "llm_output_tokens": 11,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0087",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "What is the test command of notifications-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "go test ./...",
+        "aliases": [],
+        "forbidden": [
+          "pnpm vitest run"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "ci test command of notifications-service: go test ./... (since 2026-05-30; source: tool_result)",
+          "memory_id": "L000056",
+          "source_event_ids": [
+            "e00179"
+          ],
+          "valid_from": "2026-05-30T12:28:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-30T12:28:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 27,
+      "injected_tokens": 27,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "go test ./...",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004335420089773834,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 426,
+        "llm_output_tokens": 11,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0088",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Remind me: auth-service's database?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "MariaDB 11.4",
+        "aliases": [],
+        "forbidden": [
+          "MongoDB 7.0",
+          "PostgreSQL 15"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "database of auth-service: MariaDB 11.4 (since 2026-05-18; source: tool_result)",
+          "memory_id": "L000049",
+          "source_event_ids": [
+            "e00152"
+          ],
+          "valid_from": "2026-05-18T15:25:01Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-18T15:25:01Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "MariaDB 11.4",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00048145800246857107,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 426,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0089",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which region is auth-service deployed in?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0003809159970842302,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 425,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0090",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which on-call owner does auth-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004458750190678984,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 426,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0091",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "What is the on-call owner of payments-service?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Jonas Berg",
+        "aliases": [],
+        "forbidden": [
+          "Leena Koski"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call owner of payments-service: Jonas Berg (since 2026-02-19; source: user_message)",
+          "memory_id": "L000026",
+          "source_event_ids": [
+            "e00069",
+            "e00193"
+          ],
+          "valid_from": "2026-02-19T17:51:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-19T17:51:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Jonas Berg",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005010410095565021,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 421,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0092",
+      "probe_type": "contamination",
+      "checkpoint": "c4",
+      "question": "Remind me: payments-service's message queue?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Amazon SQS",
+        "aliases": [],
+        "forbidden": [
+          "NATS"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "message queue of payments-service: Amazon SQS (since 2026-02-17; source: user_message)",
+          "memory_id": "L000025",
+          "source_event_ids": [
+            "e00065"
+          ],
+          "valid_from": "2026-02-17T14:24:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-02-17T14:24:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Amazon SQS",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005499160033650696,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 421,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0093",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Which staging hostname does cart-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "cart-stg-4.internal",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "staging hostname of cart-service: cart-stg-4.internal (since 2026-06-29; source: user_message)",
+          "memory_id": "L000065",
+          "source_event_ids": [
+            "e00213"
+          ],
+          "valid_from": "2026-06-29T08:28:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-06-29T08:28:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "cart-stg-4.internal",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00048529100604355335,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 419,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0094",
+      "probe_type": "current",
+      "checkpoint": "c4",
+      "question": "Remind me: payments-service's deploy branch?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "trunk",
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "deploy branch of payments-service: trunk (since 2026-01-25; source: user_message)",
+          "memory_id": "L000010",
+          "source_event_ids": [
+            "e00023"
+          ],
+          "valid_from": "2026-01-25T14:19:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-01-25T14:19:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 20,
+      "injected_tokens": 20,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "trunk",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0005054579814895988,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 421,
+        "llm_output_tokens": 10,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0095",
+      "probe_type": "post_update",
+      "checkpoint": "c4",
+      "question": "What language version is payments-service on?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "value",
+        "value": "Go 1.22",
+        "aliases": [],
+        "forbidden": [
+          "Java 21",
+          "Node 18",
+          "Node 20"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Go 1.22 (since 2026-05-16; source: tool_result)",
+          "memory_id": "L000047",
+          "source_event_ids": [
+            "e00147"
+          ],
+          "valid_from": "2026-05-16T10:48:02Z",
+          "valid_to": null,
+          "recorded_at": "2026-05-16T10:48:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 22,
+      "injected_tokens": 22,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Go 1.22",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00048187500215135515,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 419,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0096",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on March 25, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-03-25T21:29:55Z",
+      "expected": {
+        "kind": "value",
+        "value": "Node 20",
+        "aliases": [
+          "Node.js 20"
+        ],
+        "forbidden": [
+          "Go 1.22",
+          "Java 21",
+          "Node 18"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Node 20 (since 2026-03-09 until 2026-04-24; source: tool_result)",
+          "memory_id": "L000029",
+          "source_event_ids": [
+            "e00079"
+          ],
+          "valid_from": "2026-03-09T12:16:02Z",
+          "valid_to": "2026-04-24T09:34:02Z",
+          "recorded_at": "2026-03-09T12:16:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Node 20",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00041804200736805797,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 428,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0097",
+      "probe_type": "historical",
+      "checkpoint": "c4",
+      "question": "Back on April 30, 2026, which runtime did payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": "2026-04-30T21:41:12Z",
+      "expected": {
+        "kind": "value",
+        "value": "Node 18",
+        "aliases": [
+          "Node.js 18"
+        ],
+        "forbidden": [
+          "Go 1.22",
+          "Java 21",
+          "Node 20"
+        ]
+      },
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "runtime of payments-service: Node 18 (since 2026-04-24 until 2026-05-16; source: user_message)",
+          "memory_id": "L000042",
+          "source_event_ids": [
+            "e00132"
+          ],
+          "valid_from": "2026-04-24T09:34:02Z",
+          "valid_to": "2026-05-16T10:48:02Z",
+          "recorded_at": "2026-04-24T09:34:02Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": "Node 18",
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.0004617090162355453,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 428,
+        "llm_output_tokens": 8,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0098",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which cloud region does payments-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00038766697980463505,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 419,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    },
+    {
+      "probe_id": "p0099",
+      "probe_type": "abstention",
+      "checkpoint": "c4",
+      "question": "Which cloud region does cart-service use?",
+      "asked_at": "2026-07-03T13:08:02Z",
+      "as_of": null,
+      "expected": {
+        "kind": "abstain",
+        "value": null,
+        "aliases": [],
+        "forbidden": []
+      },
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
+      "budget_exceeded": false,
+      "verdict": "correct",
+      "matched": null,
+      "forbidden_hits": [],
+      "foreign_hits": [],
+      "latency_s": 0.00034474997664801776,
+      "usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 419,
+        "llm_output_tokens": 4,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
+      }
+    }
+  ],
+  "checkpoint_stats": {
+    "c1": {
+      "user_id": null,
+      "n_items": 21,
+      "storage_bytes": 219,
+      "extra": {
+        "active": 19,
+        "disputes": 0,
+        "tombstones": 0
+      }
+    },
+    "c2": {
+      "user_id": null,
+      "n_items": 29,
+      "storage_bytes": 283,
+      "extra": {
+        "active": 24,
+        "disputes": 3,
+        "tombstones": 3
+      }
+    },
+    "c3": {
+      "user_id": null,
+      "n_items": 42,
+      "storage_bytes": 393,
+      "extra": {
+        "active": 29,
+        "disputes": 4,
+        "tombstones": 4
+      }
+    },
+    "c4": {
+      "user_id": null,
+      "n_items": 50,
+      "storage_bytes": 484,
+      "extra": {
+        "active": 33,
+        "disputes": 6,
+        "tombstones": 5
+      }
+    }
+  }
+}

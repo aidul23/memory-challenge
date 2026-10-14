@@ -648,9 +648,9 @@ they cannot act on a description); the rule-based ledger still scores 8/8.
 
 ### Synthetic workload: small preset, seed 0 (99 probes)
 
-| | no_memory | full_replay | transcript_rag | ledger (rules) |
-|---|---|---|---|---|
-| Correct | 0 | 24 | **34** | 29 |
+| | no_memory | full_replay | transcript_rag | ledger (rules) | ledger_llm |
+|---|---|---|---|---|---|
+| Correct | 0 | 24 | 34 | 29 | **93** |
 
 By probe type:
 
@@ -664,8 +664,25 @@ By probe type:
     nothing, not from correct behaviour.
 
 This is the expected result: the rule-based extractor was a stand-in, and the
-generator was built to expose it. **The LLM ledger has not been run on the
-synthetic workload yet**; that is the next measurement.
+generator was built to expose it.
+
+**The LLM ledger** (`gpt-4.1-mini`, 153 extraction calls) scores 93/99, the
+same with deletion by description only. It has no polluted, wrong or leaked
+answers; all six failures are false abstentions caused by extraction:
+
+- One property split across two slots: the test command went to both
+  `ci_test_command` and `pre_push_test_command` (p0033, p0058, p0086).
+- A bad attribute name that stuck: a runtime stored as
+  `target_java_version = Python 3.12`. The extractor reuses known
+  attributes, so the first bad name persists (p0044, p0045).
+- An on-call owner never extracted before it was asked about (p0018).
+
+The first run scored 88/99: the slot router returned no slot for questions
+worded differently from the slot ("cloud region" vs `region`, "where it
+publishes events" vs `message_queue`), mostly historical ones. Telling it to
+match on meaning, and never on the service alone, fixed those five without
+breaking any abstention. Hiding current values from the router was also tried
+and lost recall: a misnamed slot is only recognizable by its value.
 
 ## 14. Running it
 
@@ -725,9 +742,12 @@ network or your real `.env`.
 
 ### Next steps
 
-1. Run `ledger_llm` on the synthetic small workload against `transcript_rag`
-   and the rule-based `ledger`, and read the per-type breakdown.
-2. Fix the restatement/spelling issue above.
+1. Fix slot fragmentation in extraction (split and misnamed slots, see
+   section 13), together with the restatement/spelling issue above: both are
+   the extractor failing to map a claim onto the slot or value it already
+   knows.
+2. Make LLM calls deterministic (temperature 0 where the provider allows) and
+   run several seeds; every number above comes from one run on one seed.
 3. Adapters for third-party memory systems (Mem0, A-MEM, ...) behind the same
    interface.
 4. A standalone invariant suite producing the claimed-vs-verified
