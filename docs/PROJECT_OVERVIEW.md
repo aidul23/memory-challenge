@@ -139,6 +139,7 @@ runner/
   replay.py            Replays a timeline against one system; logs everything
   scoring.py           Verdicts and error types
   __main__.py          CLI: run systems, save logs, print the comparison table
+  sweep.py             CLI: run systems over several seeds; mean ± sd, run-to-run noise
 systems/
   no_memory/           Lower bound: stores nothing
   transcript_store.py  Shared storage for the two transcript baselines
@@ -150,7 +151,7 @@ systems/
     llm.py             LLM-based extractor (any provider), with response cache
     backends.py        Model providers: Anthropic, OpenAI / OpenAI-compatible
 runs/                  Run logs, one JSON file per (workload, system, mode)
-tests/                 67 tests (schema, runner, ledger, generator, LLM extractor)
+tests/                 71 tests (schema, runner, ledger, generator, LLM extractor, sweep)
 .env.example           Template for API keys and model settings (.env is git-ignored)
 ```
 
@@ -435,6 +436,19 @@ Runs the selected systems on one timeline and saves
 plus the summary rows. Full replay always runs with an unbounded budget.
 Systems that cost money (`ledger_llm`) run only when named with `--systems`.
 
+### Multi-seed sweeps (`runner/sweep.py`)
+
+One run on one seed cannot tell a better system from a lucky one: across
+seeds 0–4 the same system's score moves by up to 16 points. `python -m
+runner.sweep` loads (or generates and saves) each seed's workload, runs every
+system on it, and reports the score per seed, mean ± sd across seeds, verdict
+totals and accuracy per probe type, plus a summary in
+`runs/sweep-<preset>.json`. With `--repeats N` it runs LLM systems N times per
+seed, bypassing the response cache after the first, and reports how many
+probes change verdict between identical runs. Do not run two sweeps at once:
+they share the response cache, and identical prompts race, so neither run can
+be replayed afterwards.
+
 ## 9. Scoring (`runner/scoring.py`)
 
 A value **surfaces** when any evidence item mentions it, or one of its
@@ -589,8 +603,12 @@ extractor can reuse the same keys and spellings across sessions.
     slot. If the user has no slots, it abstains without a call.
 
   Slot keys are `entity/attribute` (e.g. `payments-service/database`).
-  Output is re-validated, malformed claims are skipped, and refusals yield no
-  claims and are not cached.
+  The extraction schema enumerates the batch's event ids: `gpt-4.1-mini`
+  sometimes copies an id wrongly (`e0014` for `e00014`), and before the enum
+  that silently dropped a whole session's claims. Output is still
+  re-validated (not every OpenAI-compatible endpoint enforces schemas);
+  malformed claims are skipped and counted as `dropped_claims` in the run
+  log, and refusals yield no claims and are not cached.
 
 ## 12. LLM providers and configuration
 
@@ -609,6 +627,7 @@ get JSON matching a schema, using each provider's native structured outputs.
 | `LLM_PROVIDER` | `anthropic` or `openai`; empty = whichever API key is set (Anthropic first). |
 | `LLM_MODEL` | Model id; empty = `claude-opus-5-5` for Anthropic; required for OpenAI. |
 | `LLM_EFFORT` | Reasoning effort; empty = `low` for Anthropic, not sent for OpenAI. |
+| `LLM_TEMPERATURE` | OpenAI only. Empty = `0` with a fixed seed, or not sent when `LLM_EFFORT` is set (reasoning models reject it); `none` = not sent. |
 | `ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `OPENAI_BASE_URL` | Credentials and endpoint. |
 
 Blank values count as unset (the OpenAI SDK would otherwise treat an empty
@@ -618,8 +637,14 @@ Blank values count as unset (the OpenAI SDK would otherwise treat an empty
 hash of provider, model, effort, prompt and schema. Rerunning a workload is
 free and gives identical results. A cached result reports the token usage of
 the original call, so cost comparisons stay honest. Each run's log records the
-provider, model, effort, a hash of the prompts, and the counts of calls, cache
-hits and refusals.
+provider, model, effort, sampling settings, a hash of the prompts, and the
+counts of calls, cache hits, refusals and dropped claims.
+
+**Determinism.** OpenAI calls use temperature 0 and a fixed seed, which are
+part of the cache key. That narrows run-to-run variation without removing it
+(see section 13). Current Claude models reject sampling parameters, so with
+the Anthropic backend only the cache makes a rerun reproducible; measure the
+noise with `python -m runner.sweep --repeats`.
 
 ## 13. Results so far
 
@@ -638,51 +663,95 @@ hits and refusals.
 | **Correct** | | | **0/8** | **1/8** | **1/8** | **8/8** | **8/8** |
 | Injected tokens | | | 0 | 1,644 | 393 | 103 | 127 |
 
-`ledger_llm` above ran with OpenAI `gpt-4.1-mini`: 14 calls, 4,473 input and
-262 output tokens, about 0.84 s mean retrieval latency (versus about 0.1 ms for
+`ledger_llm` above ran with OpenAI `gpt-4.1-mini`: 14 calls, 5,161 input and
+283 output tokens, about 0.65 s mean retrieval latency (versus about 0.1 ms for
 the rule-based ledger).
 
 With deletion by description only (`--withhold-sources`), the transcript
 baselines get worse on p06 (`leaked`: the deleted hostname comes back, since
-they cannot act on a description); the rule-based ledger still scores 8/8.
+they cannot act on a description); both ledgers still score 8/8.
 
-### Synthetic workload: small preset, seed 0 (99 probes)
+### Synthetic workloads: small preset, seeds 0–4 (512 probes)
+
+`python -m runner.sweep --seeds 0 1 2 3 4`, with `ledger_llm` on OpenAI
+`gpt-4.1-mini` (temperature 0, fixed seed). Logs in `runs/synthetic-small-s*/`,
+summary in `runs/sweep-small.json`.
 
 | | no_memory | full_replay | transcript_rag | ledger (rules) | ledger_llm |
 |---|---|---|---|---|---|
-| Correct | 0 | 24 | 34 | 29 | **93** |
+| Seed 0 | 0/99 | 24/99 | 34/99 | 29/99 | 93/99 |
+| Seed 1 | 0/98 | 19/98 | 20/98 | 41/98 | 86/98 |
+| Seed 2 | 0/99 | 22/99 | 27/99 | 45/99 | 98/99 |
+| Seed 3 | 0/107 | 24/107 | 27/107 | 38/107 | 92/107 |
+| Seed 4 | 0/109 | 23/109 | 30/109 | 45/109 | 99/109 |
+| **% correct, mean ± sd** | 0.0 ± 0.0 | 21.9 ± 1.8 | 27.0 ± 5.0 | 38.7 ± 6.3 | **91.5 ± 5.2** |
 
-By probe type:
+Correct by probe type, all seeds:
 
-- **full_replay** gets every `current` probe right and pollutes every update,
-  contamination and historical probe.
-- **transcript_rag** is mixed.
-- **The rule-based ledger** mostly abstains. Its extractor misses most
-  generated phrasings, so it has nothing stored for most facts:
-  - 63 false abstentions, including all 18 historical probes.
-  - Its correct abstention and post-delete answers come largely from knowing
-    nothing, not from correct behaviour.
+| Type | no_memory | full_replay | transcript_rag | ledger (rules) | ledger_llm |
+|---|---|---|---|---|---|
+| current | 0/112 | 112/112 | 102/112 | 27/112 | 102/112 |
+| post_update | 0/89 | 0/89 | 5/89 | 13/89 | 80/89 |
+| historical | 0/93 | 0/93 | 17/93 | 14/93 | 74/93 |
+| contamination | 0/67 | 0/67 | 14/67 | 6/67 | 62/67 |
+| post_delete | 0/31 | 0/31 | 0/31 | 30/31 | 30/31 |
+| abstention | 0/120 | 0/120 | 0/120 | 108/120 | 120/120 |
 
-This is the expected result: the rule-based extractor was a stand-in, and the
-generator was built to expose it.
+Verdicts, all seeds:
 
-**The LLM ledger** (`gpt-4.1-mini`, 153 extraction calls) scores 93/99, the
-same with deletion by description only. It has no polluted, wrong or leaked
-answers; all six failures are false abstentions caused by extraction:
+| | correct | polluted | wrong | missed | false_abstention | no_abstention |
+|---|---|---|---|---|---|---|
+| full_replay | 112 | 249 | 0 | 0 | 0 | 151 |
+| transcript_rag | 138 | 139 | 56 | 28 | 0 | 151 |
+| ledger (rules) | 198 | 0 | 9 | 28 | 264 | 13 |
+| ledger_llm | 468 | 0 | 6 | 2 | 35 | 1 |
 
-- One property split across two slots: the test command went to both
-  `ci_test_command` and `pre_push_test_command` (p0033, p0058, p0086).
-- A bad attribute name that stuck: a runtime stored as
-  `target_java_version = Python 3.12`. The extractor reuses known
-  attributes, so the first bad name persists (p0044, p0045).
-- An on-call owner never extracted before it was asked about (p0018).
+- **full_replay** answers every `current` probe and pollutes every update,
+  contamination and historical probe: the old value is always there too.
+- **transcript_rag** is mixed, and never abstains.
+- **The rule-based ledger** never pollutes, but its extractor misses most
+  generated phrasings: 264 false abstentions, and its correct abstention and
+  post-delete answers come largely from knowing nothing.
+- **The LLM ledger** never pollutes, abstains correctly on all 120
+  abstention probes, and its failures are mostly false abstentions (35).
+  Its 6 `wrong` answers (seeds 3 and 4) have two causes:
+  - An update stated indirectly was missed, so the old value is served
+    (4): "build #812 reported by Jenkins", "escalation policy -> Mikko
+    Laine", `config-sync: auth.database = MySQL 8.4`.
+  - The user's first value was missed ("Page Leena Koski if gateway-service
+    breaks"), and the assistant's later guess ("I'll assume Mikko Laine")
+    then introduced the slot, since a less-trusted source may introduce a
+    fact nobody has stated (2).
 
-The first run scored 88/99: the slot router returned no slot for questions
-worded differently from the slot ("cloud region" vs `region`, "where it
-publishes events" vs `message_queue`), mostly historical ones. Telling it to
-match on meaning, and never on the service alone, fixed those five without
-breaking any abstention. Hiding current values from the router was also tried
-and lost recall: a misnamed slot is only recognizable by its value.
+  Its one `no_abstention` is a deletion request ("Don't keep auth-service's
+  database in memory anymore") extracted as the value "not in memory".
+
+**Noise.** Three identical runs per seed (`--repeats 3`) changed the verdict
+of 20 of 512 probes, a standard deviation of about 1 probe per seed. Seeds
+differ far more: up to 16 points for the rule-based ledger. Any change has to
+be judged on the 5-seed mean, and differences of a point or two are noise.
+
+**What changed the LLM ledger's score, measured this way** (mean % correct
+over seeds 0–4):
+
+| Change | Before | After | Kept |
+|---|---|---|---|
+| Enumerate event ids in the extraction schema (fixes silently lost sessions) | 88.7 ± 4.0 | 92.2 ± 4.1 | yes |
+| Merge a new slot into an existing one when an LLM judges them the same property | 92.2 | 92.0 | no: 127 checks, 0 merges |
+| Map short service names (`auth` → `auth-service`); ask for tersely stated values | 91.9 | 90.7 | no: fixed 7 historical probes, broke 7 others |
+| Router prompt examples reworded so they no longer copy the generator's phrasing | 91.9 | 91.5 | yes: within noise, and 120/120 abstentions |
+
+The first two rows average three runs per seed, the last two one run (91.9
+is the single-run baseline). The router's examples were originally tuned on
+seed 0 using the generator's own question wording, which flattered the score;
+91.5 is the number without that. The extraction-prompt experiments show the pattern behind the remaining
+errors: with `gpt-4.1-mini`, rewording the prompt re-rolls all ~150
+extractions and moves failures around rather than removing them. What is left
+is the extraction model's recall on terse or indirect statements, mostly a
+fact's *first* value (`config-sync: auth.staging_host = ...`, "Page Priya
+Nair if auth-service breaks"). A missed first value makes every historical
+question before the next update abstain, which is why historical probes
+(74/93) are the weakest type.
 
 ## 14. Running it
 
@@ -698,22 +767,25 @@ python -m runner --withhold-sources                             # deletion by de
 python -m runner --timeline workloads/generated/synthetic-small-s0.json
 python -m runner --systems ledger ledger_llm                    # ledger_llm calls the configured LLM
 python -m runner --budget 500                                   # tighter evidence budget
+python -m runner.sweep --seeds 0 1 2 3 4                        # free systems over five seeds
+python -m runner.sweep --seeds 0 1 2 3 4 --systems ledger_llm --repeats 3   # LLM mean ± sd and noise
 
 python -m pytest -q tests
 ```
 
 ## 15. Tests
 
-67 tests, all offline: the LLM tests use fake clients and never touch the
+71 tests, all offline: the LLM tests use fake clients and never touch the
 network or your real `.env`.
 
 | File | Tests | Covers |
 |---|---|---|
 | `test_schema.py` | 9 | The example is valid and round-trips through JSON. Ground-truth semantics are right. Deleted history stays hidden. The validator rejects a wrong expected answer, a missing forbidden value, an update to the same value, a source that does not match its carrier, and a contradiction from the user. Interface rules hold. |
-| `test_runner.py` | 10 | The delivery protocol (session batching, delete timing, no future events) and withholding sources. A perfect "oracle" system scores 8/8. The no-memory lower bound. Full replay's errors are typed correctly. Deletion without sources leaks. The runner truncates over-budget evidence, and RAG fits its own budget. The transcript store is idempotent and deletion sticks. Whole-phrase matching. |
-| `test_ledger.py` | 11 | The example scores 8/8 in both deletion modes. Restate, supersede and `as_of`. Disputes from less trusted sources, while a document may still introduce a fact. Deletion erases history and blocks replay, with or without sources. Abstention. User isolation (including a deletion request naming another user's events). Snapshot/restore round-trip. |
-| `test_generator.py` | 7 | Same seed gives the same timeline. Ten seeds are valid and clean. Every mutation and probe type appears. Contradictions only target trusted values. Values are unique per user. The hygiene check catches a planted leak. The runner replays generated timelines. |
-| `test_llm_extractor.py` | 12 | For both providers: request shape, output filtering (invented event ids, blank and malformed claims), caching, per-provider cache keys, slot routing with an enum, refusals. Provider selection from the environment, and blank values counting as unset. The ledger end to end with an LLM extractor. |
+| `test_runner.py` | 11 | The delivery protocol (session batching, delete timing, no future events) and withholding sources. A perfect "oracle" system scores 8/8. The no-memory lower bound. Full replay's errors are typed correctly. Deletion without sources leaks. The runner truncates over-budget evidence, and RAG fits its own budget. The transcript store is idempotent and deletion sticks. Whole-phrase matching. |
+| `test_ledger.py` | 14 | The example scores 8/8 in both deletion modes. Restate, supersede and `as_of`. Disputes from less trusted sources, while a document may still introduce a fact. Deletion erases history and blocks replay, with or without sources. Abstention. User isolation (including a deletion request naming another user's events). Snapshot/restore round-trip. |
+| `test_generator.py` | 16 | Same seed gives the same timeline. Ten seeds are valid and clean. Every mutation and probe type appears. Contradictions only target trusted values. Values are unique per user. The hygiene check catches a planted leak. The runner replays generated timelines. |
+| `test_llm_extractor.py` | 20 | For both providers: request shape, output filtering (invented event ids, blank and malformed claims), event ids enumerated in the schema and bad ones counted, caching, per-provider cache keys, slot routing with an enum, refusals. Provider selection from the environment, blank values counting as unset, and OpenAI sampling pinned unless a reasoning effort is set. The ledger end to end with an LLM extractor. |
+| `test_sweep.py` | 1 | Workloads are generated once and reloaded, every system runs on every seed, deterministic systems run once, and repeats are logged and scored for noise. |
 
 ## 16. Known limitations and next steps
 
@@ -730,6 +802,25 @@ network or your real `.env`.
 - **Validity time = event time.** The ledger takes a fact's start time from the
   event that states it. It does not extract a different real-world time from
   the text (e.g. "we migrated last Tuesday").
+- **Extraction recall with `gpt-4.1-mini`.** Terse or indirect statements,
+  often a fact's first value, are missed, which costs most of the remaining
+  historical and post-update probes (section 13). Prompt rewording did not fix
+  it; a stronger model, or extracting events one at a time, has not been
+  tried.
+- **Slot fragmentation.** The extractor can file one property under two slot
+  names (`ci_test_command` and `pre_push_test_command`). A less-trusted
+  contradiction under the second name then becomes a current value of its own
+  instead of a dispute. It is rare in the sweep, and an LLM merge check was
+  tried and removed (it never merged).
+- **The router** misses some paraphrases ("where does it publish its events"
+  for a message-queue slot) now that its examples no longer copy the
+  generator; those probes abstain rather than answer wrongly.
+- **A less-trusted source may introduce a fact.** This lets a document state
+  something the user never did, but it also lets the assistant's own guess
+  become the answer when the user's statement was missed (section 13). A
+  stricter rule (introduce only from trusted sources, or mark such values as
+  unconfirmed) has not been tried.
+- **Run-to-run noise** remains at temperature 0: about 1 probe per seed.
 - **The rule-based extractor** covers four slots and one project per user. It
   is a fallback, not a contender.
 - **Deduplication (I4)** is measured only through store size and
@@ -742,18 +833,15 @@ network or your real `.env`.
 
 ### Next steps
 
-1. Fix slot fragmentation in extraction (split and misnamed slots, see
-   section 13), together with the restatement/spelling issue above: both are
-   the extractor failing to map a claim onto the slot or value it already
-   knows.
-2. Make LLM calls deterministic (temperature 0 where the provider allows) and
-   run several seeds; every number above comes from one run on one seed.
-3. Adapters for third-party memory systems (Mem0, A-MEM, ...) behind the same
+1. Improve extraction recall: try a stronger model, and extracting each event
+   on its own, measured with the sweep against 91.5 ± 5.2.
+2. Adapters for third-party memory systems (Mem0, A-MEM, ...) behind the same
    interface.
-4. A standalone invariant suite producing the claimed-vs-verified
+3. A standalone invariant suite producing the claimed-vs-verified
    capability table (R1).
-5. Cost in dollars from a pinned price table; storage-growth curves from
-   checkpoint stats; larger (`medium`) workloads and several seeds.
+4. Cost in dollars from a pinned price table; storage-growth curves from
+   checkpoint stats; larger (`medium`) workloads.
+5. The restatement/spelling issue and slot fragmentation above.
 
 ## 17. Glossary
 

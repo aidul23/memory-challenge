@@ -64,9 +64,9 @@ is about. Choose only from the listed slot keys. Return every slot the text
 asks about, and an empty list when none of them matches: a slot about a
 different service or a different property does not match.
 
-Match on meaning, not wording: "cloud region" or "where it is deployed" is a
-region slot, and "where it publishes events" is a message queue slot. A
-question about an earlier date matches the same slot as one about now. Never
+Match on meaning, not wording: "where do the images get pushed" is a
+container registry slot, and "what do we log with" is a logging library slot.
+A question about an earlier date matches the same slot as one about now. Never
 return a slot just because it is about the same service: if no slot holds the
 property asked about, return an empty list.
 """
@@ -118,7 +118,7 @@ def _known_block(known: Mapping[str, str]) -> str:
 
 class LLMExtractor:
     name = "llm"
-    version = "4"
+    version = "5"
 
     def __init__(self, backend: Backend | None = None, cache_dir: Path | None = DEFAULT_CACHE) -> None:
         self._backend, self.cache_dir = backend, cache_dir
