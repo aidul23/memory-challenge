@@ -1,5 +1,5 @@
 """Ledger tests: the example timeline end to end, and each write/read rule
-(restate, supersede, dispute, delete, as_of, isolation, persistence) in
+(restate, supersede, dispute, hold, delete, as_of, isolation, persistence) in
 isolation."""
 
 from datetime import datetime, timezone
@@ -85,11 +85,61 @@ def test_less_trusted_source_is_disputed_not_retrieved(kind):
     assert s.stats().extra["disputes"] == 1
 
 
-def test_less_trusted_source_may_introduce():
+def test_document_may_introduce():
     s = Ledger()
     s.ingest([ev("a", 1, "README: Deploys go out from the `master` branch.", kind=EventKind.DOCUMENT)])
+    assert values(ask(s, "Which branch do we deploy from?")) == ["master"]
     s.ingest([ev("b", 2, "We deploy from the main branch.")])
     assert values(ask(s, "Which branch do we deploy from?")) == ["main"]
+
+
+def test_assistant_guess_is_held_not_retrieved():
+    s = Ledger()
+    rep = s.ingest([ev("a", 1, "Deploys go out from the `master` branch.", kind=EventKind.ASSISTANT_MESSAGE)])
+    assert (rep.items_added, rep.items_rejected) == (0, 1)
+    res = ask(s, "Which branch do we deploy from?")
+    assert res.abstained and res.abstain_reason == "only an unconfirmed claim from a less trusted source"
+    assert s.stats().extra["pending"] == 1 and s.export_items("u1") == []
+
+
+def test_trusted_source_confirms_held_value():
+    s = Ledger()
+    s.ingest([ev("a", 1, "Deploys go out from the `master` branch.", kind=EventKind.ASSISTANT_MESSAGE)])
+    s.ingest([ev("b", 5, "We deploy from the master branch.")])
+    res = ask(s, "Which branch do we deploy from?")
+    assert values(res) == ["master"] and res.evidence[0].source_event_ids == ("a", "b")
+    assert res.evidence[0].valid_from == ts(5)  # valid from the trusted statement
+    assert ask(s, "Which branch do we deploy from?", as_of=3).abstained
+    assert s.stats().extra == {"active": 1, "disputes": 0, "pending": 0, "tombstones": 0}
+
+
+def test_trusted_source_overrules_held_value():
+    s = Ledger()
+    s.ingest([ev("a", 1, "Deploys go out from the `master` branch.", kind=EventKind.ASSISTANT_MESSAGE)])
+    s.ingest([ev("b", 2, "Deploys go out from the `develop` branch.", kind=EventKind.TOOL_CALL)])
+    s.ingest([ev("c", 5, "We deploy from the main branch.")])
+    assert values(ask(s, "Which branch do we deploy from?")) == ["main"]
+    assert s.stats().extra == {"active": 1, "disputes": 2, "pending": 0, "tombstones": 0}
+
+
+def test_introduce_trust_is_configurable():
+    s = Ledger(introduce_trust=1)
+    s.ingest([ev("a", 1, "Deploys go out from the `master` branch.", kind=EventKind.ASSISTANT_MESSAGE)])
+    assert values(ask(s, "Which branch do we deploy from?")) == ["master"]
+    s = Ledger(introduce_trust=3)
+    s.ingest([ev("a", 1, "README: Deploys go out from the `master` branch.", kind=EventKind.DOCUMENT)])
+    assert ask(s, "Which branch do we deploy from?").abstained
+
+
+def test_delete_erases_held_claim():
+    s = Ledger()
+    s.ingest([ev("a", 1, "Staging lives at staging-7.internal.", kind=EventKind.ASSISTANT_MESSAGE)])
+    rep = s.delete(DeleteRequest(request_id="d", user_id="u1", requested_at=ts(3),
+                                 description="Please forget the staging hostname.", source_event_ids=("a",)))
+    assert rep.items_deleted == 1 and s.stats().extra["pending"] == 0
+    s.ingest([ev("b", 4, "Staging lives at staging-7.internal.")])
+    res = ask(s, "What's the staging hostname?")
+    assert values(res) == ["staging-7.internal"] and res.evidence[0].source_event_ids == ("b",)
 
 
 @pytest.mark.parametrize("sources", [("a",), ()])
@@ -145,6 +195,8 @@ def test_snapshot_restore_roundtrip(tmp_path):
               ev("e", 11, "We deploy from the main branch.")])
     s.delete(DeleteRequest(request_id="x", user_id="u1", requested_at=ts(12),
                            description="forget the staging hostname"))
+    s.ingest([ev("f", 13, "Staging lives at staging-9.internal.", kind=EventKind.ASSISTANT_MESSAGE)])
+    assert s.stats().extra["pending"] == 1
     path = tmp_path / "ledger.json"
     s.snapshot(path)
 

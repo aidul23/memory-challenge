@@ -19,7 +19,8 @@ Full walkthrough of the project: [`docs/PROJECT_OVERVIEW.md`](docs/PROJECT_OVERV
 - `systems/ledger/`: our system. A bitemporal, trust-ranked fact ledger with
   provenance: restatements merge, updates supersede (old values stay queryable
   by `as_of`), less-trusted contradictions are kept as disputes and never
-  retrieved, deletion erases a slot's whole history, and unknown or deleted
+  retrieved, a value only the assistant has stated is held as unconfirmed
+  until a trusted source confirms it, deletion erases a slot's whole history, and unknown or deleted
   slots abstain. Fact extraction sits behind an `Extractor` (`extract.py`);
   the default `RuleExtractor` is a deterministic, model-free stand-in that
   covers only a handful of slots and assumes one project per user.

@@ -3,10 +3,10 @@
   "generator": "synthetic/0.1",
   "seed": 1,
   "system": "ledger",
-  "system_version": "1",
+  "system_version": "2",
   "system_config": {
     "name": "ledger",
-    "version": "1",
+    "version": "2",
     "extractor": {
       "name": "llm",
       "version": "5",
@@ -29,7 +29,8 @@
       "document": 2,
       "assistant_message": 1,
       "tool_call": 1
-    }
+    },
+    "introduce_trust": 2
   },
   "capabilities": {
     "provenance": true,
@@ -44,7 +45,7 @@
     "delete_with_sources": true,
     "tokenizer": "regex-words/1"
   },
-  "started_at": "2026-10-14T12:18:55.892471Z",
+  "started_at": "2026-10-14T13:32:11.751979Z",
   "ops": [
     {
       "op": "ingest",
@@ -55,7 +56,7 @@
         "e00002",
         "e00003"
       ],
-      "latency_s": 0.0017465410055592656,
+      "latency_s": 0.008516666013747454,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 463,
@@ -80,7 +81,7 @@
       "event_ids": [
         "e00004"
       ],
-      "latency_s": 0.00041483298991806805,
+      "latency_s": 0.006283958995481953,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 398,
@@ -109,7 +110,7 @@
         "e00008",
         "e00009"
       ],
-      "latency_s": 0.0003325409779790789,
+      "latency_s": 0.005472833989188075,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 523,
@@ -136,7 +137,7 @@
         "e00011",
         "e00012"
       ],
-      "latency_s": 0.00035295900306664407,
+      "latency_s": 0.004654083022614941,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 513,
@@ -163,7 +164,7 @@
         "e00014",
         "e00015"
       ],
-      "latency_s": 0.00039845798164606094,
+      "latency_s": 0.004591749981045723,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 459,
@@ -188,7 +189,7 @@
       "event_ids": [
         "e00016"
       ],
-      "latency_s": 0.000369541987311095,
+      "latency_s": 0.004591584001900628,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 421,
@@ -214,7 +215,7 @@
         "e00017",
         "e00018"
       ],
-      "latency_s": 0.00035041599767282605,
+      "latency_s": 0.004614000004949048,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 461,
@@ -242,7 +243,7 @@
         "e00021",
         "e00022"
       ],
-      "latency_s": 0.0003697499923873693,
+      "latency_s": 0.0046316249936353415,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 540,
@@ -271,7 +272,7 @@
         "e00026",
         "e00027"
       ],
-      "latency_s": 0.00047129197628237307,
+      "latency_s": 0.00497808400541544,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 569,
@@ -298,7 +299,7 @@
         "e00029",
         "e00030"
       ],
-      "latency_s": 0.00044162498670630157,
+      "latency_s": 0.0038187499740161,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 486,
@@ -326,7 +327,7 @@
         "e00033",
         "e00034"
       ],
-      "latency_s": 0.00036287499824538827,
+      "latency_s": 0.004184083984000608,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 555,
@@ -352,7 +353,7 @@
         "e00035",
         "e00036"
       ],
-      "latency_s": 0.00025687500601634383,
+      "latency_s": 0.003852708003250882,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 508,
@@ -379,7 +380,7 @@
         "e00038",
         "e00039"
       ],
-      "latency_s": 0.0002704579965211451,
+      "latency_s": 0.005221083003561944,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 527,
@@ -405,7 +406,7 @@
         "e00040",
         "e00041"
       ],
-      "latency_s": 0.000261709006736055,
+      "latency_s": 0.0037582090008072555,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 452,
@@ -432,7 +433,7 @@
         "e00043",
         "e00044"
       ],
-      "latency_s": 0.000305124995065853,
+      "latency_s": 0.004288708994863555,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 531,
@@ -458,7 +459,7 @@
         "e00008",
         "e00011"
       ],
-      "latency_s": 9.208015399053693e-6,
+      "latency_s": 0.000015416997484862804,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -479,7 +480,7 @@
         "e00045",
         "e00046"
       ],
-      "latency_s": 0.0003075420099776238,
+      "latency_s": 0.004852542013395578,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 474,
@@ -507,7 +508,7 @@
         "e00049",
         "e00050"
       ],
-      "latency_s": 0.0006460000004153699,
+      "latency_s": 0.004133082984481007,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 549,
@@ -534,7 +535,7 @@
         "e00052",
         "e00053"
       ],
-      "latency_s": 0.0005370419821701944,
+      "latency_s": 0.0041759580199141055,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 534,
@@ -562,7 +563,7 @@
         "e00056",
         "e00057"
       ],
-      "latency_s": 0.0005180409934837371,
+      "latency_s": 0.004510500002652407,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 548,
@@ -591,7 +592,7 @@
         "e00061",
         "e00062"
       ],
-      "latency_s": 0.00032658298732712865,
+      "latency_s": 0.0043177499901503325,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 596,
@@ -623,7 +624,7 @@
         "e00069",
         "e00070"
       ],
-      "latency_s": 0.0004587090224958956,
+      "latency_s": 0.004199957998935133,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 722,
@@ -648,7 +649,7 @@
       "event_ids": [
         "e00071"
       ],
-      "latency_s": 0.00045679198228754103,
+      "latency_s": 0.004155834001721814,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 505,
@@ -677,7 +678,7 @@
         "e00075",
         "e00076"
       ],
-      "latency_s": 0.00039500001003034413,
+      "latency_s": 0.004164957994362339,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 616,
@@ -703,7 +704,7 @@
         "e00077",
         "e00078"
       ],
-      "latency_s": 0.00037112500285729766,
+      "latency_s": 0.004812041006516665,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 503,
@@ -733,7 +734,7 @@
         "e00083",
         "e00084"
       ],
-      "latency_s": 0.000446333026047796,
+      "latency_s": 0.0044760000018868595,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 703,
@@ -763,7 +764,7 @@
         "e00089",
         "e00090"
       ],
-      "latency_s": 0.00039883400313556194,
+      "latency_s": 0.004280708002625033,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 689,
@@ -789,7 +790,7 @@
         "e00091",
         "e00092"
       ],
-      "latency_s": 0.00036399997770786285,
+      "latency_s": 0.004197500005830079,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 487,
@@ -800,10 +801,10 @@
         ]
       },
       "report": {
-        "items_added": 1,
+        "items_added": 0,
         "items_updated": 0,
         "items_superseded": 0,
-        "items_rejected": 0
+        "items_rejected": 1
       },
       "error": null
     },
@@ -816,7 +817,7 @@
         "e00094",
         "e00095"
       ],
-      "latency_s": 0.000764083000831306,
+      "latency_s": 0.004667458008043468,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 545,
@@ -845,7 +846,7 @@
         "e00099",
         "e00100"
       ],
-      "latency_s": 0.0005840000230818987,
+      "latency_s": 0.004511333012487739,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 616,
@@ -871,7 +872,7 @@
         "e00101",
         "e00102"
       ],
-      "latency_s": 0.0005083329742774367,
+      "latency_s": 0.004239332978613675,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 534,
@@ -898,7 +899,7 @@
         "e00104",
         "e00105"
       ],
-      "latency_s": 0.0005881249962840229,
+      "latency_s": 0.0043626670085359365,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 624,
@@ -926,7 +927,7 @@
         "e00108",
         "e00109"
       ],
-      "latency_s": 0.0009934580011758953,
+      "latency_s": 0.004439749987795949,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 603,
@@ -952,7 +953,7 @@
         "e00110",
         "e00111"
       ],
-      "latency_s": 0.0006777500093448907,
+      "latency_s": 0.004468625003937632,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 535,
@@ -981,7 +982,7 @@
         "e00115",
         "e00116"
       ],
-      "latency_s": 0.0007040000054985285,
+      "latency_s": 0.004403083003126085,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 644,
@@ -1006,7 +1007,7 @@
       "event_ids": [
         "e00117"
       ],
-      "latency_s": 0.0005125840252730995,
+      "latency_s": 0.004321584012359381,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 554,
@@ -1032,7 +1033,7 @@
         "e00065",
         "e00083"
       ],
-      "latency_s": 0.00002737497561611235,
+      "latency_s": 0.00007750000804662704,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1055,7 +1056,7 @@
         "e00120",
         "e00121"
       ],
-      "latency_s": 0.0006530419923365116,
+      "latency_s": 0.004700499994214624,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 638,
@@ -1082,7 +1083,7 @@
         "e00123",
         "e00124"
       ],
-      "latency_s": 0.0005093750078231096,
+      "latency_s": 0.004717792005976662,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 597,
@@ -1108,7 +1109,7 @@
         "e00125",
         "e00126"
       ],
-      "latency_s": 0.00047795899445191026,
+      "latency_s": 0.0044122499821241945,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 546,
@@ -1137,7 +1138,7 @@
         "e00130",
         "e00131"
       ],
-      "latency_s": 0.0005053749773651361,
+      "latency_s": 0.00451504101511091,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 658,
@@ -1168,7 +1169,7 @@
         "e00137",
         "e00138"
       ],
-      "latency_s": 0.0005477500089909881,
+      "latency_s": 0.004704125021817163,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 743,
@@ -1193,7 +1194,7 @@
       "event_ids": [
         "e00139"
       ],
-      "latency_s": 0.0010527500126045197,
+      "latency_s": 0.004354208009317517,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 576,
@@ -1221,7 +1222,7 @@
         "e00142",
         "e00143"
       ],
-      "latency_s": 0.000810041994554922,
+      "latency_s": 0.004390040994621813,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 674,
@@ -1249,7 +1250,7 @@
         "e00146",
         "e00147"
       ],
-      "latency_s": 0.0006824999873060733,
+      "latency_s": 0.004343959008110687,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 635,
@@ -1261,9 +1262,9 @@
       },
       "report": {
         "items_added": 0,
-        "items_updated": 1,
+        "items_updated": 0,
         "items_superseded": 0,
-        "items_rejected": 0
+        "items_rejected": 1
       },
       "error": null
     },
@@ -1277,7 +1278,7 @@
         "e00150",
         "e00151"
       ],
-      "latency_s": 0.0007047920080367476,
+      "latency_s": 0.004252208978869021,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 616,
@@ -1306,7 +1307,7 @@
         "e00155",
         "e00156"
       ],
-      "latency_s": 0.0007653330103494227,
+      "latency_s": 0.004441249999217689,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 729,
@@ -1333,7 +1334,7 @@
         "e00158",
         "e00159"
       ],
-      "latency_s": 0.0006715409981552511,
+      "latency_s": 0.004275291983503848,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 590,
@@ -1360,7 +1361,7 @@
         "e00161",
         "e00162"
       ],
-      "latency_s": 0.0008080830157268792,
+      "latency_s": 0.001182165986392647,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 590,
@@ -1389,7 +1390,7 @@
         "e00166",
         "e00167"
       ],
-      "latency_s": 0.0007337919960264117,
+      "latency_s": 0.004008457995951176,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 660,
@@ -1415,7 +1416,7 @@
         "e00005",
         "e00038"
       ],
-      "latency_s": 0.00004499999340623617,
+      "latency_s": 0.00006424999446608126,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1435,7 +1436,7 @@
       "event_ids": [
         "e00168"
       ],
-      "latency_s": 0.0007087919802870601,
+      "latency_s": 0.0042052079807035625,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 511,
@@ -1463,7 +1464,7 @@
         "e00171",
         "e00172"
       ],
-      "latency_s": 0.0005969159828964621,
+      "latency_s": 0.004370709008071572,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 702,
@@ -1488,7 +1489,7 @@
       "event_ids": [
         "e00173"
       ],
-      "latency_s": 0.0006107499939389527,
+      "latency_s": 0.00415074999909848,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 591,
@@ -1515,7 +1516,7 @@
         "e00063",
         "e00156"
       ],
-      "latency_s": 0.00004124999395571649,
+      "latency_s": 0.0000907079956959933,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1535,7 +1536,7 @@
       "event_ids": [
         "e00174"
       ],
-      "latency_s": 0.0005709579854737967,
+      "latency_s": 0.004273290978744626,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 575,
@@ -1564,7 +1565,7 @@
         "e00178",
         "e00179"
       ],
-      "latency_s": 0.0006655420002061874,
+      "latency_s": 0.004399333993205801,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 707,
@@ -1593,7 +1594,7 @@
         "e00183",
         "e00184"
       ],
-      "latency_s": 0.0005360840004868805,
+      "latency_s": 0.004381207982078195,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 648,
@@ -1649,7 +1650,7 @@
       "matched": "Aino Virtanen",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00708504201611504,
+      "latency_s": 0.004261583992047235,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 308,
@@ -1686,7 +1687,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0010843340132851154,
+      "latency_s": 0.000897999998414889,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 305,
@@ -1734,7 +1735,7 @@
       "matched": "Leena Koski",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0056548339780420065,
+      "latency_s": 0.0040402080048806965,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 303,
@@ -1782,7 +1783,7 @@
       "matched": "auth-stg-8.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.006643166998401284,
+      "latency_s": 0.0039341250085271895,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 306,
@@ -1818,7 +1819,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005451666016597301,
+      "latency_s": 0.003987083997344598,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 316,
@@ -1854,7 +1855,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0051995420071762055,
+      "latency_s": 0.004071875009685755,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 314,
@@ -1888,7 +1889,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005246749991783872,
+      "latency_s": 0.003804333013249561,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 306,
@@ -1922,7 +1923,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006690839945804328,
+      "latency_s": 0.0007310830114874989,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 305,
@@ -1968,7 +1969,7 @@
       "matched": "Sara Nyström",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004215166991343722,
+      "latency_s": 0.0044828329992014915,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 309,
@@ -2014,7 +2015,7 @@
       "matched": "gateway-stg-5.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004412709007738158,
+      "latency_s": 0.004472041997360066,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 306,
@@ -2048,7 +2049,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0007272919756360352,
+      "latency_s": 0.0009929589868988842,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 306,
@@ -2082,7 +2083,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005557499825954437,
+      "latency_s": 0.0007469580159522593,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 306,
@@ -2131,7 +2132,7 @@
       "matched": "inventory-stg-2.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004391833994304761,
+      "latency_s": 0.004166333994362503,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 259,
@@ -2179,7 +2180,7 @@
       "matched": "inventory-stg-4.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0035732919932343066,
+      "latency_s": 0.004058708989759907,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 268,
@@ -2226,7 +2227,7 @@
       "matched": "Mikko Laine",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004009124997537583,
+      "latency_s": 0.004434041999047622,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 261,
@@ -2260,7 +2261,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.003161959000863135,
+      "latency_s": 0.004706707986770198,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 259,
@@ -2294,7 +2295,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000585292000323534,
+      "latency_s": 0.000904208020074293,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 259,
@@ -2341,7 +2342,7 @@
       "matched": "cart-stg-8.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004039207997266203,
+      "latency_s": 0.004031916992971674,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 336,
@@ -2389,7 +2390,7 @@
       "matched": "Aino Virtanen",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004221415991196409,
+      "latency_s": 0.004277000000001863,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 336,
@@ -2426,7 +2427,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00346154099679552,
+      "latency_s": 0.004009000025689602,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 337,
@@ -2475,7 +2476,7 @@
       "matched": "auth-stg-6.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.003511957998853177,
+      "latency_s": 0.004141999990679324,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 337,
@@ -2524,7 +2525,7 @@
       "matched": "Leena Koski",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0040426659979857504,
+      "latency_s": 0.004139583994401619,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 334,
@@ -2560,7 +2561,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.003521167003782466,
+      "latency_s": 0.003937583998776972,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 347,
@@ -2597,7 +2598,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004080249986145645,
+      "latency_s": 0.004145707993302494,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 345,
@@ -2631,7 +2632,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006224579992704093,
+      "latency_s": 0.0008039169770199805,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 337,
@@ -2665,7 +2666,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000658417004160583,
+      "latency_s": 0.0007337910064961761,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 337,
@@ -2713,7 +2714,7 @@
       "matched": "Google Pub/Sub",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.003879583004163578,
+      "latency_s": 0.00403316700248979,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 405,
@@ -2762,7 +2763,7 @@
       "matched": "Sara Nyström",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.003924624994397163,
+      "latency_s": 0.003988332988228649,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 404,
@@ -2809,7 +2810,7 @@
       "matched": "Jonas Berg",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0039530000067316,
+      "latency_s": 0.003972290985984728,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 405,
@@ -2843,7 +2844,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0042657080048229545,
+      "latency_s": 0.0038805830117780715,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 404,
@@ -2891,7 +2892,7 @@
       "matched": "MongoDB 7.0",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004165958991507068,
+      "latency_s": 0.004293458012398332,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 403,
@@ -2942,7 +2943,7 @@
       "matched": "PostgreSQL 15",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004462457989575341,
+      "latency_s": 0.004117250005947426,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 413,
@@ -2976,7 +2977,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0007074580062180758,
+      "latency_s": 0.004235166008584201,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 405,
@@ -3010,7 +3011,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00428287498652935,
+      "latency_s": 0.004357875004643574,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 403,
@@ -3059,7 +3060,7 @@
       "matched": "inventory-stg-2.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0040267919830512255,
+      "latency_s": 0.00402270897757262,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 312,
@@ -3107,7 +3108,7 @@
       "matched": "Leena Koski",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004475124995224178,
+      "latency_s": 0.004006958013633266,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 312,
@@ -3156,7 +3157,7 @@
       "matched": "Mikko Laine",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004376917000627145,
+      "latency_s": 0.0041107499855570495,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 323,
@@ -3204,7 +3205,7 @@
       "matched": "inventory-stg-4.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004635124991182238,
+      "latency_s": 0.0038568339950870723,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 322,
@@ -3238,7 +3239,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0045693340071011335,
+      "latency_s": 0.004301082983147353,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 314,
@@ -3284,7 +3285,7 @@
       "matched": "pnpm vitest run",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004678041994338855,
+      "latency_s": 0.004133250011363998,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 312,
@@ -3318,7 +3319,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004730332992039621,
+      "latency_s": 0.004125208011828363,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 313,
@@ -3352,7 +3353,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00467241698061116,
+      "latency_s": 0.004217291017994285,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 312,
@@ -3400,7 +3401,7 @@
       "matched": "cart-stg-8.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004824375006137416,
+      "latency_s": 0.004246416996465996,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 368,
@@ -3446,7 +3447,7 @@
       "matched": "MongoDB 6.0",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004658666002796963,
+      "latency_s": 0.004160124983172864,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 368,
@@ -3495,7 +3496,7 @@
       "matched": "Jonas Berg",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004687542008468881,
+      "latency_s": 0.004204791999654844,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 365,
@@ -3544,7 +3545,7 @@
       "matched": "auth-stg-6.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004603916982887313,
+      "latency_s": 0.004112415976123884,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 367,
@@ -3581,7 +3582,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004680207988712937,
+      "latency_s": 0.004036250000353903,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 377,
@@ -3618,7 +3619,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004883459012489766,
+      "latency_s": 0.004096832999493927,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 377,
@@ -3652,7 +3653,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0050572500040289015,
+      "latency_s": 0.004180166986770928,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 368,
@@ -3686,7 +3687,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0011200420267414302,
+      "latency_s": 0.0009397079993505031,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 368,
@@ -3724,7 +3725,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006104159983806312,
+      "latency_s": 0.004245959018589929,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -3772,7 +3773,7 @@
       "matched": "gateway-stg-5.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004856125015066937,
+      "latency_s": 0.00426679098745808,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 436,
@@ -3821,7 +3822,7 @@
       "matched": "Mikko Laine",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00466533299186267,
+      "latency_s": 0.0041672500083222985,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 435,
@@ -3859,7 +3860,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00010199999087490141,
+      "latency_s": 0.00028458298766054213,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -3909,7 +3910,7 @@
       "matched": "RabbitMQ",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004952916991896927,
+      "latency_s": 0.004103207989828661,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 447,
@@ -3959,7 +3960,7 @@
       "matched": "Google Pub/Sub",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.001036250003380701,
+      "latency_s": 0.001047124998876825,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 447,
@@ -4006,7 +4007,7 @@
       "matched": "stable",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004729499982204288,
+      "latency_s": 0.004362625011708587,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -4042,7 +4043,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.001046791992848739,
+      "latency_s": 0.0009627079998608679,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -4076,7 +4077,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00519654099480249,
+      "latency_s": 0.00391766699613072,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 438,
@@ -4110,7 +4111,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0010003749921452254,
+      "latency_s": 0.0008765840029809624,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -4158,7 +4159,7 @@
       "matched": "go test ./...",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004851499979849905,
+      "latency_s": 0.004203541990136728,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 388,
@@ -4207,7 +4208,7 @@
       "matched": "inventory-stg-2.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005267458007438108,
+      "latency_s": 0.0046322499983944,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 386,
@@ -4255,7 +4256,7 @@
       "matched": "pnpm vitest run",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005199292005272582,
+      "latency_s": 0.004585207992931828,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 396,
@@ -4303,7 +4304,7 @@
       "matched": "inventory-stg-4.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0050308749778196216,
+      "latency_s": 0.004175750014837831,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 395,
@@ -4351,7 +4352,7 @@
       "matched": "release-train",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0007192080083768815,
+      "latency_s": 0.0042935420060530305,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 386,
@@ -4400,7 +4401,7 @@
       "matched": "Leena Koski",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004877833009231836,
+      "latency_s": 0.004074999975273386,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 389,
@@ -4446,7 +4447,7 @@
       "matched": "trunk",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004705958010163158,
+      "latency_s": 0.004192583990516141,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 387,
@@ -4480,7 +4481,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004784416989423335,
+      "latency_s": 0.004214459011564031,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 386,
@@ -4514,7 +4515,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004679625009885058,
+      "latency_s": 0.00422324999817647,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 387,
@@ -4548,7 +4549,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009689160215202719,
+      "latency_s": 0.0009666249970905483,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 387,
@@ -4584,7 +4585,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004728541010990739,
+      "latency_s": 0.004291082994313911,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 378,
@@ -4632,7 +4633,7 @@
       "matched": "cart-stg-8.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004816333006601781,
+      "latency_s": 0.004183374985586852,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 380,
@@ -4678,7 +4679,7 @@
       "matched": "MongoDB 6.0",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0050633749924600124,
+      "latency_s": 0.0042407080181874335,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 378,
@@ -4728,7 +4729,7 @@
       "matched": "Jonas Berg",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0051010840106755495,
+      "latency_s": 0.0043514579883776605,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 379,
@@ -4761,7 +4762,7 @@
       "evidence": [
         {
           "content": "staging dns record of auth-service: auth-stg-7.internal (since 2026-06-20; source: code_change)",
-          "memory_id": "L000048",
+          "memory_id": "L000049",
           "source_event_ids": [
             "e00182"
           ],
@@ -4778,7 +4779,7 @@
       "matched": "auth-stg-7.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0014530000044032931,
+      "latency_s": 0.001123916998039931,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 377,
@@ -4828,7 +4829,7 @@
       "matched": "Leena Koski",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004848208976909518,
+      "latency_s": 0.004731332999654114,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 388,
@@ -4879,7 +4880,7 @@
       "matched": "auth-stg-8.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005053582979599014,
+      "latency_s": 0.004314541001804173,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 388,
@@ -4913,7 +4914,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0011898329830728471,
+      "latency_s": 0.0009912080131471157,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 378,
@@ -4947,7 +4948,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0047904999810270965,
+      "latency_s": 0.004077999998116866,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 379,
@@ -4996,7 +4997,7 @@
       "matched": "stable",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005252665985608473,
+      "latency_s": 0.004251833015587181,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 438,
@@ -5045,7 +5046,7 @@
       "matched": "Mikko Laine",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004955415992299095,
+      "latency_s": 0.0041621249984018505,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 438,
@@ -5078,7 +5079,7 @@
       "evidence": [
         {
           "content": "database of gateway-service: MariaDB 10.11 (since 2026-06-19; source: user_message)",
-          "memory_id": "L000046",
+          "memory_id": "L000047",
           "source_event_ids": [
             "e00178"
           ],
@@ -5095,7 +5096,7 @@
       "matched": "MariaDB 10.11",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004743124998640269,
+      "latency_s": 0.004151000001002103,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 436,
@@ -5143,7 +5144,7 @@
       "matched": "Java 17",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004867667012149468,
+      "latency_s": 0.0042454169888515025,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -5196,7 +5197,7 @@
       "matched": "PostgreSQL 15",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004996917006792501,
+      "latency_s": 0.004156249982770532,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 445,
@@ -5228,7 +5229,7 @@
       "evidence": [
         {
           "content": "staging host of search-service: search-stg-6.internal (since 2026-05-27 until 2026-06-07; source: user_message)",
-          "memory_id": "L000043",
+          "memory_id": "L000044",
           "source_event_ids": [
             "e00155"
           ],
@@ -5245,7 +5246,7 @@
       "matched": "search-stg-6.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005217208992689848,
+      "latency_s": 0.004158959025517106,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 447,
@@ -5283,7 +5284,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0012810829794034362,
+      "latency_s": 0.0010696669924072921,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -5317,7 +5318,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0013644999999087304,
+      "latency_s": 0.001299124996876344,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -5351,7 +5352,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0010724160238169134,
+      "latency_s": 0.0010295420070178807,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 437,
@@ -5399,7 +5400,7 @@
       "matched": "go test ./...",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0013425829820334911,
+      "latency_s": 0.0011555000091902912,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 388,
@@ -5448,7 +5449,7 @@
       "matched": "inventory-stg-2.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005513459007488564,
+      "latency_s": 0.004649875016184524,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 385,
@@ -5497,7 +5498,7 @@
       "matched": "Mikko Laine",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005009042011806741,
+      "latency_s": 0.004146207997109741,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 396,
@@ -5545,7 +5546,7 @@
       "matched": "pnpm vitest run",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0010217080125585198,
+      "latency_s": 0.0010142920073121786,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 396,
@@ -5593,7 +5594,7 @@
       "matched": "release-train",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000247582996962592,
+      "latency_s": 0.00032020898652262986,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 386,
@@ -5642,7 +5643,7 @@
       "matched": "Leena Koski",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005793624994112179,
+      "latency_s": 0.0041212499781977385,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 384,
@@ -5676,7 +5677,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005915209010709077,
+      "latency_s": 0.004083542007720098,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 385,
@@ -5722,7 +5723,7 @@
       "matched": "trunk",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.006280458008404821,
+      "latency_s": 0.004126417014049366,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 388,
@@ -5756,7 +5757,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0014384999813046306,
+      "latency_s": 0.001001458993414417,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 386,
@@ -5790,7 +5791,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0013514590100385249,
+      "latency_s": 0.0009597080061212182,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 387,
@@ -5810,36 +5811,40 @@
       "extra": {
         "active": 9,
         "disputes": 0,
+        "pending": 0,
         "tombstones": 1
       }
     },
     "c2": {
       "user_id": null,
-      "n_items": 20,
-      "storage_bytes": 305,
+      "n_items": 19,
+      "storage_bytes": 280,
       "extra": {
-        "active": 16,
+        "active": 15,
         "disputes": 2,
+        "pending": 1,
         "tombstones": 1
       }
     },
     "c3": {
       "user_id": null,
-      "n_items": 31,
-      "storage_bytes": 405,
+      "n_items": 30,
+      "storage_bytes": 380,
       "extra": {
-        "active": 22,
+        "active": 21,
         "disputes": 6,
+        "pending": 1,
         "tombstones": 2
       }
     },
     "c4": {
       "user_id": null,
-      "n_items": 35,
-      "storage_bytes": 464,
+      "n_items": 34,
+      "storage_bytes": 439,
       "extra": {
-        "active": 22,
-        "disputes": 6,
+        "active": 21,
+        "disputes": 7,
+        "pending": 1,
         "tombstones": 4
       }
     }

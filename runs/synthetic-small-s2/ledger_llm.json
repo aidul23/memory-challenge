@@ -3,10 +3,10 @@
   "generator": "synthetic/0.1",
   "seed": 2,
   "system": "ledger",
-  "system_version": "1",
+  "system_version": "2",
   "system_config": {
     "name": "ledger",
-    "version": "1",
+    "version": "2",
     "extractor": {
       "name": "llm",
       "version": "5",
@@ -29,7 +29,8 @@
       "document": 2,
       "assistant_message": 1,
       "tool_call": 1
-    }
+    },
+    "introduce_trust": 2
   },
   "capabilities": {
     "provenance": true,
@@ -44,7 +45,7 @@
     "delete_with_sources": true,
     "tokenizer": "regex-words/1"
   },
-  "started_at": "2026-10-14T12:18:56.535265Z",
+  "started_at": "2026-10-14T13:32:12.591220Z",
   "ops": [
     {
       "op": "ingest",
@@ -55,7 +56,7 @@
         "e00002",
         "e00003"
       ],
-      "latency_s": 0.0015298750076908618,
+      "latency_s": 0.008472375018754974,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 460,
@@ -84,7 +85,7 @@
         "e00007",
         "e00008"
       ],
-      "latency_s": 0.0005578330019488931,
+      "latency_s": 0.006881792010972276,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 517,
@@ -112,7 +113,7 @@
         "e00011",
         "e00012"
       ],
-      "latency_s": 0.00048441701801493764,
+      "latency_s": 0.006380040984367952,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 518,
@@ -144,7 +145,7 @@
         "e00019",
         "e00020"
       ],
-      "latency_s": 0.0005213339754845947,
+      "latency_s": 0.0055288749863393605,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 643,
@@ -174,7 +175,7 @@
         "e00025",
         "e00026"
       ],
-      "latency_s": 0.0004540420195553452,
+      "latency_s": 0.005233667005086318,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 608,
@@ -204,7 +205,7 @@
         "e00031",
         "e00032"
       ],
-      "latency_s": 0.0004954999894835055,
+      "latency_s": 0.004706457984866574,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 678,
@@ -233,7 +234,7 @@
         "e00036",
         "e00037"
       ],
-      "latency_s": 0.000454624998383224,
+      "latency_s": 0.004552708996925503,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 617,
@@ -258,7 +259,7 @@
       "event_ids": [
         "e00038"
       ],
-      "latency_s": 0.0005622089956887066,
+      "latency_s": 0.005850625020684674,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 404,
@@ -286,7 +287,7 @@
         "e00041",
         "e00042"
       ],
-      "latency_s": 0.0006448339845519513,
+      "latency_s": 0.005266665975796059,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 597,
@@ -315,7 +316,7 @@
         "e00046",
         "e00047"
       ],
-      "latency_s": 0.00044770800741389394,
+      "latency_s": 0.0045860420214012265,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 641,
@@ -340,7 +341,7 @@
       "event_ids": [
         "e00048"
       ],
-      "latency_s": 0.0009205829992424697,
+      "latency_s": 0.0006829589838162065,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 511,
@@ -368,7 +369,7 @@
         "e00051",
         "e00052"
       ],
-      "latency_s": 0.0004788750084117055,
+      "latency_s": 0.0035409580159466714,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 598,
@@ -398,7 +399,7 @@
         "e00057",
         "e00058"
       ],
-      "latency_s": 0.0003845419851131737,
+      "latency_s": 0.0038815420120954514,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 591,
@@ -426,7 +427,7 @@
         "e00061",
         "e00062"
       ],
-      "latency_s": 0.0003875419788528234,
+      "latency_s": 0.0032043340033851564,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 602,
@@ -452,7 +453,7 @@
         "e00063",
         "e00064"
       ],
-      "latency_s": 0.00041470900760032237,
+      "latency_s": 0.0030799579981248826,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 549,
@@ -478,7 +479,7 @@
         "e00065",
         "e00066"
       ],
-      "latency_s": 0.0004006249946542084,
+      "latency_s": 0.0029877079941798,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 540,
@@ -504,7 +505,7 @@
         "e00067",
         "e00068"
       ],
-      "latency_s": 0.00044741699821315706,
+      "latency_s": 0.0038898339844308794,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 537,
@@ -532,7 +533,7 @@
         "e00071",
         "e00072"
       ],
-      "latency_s": 0.0006636249891016632,
+      "latency_s": 0.00356062498758547,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 602,
@@ -557,7 +558,7 @@
       "event_ids": [
         "e00053"
       ],
-      "latency_s": 0.000016624981071799994,
+      "latency_s": 0.000015166995581239462,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -580,7 +581,7 @@
         "e00075",
         "e00076"
       ],
-      "latency_s": 0.00041708399658091366,
+      "latency_s": 0.00410195899894461,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 600,
@@ -608,7 +609,7 @@
         "e00079",
         "e00080"
       ],
-      "latency_s": 0.00044054200407117605,
+      "latency_s": 0.003815957985352725,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 627,
@@ -637,7 +638,7 @@
         "e00084",
         "e00085"
       ],
-      "latency_s": 0.0006060000159777701,
+      "latency_s": 0.0038723339966963977,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 642,
@@ -664,7 +665,7 @@
         "e00087",
         "e00088"
       ],
-      "latency_s": 0.00036275002639740705,
+      "latency_s": 0.0036983330210205168,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 582,
@@ -690,7 +691,7 @@
         "e00089",
         "e00090"
       ],
-      "latency_s": 0.0003155419835820794,
+      "latency_s": 0.003610457992181182,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 566,
@@ -716,7 +717,7 @@
         "e00012",
         "e00043"
       ],
-      "latency_s": 0.000014584016753360629,
+      "latency_s": 0.00001883399090729654,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -738,7 +739,7 @@
         "e00092",
         "e00093"
       ],
-      "latency_s": 0.0005176660197321326,
+      "latency_s": 0.003280792006989941,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 582,
@@ -763,7 +764,7 @@
       "event_ids": [
         "e00094"
       ],
-      "latency_s": 0.00045612500980496407,
+      "latency_s": 0.0035732499964069575,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 533,
@@ -789,7 +790,7 @@
         "e00095",
         "e00096"
       ],
-      "latency_s": 0.0007405840151477605,
+      "latency_s": 0.0032027910056058317,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 557,
@@ -818,7 +819,7 @@
         "e00100",
         "e00101"
       ],
-      "latency_s": 0.0006294999911915511,
+      "latency_s": 0.0030929999775253236,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 625,
@@ -846,7 +847,7 @@
         "e00104",
         "e00105"
       ],
-      "latency_s": 0.000592500000493601,
+      "latency_s": 0.003099666995694861,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 599,
@@ -872,7 +873,7 @@
         "e00106",
         "e00107"
       ],
-      "latency_s": 0.0007142090180423111,
+      "latency_s": 0.003251625021221116,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 547,
@@ -898,7 +899,7 @@
         "e00108",
         "e00109"
       ],
-      "latency_s": 0.0005044580029789358,
+      "latency_s": 0.0030554170079994947,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 556,
@@ -926,7 +927,7 @@
         "e00112",
         "e00113"
       ],
-      "latency_s": 0.0005523330182768404,
+      "latency_s": 0.003312999993795529,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 598,
@@ -951,7 +952,7 @@
       "event_ids": [
         "e00114"
       ],
-      "latency_s": 0.00045054100337438285,
+      "latency_s": 0.00339091700152494,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 521,
@@ -980,7 +981,7 @@
         "e00118",
         "e00119"
       ],
-      "latency_s": 0.0005497079982887954,
+      "latency_s": 0.00337574997683987,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 649,
@@ -1008,7 +1009,7 @@
         "e00122",
         "e00123"
       ],
-      "latency_s": 0.0006538750021718442,
+      "latency_s": 0.0035534579947125167,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 618,
@@ -1034,7 +1035,7 @@
         "e00124",
         "e00125"
       ],
-      "latency_s": 0.0005228749942034483,
+      "latency_s": 0.0032489589939359576,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 555,
@@ -1063,7 +1064,7 @@
         "e00129",
         "e00130"
       ],
-      "latency_s": 0.0005306669918354601,
+      "latency_s": 0.003402707981877029,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 652,
@@ -1089,7 +1090,7 @@
         "e00131",
         "e00132"
       ],
-      "latency_s": 0.0005319170013535768,
+      "latency_s": 0.0033498329867143184,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 560,
@@ -1116,7 +1117,7 @@
         "e00134",
         "e00135"
       ],
-      "latency_s": 0.0005099170084577054,
+      "latency_s": 0.003260499972384423,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 616,
@@ -1143,7 +1144,7 @@
         "e00137",
         "e00138"
       ],
-      "latency_s": 0.00044912498560734093,
+      "latency_s": 0.0033545829937793314,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 598,
@@ -1169,7 +1170,7 @@
         "e00014",
         "e00083"
       ],
-      "latency_s": 0.00002850001328624785,
+      "latency_s": 0.0000323750136885792,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1192,7 +1193,7 @@
         "e00141",
         "e00142"
       ],
-      "latency_s": 0.0005978329863864928,
+      "latency_s": 0.003351291990838945,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 634,
@@ -1217,7 +1218,7 @@
       "event_ids": [
         "e00143"
       ],
-      "latency_s": 0.001186917012091726,
+      "latency_s": 0.0037250000168569386,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 568,
@@ -1228,10 +1229,10 @@
         ]
       },
       "report": {
-        "items_added": 1,
+        "items_added": 0,
         "items_updated": 0,
         "items_superseded": 0,
-        "items_rejected": 0
+        "items_rejected": 1
       },
       "error": null
     },
@@ -1242,7 +1243,7 @@
       "event_ids": [
         "e00144"
       ],
-      "latency_s": 0.0009155839798040688,
+      "latency_s": 0.0036632909905165434,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 526,
@@ -1269,7 +1270,7 @@
         "e00077",
         "e00092"
       ],
-      "latency_s": 0.00006941700121387839,
+      "latency_s": 0.000036124984035268426,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1293,7 +1294,7 @@
         "e00148",
         "e00149"
       ],
-      "latency_s": 0.000921916012885049,
+      "latency_s": 0.0037680000241380185,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 644,
@@ -1322,7 +1323,7 @@
         "e00153",
         "e00154"
       ],
-      "latency_s": 0.0009048750216607004,
+      "latency_s": 0.003609667008277029,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 711,
@@ -1349,7 +1350,7 @@
         "e00156",
         "e00157"
       ],
-      "latency_s": 0.0008727500098757446,
+      "latency_s": 0.0036921669961884618,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 683,
@@ -1375,7 +1376,7 @@
         "e00127",
         "e00152"
       ],
-      "latency_s": 0.00005125001189298928,
+      "latency_s": 0.00003466597991064191,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1396,7 +1397,7 @@
         "e00158",
         "e00159"
       ],
-      "latency_s": 0.000810416997410357,
+      "latency_s": 0.0035898749774787575,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 639,
@@ -1425,7 +1426,7 @@
         "e00163",
         "e00164"
       ],
-      "latency_s": 0.0008434169867541641,
+      "latency_s": 0.003655832988442853,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 670,
@@ -1453,7 +1454,7 @@
         "e00167",
         "e00168"
       ],
-      "latency_s": 0.0006872919911984354,
+      "latency_s": 0.003611624997574836,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 674,
@@ -1481,7 +1482,7 @@
         "e00171",
         "e00172"
       ],
-      "latency_s": 0.0008215830021072179,
+      "latency_s": 0.003627208003308624,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 696,
@@ -1506,7 +1507,7 @@
       "event_ids": [
         "e00173"
       ],
-      "latency_s": 0.0008621249871794134,
+      "latency_s": 0.0037358750123530626,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 518,
@@ -1533,7 +1534,7 @@
         "e00037",
         "e00098"
       ],
-      "latency_s": 0.000042791012674570084,
+      "latency_s": 0.00005079101538285613,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1554,7 +1555,7 @@
         "e00174",
         "e00175"
       ],
-      "latency_s": 0.0007537089986726642,
+      "latency_s": 0.00385558299603872,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 543,
@@ -1579,7 +1580,7 @@
       "event_ids": [
         "e00176"
       ],
-      "latency_s": 0.0007262500002980232,
+      "latency_s": 0.0010505829995963722,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 575,
@@ -1605,7 +1606,7 @@
         "e00177",
         "e00178"
       ],
-      "latency_s": 0.000756458000978455,
+      "latency_s": 0.003966958989622071,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 634,
@@ -1617,9 +1618,9 @@
       },
       "report": {
         "items_added": 0,
-        "items_updated": 2,
+        "items_updated": 1,
         "items_superseded": 0,
-        "items_rejected": 0
+        "items_rejected": 1
       },
       "error": null
     },
@@ -1631,7 +1632,7 @@
         "e00179",
         "e00180"
       ],
-      "latency_s": 0.0006760839896742254,
+      "latency_s": 0.00366249997750856,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 550,
@@ -1660,7 +1661,7 @@
         "e00184",
         "e00185"
       ],
-      "latency_s": 0.0007630419859196991,
+      "latency_s": 0.003993916005128995,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 734,
@@ -1688,7 +1689,7 @@
         "e00188",
         "e00189"
       ],
-      "latency_s": 0.0006566669908352196,
+      "latency_s": 0.003931083017960191,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 693,
@@ -1731,7 +1732,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.008443290978902951,
+      "latency_s": 0.004303166992031038,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 265,
@@ -1765,7 +1766,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0011104999866802245,
+      "latency_s": 0.0008241670147981495,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 265,
@@ -1813,7 +1814,7 @@
       "matched": "master",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004015000013168901,
+      "latency_s": 0.004543250019196421,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 345,
@@ -1861,7 +1862,7 @@
       "matched": "prod",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.006348167022224516,
+      "latency_s": 0.006202916003530845,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 355,
@@ -1907,7 +1908,7 @@
       "matched": "Python 3.11",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004098750068806112,
+      "latency_s": 0.003963707975344732,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 344,
@@ -1953,7 +1954,7 @@
       "matched": "pnpm vitest run",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.006098832993302494,
+      "latency_s": 0.004504290991462767,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 345,
@@ -1987,7 +1988,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.006824957992648706,
+      "latency_s": 0.005311207991326228,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 344,
@@ -2021,7 +2022,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.006171749992063269,
+      "latency_s": 0.0038462090014945716,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 343,
@@ -2069,7 +2070,7 @@
       "matched": "develop",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0046232920140028,
+      "latency_s": 0.004529708006884903,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 355,
@@ -2117,7 +2118,7 @@
       "matched": "us-west-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004860624991124496,
+      "latency_s": 0.0030573750264011323,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 355,
@@ -2165,7 +2166,7 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00404662502114661,
+      "latency_s": 0.0034322919964324683,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 362,
@@ -2213,7 +2214,7 @@
       "matched": "us-east-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0034589999995660037,
+      "latency_s": 0.0027113750111311674,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 363,
@@ -2259,7 +2260,7 @@
       "matched": "billing-stg-9.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004379916004836559,
+      "latency_s": 0.0035661660076584667,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 352,
@@ -2305,7 +2306,7 @@
       "matched": "eu-north-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.003845791012281552,
+      "latency_s": 0.002877917024306953,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 351,
@@ -2339,7 +2340,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004670124995755032,
+      "latency_s": 0.004251582984579727,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 353,
@@ -2373,7 +2374,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004739416996017098,
+      "latency_s": 0.004309167008614168,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 352,
@@ -2409,7 +2410,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005640292016323656,
+      "latency_s": 0.003648584010079503,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 374,
@@ -2458,7 +2459,7 @@
       "matched": "ap-southeast-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005669250007485971,
+      "latency_s": 0.003894207999110222,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 375,
@@ -2507,7 +2508,7 @@
       "matched": "eu-central-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0053366659849416465,
+      "latency_s": 0.004043333989102393,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 383,
@@ -2556,7 +2557,7 @@
       "matched": "us-east-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004372916999273002,
+      "latency_s": 0.0037438750150613487,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 382,
@@ -2604,7 +2605,7 @@
       "matched": "prod",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004323792003560811,
+      "latency_s": 0.003771708987187594,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 373,
@@ -2652,7 +2653,7 @@
       "matched": "Node 20",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004328625014750287,
+      "latency_s": 0.0034919170138891786,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 373,
@@ -2698,7 +2699,7 @@
       "matched": "develop",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004283083020709455,
+      "latency_s": 0.003434334008488804,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 373,
@@ -2732,7 +2733,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006551660189870745,
+      "latency_s": 0.0033519159769639373,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 373,
@@ -2766,7 +2767,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000709417014149949,
+      "latency_s": 0.0031894170097075403,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 371,
@@ -2814,7 +2815,7 @@
       "matched": "master",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00010137498611584306,
+      "latency_s": 0.00009004102321341634,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 345,
@@ -2862,7 +2863,7 @@
       "matched": "prod",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004554707993520424,
+      "latency_s": 0.003177375008817762,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 354,
@@ -2910,7 +2911,7 @@
       "matched": "pnpm vitest run",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0040937500016298145,
+      "latency_s": 0.0030804169946350157,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 347,
@@ -2959,7 +2960,7 @@
       "matched": "Python 3.11",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00011666701175272465,
+      "latency_s": 0.00008537500980310142,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 344,
@@ -3008,7 +3009,7 @@
       "matched": "PostgreSQL 16",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004456499998923391,
+      "latency_s": 0.003176583006279543,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 344,
@@ -3054,7 +3055,7 @@
       "matched": "cargo test",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004302082990761846,
+      "latency_s": 0.0031812080123927444,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 347,
@@ -3088,7 +3089,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000754333013901487,
+      "latency_s": 0.0031013329862616956,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 347,
@@ -3122,7 +3123,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006795419903937727,
+      "latency_s": 0.0031490830006077886,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 345,
@@ -3170,7 +3171,7 @@
       "matched": "ap-southeast-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004338625003583729,
+      "latency_s": 0.003186791989719495,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 372,
@@ -3219,7 +3220,7 @@
       "matched": "Aino Virtanen",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004482458025449887,
+      "latency_s": 0.0031068749958649278,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 374,
@@ -3267,7 +3268,7 @@
       "matched": "eu-north-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009484999754931778,
+      "latency_s": 0.0030627500091213733,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 381,
@@ -3316,7 +3317,7 @@
       "matched": "Sara Nyström",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004477125010453165,
+      "latency_s": 0.003083499992499128,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 382,
@@ -3353,7 +3354,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009270830196328461,
+      "latency_s": 0.0006760419928468764,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 371,
@@ -3399,7 +3400,7 @@
       "matched": "billing-stg-9.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004591625009197742,
+      "latency_s": 0.003026749996934086,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 372,
@@ -3446,7 +3447,7 @@
       "matched": "stable",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0007755410042591393,
+      "latency_s": 0.0005485840083565563,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 373,
@@ -3480,7 +3481,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0007845830114092678,
+      "latency_s": 0.0005994999955873936,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 373,
@@ -3514,7 +3515,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0007917920011095703,
+      "latency_s": 0.0005373750173021108,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 371,
@@ -3550,7 +3551,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005160417000297457,
+      "latency_s": 0.003145041991956532,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 429,
@@ -3599,7 +3600,7 @@
       "matched": "Python 3.10",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00467225001193583,
+      "latency_s": 0.0032119170064106584,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 427,
@@ -3649,7 +3650,7 @@
       "matched": "ap-southeast-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005071999999927357,
+      "latency_s": 0.0031994169985409826,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 428,
@@ -3697,7 +3698,7 @@
       "matched": "develop",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005041915981564671,
+      "latency_s": 0.0031954159785527736,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 427,
@@ -3746,7 +3747,7 @@
       "matched": "Python 3.10",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005264790990622714,
+      "latency_s": 0.0033191250113304704,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 426,
@@ -3796,7 +3797,7 @@
       "matched": "eu-central-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00472645802074112,
+      "latency_s": 0.0035297500144224614,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 435,
@@ -3846,7 +3847,7 @@
       "matched": "us-east-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008342920045834035,
+      "latency_s": 0.0009827089961618185,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 435,
@@ -3892,7 +3893,7 @@
       "matched": "us-west-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004629959003068507,
+      "latency_s": 0.00337804201990366,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 424,
@@ -3938,7 +3939,7 @@
       "matched": "RabbitMQ",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004655541997635737,
+      "latency_s": 0.003741124994121492,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 428,
@@ -3972,7 +3973,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005255500000203028,
+      "latency_s": 0.0036608329974114895,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 426,
@@ -4006,7 +4007,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009355840156786144,
+      "latency_s": 0.0008310420089401305,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 426,
@@ -4057,7 +4058,7 @@
       "matched": "PostgreSQL 15",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004818457993678749,
+      "latency_s": 0.0034461250179447234,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 356,
@@ -4106,7 +4107,7 @@
       "matched": "master",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009311670146416873,
+      "latency_s": 0.0037814590032212436,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 356,
@@ -4154,7 +4155,7 @@
       "matched": "MySQL 8.4",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004819833004148677,
+      "latency_s": 0.0038711249944753945,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 363,
@@ -4202,7 +4203,7 @@
       "matched": "prod",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004969708010321483,
+      "latency_s": 0.0037135420134291053,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 364,
@@ -4239,7 +4240,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009657079936005175,
+      "latency_s": 0.0036753340100403875,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 357,
@@ -4288,7 +4289,7 @@
       "matched": "Python 3.11",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004717125004390255,
+      "latency_s": 0.003956041997298598,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 354,
@@ -4334,7 +4335,7 @@
       "matched": "cargo test",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005019750009523705,
+      "latency_s": 0.003936833003535867,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 355,
@@ -4380,7 +4381,7 @@
       "matched": "gateway-stg-8.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005016084003727883,
+      "latency_s": 0.003841500001726672,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 354,
@@ -4414,7 +4415,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000967542000580579,
+      "latency_s": 0.003710166027303785,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 355,
@@ -4448,7 +4449,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008617500134278089,
+      "latency_s": 0.0038764589990023524,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 358,
@@ -4496,7 +4497,7 @@
       "matched": "develop",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0049056670104619116,
+      "latency_s": 0.0038427090039476752,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 371,
@@ -4545,7 +4546,7 @@
       "matched": "eu-west-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0052975830039940774,
+      "latency_s": 0.003879791998770088,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 369,
@@ -4594,7 +4595,7 @@
       "matched": "ap-southeast-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005755916994530708,
+      "latency_s": 0.003613540990045294,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 378,
@@ -4642,7 +4643,7 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005741499975556508,
+      "latency_s": 0.0036953749950043857,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 379,
@@ -4679,7 +4680,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0011389580031391233,
+      "latency_s": 0.0008416250057052821,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 371,
@@ -4726,7 +4727,7 @@
       "matched": "stable",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005129249999299645,
+      "latency_s": 0.00390774998231791,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 370,
@@ -4772,7 +4773,7 @@
       "matched": "Kafka",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005073875014204532,
+      "latency_s": 0.003853833011817187,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 369,
@@ -4806,7 +4807,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0048814160109031945,
+      "latency_s": 0.00385483299032785,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 369,
@@ -4840,7 +4841,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0010662499989848584,
+      "latency_s": 0.0009999999892897904,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 368,
@@ -4888,7 +4889,7 @@
       "matched": "prod",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.006305250019067898,
+      "latency_s": 0.004224333009915426,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 472,
@@ -4937,7 +4938,7 @@
       "matched": "develop",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005377499997848645,
+      "latency_s": 0.004244832991389558,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 472,
@@ -4987,7 +4988,7 @@
       "matched": "ap-southeast-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004827291006222367,
+      "latency_s": 0.004133042006287724,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 469,
@@ -5038,7 +5039,7 @@
       "matched": "Python 3.10",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004555792023893446,
+      "latency_s": 0.004217459005303681,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 471,
@@ -5088,7 +5089,7 @@
       "matched": "us-east-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004655249998904765,
+      "latency_s": 0.004204957978799939,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 480,
@@ -5139,7 +5140,7 @@
       "matched": "Node 20",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004734707996249199,
+      "latency_s": 0.004206584009807557,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 480,
@@ -5176,7 +5177,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004576625011395663,
+      "latency_s": 0.004063500004122034,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 471,
@@ -5222,7 +5223,7 @@
       "matched": "RabbitMQ",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004694915987784043,
+      "latency_s": 0.004112208989681676,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 471,
@@ -5269,7 +5270,7 @@
       "matched": "Python 3.11",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004799749993253499,
+      "latency_s": 0.003944125026464462,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 470,
@@ -5303,7 +5304,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004812832979951054,
+      "latency_s": 0.003712917008670047,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 470,
@@ -5337,7 +5338,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0011203750036656857,
+      "latency_s": 0.0010740830039139837,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 471,
@@ -5383,7 +5384,7 @@
       "matched": "eu-central-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004603999987011775,
+      "latency_s": 0.004078333004144952,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 379,
@@ -5429,7 +5430,7 @@
       "matched": "cargo test",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00506554200546816,
+      "latency_s": 0.004378750018076971,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 381,
@@ -5466,7 +5467,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0012609169934876263,
+      "latency_s": 0.004242291994160041,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 381,
@@ -5515,7 +5516,7 @@
       "matched": "Python 3.11",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005316249997122213,
+      "latency_s": 0.004223416995955631,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 378,
@@ -5566,7 +5567,7 @@
       "matched": "PostgreSQL 15",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005103375006001443,
+      "latency_s": 0.00415445800172165,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 378,
@@ -5614,7 +5615,7 @@
       "matched": "MySQL 8.4",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.005275125004118308,
+      "latency_s": 0.004223541996907443,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 387,
@@ -5648,7 +5649,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004695166979217902,
+      "latency_s": 0.004252042010193691,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 380,
@@ -5682,7 +5683,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.001020333991618827,
+      "latency_s": 0.0011245000059716403,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 380,
@@ -5730,7 +5731,7 @@
       "matched": "develop",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00462233298458159,
+      "latency_s": 0.004232542007230222,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 441,
@@ -5778,7 +5779,7 @@
       "matched": "billing-stg-2.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004752625012770295,
+      "latency_s": 0.0045251669944263995,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 441,
@@ -5826,7 +5827,7 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004842916008783504,
+      "latency_s": 0.004216167028062046,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 450,
@@ -5875,7 +5876,7 @@
       "matched": "ap-southeast-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004738957999506965,
+      "latency_s": 0.004705916973762214,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 450,
@@ -5924,7 +5925,7 @@
       "matched": "PostgreSQL 15",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004584832990076393,
+      "latency_s": 0.004347249981947243,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 442,
@@ -5958,7 +5959,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004521249997196719,
+      "latency_s": 0.004161040997132659,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 441,
@@ -5992,7 +5993,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009283339895773679,
+      "latency_s": 0.0010360000014770776,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 441,
@@ -6026,7 +6027,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.004452707973541692,
+      "latency_s": 0.004209082981105894,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 443,
@@ -6046,6 +6047,7 @@
       "extra": {
         "active": 15,
         "disputes": 0,
+        "pending": 0,
         "tombstones": 0
       }
     },
@@ -6056,6 +6058,7 @@
       "extra": {
         "active": 19,
         "disputes": 3,
+        "pending": 0,
         "tombstones": 2
       }
     },
@@ -6066,16 +6069,18 @@
       "extra": {
         "active": 21,
         "disputes": 5,
+        "pending": 0,
         "tombstones": 3
       }
     },
     "c4": {
       "user_id": null,
-      "n_items": 35,
-      "storage_bytes": 340,
+      "n_items": 34,
+      "storage_bytes": 339,
       "extra": {
-        "active": 27,
-        "disputes": 7,
+        "active": 26,
+        "disputes": 8,
+        "pending": 1,
         "tombstones": 6
       }
     }

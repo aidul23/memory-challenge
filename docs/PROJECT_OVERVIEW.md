@@ -151,7 +151,7 @@ systems/
     llm.py             LLM-based extractor (any provider), with response cache
     backends.py        Model providers: Anthropic, OpenAI / OpenAI-compatible
 runs/                  Run logs, one JSON file per (workload, system, mode)
-tests/                 71 tests (schema, runner, ledger, generator, LLM extractor, sweep)
+tests/                 76 tests (schema, runner, ledger, generator, LLM extractor, sweep)
 .env.example           Template for API keys and model settings (.env is git-ignored)
 ```
 
@@ -515,6 +515,9 @@ Memory is partitioned by user. Each user has:
   `source_event_ids`.
 - **Disputes**: conflicting values from less trusted sources, kept for audit,
   never returned.
+- **Pending**: at most one *unconfirmed* value per slot that has no value yet,
+  stated only by a source below the introduce threshold (the assistant's own
+  guess). Never returned.
 - **Tombstones**: a record that a slot was deleted (slot, time, request), with
   no value.
 - **Blocked events**: event ids that may never be ingested again for this user.
@@ -532,13 +535,16 @@ that set it until the event that replaced it.
 
 A source may replace a value only if it is at least as trusted as the source
 that set it. Tool output counts as much as the user, because it observes the
-world directly (e.g. a migration log).
+world directly (e.g. a migration log). A slot with no value may be opened only
+by a source of trust 2 or more (`INTRODUCE_TRUST`, a `Ledger` argument): a
+document may state a fact first, the assistant may not.
 
-### Write path: four rules per extracted claim, in stream order
+### Write path: five rules per extracted claim, in stream order
 
 | Rule | Condition | Action |
 |---|---|---|
-| **introduce** | No current value. | Open an entry. |
+| **introduce** | No current value; source trust ≥ 2. | Open an entry, valid from this event. A pending value equal to it joins its sources; a different one becomes a dispute. |
+| **hold** | No current value; source trust < 2. | Keep as pending (replacing any earlier pending value, which becomes a dispute). Never returned; the question abstains with "only an unconfirmed claim from a less trusted source". |
 | **restate** | Same value as current. | Add the event to its sources; no new item (I4). |
 | **supersede** | Different value, source at least as trusted. | Close the current entry at this time, open a new one (I2). The old one stays queryable by `as_of` (I3). |
 | **dispute** | Different value, less trusted source. | Store as a dispute; never returned (I5). |
@@ -550,8 +556,8 @@ Re-ingesting a seen event is skipped; a blocked event is rejected.
 1. Find the affected slots: those whose entries came from the request's source
    events, or, if none or no sources were given, the slots the extractor
    matches to the description.
-2. Erase every entry and dispute of those slots recorded up to the request,
-   past values included.
+2. Erase every entry, dispute and pending value of those slots recorded up to
+   the request, past values included.
 3. Leave a value-free tombstone.
 4. Block all their source events so a replay cannot bring them back.
 
@@ -573,7 +579,7 @@ A later statement of the fact starts a fresh, visible history.
 
 ### Also implemented
 
-- `stats` (with active entries, disputes and tombstones).
+- `stats` (with active entries, disputes, pending values and tombstones).
 - `export_items` (entries marked active or superseded).
 - `snapshot`/`restore` to JSON.
 - Isolation by user throughout.
@@ -704,7 +710,7 @@ Verdicts, all seeds:
 | full_replay | 112 | 249 | 0 | 0 | 0 | 151 |
 | transcript_rag | 138 | 139 | 56 | 28 | 0 | 151 |
 | ledger (rules) | 198 | 0 | 9 | 28 | 264 | 13 |
-| ledger_llm | 468 | 0 | 6 | 2 | 35 | 1 |
+| ledger_llm | 468 | 0 | 4 | 2 | 37 | 1 |
 
 - **full_replay** answers every `current` probe and pollutes every update,
   contamination and historical probe: the old value is always there too.
@@ -713,15 +719,14 @@ Verdicts, all seeds:
   generated phrasings: 264 false abstentions, and its correct abstention and
   post-delete answers come largely from knowing nothing.
 - **The LLM ledger** never pollutes, abstains correctly on all 120
-  abstention probes, and its failures are mostly false abstentions (35).
-  Its 6 `wrong` answers (seeds 3 and 4) have two causes:
-  - An update stated indirectly was missed, so the old value is served
-    (4): "build #812 reported by Jenkins", "escalation policy -> Mikko
-    Laine", `config-sync: auth.database = MySQL 8.4`.
-  - The user's first value was missed ("Page Leena Koski if gateway-service
-    breaks"), and the assistant's later guess ("I'll assume Mikko Laine")
-    then introduced the slot, since a less-trusted source may introduce a
-    fact nobody has stated (2).
+  abstention probes, and its failures are mostly false abstentions (37).
+  Its 4 `wrong` answers (seeds 3 and 4) all come from an update stated
+  indirectly that was missed, so the old value is served: "build #812
+  reported by Jenkins", "escalation policy -> Mikko Laine",
+  `config-sync: auth.database = MySQL 8.4`. Two more were wrong before the
+  hold rule: the user's first value was missed ("Page Leena Koski if
+  gateway-service breaks") and the assistant's later guess ("I'll assume
+  Mikko Laine") was served. They now abstain.
 
   Its one `no_abstention` is a deletion request ("Don't keep auth-service's
   database in memory anymore") extracted as the value "not in memory".
@@ -740,9 +745,13 @@ over seeds 0–4):
 | Merge a new slot into an existing one when an LLM judges them the same property | 92.2 | 92.0 | no: 127 checks, 0 merges |
 | Map short service names (`auth` → `auth-service`); ask for tersely stated values | 91.9 | 90.7 | no: fixed 7 historical probes, broke 7 others |
 | Router prompt examples reworded so they no longer copy the generator's phrasing | 91.9 | 91.5 | yes: within noise, and 120/120 abstentions |
+| Hold values the assistant states first as unconfirmed (introduce trust 2) | 91.5, 6 wrong | 91.5, 4 wrong | yes: 2 wrong → abstain, nothing else changed |
+| Also hold values a document states first (introduce trust 3) | 91.5 | 89.7 | no: 9 correct answers lost, documents are often the only first source |
 
-The first two rows average three runs per seed, the last two one run (91.9
-is the single-run baseline). The router's examples were originally tuned on
+The first two rows average three runs per seed, the others one run (91.9
+is the single-run baseline). The trust rows change only the ledger core, so
+they replay every extraction from the cache: no LLM calls, no noise, and the
+difference is exact. The router's examples were originally tuned on
 seed 0 using the generator's own question wording, which flattered the score;
 91.5 is the number without that. The extraction-prompt experiments show the pattern behind the remaining
 errors: with `gpt-4.1-mini`, rewording the prompt re-rolls all ~150
@@ -775,14 +784,14 @@ python -m pytest -q tests
 
 ## 15. Tests
 
-71 tests, all offline: the LLM tests use fake clients and never touch the
+76 tests, all offline: the LLM tests use fake clients and never touch the
 network or your real `.env`.
 
 | File | Tests | Covers |
 |---|---|---|
 | `test_schema.py` | 9 | The example is valid and round-trips through JSON. Ground-truth semantics are right. Deleted history stays hidden. The validator rejects a wrong expected answer, a missing forbidden value, an update to the same value, a source that does not match its carrier, and a contradiction from the user. Interface rules hold. |
 | `test_runner.py` | 11 | The delivery protocol (session batching, delete timing, no future events) and withholding sources. A perfect "oracle" system scores 8/8. The no-memory lower bound. Full replay's errors are typed correctly. Deletion without sources leaks. The runner truncates over-budget evidence, and RAG fits its own budget. The transcript store is idempotent and deletion sticks. Whole-phrase matching. |
-| `test_ledger.py` | 14 | The example scores 8/8 in both deletion modes. Restate, supersede and `as_of`. Disputes from less trusted sources, while a document may still introduce a fact. Deletion erases history and blocks replay, with or without sources. Abstention. User isolation (including a deletion request naming another user's events). Snapshot/restore round-trip. |
+| `test_ledger.py` | 19 | The example scores 8/8 in both deletion modes. Restate, supersede and `as_of`. Disputes from less trusted sources, while a document may still introduce a fact. The assistant's first statement is held, not returned; a trusted source confirms it (valid from the confirmation) or overrules it; deletion erases it; the threshold is configurable. Deletion erases history and blocks replay, with or without sources. Abstention. User isolation (including a deletion request naming another user's events). Snapshot/restore round-trip. |
 | `test_generator.py` | 16 | Same seed gives the same timeline. Ten seeds are valid and clean. Every mutation and probe type appears. Contradictions only target trusted values. Values are unique per user. The hygiene check catches a planted leak. The runner replays generated timelines. |
 | `test_llm_extractor.py` | 20 | For both providers: request shape, output filtering (invented event ids, blank and malformed claims), event ids enumerated in the schema and bad ones counted, caching, per-provider cache keys, slot routing with an enum, refusals. Provider selection from the environment, blank values counting as unset, and OpenAI sampling pinned unless a reasoning effort is set. The ledger end to end with an LLM extractor. |
 | `test_sweep.py` | 1 | Workloads are generated once and reloaded, every system runs on every seed, deterministic systems run once, and repeats are logged and scored for noise. |
@@ -815,11 +824,11 @@ network or your real `.env`.
 - **The router** misses some paraphrases ("where does it publish its events"
   for a message-queue slot) now that its examples no longer copy the
   generator; those probes abstain rather than answer wrongly.
-- **A less-trusted source may introduce a fact.** This lets a document state
-  something the user never did, but it also lets the assistant's own guess
-  become the answer when the user's statement was missed (section 13). A
-  stricter rule (introduce only from trusted sources, or mark such values as
-  unconfirmed) has not been tried.
+- **A document may still introduce a fact.** The assistant's own first
+  statement is now held as unconfirmed, but a stale document stating a fact
+  first is served until a trusted source updates it. Holding documents too
+  cost 9 correct answers in the sweep, because generated documents are often
+  a fact's only first source.
 - **Run-to-run noise** remains at temperature 0: about 1 probe per seed.
 - **The rule-based extractor** covers four slots and one project per user. It
   is a fallback, not a contender.

@@ -3,21 +3,24 @@
   "generator": "synthetic/0.1",
   "seed": 0,
   "system": "ledger",
-  "system_version": "1",
+  "system_version": "2",
   "system_config": {
     "name": "ledger",
-    "version": "1",
+    "version": "2",
     "extractor": {
       "name": "llm",
-      "version": "3",
+      "version": "5",
       "provider": "openai",
       "model": "gpt-4.1-mini",
       "effort": null,
       "base_url": null,
-      "prompt_sha": "3c7afa1ed373",
+      "temperature": 0.0,
+      "seed": 0,
+      "prompt_sha": "cb83f582ae5c",
       "calls": 5,
       "cache_hits": 153,
-      "refusals": 0
+      "refusals": 0,
+      "dropped_claims": 1
     },
     "trust": {
       "user_message": 3,
@@ -26,7 +29,8 @@
       "document": 2,
       "assistant_message": 1,
       "tool_call": 1
-    }
+    },
+    "introduce_trust": 2
   },
   "capabilities": {
     "provenance": true,
@@ -41,7 +45,7 @@
     "delete_with_sources": false,
     "tokenizer": "regex-words/1"
   },
-  "started_at": "2026-10-13T13:48:56.280153Z",
+  "started_at": "2026-10-14T13:32:15.510253Z",
   "ops": [
     {
       "op": "ingest",
@@ -54,10 +58,10 @@
         "e00004",
         "e00005"
       ],
-      "latency_s": 0.3083072089939378,
+      "latency_s": 0.43990908400155604,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 496,
+        "llm_input_tokens": 518,
         "llm_output_tokens": 49,
         "embedding_tokens": 0,
         "model_ids": [
@@ -83,10 +87,10 @@
         "e00009",
         "e00010"
       ],
-      "latency_s": 0.00044070801232010126,
+      "latency_s": 0.00040787499165162444,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 504,
+        "llm_input_tokens": 526,
         "llm_output_tokens": 71,
         "embedding_tokens": 0,
         "model_ids": [
@@ -113,10 +117,10 @@
         "e00015",
         "e00016"
       ],
-      "latency_s": 0.0003292920009698719,
+      "latency_s": 0.000367750006262213,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 563,
+        "llm_input_tokens": 589,
         "llm_output_tokens": 54,
         "embedding_tokens": 0,
         "model_ids": [
@@ -141,10 +145,10 @@
         "e00019",
         "e00020"
       ],
-      "latency_s": 0.00033629199606366456,
+      "latency_s": 0.00034679198870435357,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 543,
+        "llm_input_tokens": 561,
         "llm_output_tokens": 28,
         "embedding_tokens": 0,
         "model_ids": [
@@ -168,10 +172,10 @@
         "e00022",
         "e00023"
       ],
-      "latency_s": 0.0003234999894630164,
+      "latency_s": 0.00034566698013804853,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 497,
+        "llm_input_tokens": 511,
         "llm_output_tokens": 52,
         "embedding_tokens": 0,
         "model_ids": [
@@ -196,11 +200,11 @@
         "e00026",
         "e00027"
       ],
-      "latency_s": 0.00031358300475403666,
+      "latency_s": 0.0003440839936956763,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 559,
-        "llm_output_tokens": 53,
+        "llm_input_tokens": 577,
+        "llm_output_tokens": 50,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -225,10 +229,10 @@
         "e00031",
         "e00032"
       ],
-      "latency_s": 0.00035074999323114753,
+      "latency_s": 0.0003364169970154762,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 504,
+        "llm_input_tokens": 526,
         "llm_output_tokens": 28,
         "embedding_tokens": 0,
         "model_ids": [
@@ -253,10 +257,10 @@
         "e00035",
         "e00036"
       ],
-      "latency_s": 0.00023416700423695147,
+      "latency_s": 0.0003458749852143228,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 487,
+        "llm_input_tokens": 505,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -281,10 +285,10 @@
         "e00039",
         "e00040"
       ],
-      "latency_s": 0.00028574999305419624,
+      "latency_s": 0.00035179100814275444,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 559,
+        "llm_input_tokens": 577,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -311,11 +315,11 @@
         "e00045",
         "e00046"
       ],
-      "latency_s": 0.0005619169969577342,
+      "latency_s": 0.00036070801434107125,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 656,
-        "llm_output_tokens": 77,
+        "llm_input_tokens": 678,
+        "llm_output_tokens": 98,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -323,7 +327,7 @@
       },
       "report": {
         "items_added": 3,
-        "items_updated": 0,
+        "items_updated": 1,
         "items_superseded": 1,
         "items_rejected": 0
       },
@@ -338,10 +342,10 @@
         "e00048",
         "e00049"
       ],
-      "latency_s": 0.0002727920073084533,
+      "latency_s": 0.0003443750028964132,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 560,
+        "llm_input_tokens": 574,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -367,10 +371,10 @@
         "e00053",
         "e00054"
       ],
-      "latency_s": 0.00026345800142735243,
+      "latency_s": 0.0003790420014411211,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 664,
+        "llm_input_tokens": 682,
         "llm_output_tokens": 52,
         "embedding_tokens": 0,
         "model_ids": [
@@ -378,10 +382,10 @@
         ]
       },
       "report": {
-        "items_added": 2,
+        "items_added": 1,
         "items_updated": 0,
         "items_superseded": 0,
-        "items_rejected": 0
+        "items_rejected": 1
       },
       "error": null
     },
@@ -393,10 +397,10 @@
         "e00055",
         "e00056"
       ],
-      "latency_s": 0.00033091698423959315,
+      "latency_s": 0.0002398340147919953,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 613,
+        "llm_input_tokens": 619,
         "llm_output_tokens": 28,
         "embedding_tokens": 0,
         "model_ids": [
@@ -422,10 +426,10 @@
         "e00060",
         "e00061"
       ],
-      "latency_s": 0.0002558339911047369,
+      "latency_s": 0.00023595799575559795,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 522,
+        "llm_input_tokens": 544,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -451,10 +455,10 @@
         "e00065",
         "e00066"
       ],
-      "latency_s": 0.00025837498833425343,
+      "latency_s": 0.0002466670121066272,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 617,
+        "llm_input_tokens": 639,
         "llm_output_tokens": 50,
         "embedding_tokens": 0,
         "model_ids": [
@@ -481,10 +485,10 @@
         "e00071",
         "e00072"
       ],
-      "latency_s": 0.0002981669967994094,
+      "latency_s": 0.00024120797752402723,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 684,
+        "llm_input_tokens": 710,
         "llm_output_tokens": 77,
         "embedding_tokens": 0,
         "model_ids": [
@@ -509,10 +513,10 @@
         "e00075",
         "e00076"
       ],
-      "latency_s": 0.00031891700928099453,
+      "latency_s": 0.00023254100233316422,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 532,
+        "llm_input_tokens": 550,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -535,11 +539,11 @@
         "e00077",
         "e00078"
       ],
-      "latency_s": 0.00028091701096855104,
+      "latency_s": 0.00022445799550041556,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 584,
-        "llm_output_tokens": 27,
+        "llm_input_tokens": 594,
+        "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -547,7 +551,7 @@
       },
       "report": {
         "items_added": 0,
-        "items_updated": 1,
+        "items_updated": 0,
         "items_superseded": 0,
         "items_rejected": 0
       },
@@ -561,10 +565,10 @@
         "e00079",
         "e00080"
       ],
-      "latency_s": 0.0002773329906631261,
+      "latency_s": 0.00022529199486598372,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 584,
+        "llm_input_tokens": 594,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -584,10 +588,10 @@
       "at": "2026-03-09T12:20:02Z",
       "ref": "m00032",
       "event_ids": [],
-      "latency_s": 0.7936160420067608,
+      "latency_s": 1.4358438329945784,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 415,
+        "llm_input_tokens": 413,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -607,10 +611,10 @@
         "e00081",
         "e00082"
       ],
-      "latency_s": 0.00294716699863784,
+      "latency_s": 0.0010512080043554306,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 578,
+        "llm_input_tokens": 588,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -633,10 +637,10 @@
         "e00083",
         "e00084"
       ],
-      "latency_s": 0.0007422920025419444,
+      "latency_s": 0.0006161249766591936,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 638,
+        "llm_input_tokens": 644,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -663,10 +667,10 @@
         "e00089",
         "e00090"
       ],
-      "latency_s": 0.0005360410141292959,
+      "latency_s": 0.0005086250021122396,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 584,
+        "llm_input_tokens": 610,
         "llm_output_tokens": 29,
         "embedding_tokens": 0,
         "model_ids": [
@@ -686,10 +690,10 @@
       "at": "2026-03-17T15:01:01Z",
       "ref": "m00035",
       "event_ids": [],
-      "latency_s": 0.6587639169883914,
+      "latency_s": 0.9133666660054587,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 302,
+        "llm_input_tokens": 300,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -710,10 +714,10 @@
         "e00092",
         "e00093"
       ],
-      "latency_s": 0.0024937919806689024,
+      "latency_s": 0.0011196669947821647,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 508,
+        "llm_input_tokens": 522,
         "llm_output_tokens": 29,
         "embedding_tokens": 0,
         "model_ids": [
@@ -738,10 +742,10 @@
         "e00096",
         "e00097"
       ],
-      "latency_s": 0.0009391669882461429,
+      "latency_s": 0.0008265410142485052,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 686,
+        "llm_input_tokens": 700,
         "llm_output_tokens": 53,
         "embedding_tokens": 0,
         "model_ids": [
@@ -766,10 +770,10 @@
         "e00100",
         "e00101"
       ],
-      "latency_s": 0.0008165000181179494,
+      "latency_s": 0.000750750012230128,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 703,
+        "llm_input_tokens": 717,
         "llm_output_tokens": 28,
         "embedding_tokens": 0,
         "model_ids": [
@@ -792,10 +796,10 @@
         "e00102",
         "e00103"
       ],
-      "latency_s": 0.0006426250038202852,
+      "latency_s": 0.0006592079880647361,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 649,
+        "llm_input_tokens": 655,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -815,10 +819,10 @@
       "at": "2026-03-28T14:10:00Z",
       "ref": "m00040",
       "event_ids": [],
-      "latency_s": 0.691211375000421,
+      "latency_s": 0.6964840409928001,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 507,
+        "llm_input_tokens": 499,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -839,10 +843,10 @@
         "e00105",
         "e00106"
       ],
-      "latency_s": 0.002915124990977347,
+      "latency_s": 0.0010342080204281956,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 600,
+        "llm_input_tokens": 614,
         "llm_output_tokens": 52,
         "embedding_tokens": 0,
         "model_ids": [
@@ -865,18 +869,18 @@
         "e00107",
         "e00108"
       ],
-      "latency_s": 0.0013216249935794622,
+      "latency_s": 0.0007261669961735606,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 636,
-        "llm_output_tokens": 4,
+        "llm_input_tokens": 642,
+        "llm_output_tokens": 28,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
         ]
       },
       "report": {
-        "items_added": 0,
+        "items_added": 1,
         "items_updated": 0,
         "items_superseded": 0,
         "items_rejected": 0
@@ -891,10 +895,10 @@
         "e00109",
         "e00110"
       ],
-      "latency_s": 0.0010650000185705721,
+      "latency_s": 0.0006299169908743352,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 638,
+        "llm_input_tokens": 662,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -918,10 +922,10 @@
         "e00112",
         "e00113"
       ],
-      "latency_s": 0.0010009999969042838,
+      "latency_s": 0.00036987499333918095,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 528,
+        "llm_input_tokens": 542,
         "llm_output_tokens": 28,
         "embedding_tokens": 0,
         "model_ids": [
@@ -943,11 +947,11 @@
       "event_ids": [
         "e00114"
       ],
-      "latency_s": 0.0009399999980814755,
+      "latency_s": 0.0004489590064622462,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 617,
-        "llm_output_tokens": 26,
+        "llm_input_tokens": 637,
+        "llm_output_tokens": 285,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -955,8 +959,8 @@
       },
       "report": {
         "items_added": 1,
-        "items_updated": 0,
-        "items_superseded": 1,
+        "items_updated": 11,
+        "items_superseded": 0,
         "items_rejected": 0
       },
       "error": null
@@ -974,18 +978,18 @@
         "e00120",
         "e00121"
       ],
-      "latency_s": 0.0010169589950237423,
+      "latency_s": 0.00040091699338518083,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 638,
-        "llm_output_tokens": 27,
+        "llm_input_tokens": 668,
+        "llm_output_tokens": 51,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
         ]
       },
       "report": {
-        "items_added": 1,
+        "items_added": 2,
         "items_updated": 0,
         "items_superseded": 0,
         "items_rejected": 0
@@ -1003,10 +1007,10 @@
         "e00125",
         "e00126"
       ],
-      "latency_s": 0.0009235420147888362,
+      "latency_s": 0.0003535830182954669,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 594,
+        "llm_input_tokens": 634,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1033,11 +1037,11 @@
         "e00131",
         "e00132"
       ],
-      "latency_s": 0.000961042009294033,
+      "latency_s": 0.00039241701597347856,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 688,
-        "llm_output_tokens": 27,
+        "llm_input_tokens": 714,
+        "llm_output_tokens": 50,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -1045,7 +1049,7 @@
       },
       "report": {
         "items_added": 1,
-        "items_updated": 0,
+        "items_updated": 1,
         "items_superseded": 1,
         "items_rejected": 0
       },
@@ -1059,20 +1063,20 @@
         "e00133",
         "e00134"
       ],
-      "latency_s": 0.0009272079914808273,
+      "latency_s": 0.0003377920074854046,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 507,
-        "llm_output_tokens": 26,
+        "llm_input_tokens": 535,
+        "llm_output_tokens": 29,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
         ]
       },
       "report": {
-        "items_added": 1,
-        "items_updated": 0,
-        "items_superseded": 1,
+        "items_added": 0,
+        "items_updated": 1,
+        "items_superseded": 0,
         "items_rejected": 0
       },
       "error": null
@@ -1082,10 +1086,10 @@
       "at": "2026-04-28T16:36:01Z",
       "ref": "m00052",
       "event_ids": [],
-      "latency_s": 0.6446879169961903,
+      "latency_s": 0.8224726249754895,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 318,
+        "llm_input_tokens": 341,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1093,7 +1097,7 @@
         ]
       },
       "report": {
-        "items_deleted": 2
+        "items_deleted": 1
       },
       "error": null
     },
@@ -1105,10 +1109,10 @@
         "e00135",
         "e00136"
       ],
-      "latency_s": 0.0014113750075921416,
+      "latency_s": 0.0013462499773595482,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 507,
+        "llm_input_tokens": 535,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1136,11 +1140,11 @@
         "e00142",
         "e00143"
       ],
-      "latency_s": 0.0013260419946163893,
+      "latency_s": 0.001260999997612089,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 778,
-        "llm_output_tokens": 53,
+        "llm_input_tokens": 822,
+        "llm_output_tokens": 52,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -1166,10 +1170,10 @@
         "e00148",
         "e00149"
       ],
-      "latency_s": 0.0012465830077417195,
+      "latency_s": 0.0007459170010406524,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 693,
+        "llm_input_tokens": 719,
         "llm_output_tokens": 54,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1196,10 +1200,10 @@
         "e00154",
         "e00155"
       ],
-      "latency_s": 0.0011605829931795597,
+      "latency_s": 0.0009892500238493085,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 625,
+        "llm_input_tokens": 669,
         "llm_output_tokens": 76,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1227,19 +1231,19 @@
         "e00161",
         "e00162"
       ],
-      "latency_s": 0.0012479579891078174,
+      "latency_s": 0.0009652499866206199,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 802,
-        "llm_output_tokens": 103,
+        "llm_input_tokens": 847,
+        "llm_output_tokens": 101,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
         ]
       },
       "report": {
-        "items_added": 3,
-        "items_updated": 1,
+        "items_added": 2,
+        "items_updated": 2,
         "items_superseded": 1,
         "items_rejected": 0
       },
@@ -1252,11 +1256,11 @@
       "event_ids": [
         "e00163"
       ],
-      "latency_s": 0.0006377089885063469,
+      "latency_s": 0.0007983329996932298,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 675,
-        "llm_output_tokens": 31,
+        "llm_input_tokens": 674,
+        "llm_output_tokens": 30,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -1282,10 +1286,10 @@
         "e00168",
         "e00169"
       ],
-      "latency_s": 0.0006317090010270476,
+      "latency_s": 0.0006290420133154839,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 646,
+        "llm_input_tokens": 690,
         "llm_output_tokens": 51,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1311,10 +1315,10 @@
         "e00173",
         "e00174"
       ],
-      "latency_s": 0.0006127090018708259,
+      "latency_s": 0.0005931250052526593,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 601,
+        "llm_input_tokens": 641,
         "llm_output_tokens": 26,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1338,10 +1342,10 @@
         "e00176",
         "e00177"
       ],
-      "latency_s": 0.0006697910139337182,
+      "latency_s": 0.000602333020651713,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 618,
+        "llm_input_tokens": 632,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1366,19 +1370,19 @@
         "e00180",
         "e00181"
       ],
-      "latency_s": 0.0005876249924767762,
+      "latency_s": 0.0006657079793512821,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 584,
-        "llm_output_tokens": 30,
+        "llm_input_tokens": 620,
+        "llm_output_tokens": 29,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
         ]
       },
       "report": {
-        "items_added": 1,
-        "items_updated": 0,
+        "items_added": 0,
+        "items_updated": 1,
         "items_superseded": 0,
         "items_rejected": 0
       },
@@ -1392,11 +1396,11 @@
         "e00182",
         "e00183"
       ],
-      "latency_s": 0.0006556669832207263,
+      "latency_s": 0.0007277920085471123,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 704,
-        "llm_output_tokens": 31,
+        "llm_input_tokens": 707,
+        "llm_output_tokens": 51,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -1415,10 +1419,10 @@
       "at": "2026-06-03T12:25:00Z",
       "ref": "m00074",
       "event_ids": [],
-      "latency_s": 0.6795312920003198,
+      "latency_s": 0.9961993749893736,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 572,
+        "llm_input_tokens": 559,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1438,10 +1442,10 @@
         "e00184",
         "e00185"
       ],
-      "latency_s": 0.0025754160014912486,
+      "latency_s": 0.0009683329844847322,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 686,
+        "llm_input_tokens": 689,
         "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1468,11 +1472,11 @@
         "e00190",
         "e00191"
       ],
-      "latency_s": 0.0015507919888477772,
+      "latency_s": 0.0007190420001279563,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 820,
-        "llm_output_tokens": 100,
+        "llm_input_tokens": 839,
+        "llm_output_tokens": 124,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -1480,8 +1484,8 @@
       },
       "report": {
         "items_added": 4,
-        "items_updated": 0,
-        "items_superseded": 2,
+        "items_updated": 1,
+        "items_superseded": 1,
         "items_rejected": 0
       },
       "error": null
@@ -1497,10 +1501,10 @@
         "e00195",
         "e00196"
       ],
-      "latency_s": 0.0009750830067787319,
+      "latency_s": 0.0006491249951068312,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 678,
+        "llm_input_tokens": 700,
         "llm_output_tokens": 53,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1525,11 +1529,11 @@
         "e00199",
         "e00200"
       ],
-      "latency_s": 0.0009652920125517994,
+      "latency_s": 0.000596875004703179,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 606,
-        "llm_output_tokens": 29,
+        "llm_input_tokens": 621,
+        "llm_output_tokens": 27,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -1538,7 +1542,7 @@
       "report": {
         "items_added": 1,
         "items_updated": 0,
-        "items_superseded": 0,
+        "items_superseded": 1,
         "items_rejected": 0
       },
       "error": null
@@ -1555,21 +1559,21 @@
         "e00205",
         "e00206"
       ],
-      "latency_s": 0.0008512499916832894,
+      "latency_s": 0.000567542010685429,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 671,
-        "llm_output_tokens": 32,
+        "llm_input_tokens": 674,
+        "llm_output_tokens": 30,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
         ]
       },
       "report": {
-        "items_added": 1,
+        "items_added": 0,
         "items_updated": 0,
         "items_superseded": 0,
-        "items_rejected": 0
+        "items_rejected": 1
       },
       "error": null
     },
@@ -1583,10 +1587,10 @@
         "e00209",
         "e00210"
       ],
-      "latency_s": 0.0007612910121679306,
+      "latency_s": 0.0004752080130856484,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 628,
+        "llm_input_tokens": 646,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1611,10 +1615,10 @@
         "e00213",
         "e00214"
       ],
-      "latency_s": 0.0006911669916007668,
+      "latency_s": 0.0004930830036755651,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 649,
+        "llm_input_tokens": 667,
         "llm_output_tokens": 78,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1637,10 +1641,10 @@
         "e00215",
         "e00216"
       ],
-      "latency_s": 0.0006697499775327742,
+      "latency_s": 0.00047812500270083547,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 599,
+        "llm_input_tokens": 609,
         "llm_output_tokens": 30,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1692,10 +1696,10 @@
       "matched": "notifications-stg-5.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00041187499300576746,
+      "latency_s": 0.00035520800156518817,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 455,
+        "llm_input_tokens": 447,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1738,10 +1742,10 @@
       "matched": "Travis CI",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00034608400892466307,
+      "latency_s": 0.00033333300962112844,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 456,
+        "llm_input_tokens": 448,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1786,10 +1790,10 @@
       "matched": "eu-north-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0003539999888744205,
+      "latency_s": 0.0003333750064484775,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 452,
+        "llm_input_tokens": 444,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1834,10 +1838,10 @@
       "matched": "CircleCI",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00031383297755382955,
+      "latency_s": 0.00032791600096970797,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 453,
+        "llm_input_tokens": 445,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1882,10 +1886,10 @@
       "matched": "us-west-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00034883301123045385,
+      "latency_s": 0.0002558330015745014,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 463,
+        "llm_input_tokens": 455,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1930,10 +1934,10 @@
       "matched": "GitHub Actions",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00031883298652246594,
+      "latency_s": 0.00027424999279901385,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 464,
+        "llm_input_tokens": 456,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -1978,10 +1982,10 @@
       "matched": "us-east-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0002483749995008111,
+      "latency_s": 0.0002591669908724725,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 455,
+        "llm_input_tokens": 447,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2012,10 +2016,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00025462498888373375,
+      "latency_s": 0.00024950000806711614,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 453,
+        "llm_input_tokens": 445,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2046,10 +2050,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00022466701921075583,
+      "latency_s": 0.00023595799575559795,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 455,
+        "llm_input_tokens": 447,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2092,10 +2096,10 @@
       "matched": "Google Pub/Sub",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0002404589904472232,
+      "latency_s": 0.0002757500042207539,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 251,
+        "llm_input_tokens": 249,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2138,10 +2142,10 @@
       "matched": "NATS",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0003020830044988543,
+      "latency_s": 0.00028966699028387666,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 253,
+        "llm_input_tokens": 251,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2172,10 +2176,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00022520899074152112,
+      "latency_s": 0.00025166600244119763,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 252,
+        "llm_input_tokens": 250,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2206,10 +2210,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0002619589795358479,
+      "latency_s": 0.00025179199292324483,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 251,
+        "llm_input_tokens": 249,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2252,10 +2256,10 @@
       "matched": "Java 21",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0002996250113938004,
+      "latency_s": 0.0002494999789632857,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 361,
+        "llm_input_tokens": 359,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2298,10 +2302,10 @@
       "matched": "Drone CI",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00034795800456777215,
+      "latency_s": 0.0002536670072004199,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 361,
+        "llm_input_tokens": 359,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2332,10 +2336,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0002868750016205013,
+      "latency_s": 0.00024720802321098745,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 362,
+        "llm_input_tokens": 360,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2366,10 +2370,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00033741601509973407,
+      "latency_s": 0.00024066699552349746,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 362,
+        "llm_input_tokens": 360,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2390,21 +2394,33 @@
         "aliases": [],
         "forbidden": []
       },
-      "abstained": true,
-      "abstain_reason": "no known slot matches",
-      "evidence": [],
-      "evidence_tokens": 0,
-      "injected_tokens": 0,
+      "abstained": false,
+      "abstain_reason": null,
+      "evidence": [
+        {
+          "content": "on call of notifications-service: Tomás Ruiz (since 2026-04-02; source: user_message)",
+          "memory_id": "L000037",
+          "source_event_ids": [
+            "e00107"
+          ],
+          "valid_from": "2026-04-02T09:15:00Z",
+          "valid_to": null,
+          "recorded_at": "2026-04-02T09:15:00Z",
+          "score": null
+        }
+      ],
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
       "budget_exceeded": false,
-      "verdict": "false_abstention",
-      "matched": null,
+      "verdict": "correct",
+      "matched": "Tomás Ruiz",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0013239580148365349,
+      "latency_s": 0.000618958001723513,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 493,
-        "llm_output_tokens": 4,
+        "llm_input_tokens": 508,
+        "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -2446,10 +2462,10 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0026844170060940087,
+      "latency_s": 0.0005561660218518227,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 492,
+        "llm_input_tokens": 507,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2494,10 +2510,10 @@
       "matched": "CircleCI",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.002804417017614469,
+      "latency_s": 0.0005194579716771841,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 490,
+        "llm_input_tokens": 505,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2542,10 +2558,10 @@
       "matched": "eu-north-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.001082583999959752,
+      "latency_s": 0.0005192079988773912,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 489,
+        "llm_input_tokens": 504,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2591,10 +2607,10 @@
       "matched": "Amazon SQS",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000976208015345037,
+      "latency_s": 0.0004722090088762343,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 491,
+        "llm_input_tokens": 506,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2639,10 +2655,10 @@
       "matched": "us-east-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008677910082042217,
+      "latency_s": 0.0004280840221326798,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 491,
+        "llm_input_tokens": 506,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2687,10 +2703,10 @@
       "matched": "us-west-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009502499888185412,
+      "latency_s": 0.00040712501504458487,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 500,
+        "llm_input_tokens": 515,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2735,10 +2751,10 @@
       "matched": "GitHub Actions",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009547499939799309,
+      "latency_s": 0.00036545901093631983,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 500,
+        "llm_input_tokens": 515,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2771,10 +2787,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008872910111676902,
+      "latency_s": 0.00032712501706555486,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 490,
+        "llm_input_tokens": 505,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2805,10 +2821,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009072500106412917,
+      "latency_s": 0.00031066700466908514,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 491,
+        "llm_input_tokens": 506,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2839,10 +2855,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009506250207778066,
+      "latency_s": 0.000351500028045848,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 493,
+        "llm_input_tokens": 508,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2875,10 +2891,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008113329822663218,
+      "latency_s": 0.000388374988688156,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 309,
+        "llm_input_tokens": 307,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2923,10 +2939,10 @@
       "matched": "Redis Streams",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008809170103631914,
+      "latency_s": 0.00033633297425694764,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 309,
+        "llm_input_tokens": 307,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -2971,10 +2987,10 @@
       "matched": "NATS",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009737079963088036,
+      "latency_s": 0.0003217089979443699,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 318,
+        "llm_input_tokens": 316,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3017,10 +3033,10 @@
       "matched": "Tomás Ruiz",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009597919997759163,
+      "latency_s": 0.00034012499963864684,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 307,
+        "llm_input_tokens": 305,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3051,10 +3067,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008674999990034848,
+      "latency_s": 0.0005705000075977296,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 309,
+        "llm_input_tokens": 307,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3085,10 +3101,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009246669942513108,
+      "latency_s": 0.00035570800537243485,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 307,
+        "llm_input_tokens": 305,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3119,10 +3135,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008312909922096878,
+      "latency_s": 0.00029612501384690404,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 309,
+        "llm_input_tokens": 307,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3150,8 +3166,7 @@
           "content": "runtime of cart-service: Java 17 (since 2026-02-17; source: user_message)",
           "memory_id": "L000024",
           "source_event_ids": [
-            "e00064",
-            "e00078"
+            "e00064"
           ],
           "valid_from": "2026-02-17T14:23:02Z",
           "valid_to": null,
@@ -3166,10 +3181,10 @@
       "matched": "Java 17",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008779999916441739,
+      "latency_s": 0.0003757090016733855,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 411,
+        "llm_input_tokens": 409,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3213,10 +3228,10 @@
       "matched": "Mikko Laine",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008720000041648746,
+      "latency_s": 0.0003549579996615648,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 415,
+        "llm_input_tokens": 413,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3263,10 +3278,10 @@
       "matched": "Node 20",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009444169991184026,
+      "latency_s": 0.00036454200744628906,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 412,
+        "llm_input_tokens": 410,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3311,10 +3326,10 @@
       "matched": "Java 21",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009501249878667295,
+      "latency_s": 0.00037291599437594414,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 421,
+        "llm_input_tokens": 419,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3359,10 +3374,10 @@
       "matched": "Jonas Berg",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009171249985229224,
+      "latency_s": 0.00034479101304896176,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 410,
+        "llm_input_tokens": 408,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3393,10 +3408,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008372919983230531,
+      "latency_s": 0.0003588750259950757,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 412,
+        "llm_input_tokens": 410,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3427,10 +3442,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008620419830549508,
+      "latency_s": 0.00030441698618233204,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 414,
+        "llm_input_tokens": 412,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3460,7 +3475,8 @@
           "content": "ci provider of notifications-service: CircleCI (since 2026-02-11; source: code_change)",
           "memory_id": "L000016",
           "source_event_ids": [
-            "e00043"
+            "e00043",
+            "e00114"
           ],
           "valid_from": "2026-02-11T14:09:00Z",
           "valid_to": null,
@@ -3475,10 +3491,10 @@
       "matched": "CircleCI",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0011159999994561076,
+      "latency_s": 0.0007307089981622994,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 568,
+        "llm_input_tokens": 555,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3511,10 +3527,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009558330057188869,
+      "latency_s": 0.0005445830174721777,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 568,
+        "llm_input_tokens": 555,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3547,10 +3563,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0011144590098410845,
+      "latency_s": 0.0005956660024821758,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 577,
+        "llm_input_tokens": 564,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3595,10 +3611,10 @@
       "matched": "us-west-2",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0011662920005619526,
+      "latency_s": 0.0007127500139176846,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 578,
+        "llm_input_tokens": 565,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3628,7 +3644,8 @@
           "content": "region of auth-service: us-east-1 (since 2026-02-11; source: user_message)",
           "memory_id": "L000017",
           "source_event_ids": [
-            "e00045"
+            "e00045",
+            "e00114"
           ],
           "valid_from": "2026-02-11T14:17:00Z",
           "valid_to": null,
@@ -3643,10 +3660,10 @@
       "matched": "us-east-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0010546249977778643,
+      "latency_s": 0.0006649590213783085,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 571,
+        "llm_input_tokens": 558,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3676,7 +3693,8 @@
           "content": "ci provider of notifications-service: CircleCI (since 2026-02-11; source: code_change)",
           "memory_id": "L000016",
           "source_event_ids": [
-            "e00043"
+            "e00043",
+            "e00114"
           ],
           "valid_from": "2026-02-11T14:09:00Z",
           "valid_to": null,
@@ -3691,10 +3709,10 @@
       "matched": "CircleCI",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0010907499818131328,
+      "latency_s": 0.0007510829891543835,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 569,
+        "llm_input_tokens": 556,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3727,10 +3745,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008731669804546982,
+      "latency_s": 0.0005063329881522804,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 568,
+        "llm_input_tokens": 555,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3758,7 +3776,8 @@
           "content": "database of auth-service: MySQL 8.4 (since 2026-03-21; source: user_message)",
           "memory_id": "L000033",
           "source_event_ids": [
-            "e00095"
+            "e00095",
+            "e00114"
           ],
           "valid_from": "2026-03-21T13:33:00Z",
           "valid_to": null,
@@ -3773,10 +3792,10 @@
       "matched": "MySQL 8.4",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009325830033048987,
+      "latency_s": 0.0009217500046361238,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 569,
+        "llm_input_tokens": 556,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3801,29 +3820,31 @@
       "abstain_reason": null,
       "evidence": [
         {
-          "content": "on call owner of notifications-service: Tomás Ruiz (since 2026-05-19; source: user_message)",
-          "memory_id": "L000051",
+          "content": "on call of notifications-service: Tomás Ruiz (since 2026-04-02; source: user_message)",
+          "memory_id": "L000037",
           "source_event_ids": [
+            "e00107",
+            "e00114",
             "e00159"
           ],
-          "valid_from": "2026-05-19T11:47:00Z",
+          "valid_from": "2026-04-02T09:15:00Z",
           "valid_to": null,
-          "recorded_at": "2026-05-19T11:47:00Z",
+          "recorded_at": "2026-04-02T09:15:00Z",
           "score": null
         }
       ],
-      "evidence_tokens": 22,
-      "injected_tokens": 22,
+      "evidence_tokens": 21,
+      "injected_tokens": 21,
       "budget_exceeded": false,
       "verdict": "correct",
       "matched": "Tomás Ruiz",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009138750028796494,
+      "latency_s": 0.0005059580144006759,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 569,
-        "llm_output_tokens": 10,
+        "llm_input_tokens": 556,
+        "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -3853,10 +3874,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008624589827377349,
+      "latency_s": 0.000445916986791417,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 569,
+        "llm_input_tokens": 556,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3887,10 +3908,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008466670115012676,
+      "latency_s": 0.0004656249948311597,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 569,
+        "llm_input_tokens": 556,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3918,7 +3939,7 @@
       "evidence": [
         {
           "content": "message queue of notifications-service: ActiveMQ (since 2026-04-18; source: user_message)",
-          "memory_id": "L000040",
+          "memory_id": "L000042",
           "source_event_ids": [
             "e00116",
             "e00154"
@@ -3936,10 +3957,10 @@
       "matched": "ActiveMQ",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008879169763531536,
+      "latency_s": 0.0005533749936148524,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 343,
+        "llm_input_tokens": 364,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -3982,10 +4003,10 @@
       "matched": "Tomás Ruiz",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008847500139381737,
+      "latency_s": 0.000529208016814664,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 345,
+        "llm_input_tokens": 366,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4013,7 +4034,7 @@
       "evidence": [
         {
           "content": "runtime of auth-service: Java 21 (since 2026-04-20; source: user_message)",
-          "memory_id": "L000041",
+          "memory_id": "L000043",
           "source_event_ids": [
             "e00123",
             "e00135"
@@ -4031,10 +4052,10 @@
       "matched": "Java 21",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009372080094181001,
+      "latency_s": 0.00046695797936990857,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 343,
+        "llm_input_tokens": 364,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4063,7 +4084,7 @@
       "evidence": [
         {
           "content": "message queue of auth-service: Amazon SQS (since 2026-04-10; source: user_message)",
-          "memory_id": "L000038",
+          "memory_id": "L000039",
           "source_event_ids": [
             "e00113"
           ],
@@ -4080,10 +4101,10 @@
       "matched": "Amazon SQS",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009100419993046671,
+      "latency_s": 0.00044616698869504035,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 344,
+        "llm_input_tokens": 365,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4107,7 +4128,7 @@
         ]
       },
       "abstained": true,
-      "abstain_reason": "no known slot matches",
+      "abstain_reason": "no value held at 2026-03-24",
       "evidence": [],
       "evidence_tokens": 0,
       "injected_tokens": 0,
@@ -4116,11 +4137,11 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008598749991506338,
+      "latency_s": 0.00045829202281311154,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 352,
-        "llm_output_tokens": 4,
+        "llm_input_tokens": 373,
+        "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -4165,10 +4186,10 @@
       "matched": "NATS",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008452499751001596,
+      "latency_s": 0.0006245000113267452,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 351,
+        "llm_input_tokens": 372,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4199,10 +4220,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000782167015131563,
+      "latency_s": 0.0004933330055791885,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 342,
+        "llm_input_tokens": 363,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4233,10 +4254,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008032499754335731,
+      "latency_s": 0.0004322500026319176,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 342,
+        "llm_input_tokens": 363,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4282,10 +4303,10 @@
       "matched": "Mikko Laine",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008640829764772207,
+      "latency_s": 0.0004759589792229235,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 415,
+        "llm_input_tokens": 413,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4333,10 +4354,10 @@
       "matched": "PostgreSQL 12",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008513749926351011,
+      "latency_s": 0.00046054201084189117,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 413,
+        "llm_input_tokens": 411,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4364,7 +4385,8 @@
           "content": "message queue of payments-service: Amazon SQS (since 2026-02-17; source: user_message)",
           "memory_id": "L000025",
           "source_event_ids": [
-            "e00065"
+            "e00065",
+            "e00129"
           ],
           "valid_from": "2026-02-17T14:24:02Z",
           "valid_to": null,
@@ -4379,10 +4401,10 @@
       "matched": "Amazon SQS",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0009239170176442713,
+      "latency_s": 0.0004585839924402535,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 414,
+        "llm_input_tokens": 412,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4425,10 +4447,10 @@
       "matched": "trunk",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006121670012362301,
+      "latency_s": 0.0004650420160032809,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 416,
+        "llm_input_tokens": 414,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4458,7 +4480,7 @@
       "evidence": [
         {
           "content": "runtime of payments-service: Go 1.22 (since 2026-05-16; source: tool_result)",
-          "memory_id": "L000047",
+          "memory_id": "L000048",
           "source_event_ids": [
             "e00147"
           ],
@@ -4475,10 +4497,10 @@
       "matched": "Go 1.22",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005623330071102828,
+      "latency_s": 0.00044570802128873765,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 414,
+        "llm_input_tokens": 412,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4525,10 +4547,10 @@
       "matched": "Java 21",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005456670187413692,
+      "latency_s": 0.00045420799870043993,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 423,
+        "llm_input_tokens": 421,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4577,10 +4599,10 @@
       "matched": "Node 20",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004893750010523945,
+      "latency_s": 0.00044583299313671887,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 423,
+        "llm_input_tokens": 421,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4611,10 +4633,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005782080115750432,
+      "latency_s": 0.0004164580022916198,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 416,
+        "llm_input_tokens": 414,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4645,10 +4667,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000488290999783203,
+      "latency_s": 0.00039470798219554126,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 414,
+        "llm_input_tokens": 412,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4675,14 +4697,16 @@
       "abstain_reason": null,
       "evidence": [
         {
-          "content": "deploy branch of auth-service: trunk (since 2026-06-08; source: user_message)",
-          "memory_id": "L000060",
+          "content": "deploy branch of auth-service: trunk (since 2026-04-02; source: user_message)",
+          "memory_id": "L000038",
           "source_event_ids": [
+            "e00109",
+            "e00114",
             "e00190"
           ],
-          "valid_from": "2026-06-08T10:19:00Z",
+          "valid_from": "2026-04-02T09:25:00Z",
           "valid_to": null,
-          "recorded_at": "2026-06-08T10:19:00Z",
+          "recorded_at": "2026-04-02T09:25:00Z",
           "score": null
         }
       ],
@@ -4693,10 +4717,10 @@
       "matched": "trunk",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0007096669869497418,
+      "latency_s": 0.0004418330208864063,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 598,
+        "llm_input_tokens": 609,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4721,33 +4745,21 @@
           "NATS"
         ]
       },
-      "abstained": false,
-      "abstain_reason": null,
-      "evidence": [
-        {
-          "content": "message queue of payments-service: RabbitMQ (since 2026-05-19; source: tool_result)",
-          "memory_id": "L000050",
-          "source_event_ids": [
-            "e00157"
-          ],
-          "valid_from": "2026-05-19T11:38:00Z",
-          "valid_to": null,
-          "recorded_at": "2026-05-19T11:38:00Z",
-          "score": null
-        }
-      ],
-      "evidence_tokens": 20,
-      "injected_tokens": 20,
+      "abstained": true,
+      "abstain_reason": "no known slot matches",
+      "evidence": [],
+      "evidence_tokens": 0,
+      "injected_tokens": 0,
       "budget_exceeded": false,
-      "verdict": "correct",
-      "matched": "RabbitMQ",
+      "verdict": "false_abstention",
+      "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006430000066757202,
+      "latency_s": 0.0003563749778550118,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 597,
-        "llm_output_tokens": 9,
+        "llm_input_tokens": 608,
+        "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -4779,7 +4791,8 @@
           "memory_id": "L000020",
           "source_event_ids": [
             "e00050",
-            "e00099"
+            "e00099",
+            "e00114"
           ],
           "valid_from": "2026-02-13T11:23:00Z",
           "valid_to": "2026-05-19T11:38:00Z",
@@ -4794,10 +4807,10 @@
       "matched": "Amazon SQS",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006123330094851553,
+      "latency_s": 0.00042887500603683293,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 607,
+        "llm_input_tokens": 618,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4828,7 +4841,8 @@
           "content": "region of notifications-service: eu-north-1 (since 2026-01-26 until 2026-06-08; source: code_change)",
           "memory_id": "L000012",
           "source_event_ids": [
-            "e00025"
+            "e00025",
+            "e00114"
           ],
           "valid_from": "2026-01-26T08:06:00Z",
           "valid_to": "2026-06-08T10:11:00Z",
@@ -4843,10 +4857,10 @@
       "matched": "eu-north-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006972500123083591,
+      "latency_s": 0.00043741700937971473,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 607,
+        "llm_input_tokens": 618,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4875,7 +4889,7 @@
       "evidence": [
         {
           "content": "ci provider of notifications-service: GitLab CI (since 2026-06-08; source: user_message)",
-          "memory_id": "L000058",
+          "memory_id": "L000057",
           "source_event_ids": [
             "e00186"
           ],
@@ -4892,10 +4906,10 @@
       "matched": "GitLab CI",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005829590081702918,
+      "latency_s": 0.0004088749992661178,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 599,
+        "llm_input_tokens": 610,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4923,7 +4937,8 @@
           "content": "deploy branch of notifications-service: release-train (since 2026-02-13; source: user_message)",
           "memory_id": "L000022",
           "source_event_ids": [
-            "e00055"
+            "e00055",
+            "e00114"
           ],
           "valid_from": "2026-02-13T11:34:00Z",
           "valid_to": null,
@@ -4938,10 +4953,10 @@
       "matched": "release-train",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000568667019251734,
+      "latency_s": 0.0003726669820025563,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 597,
+        "llm_input_tokens": 608,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -4971,7 +4986,8 @@
           "content": "region of auth-service: us-east-1 (since 2026-02-11; source: user_message)",
           "memory_id": "L000017",
           "source_event_ids": [
-            "e00045"
+            "e00045",
+            "e00114"
           ],
           "valid_from": "2026-02-11T14:17:00Z",
           "valid_to": null,
@@ -4986,10 +5002,10 @@
       "matched": "us-east-1",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00047020899364724755,
+      "latency_s": 0.0004107500135432929,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 598,
+        "llm_input_tokens": 609,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5019,7 +5035,7 @@
       "evidence": [
         {
           "content": "message queue of payments-service: RabbitMQ (since 2026-05-19; source: tool_result)",
-          "memory_id": "L000050",
+          "memory_id": "L000051",
           "source_event_ids": [
             "e00157"
           ],
@@ -5036,10 +5052,10 @@
       "matched": "RabbitMQ",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0006457919953390956,
+      "latency_s": 0.00038762501208111644,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 597,
+        "llm_input_tokens": 608,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5070,10 +5086,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005298750184010714,
+      "latency_s": 0.0005777080077677965,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 598,
+        "llm_input_tokens": 609,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5104,10 +5120,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004897500039078295,
+      "latency_s": 0.0003598750045057386,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 595,
+        "llm_input_tokens": 606,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5133,7 +5149,7 @@
       "evidence": [
         {
           "content": "runtime of notifications-service: Python 3.10 (since 2026-05-18; source: document)",
-          "memory_id": "L000048",
+          "memory_id": "L000049",
           "source_event_ids": [
             "e00151"
           ],
@@ -5150,10 +5166,10 @@
       "matched": "Python 3.10",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00046887501957826316,
+      "latency_s": 0.0003474170225672424,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 424,
+        "llm_input_tokens": 360,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5181,7 +5197,7 @@
       "evidence": [
         {
           "content": "message queue of notifications-service: ActiveMQ (since 2026-04-18; source: user_message)",
-          "memory_id": "L000040",
+          "memory_id": "L000042",
           "source_event_ids": [
             "e00116",
             "e00154"
@@ -5199,10 +5215,10 @@
       "matched": "ActiveMQ",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.000499500019941479,
+      "latency_s": 0.0004125830018892884,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 427,
+        "llm_input_tokens": 363,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5229,29 +5245,30 @@
       "abstain_reason": null,
       "evidence": [
         {
-          "content": "ci test command of notifications-service: go test ./... (since 2026-05-30; source: tool_result)",
-          "memory_id": "L000056",
+          "content": "test command of notifications-service: go test ./... (since 2026-04-18; source: tool_result)",
+          "memory_id": "L000041",
           "source_event_ids": [
+            "e00115",
             "e00179"
           ],
-          "valid_from": "2026-05-30T12:28:01Z",
+          "valid_from": "2026-04-18T11:06:01Z",
           "valid_to": null,
-          "recorded_at": "2026-05-30T12:28:01Z",
+          "recorded_at": "2026-04-18T11:06:01Z",
           "score": null
         }
       ],
-      "evidence_tokens": 27,
-      "injected_tokens": 27,
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
       "budget_exceeded": false,
       "verdict": "correct",
       "matched": "go test ./...",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00047462500515393913,
+      "latency_s": 0.0003755409852601588,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 425,
-        "llm_output_tokens": 11,
+        "llm_input_tokens": 361,
+        "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -5298,10 +5315,10 @@
       "matched": "Kafka",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004820830072276294,
+      "latency_s": 0.0003877920098602772,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 425,
+        "llm_input_tokens": 361,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5349,10 +5366,10 @@
       "matched": "Redis Streams",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00042708401451818645,
+      "latency_s": 0.0003064999764319509,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 434,
+        "llm_input_tokens": 370,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5385,11 +5402,11 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004679169796872884,
+      "latency_s": 0.00028649999876506627,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 434,
-        "llm_output_tokens": 11,
+        "llm_input_tokens": 370,
+        "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -5415,29 +5432,30 @@
       "abstain_reason": null,
       "evidence": [
         {
-          "content": "ci test command of notifications-service: go test ./... (since 2026-05-30; source: tool_result)",
-          "memory_id": "L000056",
+          "content": "test command of notifications-service: go test ./... (since 2026-04-18; source: tool_result)",
+          "memory_id": "L000041",
           "source_event_ids": [
+            "e00115",
             "e00179"
           ],
-          "valid_from": "2026-05-30T12:28:01Z",
+          "valid_from": "2026-04-18T11:06:01Z",
           "valid_to": null,
-          "recorded_at": "2026-05-30T12:28:01Z",
+          "recorded_at": "2026-04-18T11:06:01Z",
           "score": null
         }
       ],
-      "evidence_tokens": 27,
-      "injected_tokens": 27,
+      "evidence_tokens": 26,
+      "injected_tokens": 26,
       "budget_exceeded": false,
       "verdict": "correct",
       "matched": "go test ./...",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004335420089773834,
+      "latency_s": 0.00028437498258426785,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 426,
-        "llm_output_tokens": 11,
+        "llm_input_tokens": 362,
+        "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
           "gpt-4.1-mini-2025-04-14"
@@ -5465,7 +5483,7 @@
       "evidence": [
         {
           "content": "database of auth-service: MariaDB 11.4 (since 2026-05-18; source: tool_result)",
-          "memory_id": "L000049",
+          "memory_id": "L000050",
           "source_event_ids": [
             "e00152"
           ],
@@ -5482,10 +5500,10 @@
       "matched": "MariaDB 11.4",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00048145800246857107,
+      "latency_s": 0.000271833996521309,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 426,
+        "llm_input_tokens": 362,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5516,10 +5534,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0003809159970842302,
+      "latency_s": 0.000263167021330446,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 425,
+        "llm_input_tokens": 361,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5550,10 +5568,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004458750190678984,
+      "latency_s": 0.00027637500897981226,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 426,
+        "llm_input_tokens": 362,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5599,10 +5617,10 @@
       "matched": "Jonas Berg",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005010410095565021,
+      "latency_s": 0.000317083002300933,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 421,
+        "llm_input_tokens": 419,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5632,7 +5650,8 @@
           "content": "message queue of payments-service: Amazon SQS (since 2026-02-17; source: user_message)",
           "memory_id": "L000025",
           "source_event_ids": [
-            "e00065"
+            "e00065",
+            "e00129"
           ],
           "valid_from": "2026-02-17T14:24:02Z",
           "valid_to": null,
@@ -5647,10 +5666,10 @@
       "matched": "Amazon SQS",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005499160033650696,
+      "latency_s": 0.00028941701748408377,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 421,
+        "llm_input_tokens": 419,
         "llm_output_tokens": 9,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5676,7 +5695,7 @@
       "evidence": [
         {
           "content": "staging hostname of cart-service: cart-stg-4.internal (since 2026-06-29; source: user_message)",
-          "memory_id": "L000065",
+          "memory_id": "L000064",
           "source_event_ids": [
             "e00213"
           ],
@@ -5693,10 +5712,10 @@
       "matched": "cart-stg-4.internal",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00048529100604355335,
+      "latency_s": 0.0003495830169413239,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 419,
+        "llm_input_tokens": 417,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5739,10 +5758,10 @@
       "matched": "trunk",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0005054579814895988,
+      "latency_s": 0.00032795799779705703,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 421,
+        "llm_input_tokens": 419,
         "llm_output_tokens": 10,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5772,7 +5791,7 @@
       "evidence": [
         {
           "content": "runtime of payments-service: Go 1.22 (since 2026-05-16; source: tool_result)",
-          "memory_id": "L000047",
+          "memory_id": "L000048",
           "source_event_ids": [
             "e00147"
           ],
@@ -5789,10 +5808,10 @@
       "matched": "Go 1.22",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00048187500215135515,
+      "latency_s": 0.0002989170025102794,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 419,
+        "llm_input_tokens": 417,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5841,10 +5860,10 @@
       "matched": "Node 20",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00041804200736805797,
+      "latency_s": 0.0003006249899044633,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 428,
+        "llm_input_tokens": 426,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5876,7 +5895,7 @@
       "evidence": [
         {
           "content": "runtime of payments-service: Node 18 (since 2026-04-24 until 2026-05-16; source: user_message)",
-          "memory_id": "L000042",
+          "memory_id": "L000044",
           "source_event_ids": [
             "e00132"
           ],
@@ -5893,10 +5912,10 @@
       "matched": "Node 18",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0004617090162355453,
+      "latency_s": 0.00030758301727473736,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 428,
+        "llm_input_tokens": 426,
         "llm_output_tokens": 8,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5927,10 +5946,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00038766697980463505,
+      "latency_s": 0.0002725830127019435,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 419,
+        "llm_input_tokens": 417,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5961,10 +5980,10 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00034474997664801776,
+      "latency_s": 0.0002503329887986183,
       "usage": {
         "llm_calls": 1,
-        "llm_input_tokens": 419,
+        "llm_input_tokens": 417,
         "llm_output_tokens": 4,
         "embedding_tokens": 0,
         "model_ids": [
@@ -5976,41 +5995,45 @@
   "checkpoint_stats": {
     "c1": {
       "user_id": null,
-      "n_items": 21,
-      "storage_bytes": 219,
+      "n_items": 20,
+      "storage_bytes": 202,
       "extra": {
-        "active": 19,
+        "active": 18,
         "disputes": 0,
+        "pending": 1,
         "tombstones": 0
       }
     },
     "c2": {
       "user_id": null,
       "n_items": 29,
-      "storage_bytes": 283,
+      "storage_bytes": 277,
       "extra": {
         "active": 24,
         "disputes": 3,
+        "pending": 1,
         "tombstones": 3
       }
     },
     "c3": {
       "user_id": null,
       "n_items": 42,
-      "storage_bytes": 393,
+      "storage_bytes": 397,
       "extra": {
-        "active": 29,
+        "active": 30,
         "disputes": 4,
+        "pending": 0,
         "tombstones": 4
       }
     },
     "c4": {
       "user_id": null,
-      "n_items": 50,
-      "storage_bytes": 484,
+      "n_items": 48,
+      "storage_bytes": 469,
       "extra": {
-        "active": 33,
-        "disputes": 6,
+        "active": 32,
+        "disputes": 7,
+        "pending": 0,
         "tombstones": 5
       }
     }

@@ -2,7 +2,7 @@
 
 Every value lives in a *slot* (as named by the extractor) as an ``Entry`` with
 a validity interval and the events that stated it. The write path applies
-four rules per claim, in stream order:
+five rules per claim, in stream order:
 
   restate     same value as the active entry: add the event to its provenance,
               no new item (I4).
@@ -11,7 +11,12 @@ four rules per claim, in stream order:
               new one (I2). Closed entries stay queryable by ``as_of`` (I3).
   dispute     different value from a *less* trusted source (an old README, the
               agent's own echo): kept for audit, never retrieved (I5).
-  introduce   no active entry: open one.
+  introduce   no active entry, and a source trusted at least
+              ``introduce_trust``: open one. If an unconfirmed claim of the
+              same value was held, its events join the provenance.
+  hold        no active entry, from a source below ``introduce_trust`` (the
+              agent guessing a value nobody stated): kept as *unconfirmed*,
+              never retrieved, until a trusted source states a value.
 
 Deletion erases every entry and dispute of the affected slots recorded up to
 the request, keeping only a value-free tombstone, and blocks the source events
@@ -38,6 +43,8 @@ from systems.ledger.extract import Claim, Extractor, RuleExtractor
 
 #: Higher wins. A source may supersede a value only from equal or higher rank.
 #: Tool output is as trusted as the user: it observes the world directly.
+#: A slot with no value can be opened only from ``INTRODUCE_TRUST`` up.
+INTRODUCE_TRUST = 2
 TRUST: dict[EventKind, int] = {
     EventKind.USER_MESSAGE: 3,
     EventKind.TOOL_RESULT: 3,
@@ -89,6 +96,8 @@ class Tombstone:
 class _UserLedger:
     entries: list[Entry] = field(default_factory=list)
     disputes: list[Entry] = field(default_factory=list)
+    pending: list[Entry] = field(default_factory=list)
+    """Unconfirmed claims for slots with no value, at most one per slot."""
     tombstones: list[Tombstone] = field(default_factory=list)
     blocked: set[str] = field(default_factory=set)
     """Event ids that may never be ingested again for this user."""
@@ -96,17 +105,24 @@ class _UserLedger:
     def active(self, slot: str) -> Entry | None:
         return next((e for e in reversed(self.entries) if e.slot == slot and e.valid_to is None), None)
 
+    def take_pending(self, slot: str) -> Entry | None:
+        held = next((e for e in self.pending if e.slot == slot), None)
+        if held is not None:
+            self.pending.remove(held)
+        return held
+
 
 class Ledger(MemorySystem):
     name = "ledger"
-    version = "1"
+    version = "2"
     capabilities = Capabilities(
         provenance=True, temporal_query=True, deletion=True,
         abstention=True, persistence=True, export=True,
     )
 
-    def __init__(self, extractor: Extractor | None = None) -> None:
+    def __init__(self, extractor: Extractor | None = None, introduce_trust: int = INTRODUCE_TRUST) -> None:
         self.extractor = extractor or RuleExtractor()
+        self.introduce_trust = introduce_trust
         self.reset()
 
     def reset(self) -> None:
@@ -140,7 +156,7 @@ class Ledger(MemorySystem):
                 added += outcome in ("introduce", "supersede")
                 updated += outcome == "restate"
                 superseded += outcome == "supersede"
-                rejected += outcome == "dispute"
+                rejected += outcome in ("dispute", "hold")
         return WriteReport(
             usage=_total(usages), items_added=added, items_updated=updated,
             items_superseded=superseded, items_rejected=rejected,
@@ -164,17 +180,33 @@ class Ledger(MemorySystem):
             return "dispute"
         if cur is not None:
             cur.valid_to = ev.timestamp
+            ul.entries.append(new)
+            return "supersede"
+        held = ul.take_pending(c.slot)
+        if trust < self.introduce_trust:
+            if held is not None:
+                ul.disputes.append(held)
+            ul.pending.append(new)
+            return "hold"
+        if held is not None and held.value == c.value:
+            # Confirmed: valid from the trusted statement, with the earlier events kept.
+            new.label = held.label
+            new.source_event_ids = held.source_event_ids + new.source_event_ids
+        elif held is not None:
+            ul.disputes.append(held)
         ul.entries.append(new)
-        return "supersede" if cur is not None else "introduce"
+        return "introduce"
 
     @staticmethod
     def _known(ul: _UserLedger) -> dict[str, str]:
         """Every slot this user has had, described for the extractor. Deleted
-        slots keep their key but never their values."""
+        slots keep their key but never their values. An unconfirmed value is
+        shown like a current one: it keeps keys and spellings stable, and
+        trust is decided here, not by the extractor."""
         known = {t.slot: "(deleted)" for t in ul.tombstones}
-        for e in ul.disputes + ul.entries:
+        for e in ul.disputes + ul.entries + ul.pending:
             known.setdefault(e.slot, e.label)
-        for e in ul.entries:
+        for e in ul.entries + ul.pending:
             if e.valid_to is None:
                 known[e.slot] = f"{e.label} (current: {e.value})"
         return known
@@ -186,7 +218,7 @@ class Ledger(MemorySystem):
     def delete(self, request: DeleteRequest) -> DeleteReport:
         ul = self._user(request.user_id)
         sources = set(request.source_event_ids)
-        slots = {e.slot for e in ul.entries + ul.disputes if sources & set(e.source_event_ids)}
+        slots = {e.slot for e in ul.entries + ul.disputes + ul.pending if sources & set(e.source_event_ids)}
         usage = Usage()
         if not slots:
             # Description-only request, or sources we never turned into entries.
@@ -196,9 +228,10 @@ class Ledger(MemorySystem):
         def erased(e: Entry) -> bool:
             return e.slot in slots and e.valid_from <= request.requested_at
 
-        gone = [e for e in ul.entries + ul.disputes if erased(e)]
+        gone = [e for e in ul.entries + ul.disputes + ul.pending if erased(e)]
         ul.entries = [e for e in ul.entries if not erased(e)]
         ul.disputes = [e for e in ul.disputes if not erased(e)]
+        ul.pending = [e for e in ul.pending if not erased(e)]
         ul.blocked |= sources | {i for e in gone for i in e.source_event_ids}
         ul.tombstones += [Tombstone(s, request.requested_at, request.request_id) for s in sorted(slots)]
         return DeleteReport(usage=usage, items_deleted=len(gone))
@@ -227,7 +260,10 @@ class Ledger(MemorySystem):
             used += cost
         if not evidence:
             deleted = any(t.slot in slots and t.deleted_at <= query.asked_at for t in ul.tombstones)
-            reason = "deleted at the user's request" if deleted else f"no value held at {target:%Y-%m-%d}"
+            unconfirmed = any(e.slot in slots and e.valid_from <= query.asked_at for e in ul.pending)
+            reason = ("deleted at the user's request" if deleted
+                      else "only an unconfirmed claim from a less trusted source" if unconfirmed
+                      else f"no value held at {target:%Y-%m-%d}")
             return RetrievalResult(abstained=True, abstain_reason=reason, usage=usage)
         return RetrievalResult(evidence=tuple(evidence), usage=usage)
 
@@ -252,6 +288,7 @@ class Ledger(MemorySystem):
             extra={
                 "active": sum(e.valid_to is None for e in entries),
                 "disputes": sum(len(ul.disputes) for ul in uls),
+                "pending": sum(len(ul.pending) for ul in uls),
                 "tombstones": sum(len(ul.tombstones) for ul in uls),
             },
         )
@@ -291,6 +328,7 @@ class Ledger(MemorySystem):
             self._users[u] = _UserLedger(
                 entries=[entry(e) for e in d["entries"]],
                 disputes=[entry(e) for e in d["disputes"]],
+                pending=[entry(e) for e in d.get("pending", [])],
                 tombstones=[Tombstone(t["slot"], datetime.fromisoformat(t["deleted_at"]), t["request_id"])
                             for t in d["tombstones"]],
                 blocked=set(d["blocked"]),
@@ -301,4 +339,5 @@ class Ledger(MemorySystem):
             "name": self.name, "version": self.version,
             "extractor": self.extractor.config(),
             "trust": {k.value: v for k, v in TRUST.items()},
+            "introduce_trust": self.introduce_trust,
         }

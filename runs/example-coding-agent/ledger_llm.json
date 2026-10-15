@@ -3,10 +3,10 @@
   "generator": "hand-built/0.1",
   "seed": 0,
   "system": "ledger",
-  "system_version": "1",
+  "system_version": "2",
   "system_config": {
     "name": "ledger",
-    "version": "1",
+    "version": "2",
     "extractor": {
       "name": "llm",
       "version": "5",
@@ -17,8 +17,8 @@
       "temperature": 0.0,
       "seed": 0,
       "prompt_sha": "cb83f582ae5c",
-      "calls": 14,
-      "cache_hits": 0,
+      "calls": 0,
+      "cache_hits": 14,
       "refusals": 0,
       "dropped_claims": 0
     },
@@ -29,7 +29,8 @@
       "document": 2,
       "assistant_message": 1,
       "tool_call": 1
-    }
+    },
+    "introduce_trust": 2
   },
   "capabilities": {
     "provenance": true,
@@ -44,7 +45,7 @@
     "delete_with_sources": true,
     "tokenizer": "regex-words/1"
   },
-  "started_at": "2026-10-14T12:19:06.802006Z",
+  "started_at": "2026-10-14T13:33:29.593411Z",
   "ops": [
     {
       "op": "ingest",
@@ -56,7 +57,7 @@
         "e03",
         "e04"
       ],
-      "latency_s": 1.5066164589952677,
+      "latency_s": 0.4135754580202047,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 482,
@@ -83,7 +84,7 @@
         "e06",
         "e07"
       ],
-      "latency_s": 0.9849343330133706,
+      "latency_s": 0.008660457999212667,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 511,
@@ -109,7 +110,7 @@
         "e08",
         "e09"
       ],
-      "latency_s": 0.8470989589986857,
+      "latency_s": 0.006622916989726946,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 496,
@@ -134,7 +135,7 @@
       "event_ids": [
         "e10"
       ],
-      "latency_s": 0.5916622079967055,
+      "latency_s": 0.0049319999816361815,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 464,
@@ -159,7 +160,7 @@
       "event_ids": [
         "e06"
       ],
-      "latency_s": 0.00008720799814909697,
+      "latency_s": 0.000027875008527189493,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -179,7 +180,7 @@
       "event_ids": [
         "e11"
       ],
-      "latency_s": 0.7715715410013217,
+      "latency_s": 0.005193457996938378,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 457,
@@ -204,7 +205,7 @@
       "event_ids": [
         "e12"
       ],
-      "latency_s": 0.6644999580166768,
+      "latency_s": 0.00460812498931773,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 453,
@@ -262,7 +263,7 @@
       "matched": "Postgres 14",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.565311540995026,
+      "latency_s": 0.00697079100064002,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 292,
@@ -310,7 +311,7 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.565530541993212,
+      "latency_s": 0.0058079580194316804,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 291,
@@ -361,7 +362,7 @@
       "matched": "PostgreSQL 16",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.5785980420187116,
+      "latency_s": 0.005547207983909175,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 291,
@@ -409,7 +410,7 @@
       "matched": "make test",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.7424768749915529,
+      "latency_s": 0.005477625003550202,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 291,
@@ -460,7 +461,7 @@
       "matched": "Postgres 14",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.7656640420027543,
+      "latency_s": 0.004517249995842576,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 288,
@@ -496,7 +497,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.4819645830139052,
+      "latency_s": 0.004537792003247887,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 280,
@@ -544,7 +545,7 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.7614998329954688,
+      "latency_s": 0.004273625003406778,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 282,
@@ -578,7 +579,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.7458603749983013,
+      "latency_s": 0.004325208981754258,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 283,
@@ -598,6 +599,7 @@
       "extra": {
         "active": 4,
         "disputes": 1,
+        "pending": 0,
         "tombstones": 0
       }
     },
@@ -608,6 +610,7 @@
       "extra": {
         "active": 4,
         "disputes": 1,
+        "pending": 0,
         "tombstones": 0
       }
     },
@@ -618,6 +621,7 @@
       "extra": {
         "active": 3,
         "disputes": 2,
+        "pending": 0,
         "tombstones": 1
       }
     }
