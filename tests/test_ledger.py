@@ -6,10 +6,11 @@ from datetime import datetime, timezone
 
 import pytest
 
-from interface.memory_system import DeleteRequest, Event, EventKind, MemoryItemStatus, Query
+from interface.memory_system import DeleteRequest, Event, EventKind, MemoryItemStatus, Query, Usage
 from runner.replay import run
 from runner.scoring import Verdict
-from systems.ledger.system import Ledger
+from systems.ledger.extract import Claim
+from systems.ledger.system import Ledger, named_slots
 from workloads.examples.build_example import build
 
 
@@ -140,6 +141,47 @@ def test_delete_erases_held_claim():
     s.ingest([ev("b", 4, "Staging lives at staging-7.internal.")])
     res = ask(s, "What's the staging hostname?")
     assert values(res) == ["staging-7.internal"] and res.evidence[0].source_event_ids == ("b",)
+
+
+def test_named_slots():
+    slots = ["gateway-service/ci_provider", "gateway-service/on_call_owner", "auth/database",
+             "auth-service/database", "payments-service/staging_hostname", "database"]
+    assert named_slots("Don't keep gateway-service's on-call owner in memory anymore.", slots) == \
+        ["gateway-service/on_call_owner"]
+    assert named_slots("Forget auth-service's database.", slots) == ["auth-service/database"]
+    assert named_slots("Remove payments-service's staging host.", slots) == []  # "hostname" not stated
+    assert named_slots("Forget the CI provider.", slots) == []  # no entity
+    assert named_slots("Forget the database.", slots) == []  # keys without an entity never match
+
+
+class SilentRouter:
+    """Extracts "<entity> <attribute> is <value>." and never routes a question."""
+
+    name, version = "silent", "0"
+
+    def claims(self, events, known):
+        out = []
+        for e in events:
+            entity, attribute, _, value = e.content.rstrip(".").split(" ", 3)
+            out.append(Claim(event_id=e.event_id, slot=f"{entity}/{attribute}", value=value, label=attribute))
+        return out, Usage()
+
+    def slots_for(self, text, known):
+        return [], Usage()
+
+    def config(self):
+        return {"name": self.name}
+
+
+def test_delete_by_description_erases_named_slot_when_router_misses():
+    s = Ledger(SilentRouter())
+    s.ingest([ev("a", 1, "gateway-service ci_provider is Jenkins."),
+              ev("b", 1, "gateway-service runtime is Java 21.")])
+    rep = s.delete(DeleteRequest(request_id="d", user_id="u1", requested_at=ts(3),
+                                 description="Don't keep gateway-service's CI provider in memory anymore."))
+    assert rep.items_deleted == 1
+    assert [e.slot for e in s._user("u1").entries] == ["gateway-service/runtime"]
+    assert s.stats().extra["tombstones"] == 1
 
 
 @pytest.mark.parametrize("sources", [("a",), ()])

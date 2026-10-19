@@ -18,8 +18,9 @@ five rules per claim, in stream order:
               agent guessing a value nobody stated): kept as *unconfirmed*,
               never retrieved, until a trusted source states a value.
 
-Deletion erases every entry and dispute of the affected slots recorded up to
-the request, keeping only a value-free tombstone, and blocks the source events
+Deletion erases every entry and dispute of the affected slots (matched by the
+request's source events, else by the extractor and by ``named_slots``)
+recorded up to the request, keeping only a value-free tombstone, and blocks the source events
 so a replay cannot bring them back (I1). Retrieval returns the one entry valid
 at ``as_of`` (or now) per matched slot, and abstains when there is none (I6).
 All state is partitioned by ``user_id`` (I7).
@@ -28,6 +29,7 @@ All state is partitioned by ``user_id`` (I7).
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from pathlib import Path
@@ -53,6 +55,27 @@ TRUST: dict[EventKind, int] = {
     EventKind.ASSISTANT_MESSAGE: 1,
     EventKind.TOOL_CALL: 1,
 }
+
+
+def named_slots(text: str, slots: Sequence[str]) -> list[str]:
+    """The ``entity/attribute`` slots that ``text`` names outright: the entity
+    as a whole word ("auth-service", not the "auth" inside it) and every word
+    of the attribute, each starting a word of the text ("host" in
+    "hostname"). Deletion uses it alongside the extractor's routing, so a
+    request that names a slot erases it even when the model returns nothing.
+    """
+    low = text.lower()
+    words = re.findall(r"[a-z0-9]+", low)
+    out = []
+    for slot in slots:
+        entity, sep, attribute = slot.partition("/")
+        if not (sep and entity and attribute):
+            continue
+        if not re.search(rf"(?<![\w-]){re.escape(entity)}(?![\w-])", low):
+            continue
+        if all(any(w.startswith(a) for w in words) for a in re.findall(r"[a-z0-9]+", attribute)):
+            out.append(slot)
+    return out
 
 
 def _total(usages: Sequence[Usage]) -> Usage:
@@ -114,7 +137,7 @@ class _UserLedger:
 
 class Ledger(MemorySystem):
     name = "ledger"
-    version = "2"
+    version = "3"
     capabilities = Capabilities(
         provenance=True, temporal_query=True, deletion=True,
         abstention=True, persistence=True, export=True,
@@ -222,8 +245,11 @@ class Ledger(MemorySystem):
         usage = Usage()
         if not slots:
             # Description-only request, or sources we never turned into entries.
-            found, usage = self.extractor.slots_for(request.description, self._known(ul))
-            slots = set(found)
+            # A missed slot is a privacy failure, so a slot the text names
+            # outright is erased even if the extractor does not route to it.
+            known = self._known(ul)
+            found, usage = self.extractor.slots_for(request.description, known)
+            slots = set(found) | set(named_slots(request.description, list(known)))
 
         def erased(e: Entry) -> bool:
             return e.slot in slots and e.valid_from <= request.requested_at

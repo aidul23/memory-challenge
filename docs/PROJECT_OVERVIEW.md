@@ -151,7 +151,7 @@ systems/
     llm.py             LLM-based extractor (any provider), with response cache
     backends.py        Model providers: Anthropic, OpenAI / OpenAI-compatible
 runs/                  Run logs, one JSON file per (workload, system, mode)
-tests/                 76 tests (schema, runner, ledger, generator, LLM extractor, sweep)
+tests/                 78 tests (schema, runner, ledger, generator, LLM extractor, sweep)
 .env.example           Template for API keys and model settings (.env is git-ignored)
 ```
 
@@ -555,7 +555,11 @@ Re-ingesting a seen event is skipped; a blocked event is rejected.
 
 1. Find the affected slots: those whose entries came from the request's source
    events, or, if none or no sources were given, the slots the extractor
-   matches to the description.
+   matches to the description, plus every `entity/attribute` slot the
+   description names outright (`named_slots`: the entity as a whole word and
+   each attribute word starting a word of the text, so "gateway-service's
+   on-call owner" names `gateway-service/on_call_owner`). A missed slot is a
+   privacy failure, so deletion does not rest on one LLM call alone.
 2. Erase every entry, dispute and pending value of those slots recorded up to
    the request, past values included.
 3. Leave a value-free tombstone.
@@ -731,6 +735,26 @@ Verdicts, all seeds:
   Its one `no_abstention` is a deletion request ("Don't keep auth-service's
   database in memory anymore") extracted as the value "not in memory".
 
+**Deletion by description only** (`--withhold-sources`, logs
+`runs/synthetic-small-s*/*__nosrc.json`): the LLM ledger scores 469 correct,
+37 false abstentions, 2 missed, 4 wrong and **0 leaked** over the 5 seeds.
+Before `named_slots` it leaked 2 deleted values on seed 4 ("Don't keep
+gateway-service's CI provider / on-call owner in memory anymore"): the router
+returned no slot although both were listed. Asked again live, it missed the
+CI provider 5 times out of 5 with the user's 14 slots listed (and found it
+with only the gateway slots listed); it found the on-call owner 5 times out of
+5, so the cached miss was noise. Either way a single routing call decided
+whether a deletion happened. The fix changed no other verdict, apart from one
+contamination probe (p0104) whose router call changed because the gateway
+slots now show as deleted; it now abstains, a routing miss on a fragmented
+`inventory/ci_provider` slot.
+
+The one probe the runner counts as an isolation violation (seed 4, p0051) is
+not a cross-user leak: the extractor invented "GitHub Actions" as
+billing-service's CI provider from a diff summary ("3 files changed, 41
+insertions(+), 7 deletions(-)"), and that string happens to be another user's
+value.
+
 **Noise.** Three identical runs per seed (`--repeats 3`) changed the verdict
 of 20 of 512 probes, a standard deviation of about 1 probe per seed. Seeds
 differ far more: up to 16 points for the rule-based ledger. Any change has to
@@ -747,6 +771,7 @@ over seeds 0–4):
 | Router prompt examples reworded so they no longer copy the generator's phrasing | 91.9 | 91.5 | yes: within noise, and 120/120 abstentions |
 | Hold values the assistant states first as unconfirmed (introduce trust 2) | 91.5, 6 wrong | 91.5, 4 wrong | yes: 2 wrong → abstain, nothing else changed |
 | Also hold values a document states first (introduce trust 3) | 91.5 | 89.7 | no: 9 correct answers lost, documents are often the only first source |
+| Deletion also erases slots the description names outright (`named_slots`) | 2 leaked (description only) | 0 leaked | yes: with-sources results unchanged |
 
 The first two rows average three runs per seed, the others one run (91.9
 is the single-run baseline). The trust rows change only the ledger core, so
@@ -784,14 +809,14 @@ python -m pytest -q tests
 
 ## 15. Tests
 
-76 tests, all offline: the LLM tests use fake clients and never touch the
+78 tests, all offline: the LLM tests use fake clients and never touch the
 network or your real `.env`.
 
 | File | Tests | Covers |
 |---|---|---|
 | `test_schema.py` | 9 | The example is valid and round-trips through JSON. Ground-truth semantics are right. Deleted history stays hidden. The validator rejects a wrong expected answer, a missing forbidden value, an update to the same value, a source that does not match its carrier, and a contradiction from the user. Interface rules hold. |
 | `test_runner.py` | 11 | The delivery protocol (session batching, delete timing, no future events) and withholding sources. A perfect "oracle" system scores 8/8. The no-memory lower bound. Full replay's errors are typed correctly. Deletion without sources leaks. The runner truncates over-budget evidence, and RAG fits its own budget. The transcript store is idempotent and deletion sticks. Whole-phrase matching. |
-| `test_ledger.py` | 19 | The example scores 8/8 in both deletion modes. Restate, supersede and `as_of`. Disputes from less trusted sources, while a document may still introduce a fact. The assistant's first statement is held, not returned; a trusted source confirms it (valid from the confirmation) or overrules it; deletion erases it; the threshold is configurable. Deletion erases history and blocks replay, with or without sources. Abstention. User isolation (including a deletion request naming another user's events). Snapshot/restore round-trip. |
+| `test_ledger.py` | 21 | The example scores 8/8 in both deletion modes. Restate, supersede and `as_of`. Disputes from less trusted sources, while a document may still introduce a fact. The assistant's first statement is held, not returned; a trusted source confirms it (valid from the confirmation) or overrules it; deletion erases it; the threshold is configurable. Deletion erases history and blocks replay, with or without sources, and erases a slot the description names even when the router returns none; `named_slots` matches whole entity names only. Abstention. User isolation (including a deletion request naming another user's events). Snapshot/restore round-trip. |
 | `test_generator.py` | 16 | Same seed gives the same timeline. Ten seeds are valid and clean. Every mutation and probe type appears. Contradictions only target trusted values. Values are unique per user. The hygiene check catches a planted leak. The runner replays generated timelines. |
 | `test_llm_extractor.py` | 20 | For both providers: request shape, output filtering (invented event ids, blank and malformed claims), event ids enumerated in the schema and bad ones counted, caching, per-provider cache keys, slot routing with an enum, refusals. Provider selection from the environment, blank values counting as unset, and OpenAI sampling pinned unless a reasoning effort is set. The ledger end to end with an LLM extractor. |
 | `test_sweep.py` | 1 | Workloads are generated once and reloaded, every system runs on every seed, deterministic systems run once, and repeats are logged and scored for noise. |
@@ -830,6 +855,14 @@ network or your real `.env`.
   cost 9 correct answers in the sweep, because generated documents are often
   a fact's only first source.
 - **Run-to-run noise** remains at temperature 0: about 1 probe per seed.
+- **Ungrounded values.** The extractor occasionally invents a value the event
+  does not contain (seed 4: "GitHub Actions" from a diff summary). A check
+  that a claim's value appears in its source event would catch it, but must
+  allow the extractor's normalisation to a known spelling.
+- **Deletion by paraphrase still depends on the router.** `named_slots` only
+  catches requests that name the slot; "forget who we page for gateway" relies
+  on the LLM, and a fragmented slot (`inventory/ci_provider` next to
+  `inventory-service/...`) is not named by "inventory-service".
 - **The rule-based extractor** covers four slots and one project per user. It
   is a fallback, not a contender.
 - **Deduplication (I4)** is measured only through store size and
