@@ -16,7 +16,10 @@ are cached on disk, keyed by a hash of provider, model and full request, so a
 rerun of the same workload is free and reproducible (R3). A cached result
 reports the usage of the call that produced it, so costs stay comparable.
 Output is re-checked here, since not every OpenAI-compatible endpoint
-enforces the schema.
+enforces the schema, and a claim whose value does not appear in its event
+(ignoring case and punctuation) is dropped as ungrounded: the model copies
+known values onto unrelated events ("3 files changed, 41 insertions(+)")
+and turns non-statements into values ("unknown", "not in memory").
 """
 
 from __future__ import annotations
@@ -105,6 +108,17 @@ def _claims_schema(event_ids: Sequence[str]) -> dict[str, Any]:
     return schema
 
 
+def _squash(text: str) -> str:
+    return re.sub(r"[^0-9a-z]", "", text.lower())
+
+
+def grounded(value: str, text: str) -> bool:
+    """``value`` appears in ``text``, ignoring case, spacing and punctuation
+    ("MariaDB 11.4" in "server_version=MariaDB 11.4")."""
+    v = _squash(value)
+    return bool(v) and v in _squash(text)
+
+
 def slot_key(entity: str, attribute: str) -> str:
     norm = lambda s: re.sub(r"\s+", "-", s.strip().lower())
     return f"{norm(entity)}/{norm(attribute).replace('-', '_')}"
@@ -118,11 +132,11 @@ def _known_block(known: Mapping[str, str]) -> str:
 
 class LLMExtractor:
     name = "llm"
-    version = "5"
+    version = "6"
 
     def __init__(self, backend: Backend | None = None, cache_dir: Path | None = DEFAULT_CACHE) -> None:
         self._backend, self.cache_dir = backend, cache_dir
-        self.calls = self.cache_hits = self.refusals = self.dropped = 0
+        self.calls = self.cache_hits = self.refusals = self.dropped = self.ungrounded = 0
 
     @property
     def backend(self) -> Backend:
@@ -138,6 +152,7 @@ class LLMExtractor:
         lines = [f"[{e.event_id}] {e.timestamp:%Y-%m-%d %H:%M} {e.kind.value}: {e.content}" for e in events]
         prompt = f"{_known_block(known)}\n\nEvents:\n" + "\n".join(lines)
         ids = [e.event_id for e in events]
+        text = {e.event_id: e.content for e in events}
         data, usage = self._call(EXTRACT_SYSTEM, prompt, _claims_schema(ids), "claims")
         out = []
         for c in data.get("claims", []) if isinstance(data.get("claims"), list) else []:
@@ -146,6 +161,8 @@ class LLMExtractor:
                 continue
             if not (c["event_id"] in ids and c["value"].strip() and c["entity"].strip() and c["attribute"].strip()):
                 self.dropped += 1  # an empty field, or an id from an endpoint not enforcing the schema
+            elif not grounded(c["value"], text[c["event_id"]]):
+                self.ungrounded += 1
             else:
                 key = slot_key(c["entity"], c["attribute"])
                 label = f"{c['attribute'].strip().replace('_', ' ')} of {c['entity'].strip()}"
@@ -169,7 +186,8 @@ class LLMExtractor:
         digest = hashlib.sha256((EXTRACT_SYSTEM + SLOTS_SYSTEM).encode()).hexdigest()[:12]
         return {"name": self.name, "version": self.version, **self.backend.config(),
                 "prompt_sha": digest, "calls": self.calls, "cache_hits": self.cache_hits,
-                "refusals": self.refusals, "dropped_claims": self.dropped}
+                "refusals": self.refusals, "dropped_claims": self.dropped,
+                "ungrounded_claims": self.ungrounded}
 
     # ---- caching --------------------------------------------------------------
 

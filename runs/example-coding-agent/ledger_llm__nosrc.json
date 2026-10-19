@@ -9,7 +9,7 @@
     "version": "3",
     "extractor": {
       "name": "llm",
-      "version": "5",
+      "version": "6",
       "provider": "openai",
       "model": "gpt-4.1-mini",
       "effort": null,
@@ -20,7 +20,8 @@
       "calls": 0,
       "cache_hits": 15,
       "refusals": 0,
-      "dropped_claims": 0
+      "dropped_claims": 0,
+      "ungrounded_claims": 0
     },
     "trust": {
       "user_message": 3,
@@ -45,7 +46,7 @@
     "delete_with_sources": false,
     "tokenizer": "regex-words/1"
   },
-  "started_at": "2026-10-19T06:12:37.121315Z",
+  "started_at": "2026-10-19T06:23:36.073162Z",
   "ops": [
     {
       "op": "ingest",
@@ -57,7 +58,7 @@
         "e03",
         "e04"
       ],
-      "latency_s": 0.3632140829868149,
+      "latency_s": 0.35314920797827654,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 482,
@@ -84,7 +85,7 @@
         "e06",
         "e07"
       ],
-      "latency_s": 0.00027916699764318764,
+      "latency_s": 0.0002735840098466724,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 511,
@@ -110,7 +111,7 @@
         "e08",
         "e09"
       ],
-      "latency_s": 0.00023266600328497589,
+      "latency_s": 0.00023458301438950002,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 496,
@@ -135,7 +136,7 @@
       "event_ids": [
         "e10"
       ],
-      "latency_s": 0.0005633340042550117,
+      "latency_s": 0.00025479201576672494,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 464,
@@ -158,7 +159,7 @@
       "at": "2026-03-10T11:00:00Z",
       "ref": "m09",
       "event_ids": [],
-      "latency_s": 0.015247417002683505,
+      "latency_s": 0.0005082499992568046,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 294,
@@ -180,7 +181,7 @@
       "event_ids": [
         "e11"
       ],
-      "latency_s": 0.0010233329958282411,
+      "latency_s": 0.0002565419999882579,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 457,
@@ -205,7 +206,7 @@
       "event_ids": [
         "e12"
       ],
-      "latency_s": 0.0006637090118601918,
+      "latency_s": 0.0003504999913275242,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 453,
@@ -263,7 +264,7 @@
       "matched": "Postgres 14",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0002415000053588301,
+      "latency_s": 0.00022754198289476335,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 292,
@@ -311,7 +312,7 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00023712500114925206,
+      "latency_s": 0.00023120897822082043,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 291,
@@ -362,7 +363,7 @@
       "matched": "PostgreSQL 16",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00022741698194295168,
+      "latency_s": 0.00020325000514276326,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 291,
@@ -410,7 +411,7 @@
       "matched": "make test",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.00024529200163669884,
+      "latency_s": 0.0002608330105431378,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 291,
@@ -461,7 +462,7 @@
       "matched": "Postgres 14",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0008576670079492033,
+      "latency_s": 0.0002502499846741557,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 288,
@@ -497,7 +498,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.001880708005046472,
+      "latency_s": 0.00020383301307447255,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 280,
@@ -545,7 +546,7 @@
       "matched": "main",
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0010106670088134706,
+      "latency_s": 0.0001943749957717955,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 282,
@@ -579,7 +580,7 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 0.0002998329873662442,
+      "latency_s": 0.00018999999156221747,
       "usage": {
         "llm_calls": 1,
         "llm_input_tokens": 283,

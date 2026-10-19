@@ -10,7 +10,7 @@ import pytest
 
 from interface.memory_system import Event, EventKind, Query
 from systems.ledger.backends import AnthropicBackend, OpenAIBackend, backend_from_env
-from systems.ledger.llm import LLMExtractor, slot_key
+from systems.ledger.llm import LLMExtractor, grounded, slot_key
 from systems.ledger.system import Ledger
 
 
@@ -138,6 +138,31 @@ def test_slots_for_uses_enum_and_skips_call_when_nothing_known(make, tmp_path):
     assert client.requests == []
     slots, _ = x.slots_for("Which db does a use?", {"a/db": "db of a", "b/db": "db of b"})
     assert slots == ["a/db"]
+
+
+def test_grounded_ignores_case_spacing_and_punctuation():
+    assert grounded("MariaDB 11.4", "db-check: server_version=MariaDB 11.4")
+    assert grounded("Node 20", "runtime: node20")
+    assert grounded("auth-stg-8.internal", "Staging lives at AUTH-STG-8.INTERNAL now.")
+    assert not grounded("GitHub Actions", "3 files changed, 41 insertions(+), 7 deletions(-)")
+    assert not grounded("not in memory", "Don't keep auth-service's database in memory anymore.")
+    assert not grounded("...", "anything")  # nothing left to match
+
+
+@pytest.mark.parametrize("make", PROVIDERS)
+def test_ungrounded_claims_are_dropped_and_counted(make, tmp_path):
+    # Seen with gpt-4.1-mini: known values copied onto a diff summary, and a
+    # deletion request extracted as the value "not in memory".
+    x, _ = make(lambda s, p: {"claims": [
+        {"event_id": "a", "entity": "billing-service", "attribute": "ci_provider", "value": "GitHub Actions"},
+        {"event_id": "b", "entity": "auth-service", "attribute": "database", "value": "not in memory"},
+        {"event_id": "c", "entity": "auth-service", "attribute": "database", "value": "MySQL 8.4"},
+    ]}, tmp_path)
+    claims, _ = x.claims([ev("a", 1, "3 files changed, 41 insertions(+), 7 deletions(-)", kind=EventKind.TOOL_RESULT),
+                          ev("b", 1, "Don't keep auth-service's database in memory anymore."),
+                          ev("c", 1, "config-sync: auth.database = MySQL 8.4", kind=EventKind.TOOL_RESULT)])
+    assert [(c.event_id, c.value) for c in claims] == [("c", "MySQL 8.4")]
+    assert x.ungrounded == 2 and x.config()["ungrounded_claims"] == 2 and x.dropped == 0
 
 
 @pytest.mark.parametrize("make", PROVIDERS)
