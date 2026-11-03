@@ -1,0 +1,585 @@
+{
+  "seeds": [
+    2
+  ],
+  "systems": {
+    "no_memory": {
+      "accuracy_pct": [
+        0.0
+      ],
+      "correct": {
+        "2": [
+          0
+        ]
+      },
+      "probes": {
+        "2": 480
+      },
+      "verdicts": {
+        "missed": 342,
+        "no_abstention": 138
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          96
+        ],
+        "contamination": [
+          0,
+          79
+        ],
+        "current": [
+          0,
+          88
+        ],
+        "historical": [
+          0,
+          88
+        ],
+        "post_delete": [
+          0,
+          42
+        ],
+        "post_update": [
+          0,
+          87
+        ]
+      },
+      "answer_accuracy_pct": [
+        28.75
+      ],
+      "answer_verdicts": {
+        "false_abstention": 342,
+        "correct": 138
+      },
+      "cost_usd": {
+        "memory": 0.0,
+        "answer": 0.047224
+      }
+    },
+    "full_replay": {
+      "accuracy_pct": [
+        18.333333333333332
+      ],
+      "correct": {
+        "2": [
+          88
+        ]
+      },
+      "probes": {
+        "2": 480
+      },
+      "verdicts": {
+        "polluted": 254,
+        "correct": 88,
+        "no_abstention": 138
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          96
+        ],
+        "contamination": [
+          0,
+          79
+        ],
+        "current": [
+          88,
+          88
+        ],
+        "historical": [
+          0,
+          88
+        ],
+        "post_delete": [
+          0,
+          42
+        ],
+        "post_update": [
+          0,
+          87
+        ]
+      },
+      "answer_accuracy_pct": [
+        78.125
+      ],
+      "answer_verdicts": {
+        "correct": 375,
+        "wrong": 68,
+        "no_abstention": 32,
+        "false_abstention": 1,
+        "missed": 4
+      },
+      "cost_usd": {
+        "memory": 0.0,
+        "answer": 0.597156
+      }
+    },
+    "transcript_rag": {
+      "accuracy_pct": [
+        22.083333333333332
+      ],
+      "correct": {
+        "2": [
+          106
+        ]
+      },
+      "probes": {
+        "2": 480
+      },
+      "verdicts": {
+        "polluted": 142,
+        "correct": 106,
+        "no_abstention": 138,
+        "wrong": 69,
+        "missed": 25
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          96
+        ],
+        "contamination": [
+          12,
+          79
+        ],
+        "current": [
+          71,
+          88
+        ],
+        "historical": [
+          19,
+          88
+        ],
+        "post_delete": [
+          0,
+          42
+        ],
+        "post_update": [
+          4,
+          87
+        ]
+      },
+      "answer_accuracy_pct": [
+        73.33333333333333
+      ],
+      "answer_verdicts": {
+        "wrong": 94,
+        "correct": 352,
+        "false_abstention": 33,
+        "no_abstention": 1
+      },
+      "cost_usd": {
+        "memory": 0.0,
+        "answer": 0.07488840000000001
+      }
+    },
+    "ledger": {
+      "accuracy_pct": [
+        32.916666666666664
+      ],
+      "correct": {
+        "2": [
+          158
+        ]
+      },
+      "probes": {
+        "2": 480
+      },
+      "verdicts": {
+        "false_abstention": 233,
+        "correct": 158,
+        "missed": 34,
+        "no_abstention": 31,
+        "wrong": 24
+      },
+      "by_type": {
+        "abstention": [
+          72,
+          96
+        ],
+        "contamination": [
+          18,
+          79
+        ],
+        "current": [
+          16,
+          88
+        ],
+        "historical": [
+          11,
+          88
+        ],
+        "post_delete": [
+          35,
+          42
+        ],
+        "post_update": [
+          6,
+          87
+        ]
+      },
+      "answer_accuracy_pct": [
+        33.958333333333336
+      ],
+      "answer_verdicts": {
+        "false_abstention": 239,
+        "correct": 163,
+        "missed": 28,
+        "no_abstention": 26,
+        "wrong": 24
+      },
+      "cost_usd": {
+        "memory": 0.0,
+        "answer": 0.05102360000000001
+      }
+    },
+    "ledger_llm": {
+      "accuracy_pct": [
+        87.5
+      ],
+      "correct": {
+        "2": [
+          420
+        ]
+      },
+      "probes": {
+        "2": 480
+      },
+      "verdicts": {
+        "false_abstention": 39,
+        "correct": 420,
+        "missed": 10,
+        "wrong": 9,
+        "no_abstention": 2
+      },
+      "by_type": {
+        "abstention": [
+          94,
+          96
+        ],
+        "contamination": [
+          63,
+          79
+        ],
+        "current": [
+          78,
+          88
+        ],
+        "historical": [
+          73,
+          88
+        ],
+        "post_delete": [
+          42,
+          42
+        ],
+        "post_update": [
+          70,
+          87
+        ]
+      },
+      "answer_accuracy_pct": [
+        86.875
+      ],
+      "answer_verdicts": {
+        "false_abstention": 46,
+        "correct": 417,
+        "wrong": 12,
+        "missed": 5
+      },
+      "cost_usd": {
+        "memory": 0.22407280000000002,
+        "answer": 0.0531644
+      }
+    },
+    "hybrid_llm_aug": {
+      "accuracy_pct": [
+        26.458333333333332
+      ],
+      "correct": {
+        "2": [
+          127
+        ]
+      },
+      "probes": {
+        "2": 480
+      },
+      "verdicts": {
+        "polluted": 194,
+        "correct": 127,
+        "no_abstention": 132,
+        "wrong": 17,
+        "missed": 10
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          96
+        ],
+        "contamination": [
+          12,
+          79
+        ],
+        "current": [
+          80,
+          88
+        ],
+        "historical": [
+          21,
+          88
+        ],
+        "post_delete": [
+          6,
+          42
+        ],
+        "post_update": [
+          8,
+          87
+        ]
+      },
+      "answer_accuracy_pct": [
+        92.5
+      ],
+      "answer_verdicts": {
+        "correct": 444,
+        "wrong": 23,
+        "false_abstention": 13
+      },
+      "cost_usd": {
+        "memory": 0.20461120000000002,
+        "answer": 0.07831320000000001
+      }
+    },
+    "hybrid_llm_fb": {
+      "accuracy_pct": [
+        65.41666666666667
+      ],
+      "correct": {
+        "2": [
+          314
+        ]
+      },
+      "probes": {
+        "2": 480
+      },
+      "verdicts": {
+        "correct": 314,
+        "no_abstention": 132,
+        "wrong": 16,
+        "polluted": 7,
+        "missed": 11
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          96
+        ],
+        "contamination": [
+          68,
+          79
+        ],
+        "current": [
+          80,
+          88
+        ],
+        "historical": [
+          83,
+          88
+        ],
+        "post_delete": [
+          6,
+          42
+        ],
+        "post_update": [
+          77,
+          87
+        ]
+      },
+      "answer_accuracy_pct": [
+        92.70833333333333
+      ],
+      "answer_verdicts": {
+        "correct": 445,
+        "wrong": 18,
+        "false_abstention": 16,
+        "missed": 1
+      },
+      "cost_usd": {
+        "memory": 0.20461120000000002,
+        "answer": 0.0606864
+      }
+    }
+  },
+  "preset": "long",
+  "budget": 2000,
+  "repeats": 1,
+  "configs": {
+    "no_memory": {
+      "name": "no_memory",
+      "version": "1"
+    },
+    "full_replay": {
+      "name": "full_replay",
+      "version": "1",
+      "order": "chronological"
+    },
+    "transcript_rag": {
+      "name": "transcript_rag",
+      "version": "1",
+      "retriever": "bm25",
+      "unit": "event",
+      "top_k": 5,
+      "k1": 1.5,
+      "b": 0.75,
+      "stopwords": 52
+    },
+    "ledger": {
+      "name": "ledger",
+      "version": "3",
+      "extractor": {
+        "name": "rules",
+        "version": "1",
+        "slots": [
+          "database",
+          "test_command",
+          "deploy_branch",
+          "staging_hostname"
+        ]
+      },
+      "trust": {
+        "user_message": 3,
+        "tool_result": 3,
+        "code_change": 3,
+        "document": 2,
+        "assistant_message": 1,
+        "tool_call": 1
+      },
+      "introduce_trust": 2,
+      "extract_min_trust": null
+    },
+    "ledger_llm": {
+      "name": "ledger",
+      "version": "3",
+      "extractor": {
+        "name": "llm",
+        "version": "6",
+        "profile": "coding",
+        "provider": "openai",
+        "model": "gpt-4.1-mini",
+        "effort": null,
+        "base_url": null,
+        "temperature": 0.0,
+        "seed": 0,
+        "prompt_sha": "cb83f582ae5c",
+        "calls": 864,
+        "cache_hits": 10,
+        "refusals": 0,
+        "dropped_claims": 13,
+        "ungrounded_claims": 138
+      },
+      "trust": {
+        "user_message": 3,
+        "tool_result": 3,
+        "code_change": 3,
+        "document": 2,
+        "assistant_message": 1,
+        "tool_call": 1
+      },
+      "introduce_trust": 2,
+      "extract_min_trust": null
+    },
+    "hybrid_llm_aug": {
+      "name": "ledger_hybrid",
+      "version": "1",
+      "mode": "augment",
+      "ledger": {
+        "name": "ledger",
+        "version": "3",
+        "extractor": {
+          "name": "llm",
+          "version": "6",
+          "profile": "coding",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "effort": null,
+          "base_url": null,
+          "temperature": 0.0,
+          "seed": 0,
+          "prompt_sha": "cb83f582ae5c",
+          "calls": 522,
+          "cache_hits": 307,
+          "refusals": 0,
+          "dropped_claims": 12,
+          "ungrounded_claims": 123
+        },
+        "trust": {
+          "user_message": 3,
+          "tool_result": 3,
+          "code_change": 3,
+          "document": 2,
+          "assistant_message": 1,
+          "tool_call": 1
+        },
+        "introduce_trust": 2,
+        "extract_min_trust": 2
+      },
+      "episodes": {
+        "name": "transcript_rag",
+        "version": "1",
+        "retriever": "bm25",
+        "unit": "event",
+        "top_k": 5,
+        "k1": 1.5,
+        "b": 0.75,
+        "stopwords": 52
+      }
+    },
+    "hybrid_llm_fb": {
+      "name": "ledger_hybrid",
+      "version": "1",
+      "mode": "fallback",
+      "ledger": {
+        "name": "ledger",
+        "version": "3",
+        "extractor": {
+          "name": "llm",
+          "version": "6",
+          "profile": "coding",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "effort": null,
+          "base_url": null,
+          "temperature": 0.0,
+          "seed": 0,
+          "prompt_sha": "cb83f582ae5c",
+          "calls": 0,
+          "cache_hits": 829,
+          "refusals": 0,
+          "dropped_claims": 12,
+          "ungrounded_claims": 123
+        },
+        "trust": {
+          "user_message": 3,
+          "tool_result": 3,
+          "code_change": 3,
+          "document": 2,
+          "assistant_message": 1,
+          "tool_call": 1
+        },
+        "introduce_trust": 2,
+        "extract_min_trust": 2
+      },
+      "episodes": {
+        "name": "transcript_rag",
+        "version": "1",
+        "retriever": "bm25",
+        "unit": "event",
+        "top_k": 5,
+        "k1": 1.5,
+        "b": 0.75,
+        "stopwords": 52
+      }
+    }
+  }
+}

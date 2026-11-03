@@ -143,9 +143,14 @@ class Ledger(MemorySystem):
         abstention=True, persistence=True, export=True,
     )
 
-    def __init__(self, extractor: Extractor | None = None, introduce_trust: int = INTRODUCE_TRUST) -> None:
+    def __init__(self, extractor: Extractor | None = None, introduce_trust: int = INTRODUCE_TRUST,
+                 extract_min_trust: int | None = None) -> None:
         self.extractor = extractor or RuleExtractor()
         self.introduce_trust = introduce_trust
+        #: Only events this trusted go to the extractor (None: all). With
+        #: ``introduce_trust`` it skips paying to extract claims that could
+        #: only ever be held or disputed, at the cost of that audit trail.
+        self.extract_min_trust = extract_min_trust
         self.reset()
 
     def reset(self) -> None:
@@ -167,7 +172,8 @@ class Ledger(MemorySystem):
                 rejected += 1
             elif ev.event_id not in self._seen:
                 self._seen.add(ev.event_id)
-                fresh.setdefault(ev.user_id, []).append(ev)
+                if self.extract_min_trust is None or TRUST[ev.kind] >= self.extract_min_trust:
+                    fresh.setdefault(ev.user_id, []).append(ev)
         for user_id, batch in fresh.items():
             ul = self._user(user_id)
             claims, usage = self.extractor.claims(batch, self._known(ul))
@@ -332,16 +338,20 @@ class Ledger(MemorySystem):
         ]
 
     def snapshot(self, path: Path) -> None:
-        state = {
+        path.write_text(json.dumps(self.state(), default=datetime.isoformat, indent=1), encoding="utf-8")
+
+    def restore(self, path: Path) -> None:
+        self.load_state(json.loads(path.read_text(encoding="utf-8")))
+
+    def state(self) -> dict[str, Any]:
+        """Everything the store knows, JSON-ready except for datetimes."""
+        return {
             "next_id": self._next_id,
             "seen": sorted(self._seen),
             "users": {u: {**asdict(ul), "blocked": sorted(ul.blocked)} for u, ul in self._users.items()},
         }
-        path.write_text(json.dumps(state, default=datetime.isoformat, indent=1), encoding="utf-8")
 
-    def restore(self, path: Path) -> None:
-        state = json.loads(path.read_text(encoding="utf-8"))
-
+    def load_state(self, state: dict[str, Any]) -> None:
         def entry(d: dict[str, Any]) -> Entry:
             d["valid_from"] = datetime.fromisoformat(d["valid_from"])
             d["valid_to"] = d["valid_to"] and datetime.fromisoformat(d["valid_to"])
@@ -366,4 +376,5 @@ class Ledger(MemorySystem):
             "extractor": self.extractor.config(),
             "trust": {k.value: v for k, v in TRUST.items()},
             "introduce_trust": self.introduce_trust,
+            "extract_min_trust": self.extract_min_trust,
         }

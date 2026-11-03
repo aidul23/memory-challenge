@@ -19,9 +19,23 @@
   "settings": {
     "token_budget": 2000,
     "delete_with_sources": true,
-    "tokenizer": "regex-words/1"
+    "tokenizer": "regex-words/1",
+    "answerer": {
+      "version": "1",
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "effort": null,
+      "base_url": null,
+      "temperature": 0.0,
+      "seed": 0,
+      "prompt_sha": "31f66b21d891",
+      "calls": 0,
+      "cache_hits": 98,
+      "refusals": 0
+    },
+    "prices_as_of": "2026-10-19"
   },
-  "started_at": "2026-10-14T12:18:55.688412Z",
+  "started_at": "2026-10-19T12:58:12.624616Z",
   "ops": [
     {
       "op": "ingest",
@@ -32,7 +46,7 @@
         "e00002",
         "e00003"
       ],
-      "latency_s": 4.875008016824722e-6,
+      "latency_s": 2.4170149117708206e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -55,7 +69,7 @@
       "event_ids": [
         "e00004"
       ],
-      "latency_s": 0.000015249999705702066,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -82,7 +96,7 @@
         "e00008",
         "e00009"
       ],
-      "latency_s": 1.333013642579317e-6,
+      "latency_s": 5.409820005297661e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -107,7 +121,7 @@
         "e00011",
         "e00012"
       ],
-      "latency_s": 4.1669991333037615e-6,
+      "latency_s": 5.420006345957518e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -132,7 +146,7 @@
         "e00014",
         "e00015"
       ],
-      "latency_s": 1.0420044418424368e-6,
+      "latency_s": 4.5899651013314724e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -155,7 +169,7 @@
       "event_ids": [
         "e00016"
       ],
-      "latency_s": 7.080088835209608e-7,
+      "latency_s": 7.079797796905041e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -179,7 +193,7 @@
         "e00017",
         "e00018"
       ],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 4.999747034162283e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -205,7 +219,7 @@
         "e00021",
         "e00022"
       ],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 4.5797787606716156e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -232,7 +246,7 @@
         "e00026",
         "e00027"
       ],
-      "latency_s": 6.250047590583563e-7,
+      "latency_s": 4.580069798976183e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -257,7 +271,7 @@
         "e00029",
         "e00030"
       ],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 5.00003807246685e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -283,7 +297,7 @@
         "e00033",
         "e00034"
       ],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 5.00003807246685e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -307,7 +321,7 @@
         "e00035",
         "e00036"
       ],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 4.999747034162283e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -356,7 +370,7 @@
         "e00040",
         "e00041"
       ],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 4.580069798976183e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -381,7 +395,7 @@
         "e00043",
         "e00044"
       ],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 5.839974619448185e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -424,7 +438,7 @@
         "e00045",
         "e00046"
       ],
-      "latency_s": 7.500057108700275e-7,
+      "latency_s": 5.420006345957518e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -450,7 +464,7 @@
         "e00049",
         "e00050"
       ],
-      "latency_s": 1.1250085663050413e-6,
+      "latency_s": 2.040993422269821e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -475,7 +489,7 @@
         "e00052",
         "e00053"
       ],
-      "latency_s": 6.659829523414373e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -528,7 +542,7 @@
         "e00061",
         "e00062"
       ],
-      "latency_s": 6.250047590583563e-7,
+      "latency_s": 4.999747034162283e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -558,7 +572,7 @@
         "e00069",
         "e00070"
       ],
-      "latency_s": 5.830079317092896e-7,
+      "latency_s": 4.580069798976183e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -581,7 +595,7 @@
       "event_ids": [
         "e00071"
       ],
-      "latency_s": 5.410111043602228e-7,
+      "latency_s": 5.420006345957518e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -608,7 +622,7 @@
         "e00075",
         "e00076"
       ],
-      "latency_s": 5.840265657752752e-7,
+      "latency_s": 4.5902561396360397e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -632,7 +646,7 @@
         "e00077",
         "e00078"
       ],
-      "latency_s": 4.999747034162283e-7,
+      "latency_s": 5.420006345957518e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -660,7 +674,7 @@
         "e00083",
         "e00084"
       ],
-      "latency_s": 5.839974619448185e-7,
+      "latency_s": 5.00003807246685e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -688,7 +702,7 @@
         "e00089",
         "e00090"
       ],
-      "latency_s": 5.410111043602228e-7,
+      "latency_s": 4.5899651013314724e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -712,7 +726,7 @@
         "e00091",
         "e00092"
       ],
-      "latency_s": 5.839974619448185e-7,
+      "latency_s": 5.420006345957518e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -737,7 +751,7 @@
         "e00094",
         "e00095"
       ],
-      "latency_s": 9.580107871443033e-7,
+      "latency_s": 1.5829864423722029e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -764,7 +778,7 @@
         "e00099",
         "e00100"
       ],
-      "latency_s": 5.840265657752752e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -788,7 +802,7 @@
         "e00101",
         "e00102"
       ],
-      "latency_s": 5.830079317092896e-7,
+      "latency_s": 5.420006345957518e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -813,7 +827,7 @@
         "e00104",
         "e00105"
       ],
-      "latency_s": 5.410111043602228e-7,
+      "latency_s": 5.420006345957518e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -839,7 +853,7 @@
         "e00108",
         "e00109"
       ],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 5.00003807246685e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -863,7 +877,7 @@
         "e00110",
         "e00111"
       ],
-      "latency_s": 5.839974619448185e-7,
+      "latency_s": 5.00003807246685e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -913,7 +927,7 @@
       "event_ids": [
         "e00117"
       ],
-      "latency_s": 4.999747034162283e-7,
+      "latency_s": 5.00003807246685e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -958,7 +972,7 @@
         "e00120",
         "e00121"
       ],
-      "latency_s": 6.67001586407423e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -983,7 +997,7 @@
         "e00123",
         "e00124"
       ],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 5.410111043602228e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1007,7 +1021,7 @@
         "e00125",
         "e00126"
       ],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 5.00003807246685e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1034,7 +1048,7 @@
         "e00130",
         "e00131"
       ],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 4.580069798976183e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1086,7 +1100,7 @@
       "event_ids": [
         "e00139"
       ],
-      "latency_s": 7.079797796905041e-7,
+      "latency_s": 2.3329921532422304e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1112,7 +1126,7 @@
         "e00142",
         "e00143"
       ],
-      "latency_s": 5.830079317092896e-7,
+      "latency_s": 6.660120561718941e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1138,7 +1152,7 @@
         "e00146",
         "e00147"
       ],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 5.829788278788328e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1216,7 +1230,7 @@
         "e00158",
         "e00159"
       ],
-      "latency_s": 5.410111043602228e-7,
+      "latency_s": 5.00003807246685e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1241,7 +1255,7 @@
         "e00161",
         "e00162"
       ],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 4.580069798976183e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1310,7 +1324,7 @@
       "event_ids": [
         "e00168"
       ],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1336,7 +1350,7 @@
         "e00171",
         "e00172"
       ],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 5.840265657752752e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1359,7 +1373,7 @@
       "event_ids": [
         "e00173"
       ],
-      "latency_s": 5.410111043602228e-7,
+      "latency_s": 4.999747034162283e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1402,7 +1416,7 @@
       "event_ids": [
         "e00174"
       ],
-      "latency_s": 6.250047590583563e-7,
+      "latency_s": 5.839974619448185e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1456,7 +1470,7 @@
         "e00183",
         "e00184"
       ],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 5.839974619448185e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
@@ -1497,13 +1511,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 3.7919962778687477e-6,
+      "latency_s": 1.9170111045241356e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0013793329999316484,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 211,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1532,13 +1560,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 6.67001586407423e-7,
+      "latency_s": 1.2499804142862558e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00046549999387934804,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1566,13 +1608,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.409820005297661e-7,
+      "latency_s": 8.750066626816988e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005242500046733767,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 206,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1600,13 +1656,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 1.5410187188535929e-6,
+      "latency_s": 9.170034900307655e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00038387501263059676,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1634,13 +1704,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 6.67001586407423e-7,
+      "latency_s": 7.079797796905041e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0026105419965460896,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 219,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1668,13 +1752,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 9.999785106629133e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.002445874997647479,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 217,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1700,13 +1798,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 7.500057108700275e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004937920020893216,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1732,13 +1844,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00048049999168142676,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1764,13 +1890,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.669724825769663e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005346669931896031,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 211,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1796,13 +1936,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 7.079797796905041e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.000450999999884516,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1828,13 +1982,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 1.2920063454657793e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0006544589996337891,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1860,13 +2028,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 1.3750104699283838e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0006376669916789979,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1894,13 +2076,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 7.909839041531086e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00045795898768119514,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1928,13 +2124,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 6.669724825769663e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00043241700041107833,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 217,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1960,13 +2170,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004048330010846257,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 210,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -1992,13 +2216,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.000526999996509403,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2024,13 +2262,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 7.090275175869465e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004317499988246709,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2056,13 +2308,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.829788278788328e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00043399998685345054,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2088,13 +2354,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00040558402542956173,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2123,13 +2403,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00041825001244433224,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2158,13 +2452,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00048804201651364565,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2192,13 +2500,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004072080191690475,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 206,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2226,13 +2548,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004112499882467091,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 219,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2261,13 +2597,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004699589917436242,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 217,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2293,13 +2643,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.1601015254855156e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0003316249931231141,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2325,13 +2689,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 1.3329845387488604e-6,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0003994999860879034,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2366,6 +2744,20 @@
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005301249912008643,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2393,13 +2785,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.829788278788328e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004251670034136623,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2425,13 +2831,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.999747034162283e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00038791701081208885,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2457,13 +2877,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004944999818690121,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2491,13 +2925,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.1601015254855156e-7,
+      "latency_s": 5.839974619448185e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004235829983372241,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 207,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2528,13 +2976,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00042529101483523846,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 217,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2560,13 +3022,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005322499782778323,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2592,13 +3068,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.660120561718941e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00039674999425187707,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 207,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2626,13 +3116,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00035770799149759114,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2660,13 +3164,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.000039583013858646154,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2701,6 +3219,20 @@
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004860420012846589,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 219,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2728,13 +3260,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00044949998846277595,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2760,13 +3306,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005627500067930669,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 210,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2792,13 +3352,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.249756552278996e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004036249883938581,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2824,13 +3398,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00036183299380354583,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2856,13 +3444,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004738749994430691,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2888,13 +3490,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.829788278788328e-7,
+      "latency_s": 8.330098353326321e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005593330133706331,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2920,13 +3536,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 7.500057108700275e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0003721670072991401,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2955,13 +3585,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0003887500206474215,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 206,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -2990,13 +3634,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5902561396360397e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004939580103382468,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3025,13 +3683,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 6.659829523414373e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005101249844301492,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3060,13 +3732,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 7.920025382190943e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00042787499842233956,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3092,13 +3778,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004954159958288074,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3124,13 +3824,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.249756552278996e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0003755830111913383,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3160,13 +3874,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.1601015254855156e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004057090263813734,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3194,13 +3922,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 6.659829523414373e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004775419947691262,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 207,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3229,13 +3971,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004158749943599105,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 206,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3265,13 +4021,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 5.839974619448185e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0000372079957742244,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3301,13 +4071,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004927499976474792,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3337,13 +4121,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 5.839974619448185e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004534170147962868,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3369,13 +4167,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004235829983372241,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3403,13 +4215,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005324590019881725,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3435,13 +4261,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.409820005297661e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00046629199641756713,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3467,13 +4307,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.1601015254855156e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005882919940631837,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3501,13 +4355,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 1.0409858077764511e-6,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005676669825334102,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 210,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3535,13 +4403,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 8.750066626816988e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005030840111430734,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3569,13 +4451,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 6.250047590583563e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005572079971898347,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3603,13 +4499,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 8.750066626816988e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005419579974841326,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 217,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3637,13 +4547,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0006291670142672956,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3671,13 +4595,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.410111043602228e-7,
+      "latency_s": 7.089984137564898e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004766249912790954,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 211,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3703,13 +4641,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0006096250144764781,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3735,13 +4687,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.659829523414373e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00045941598364152014,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3767,13 +4733,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005447920120786875,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3799,13 +4779,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004692500224336982,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3833,13 +4827,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.410111043602228e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004515410109888762,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3865,13 +4873,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.249756552278996e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00036291699507273734,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 210,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3897,13 +4919,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004494589811656624,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3932,13 +4968,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 5.839974619448185e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00041008301195688546,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -3968,13 +5018,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004048340197186917,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 207,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4003,13 +5067,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.999747034162283e-7,
+      "latency_s": 5.829788278788328e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004199579998385161,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4039,13 +5117,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00040412499220110476,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4071,13 +5163,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 8.749775588512421e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004411670088302344,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4103,13 +5209,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.420006345957518e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004813339910469949,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4137,13 +5257,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00042379199294373393,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4172,13 +5306,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5902561396360397e-7,
+      "latency_s": 7.500057108700275e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005633749824482948,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4208,13 +5356,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 7.500057108700275e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005561669822782278,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 207,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4242,13 +5404,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5899651013314724e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004048330010846257,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4281,13 +5457,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0003807920147664845,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 216,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4316,13 +5506,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004844590148422867,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4352,13 +5556,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 5.830079317092896e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00041095801861956716,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4384,13 +5602,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0003497500147204846,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4416,13 +5648,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00045312498696148396,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4450,13 +5696,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 6.67001586407423e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00038941699312999845,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 210,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4484,13 +5744,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.659829523414373e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00039958400884643197,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 207,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4518,13 +5792,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5902561396360397e-7,
+      "latency_s": 7.080088835209608e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00045774999307468534,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4552,13 +5840,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5902561396360397e-7,
+      "latency_s": 6.660120561718941e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.000390208006137982,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 218,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4586,13 +5888,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 6.249756552278996e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.00033779197838157415,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4620,13 +5936,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.5797787606716156e-7,
+      "latency_s": 5.839974619448185e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004789159866049886,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 206,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4652,13 +5982,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.169996827840805e-7,
+      "latency_s": 7.920025382190943e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004383749910630286,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 207,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4684,13 +6028,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "false_abstention",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0005454589845612645,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 210,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4716,13 +6074,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 5.00003807246685e-7,
+      "latency_s": 7.500057108700275e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004639579856302589,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 208,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     },
     {
@@ -4748,13 +6120,27 @@
       "matched": null,
       "forbidden_hits": [],
       "foreign_hits": [],
-      "latency_s": 4.580069798976183e-7,
+      "latency_s": 6.250047590583563e-7,
       "usage": {
         "llm_calls": 0,
         "llm_input_tokens": 0,
         "llm_output_tokens": 0,
         "embedding_tokens": 0,
         "model_ids": []
+      },
+      "answer": "",
+      "answer_abstained": true,
+      "answer_verdict": "correct",
+      "answer_forbidden_hits": [],
+      "answer_latency_s": 0.0004304999893065542,
+      "answer_usage": {
+        "llm_calls": 1,
+        "llm_input_tokens": 209,
+        "llm_output_tokens": 9,
+        "embedding_tokens": 0,
+        "model_ids": [
+          "gpt-4.1-mini-2025-04-14"
+        ]
       }
     }
   ],

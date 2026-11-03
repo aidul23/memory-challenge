@@ -3,6 +3,7 @@
     python -m runner.sweep --seeds 0 1 2 3 4                       # free baselines
     python -m runner.sweep --seeds 0 1 2 --systems ledger ledger_llm
     python -m runner.sweep --seeds 0 1 2 --systems ledger_llm --repeats 3
+    python -m runner.sweep --seeds 0 1 2 3 4 --answer              # + shared answerer
 
 A single run on a single seed cannot tell a better system from a lucky one.
 Each seed's workload is loaded from ``workloads/generated/`` (generated and
@@ -29,8 +30,10 @@ from typing import Callable
 
 from interface.memory_system import MemorySystem
 from runner.__main__ import PAID, SYSTEMS
+from runner.answer import Answerer
 from runner.replay import RunResult, run
 from systems.ledger.llm import LLMExtractor
+from systems.hybrid.system import LedgerHybrid
 from systems.ledger.system import Ledger
 from workloads.generator import PRESETS, Config, generate
 from workloads.timeline import Timeline
@@ -38,6 +41,9 @@ from workloads.timeline import Timeline
 #: Factories that skip the LLM response cache, for repeats after the first.
 UNCACHED: dict[str, Callable[[], MemorySystem]] = {
     "ledger_llm": lambda: Ledger(LLMExtractor(cache_dir=None)),
+    "hybrid_llm": lambda: LedgerHybrid(LLMExtractor(cache_dir=None)),
+    "hybrid_llm_aug": lambda: LedgerHybrid(LLMExtractor(cache_dir=None), mode="augment", extract_min_trust=2),
+    "hybrid_llm_fb": lambda: LedgerHybrid(LLMExtractor(cache_dir=None), mode="fallback", extract_min_trust=2),
 }
 
 
@@ -110,6 +116,25 @@ def report(results: dict[str, dict[int, list[RunResult]]], seeds: list[int]) -> 
     print("\ncorrect by probe type, all seeds (first repeat)")
     _table(rows)
 
+    if all(r.probes and r.probes[0].answer_verdict is not None for b in results.values() for rs in b.values() for r in rs[:1]):
+        rows = [["system"] + [f"s{s}" for s in seeds] + ["mean ± sd (% correct)", "memory $", "answer $"]]
+        for name, by_seed in results.items():
+            accs, cells, mem, ans = [], [], 0.0, 0.0
+            for s in seeds:
+                r = by_seed[s][0]
+                sm = r.summary()
+                accs.append(_pct(sm["answer_correct"], len(r.probes)))
+                cells.append(f"{sm['answer_correct']}/{len(r.probes)}")
+                mem += sm["memory_cost_usd"]
+                ans += sm["answer_cost_usd"]
+            rows.append([name] + cells + [_mean_sd(accs), f"{mem:.3f}", f"{ans:.3f}"])
+            out["systems"][name]["answer_accuracy_pct"] = accs
+            out["systems"][name]["answer_verdicts"] = dict(Counter(
+                p.answer_verdict.value for s in seeds for p in by_seed[s][0].probes))
+            out["systems"][name]["cost_usd"] = {"memory": mem, "answer": ans}
+        print("\nanswer correct per seed, shared answerer (first repeat); cost summed over seeds")
+        _table(rows)
+
     repeated = {n: b for n, b in results.items() if len(b[seeds[0]]) > 1}
     if repeated:
         rows = [["system", "repeats", "probes that changed verdict", "mean sd across repeats (correct)"]]
@@ -137,6 +162,7 @@ def main() -> None:
     ap.add_argument("--repeats", type=int, default=1, help="runs per seed for LLM systems")
     ap.add_argument("--budget", type=int, default=2000, help="evidence token budget per query")
     ap.add_argument("--workloads", type=Path, default=Path("workloads/generated"))
+    ap.add_argument("--answer", action="store_true", help="also answer every probe with the shared model")
     ap.add_argument("--out", type=Path, default=Path("runs"))
     args = ap.parse_args()
     if args.repeats < 1:
@@ -153,7 +179,8 @@ def main() -> None:
             runs = []
             for k in range(n):
                 make = factory if k == 0 else UNCACHED[name]
-                r = run(make(), tl, token_budget=None if unbounded else args.budget)
+                answerer = Answerer(cache_dir=None if k else Answerer().cache_dir) if args.answer else None
+                r = run(make(), tl, token_budget=None if unbounded else args.budget, answerer=answerer)
                 log = out_dir / (f"{name}.json" if k == 0 else f"{name}__r{k + 1}.json")
                 log.write_text(r.model_dump_json(indent=2), encoding="utf-8")
                 runs.append(r)

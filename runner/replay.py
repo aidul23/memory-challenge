@@ -15,6 +15,11 @@ Protocol (the contract in ``interface/memory_system.py``):
 * The runner, not the system, measures latency, counts injected tokens with
   ``interface.tokens``, and truncates evidence that exceeds the budget (whole
   items, in the system's order). Scoring sees only the truncated evidence.
+* With an ``answerer``, the truncated evidence also goes to the shared
+  answering model, and its answer is scored against the same ground truth
+  (``answer_verdict``), so systems are compared on task output under one
+  model and prompt, not only on what they retrieve. Costs in dollars come
+  from ``runner.prices``.
 """
 
 from __future__ import annotations
@@ -31,6 +36,8 @@ from interface.memory_system import (
     Query, StoreStats, Usage,
 )
 from interface.tokens import TOKENIZER, count_tokens
+from runner.answer import Answerer
+from runner.prices import PRICES_AS_OF, cost_usd
 from runner.scoring import ForbiddenHit, Verdict, explain_forbidden, score
 from workloads.timeline import (
     Checkpoint, Expected, MutationKind, Probe, ProbeType, Timeline,
@@ -80,12 +87,22 @@ class ProbeResult(_Frozen):
     foreign_hits: tuple[str, ...]
     latency_s: float
     usage: Usage
+    answer: str | None = None
+    """The shared answerer's output; None when no answerer ran."""
+    answer_abstained: bool | None = None
+    answer_verdict: Verdict | None = None
+    answer_forbidden_hits: tuple[ForbiddenHit, ...] = ()
+    answer_latency_s: float | None = None
+    answer_usage: Usage | None = None
 
 
 class RunSettings(_Frozen):
     token_budget: int | None
     delete_with_sources: bool
     tokenizer: str = TOKENIZER
+    answerer: dict[str, Any] | None = None
+    """The answerer's configuration (model, prompt hash), when one ran."""
+    prices_as_of: str = PRICES_AS_OF
 
 
 class RunResult(_Frozen):
@@ -112,6 +129,18 @@ class RunResult(_Frozen):
         )
         latencies = [p.latency_s for p in self.probes]
         last = list(self.checkpoint_stats.values())[-1] if self.checkpoint_stats else None
+        memory_usage = sum_usage([o.usage for o in self.ops] + [p.usage for p in self.probes])
+        answered = [p for p in self.probes if p.answer_verdict is not None]
+        answer_usage = sum_usage([p.answer_usage for p in answered if p.answer_usage])
+        answers = {}
+        if answered:
+            av = Counter(p.answer_verdict.value for p in answered)
+            answers = {
+                "answer_correct": av.get(Verdict.CORRECT.value, 0),
+                "answer_verdicts": dict(av),
+                "answer_usage": answer_usage.model_dump(),
+                "answer_cost_usd": sum(cost_usd(p.answer_usage) for p in answered if p.answer_usage),
+            }
         return {
             "system": self.system,
             "probes": len(self.probes),
@@ -122,10 +151,14 @@ class RunResult(_Frozen):
             "isolation_violations": sum(bool(p.foreign_hits) for p in self.probes),
             "unsupported": sorted({o.op for o in self.ops if o.error}),
             "injected_tokens": sum(p.injected_tokens for p in self.probes),
-            "usage": sum_usage([o.usage for o in self.ops] + [p.usage for p in self.probes]).model_dump(),
+            "usage": memory_usage.model_dump(),
+            # Priced per call, so a run whose extractor changed model is still priced.
+            "memory_cost_usd": sum(cost_usd(u) for u in [o.usage for o in self.ops] + [p.usage for p in self.probes]),
             "ingest_s": sum(o.latency_s for o in self.ops if o.op == "ingest"),
             "mean_retrieve_ms": 1000 * sum(latencies) / len(latencies) if latencies else 0.0,
             "final_items": last.n_items if last else None,
+            "final_storage_bytes": last.storage_bytes if last else None,
+            **answers,
         }
 
 
@@ -192,7 +225,12 @@ def run(
     *,
     token_budget: int | None = 2000,
     delete_with_sources: bool = True,
+    answerer: Answerer | None = None,
+    after_checkpoint: Callable[[MemorySystem, Checkpoint], MemorySystem] | None = None,
 ) -> RunResult:
+    """``after_checkpoint`` runs after each checkpoint's probes and returns the
+    system to continue with: a restored copy (restart), or the same system with
+    a new extractor (model change)."""
     system.reset()
     started = datetime.now(timezone.utc)
     events = timeline.events
@@ -260,11 +298,17 @@ def run(
             )
             res, dt = _timed(system.retrieve, query)
             evidence, total, used = _fit(res.evidence, token_budget)
-            sc = score(
-                p.expected, evidence, res.abstained,
-                explain_forbidden(timeline, p.fact_ids, cp.at, p.as_of),
-                aliases, foreign[p.user_id],
-            )
+            reasons = explain_forbidden(timeline, p.fact_ids, cp.at, p.as_of)
+            sc = score(p.expected, evidence, res.abstained, reasons, aliases, foreign[p.user_id])
+            extra: dict[str, Any] = {}
+            if answerer is not None:
+                (ans, ans_usage), adt = _timed(answerer.answer, p.question, cp.at, evidence,
+                                               res.abstain_reason if res.abstained else None)
+                asc = score(p.expected, (Evidence(content=ans.text),) if ans.text else (),
+                            ans.abstained, reasons, aliases, foreign[p.user_id])
+                extra = dict(answer=ans.text, answer_abstained=ans.abstained, answer_verdict=asc.verdict,
+                             answer_forbidden_hits=asc.forbidden_hits, answer_latency_s=adt,
+                             answer_usage=ans_usage)
             results.append(ProbeResult(
                 probe_id=p.probe_id, probe_type=p.probe_type, checkpoint=cp.name,
                 question=p.question, asked_at=cp.at, as_of=p.as_of, expected=p.expected,
@@ -272,14 +316,20 @@ def run(
                 evidence=evidence, evidence_tokens=total, injected_tokens=used,
                 budget_exceeded=token_budget is not None and total > token_budget,
                 verdict=sc.verdict, matched=sc.matched, forbidden_hits=sc.forbidden_hits,
-                foreign_hits=sc.foreign_hits, latency_s=dt, usage=res.usage,
+                foreign_hits=sc.foreign_hits, latency_s=dt, usage=res.usage, **extra,
             ))
         cp_stats[cp.name] = system.stats()
+
+    def checkpoint(cp: Checkpoint) -> None:
+        nonlocal system
+        ask(cp)
+        if after_checkpoint is not None:
+            system = after_checkpoint(system, cp)
 
     ci = 0
     for i, e in enumerate(events):
         while ci < len(checkpoints) and checkpoints[ci].at < e.timestamp:
-            ask(checkpoints[ci])
+            checkpoint(checkpoints[ci])
             ci += 1
         key = (e.user_id, e.session_id)
         pending.setdefault(key, []).append(e)
@@ -289,13 +339,14 @@ def run(
             flush_all()
             deliver(req)
     for cp in checkpoints[ci:]:
-        ask(cp)
+        checkpoint(cp)
     flush_all()
 
     return RunResult(
         workload_id=timeline.workload_id, generator=timeline.generator, seed=timeline.seed,
         system=system.name, system_version=system.version, system_config=system.config(),
         capabilities=system.capabilities,
-        settings=RunSettings(token_budget=token_budget, delete_with_sources=delete_with_sources),
+        settings=RunSettings(token_budget=token_budget, delete_with_sources=delete_with_sources,
+                             answerer=answerer.config() if answerer else None),
         started_at=started, ops=tuple(ops), probes=tuple(results), checkpoint_stats=cp_stats,
     )

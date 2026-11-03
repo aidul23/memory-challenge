@@ -61,6 +61,39 @@ For each claim give:
   "PostgreSQL 14"), use the known spelling exactly.
 """
 
+#: For personal chat histories (LongMemEval). Values must be short spans
+#: copied from the message, since claims are checked against it (``grounded``).
+EXTRACT_SYSTEM_PERSONAL = """\
+You extract durable facts about one user from their conversations with an AI
+assistant, for a memory store. Each event is one message by the user or the
+assistant.
+
+Extract every assertion of a concrete value for a property of the user's
+life: personal details, background, work and education, possessions, people
+in their life, preferences, habits, plans, and things they did, bought,
+visited or experienced, with amounts and dates when given. Extract from both
+the user's and the assistant's messages, even when they conflict with what is
+already known: a separate component decides what to trust. Skip questions,
+general knowledge or advice that is not about the user, chit-chat, and
+mentions of a property without a value.
+
+For each claim give:
+- event_id: the id of the event that makes it.
+- entity: who or what it is about, spelled as in the known slots when it is
+  the same one (e.g. "user", "user's sister", "user's car").
+- attribute: a short snake_case name for the property (e.g. "degree",
+  "commute_minutes"). Reuse a known slot's attribute when it is the same
+  property. A one-off event (a trip, a purchase, a visit, a recommendation
+  the assistant gave) is a property of its own: name it so that different
+  events never share an attribute (e.g. "trip_to_tokyo_may", not "trip").
+- value: the value as a short phrase copied from the message (e.g.
+  "Business Administration", "45 minutes"), without surrounding prose. If it
+  is the same as a known current value written differently, use the known
+  spelling exactly.
+"""
+
+PROFILES = {"coding": EXTRACT_SYSTEM, "personal": EXTRACT_SYSTEM_PERSONAL}
+
 SLOTS_SYSTEM = """\
 You route a question, or a request to forget something, to the memory slots it
 is about. Choose only from the listed slot keys. Return every slot the text
@@ -120,7 +153,9 @@ def grounded(value: str, text: str) -> bool:
 
 
 def slot_key(entity: str, attribute: str) -> str:
-    norm = lambda s: re.sub(r"\s+", "-", s.strip().lower())
+    # Quotes and backslashes are dropped: OpenAI's strict structured outputs
+    # reject them inside the router's enum of slot keys ('"The Nightingale"').
+    norm = lambda s: re.sub(r"\s+", "-", re.sub(r'["\\]', "", s).strip().lower())
     return f"{norm(entity)}/{norm(attribute).replace('-', '_')}"
 
 
@@ -134,8 +169,10 @@ class LLMExtractor:
     name = "llm"
     version = "6"
 
-    def __init__(self, backend: Backend | None = None, cache_dir: Path | None = DEFAULT_CACHE) -> None:
+    def __init__(self, backend: Backend | None = None, cache_dir: Path | None = DEFAULT_CACHE,
+                 profile: str = "coding") -> None:
         self._backend, self.cache_dir = backend, cache_dir
+        self.profile, self.extract_system = profile, PROFILES[profile]
         self.calls = self.cache_hits = self.refusals = self.dropped = self.ungrounded = 0
 
     @property
@@ -153,7 +190,7 @@ class LLMExtractor:
         prompt = f"{_known_block(known)}\n\nEvents:\n" + "\n".join(lines)
         ids = [e.event_id for e in events]
         text = {e.event_id: e.content for e in events}
-        data, usage = self._call(EXTRACT_SYSTEM, prompt, _claims_schema(ids), "claims")
+        data, usage = self._call(self.extract_system, prompt, _claims_schema(ids), "claims")
         out = []
         for c in data.get("claims", []) if isinstance(data.get("claims"), list) else []:
             if not (isinstance(c, dict) and all(isinstance(c.get(k), str) for k in CLAIM_FIELDS)):
@@ -183,8 +220,8 @@ class LLMExtractor:
         return [s for s in dict.fromkeys(slots) if isinstance(s, str) and s in known], usage
 
     def config(self) -> dict[str, object]:
-        digest = hashlib.sha256((EXTRACT_SYSTEM + SLOTS_SYSTEM).encode()).hexdigest()[:12]
-        return {"name": self.name, "version": self.version, **self.backend.config(),
+        digest = hashlib.sha256((self.extract_system + SLOTS_SYSTEM).encode()).hexdigest()[:12]
+        return {"name": self.name, "version": self.version, "profile": self.profile, **self.backend.config(),
                 "prompt_sha": digest, "calls": self.calls, "cache_hits": self.cache_hits,
                 "refusals": self.refusals, "dropped_claims": self.dropped,
                 "ungrounded_claims": self.ungrounded}
@@ -192,23 +229,31 @@ class LLMExtractor:
     # ---- caching --------------------------------------------------------------
 
     def _call(self, system: str, prompt: str, schema: dict[str, Any], name: str) -> tuple[dict[str, Any], Usage]:
-        request = {"backend": self.backend.config(), "system": system, "prompt": prompt, "schema": schema}
-        key = hashlib.sha256(json.dumps(request, sort_keys=True).encode()).hexdigest()
-        path = self.cache_dir / f"{key}.json" if self.cache_dir else None
-        if path and path.exists():
-            self.cache_hits += 1
-            cached = json.loads(path.read_text(encoding="utf-8"))
-            return cached["data"], Usage(**cached["usage"])
+        data, usage, outcome = cached_json(self.backend, self.cache_dir, system, prompt, schema, name)
+        self.calls += outcome != "hit"
+        self.cache_hits += outcome == "hit"
+        self.refusals += outcome == "refused"
+        return data, usage
 
-        self.calls += 1
-        result = self.backend.complete_json(system, prompt, schema, name)
-        if result.data is not None and not isinstance(result.data, dict):
-            result = type(result)({}, result.usage)
-        if result.data is None:
-            # Not cached: a refusal is not a stable answer.
-            self.refusals += 1
-            return {}, result.usage
-        if path:
-            path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(json.dumps({"data": result.data, "usage": result.usage.model_dump()}), encoding="utf-8")
-        return result.data, result.usage
+
+def cached_json(backend: Backend, cache_dir: Path | None, system: str, prompt: str,
+                schema: dict[str, Any], name: str) -> tuple[dict[str, Any], Usage, str]:
+    """One structured-output call through the on-disk cache. Returns the data,
+    the usage of the call that produced it, and ``"hit"``, ``"called"`` or
+    ``"refused"`` (a refusal is not a stable answer, so it is not cached)."""
+    request = {"backend": backend.config(), "system": system, "prompt": prompt, "schema": schema}
+    key = hashlib.sha256(json.dumps(request, sort_keys=True).encode()).hexdigest()
+    path = cache_dir / f"{key}.json" if cache_dir else None
+    if path and path.exists():
+        cached = json.loads(path.read_text(encoding="utf-8"))
+        return cached["data"], Usage(**cached["usage"]), "hit"
+
+    result = backend.complete_json(system, prompt, schema, name)
+    if result.data is not None and not isinstance(result.data, dict):
+        result = type(result)({}, result.usage)
+    if result.data is None:
+        return {}, result.usage, "refused"
+    if path:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"data": result.data, "usage": result.usage.model_dump()}), encoding="utf-8")
+    return result.data, result.usage, "called"

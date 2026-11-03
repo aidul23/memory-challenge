@@ -1,0 +1,829 @@
+{
+ "benchmark": "LongMemEval_S (cleaned)",
+ "subset": "pilot",
+ "system": "no_memory",
+ "started_at": "2026-10-19T10:39:04.123474+00:00",
+ "budget": 4000,
+ "prices_as_of": "2026-10-19",
+ "answer_backend": {
+  "provider": "openai",
+  "model": "gpt-4.1-mini",
+  "effort": null,
+  "base_url": null,
+  "temperature": 0.0,
+  "seed": 0
+ },
+ "judge_backend": {
+  "provider": "openai",
+  "model": "gpt-4o-2024-08-06",
+  "effort": null,
+  "base_url": null,
+  "temperature": 0.0,
+  "seed": 0
+ },
+ "answer_prompt_system": "You are a chat assistant with memory of your past conversations with this\nuser. Answer the user's question, given after the memory, using the memory.\nMemory items may carry dates; use them and today's date for questions about\ntime, order or duration, and when statements changed over time, answer with\nthe latest. If the memory does not contain the information the question\nneeds, say that you do not know or that it was not mentioned. Answer\nconcisely.\n",
+ "summary": {
+  "system": "no_memory",
+  "questions": 14,
+  "accuracy": 0.14285714285714285,
+  "accuracy_by_category": {
+   "abstention": 1.0,
+   "knowledge-update": 0.0,
+   "multi-session": 0.0,
+   "single-session-assistant": 0.0,
+   "single-session-preference": 0.0,
+   "single-session-user": 0.0,
+   "temporal-reasoning": 0.0
+  },
+  "n_by_category": {
+   "abstention": 2,
+   "knowledge-update": 2,
+   "multi-session": 2,
+   "single-session-assistant": 2,
+   "single-session-preference": 2,
+   "single-session-user": 2,
+   "temporal-reasoning": 2
+  },
+  "mean_injected_tokens": 0,
+  "mean_ingest_s": 2.4050010584427844e-05,
+  "mean_retrieve_ms": 0.003235146453204964,
+  "mean_storage_bytes": 0,
+  "cost_usd": {
+   "memory": 0.0,
+   "answer": 0.0017360000000000001,
+   "judge": 0.008065
+  }
+ },
+ "instances": [
+  {
+   "question_id": "8a137a7f",
+   "category": "single-session-user",
+   "question_type": "single-session-user",
+   "question": "What type of bulb did I replace in my bedside lamp?",
+   "gold": "Philips LED bulb",
+   "response": "I do not know what type of bulb you replaced in your bedside lamp, as this information was not mentioned.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 100517,
+   "sessions": 51,
+   "ingest_s": 3.887602360919118e-05,
+   "retrieve_s": 8.709001122042537e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 176,
+    "llm_output_tokens": 26,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 182,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.000112,
+    "judge": 0.000505
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "311778f1",
+   "category": "single-session-user",
+   "question_type": "single-session-user",
+   "question": "How many hours did I spend watching documentaries on Netflix last month?",
+   "gold": "10",
+   "response": "I do not know how many hours you spent watching documentaries on Netflix last month as this information was not mentioned.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 102386,
+   "sessions": 52,
+   "ingest_s": 2.7746951673179865e-05,
+   "retrieve_s": 4.3330073822289705e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 177,
+    "llm_output_tokens": 26,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 182,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.00011240000000000001,
+    "judge": 0.000505
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "15745da0_abs",
+   "category": "abstention",
+   "question_type": "single-session-user",
+   "question": "How long have I been collecting vintage films?",
+   "gold": "You did not mention this information. You mentioned collecting vintage cameras but not vintage films.",
+   "response": "I do not know how long you have been collecting vintage films, as this information was not mentioned.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 100229,
+   "sessions": 50,
+   "ingest_s": 2.420897362753749e-05,
+   "retrieve_s": 3.082997864112258e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 173,
+    "llm_output_tokens": 24,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 173,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.00010760000000000001,
+    "judge": 0.0004825
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "eeda8a6d_abs",
+   "category": "abstention",
+   "question_type": "multi-session",
+   "question": "How many fish are there in my 30-gallon tank?",
+   "gold": "The information provided is not enough. You did not mention that you have a 30-gallon tank.",
+   "response": "I do not know how many fish are in your 30-gallon tank because that information was not mentioned.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 99754,
+   "sessions": 49,
+   "ingest_s": 2.5713059585541487e-05,
+   "retrieve_s": 3.4170225262641907e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 177,
+    "llm_output_tokens": 26,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 183,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.00011240000000000001,
+    "judge": 0.0005075
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "1a1907b4",
+   "category": "single-session-preference",
+   "question_type": "single-session-preference",
+   "question": "I've been thinking about making a cocktail for an upcoming get-together, but I'm not sure which one to choose. Any suggestions?",
+   "gold": "Considering their mixology class background, the user would prefer cocktail suggestions that build upon their existing skills and interests, such as creative variations of classic cocktails or innovative twists on familiar flavors. They might appreciate recommendations that incorporate their experience with refreshing summer drinks like Pimm's Cup. The user would not prefer overly simplistic or basic cocktail recipes, and may not be interested in suggestions that don't take into account their mixology class background.",
+   "response": "Since you haven't mentioned any preferences, a classic cocktail like a Mojito or Margarita could be great choices for a get-together. They are popular, refreshing, and generally well-liked.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 104944,
+   "sessions": 48,
+   "ingest_s": 2.220299211330712e-05,
+   "retrieve_s": 2.375018084421754e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 190,
+    "llm_output_tokens": 41,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 279,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.00014160000000000003,
+    "judge": 0.0007475
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "0a34ad58",
+   "category": "single-session-preference",
+   "question_type": "single-session-preference",
+   "question": "I\u2019m a bit anxious about getting around Tokyo. Do you have any helpful tips?",
+   "gold": "The user would prefer responses that utilize their existing resources, such as their Suica card and TripIt app, to provide personalized tips for navigating Tokyo's public transportation. They might not prefer general tips or recommendations that do not take into account their prior preparations.",
+   "response": "Tokyo's public transportation is very efficient and user-friendly. To get around easily, consider using a prepaid IC card like Suica or Pasmo for convenient access to trains and buses. Download a transit app such as Google Maps or Japan Transit Planner to navigate routes and schedules. Also, try to avoid rush hours if possible, as trains can be very crowded. Lastly, don't hesitate to ask station staff for help\u2014they are usually very helpful and some speak English.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 104113,
+   "sessions": 42,
+   "ingest_s": 2.0959036191925406e-05,
+   "retrieve_s": 3.6249984987080097e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 181,
+    "llm_output_tokens": 95,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 291,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.0002244,
+    "judge": 0.0007775
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "9aaed6a3",
+   "category": "multi-session",
+   "question_type": "multi-session",
+   "question": "How much cashback did I earn at SaveMart last Thursday?",
+   "gold": "$0.75",
+   "response": "I do not have information about your cashback earnings at SaveMart last Thursday.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 103201,
+   "sessions": 51,
+   "ingest_s": 2.4621840566396713e-05,
+   "retrieve_s": 2.6249908842146397e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 176,
+    "llm_output_tokens": 19,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 176,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.00010080000000000001,
+    "judge": 0.00049
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "51c32626",
+   "category": "multi-session",
+   "question_type": "multi-session",
+   "question": "When did I submit my research paper on sentiment analysis?",
+   "gold": "February 1st",
+   "response": "You have not mentioned when you submitted your research paper on sentiment analysis.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 103150,
+   "sessions": 51,
+   "ingest_s": 2.3880013031885028e-05,
+   "retrieve_s": 2.707995008677244e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 175,
+    "llm_output_tokens": 18,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 174,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 9.88e-05,
+    "judge": 0.000485
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "dcfa8644",
+   "category": "temporal-reasoning",
+   "question_type": "temporal-reasoning",
+   "question": "How many days had passed since I bought my Adidas running shoes when I realized one of the shoelaces on my old Converse sneakers had broken?",
+   "gold": "14 days. 15 days (including the last day) is also acceptable.",
+   "response": "The memory does not contain information about when you bought your Adidas running shoes or when you realized the shoelace on your old Converse sneakers had broken.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 100543,
+   "sessions": 46,
+   "ingest_s": 2.075007068924606e-05,
+   "retrieve_s": 2.249988028779626e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 193,
+    "llm_output_tokens": 34,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 284,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.00013160000000000003,
+    "judge": 0.00076
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "gpt4_7de946e7",
+   "category": "temporal-reasoning",
+   "question_type": "temporal-reasoning",
+   "question": "Which health issue did I deal with first, the persistent cough or the skin tag removal?",
+   "gold": "Persistent cough",
+   "response": "There is no information in the memory about when you dealt with the persistent cough or the skin tag removal, so I cannot determine which health issue you dealt with first.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 102705,
+   "sessions": 49,
+   "ingest_s": 2.178811701014638e-05,
+   "retrieve_s": 2.874992787837982e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 182,
+    "llm_output_tokens": 37,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 262,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.000132,
+    "judge": 0.000705
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "b01defab",
+   "category": "knowledge-update",
+   "question_type": "knowledge-update",
+   "question": "Did I finish reading 'The Nightingale' by Kristin Hannah?",
+   "gold": "Yes",
+   "response": "There is no information in the memory about whether you finished reading 'The Nightingale' by Kristin Hannah.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 104851,
+   "sessions": 50,
+   "ingest_s": 2.420699456706643e-05,
+   "retrieve_s": 2.2920139599591494e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 177,
+    "llm_output_tokens": 25,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 165,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.0001108,
+    "judge": 0.0004625
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "9bbe84a2",
+   "category": "knowledge-update",
+   "question_type": "knowledge-update",
+   "question": "What was my previous goal for my Apex Legends level before I updated my goal?",
+   "gold": "level 100",
+   "response": "You have not mentioned any previous goal for your Apex Legends level before updating it.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 102168,
+   "sessions": 48,
+   "ingest_s": 2.1084968466311693e-05,
+   "retrieve_s": 2.00001522898674e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 180,
+    "llm_output_tokens": 20,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 165,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.000104,
+    "judge": 0.0004625
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "2bf43736",
+   "category": "single-session-assistant",
+   "question_type": "single-session-assistant",
+   "question": "I was going through our previous chat and I wanted to clarify something about the prayer of beginners in Tanqueray's Spiritual Life treatise. Can you remind me which chapter of the second part discusses vocal prayer and meditation?",
+   "gold": "Chapter 4 of Book 1, titled 'Vocal Prayer and Meditation'.",
+   "response": "I do not have information about the chapters of Tanqueray's Spiritual Life treatise from our previous chats.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 102412,
+   "sessions": 44,
+   "ingest_s": 2.016508369706571e-05,
+   "retrieve_s": 1.8750142771750689e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 208,
+    "llm_output_tokens": 26,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 226,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.00012480000000000002,
+    "judge": 0.000615
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  },
+  {
+   "question_id": "7a8d0b71",
+   "category": "single-session-assistant",
+   "question_type": "single-session-assistant",
+   "question": "I'm looking back at our previous chat about the DHL Wellness Retreats campaign. Can you remind me how much was allocated for influencer marketing in the campaign plan?",
+   "gold": "$2,000",
+   "response": "There is no information in our previous chats about the amount allocated for influencer marketing in the DHL Wellness Retreats campaign plan.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [],
+   "evidence_items": 0,
+   "evidence_tokens": 0,
+   "injected_tokens": 0,
+   "history_tokens": 104071,
+   "sessions": 45,
+   "ingest_s": 2.049602335318923e-05,
+   "retrieve_s": 3.1249946914613247e-06,
+   "store_items": 0,
+   "storage_bytes": 0,
+   "memory_usage": {
+    "llm_calls": 0,
+    "llm_input_tokens": 0,
+    "llm_output_tokens": 0,
+    "embedding_tokens": 0,
+    "model_ids": []
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 195,
+    "llm_output_tokens": 28,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 204,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.0,
+    "answer": 0.0001228,
+    "judge": 0.00056
+   },
+   "system_config": {
+    "name": "no_memory",
+    "version": "1"
+   }
+  }
+ ]
+}

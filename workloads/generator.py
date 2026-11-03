@@ -257,6 +257,10 @@ PRESETS = {
     "small": Config(preset="small"),
     "medium": Config(preset="medium", users=8, services_per_user=(2, 4), sessions_per_user=40,
                      mutations_per_fact=(1, 8), span_days=365),
+    # Longitudinal runs: a year and a half of sessions, eight checkpoints.
+    "long": Config(preset="long", users=6, services_per_user=(2, 4), sessions_per_user=60,
+                   mutations_per_fact=(1, 8), span_days=540,
+                   checkpoints=tuple(i / 8 for i in range(1, 9))),
 }
 
 

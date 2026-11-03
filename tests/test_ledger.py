@@ -249,3 +249,11 @@ def test_snapshot_restore_roundtrip(tmp_path):
         assert (a.evidence, a.abstained, a.abstain_reason) == (b.evidence, b.abstained, b.abstain_reason)
     assert r.stats() == s.stats()
     assert r.ingest([ev("b", 2, "Staging lives at staging-7.internal.")]).items_rejected == 1
+
+
+def test_extract_min_trust_skips_untrusted_events():
+    s = Ledger(extract_min_trust=2)
+    s.ingest([ev("a", 1, "Deploys go out from the `master` branch.", kind=EventKind.ASSISTANT_MESSAGE),
+              ev("b", 1, "We're on PostgreSQL 14.")])
+    assert s.stats().extra["pending"] == 0 and values(ask(s, DB_Q)) == ["PostgreSQL 14"]
+    assert s.config()["extract_min_trust"] == 2

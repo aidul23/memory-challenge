@@ -9,7 +9,9 @@ anything: they have no way to act on a natural-language description.
 
 from __future__ import annotations
 
-from typing import Sequence
+import json
+from pathlib import Path
+from typing import Any, Sequence
 
 from interface.memory_system import (
     Capabilities, DeleteReport, DeleteRequest, Event, Evidence, MemorySystem,
@@ -18,7 +20,7 @@ from interface.memory_system import (
 
 
 class TranscriptStore(MemorySystem):
-    capabilities = Capabilities(provenance=True, deletion=True)
+    capabilities = Capabilities(provenance=True, deletion=True, persistence=True)
 
     def __init__(self) -> None:
         self._events: dict[str, Event] = {}
@@ -55,6 +57,21 @@ class TranscriptStore(MemorySystem):
     def reset(self) -> None:
         self._events.clear()
         self._deleted.clear()
+
+    def state(self) -> dict[str, Any]:
+        return {"events": [e.model_dump(mode="json") for e in self._events.values()],
+                "deleted": sorted(self._deleted)}
+
+    def load_state(self, state: dict[str, Any]) -> None:
+        self.reset()
+        self._events = {d["event_id"]: Event.model_validate(d) for d in state["events"]}
+        self._deleted = set(state["deleted"])
+
+    def snapshot(self, path: Path) -> None:
+        path.write_text(json.dumps(self.state()), encoding="utf-8")
+
+    def restore(self, path: Path) -> None:
+        self.load_state(json.loads(path.read_text(encoding="utf-8")))
 
     def _history(self, user_id: str) -> list[Event]:
         return sorted(

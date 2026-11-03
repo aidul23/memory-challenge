@@ -68,6 +68,21 @@
           0,
           89
         ]
+      },
+      "answer_accuracy_pct": [
+        27.272727272727273,
+        29.591836734693878,
+        31.31313131313131,
+        28.97196261682243,
+        30.275229357798164
+      ],
+      "answer_verdicts": {
+        "false_abstention": 361,
+        "correct": 151
+      },
+      "cost_usd": {
+        "memory": 0.0,
+        "answer": 0.05038600000000001
       }
     },
     "full_replay": {
@@ -132,6 +147,24 @@
           0,
           89
         ]
+      },
+      "answer_accuracy_pct": [
+        83.83838383838383,
+        85.71428571428571,
+        82.82828282828282,
+        80.37383177570094,
+        77.98165137614679
+      ],
+      "answer_verdicts": {
+        "correct": 420,
+        "missed": 1,
+        "wrong": 65,
+        "no_abstention": 22,
+        "false_abstention": 4
+      },
+      "cost_usd": {
+        "memory": 0.0,
+        "answer": 0.2809064
       }
     },
     "transcript_rag": {
@@ -198,6 +231,24 @@
           5,
           89
         ]
+      },
+      "answer_accuracy_pct": [
+        69.6969696969697,
+        75.51020408163265,
+        76.76767676767676,
+        72.89719626168224,
+        78.89908256880734
+      ],
+      "answer_verdicts": {
+        "correct": 383,
+        "wrong": 88,
+        "missed": 2,
+        "false_abstention": 36,
+        "no_abstention": 3
+      },
+      "cost_usd": {
+        "memory": 0.0,
+        "answer": 0.0795616
       }
     },
     "ledger": {
@@ -264,6 +315,24 @@
           13,
           89
         ]
+      },
+      "answer_accuracy_pct": [
+        29.292929292929294,
+        42.857142857142854,
+        47.474747474747474,
+        36.44859813084112,
+        41.28440366972477
+      ],
+      "answer_verdicts": {
+        "correct": 202,
+        "false_abstention": 269,
+        "no_abstention": 9,
+        "missed": 23,
+        "wrong": 9
+      },
+      "cost_usd": {
+        "memory": 0.0,
+        "answer": 0.054030400000000006
       }
     },
     "ledger_llm": {
@@ -329,6 +398,188 @@
           80,
           89
         ]
+      },
+      "answer_accuracy_pct": [
+        93.93939393939394,
+        85.71428571428571,
+        97.97979797979798,
+        85.04672897196262,
+        91.74311926605505
+      ],
+      "answer_verdicts": {
+        "correct": 465,
+        "false_abstention": 43,
+        "wrong": 4
+      },
+      "cost_usd": {
+        "memory": 0.17504760000000003,
+        "answer": 0.05673400000000001
+      }
+    },
+    "hybrid_llm_fb": {
+      "accuracy_pct": [
+        69.6969696969697,
+        62.244897959183675,
+        71.71717171717172,
+        61.6822429906542,
+        68.80733944954129
+      ],
+      "correct": {
+        "0": [
+          69
+        ],
+        "1": [
+          61
+        ],
+        "2": [
+          71
+        ],
+        "3": [
+          66
+        ],
+        "4": [
+          75
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 342,
+        "no_abstention": 144,
+        "polluted": 8,
+        "wrong": 8,
+        "missed": 10
+      },
+      "by_type": {
+        "abstention": [
+          2,
+          120
+        ],
+        "contamination": [
+          63,
+          67
+        ],
+        "current": [
+          109,
+          112
+        ],
+        "historical": [
+          85,
+          93
+        ],
+        "post_delete": [
+          5,
+          31
+        ],
+        "post_update": [
+          78,
+          89
+        ]
+      },
+      "answer_accuracy_pct": [
+        97.97979797979798,
+        89.79591836734694,
+        96.96969696969697,
+        89.7196261682243,
+        97.24770642201835
+      ],
+      "answer_verdicts": {
+        "correct": 483,
+        "false_abstention": 15,
+        "wrong": 10,
+        "no_abstention": 4
+      },
+      "cost_usd": {
+        "memory": 0.1649524,
+        "answer": 0.0653536
+      }
+    },
+    "hybrid_llm_aug": {
+      "accuracy_pct": [
+        43.43434343434343,
+        21.428571428571427,
+        33.333333333333336,
+        30.8411214953271,
+        33.027522935779814
+      ],
+      "correct": {
+        "0": [
+          43
+        ],
+        "1": [
+          21
+        ],
+        "2": [
+          33
+        ],
+        "3": [
+          33
+        ],
+        "4": [
+          36
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 166,
+        "polluted": 186,
+        "no_abstention": 144,
+        "wrong": 7,
+        "missed": 9
+      },
+      "by_type": {
+        "abstention": [
+          2,
+          120
+        ],
+        "contamination": [
+          19,
+          67
+        ],
+        "current": [
+          109,
+          112
+        ],
+        "historical": [
+          19,
+          93
+        ],
+        "post_delete": [
+          5,
+          31
+        ],
+        "post_update": [
+          12,
+          89
+        ]
+      },
+      "answer_accuracy_pct": [
+        96.96969696969697,
+        91.83673469387755,
+        95.95959595959596,
+        92.5233644859813,
+        94.4954128440367
+      ],
+      "answer_verdicts": {
+        "correct": 483,
+        "false_abstention": 10,
+        "wrong": 15,
+        "no_abstention": 4
+      },
+      "cost_usd": {
+        "memory": 0.1649524,
+        "answer": 0.083078
       }
     }
   },
@@ -376,7 +627,8 @@
         "assistant_message": 1,
         "tool_call": 1
       },
-      "introduce_trust": 2
+      "introduce_trust": 2,
+      "extract_min_trust": null
     },
     "ledger_llm": {
       "name": "ledger",
@@ -384,6 +636,7 @@
       "extractor": {
         "name": "llm",
         "version": "6",
+        "profile": "coding",
         "provider": "openai",
         "model": "gpt-4.1-mini",
         "effort": null,
@@ -405,7 +658,100 @@
         "assistant_message": 1,
         "tool_call": 1
       },
-      "introduce_trust": 2
+      "introduce_trust": 2,
+      "extract_min_trust": null
+    },
+    "hybrid_llm_fb": {
+      "name": "ledger_hybrid",
+      "version": "3",
+      "mode": "fallback",
+      "ledger": {
+        "name": "ledger",
+        "version": "3",
+        "extractor": {
+          "name": "llm",
+          "version": "6",
+          "profile": "coding",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "effort": null,
+          "base_url": null,
+          "temperature": 0.0,
+          "seed": 0,
+          "prompt_sha": "cb83f582ae5c",
+          "calls": 0,
+          "cache_hits": 153,
+          "refusals": 0,
+          "dropped_claims": 1,
+          "ungrounded_claims": 20
+        },
+        "trust": {
+          "user_message": 3,
+          "tool_result": 3,
+          "code_change": 3,
+          "document": 2,
+          "assistant_message": 1,
+          "tool_call": 1
+        },
+        "introduce_trust": 2,
+        "extract_min_trust": 2
+      },
+      "episodes": {
+        "name": "transcript_rag",
+        "version": "1",
+        "retriever": "bm25",
+        "unit": "event",
+        "top_k": 5,
+        "k1": 1.5,
+        "b": 0.75,
+        "stopwords": 52
+      }
+    },
+    "hybrid_llm_aug": {
+      "name": "ledger_hybrid",
+      "version": "3",
+      "mode": "augment",
+      "ledger": {
+        "name": "ledger",
+        "version": "3",
+        "extractor": {
+          "name": "llm",
+          "version": "6",
+          "profile": "coding",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "effort": null,
+          "base_url": null,
+          "temperature": 0.0,
+          "seed": 0,
+          "prompt_sha": "cb83f582ae5c",
+          "calls": 0,
+          "cache_hits": 153,
+          "refusals": 0,
+          "dropped_claims": 1,
+          "ungrounded_claims": 20
+        },
+        "trust": {
+          "user_message": 3,
+          "tool_result": 3,
+          "code_change": 3,
+          "document": 2,
+          "assistant_message": 1,
+          "tool_call": 1
+        },
+        "introduce_trust": 2,
+        "extract_min_trust": 2
+      },
+      "episodes": {
+        "name": "transcript_rag",
+        "version": "1",
+        "retriever": "bm25",
+        "unit": "event",
+        "top_k": 5,
+        "k1": 1.5,
+        "b": 0.75,
+        "stopwords": 52
+      }
     }
   }
 }

@@ -4,6 +4,7 @@
     python -m runner --systems transcript_rag --budget 500
     python -m runner --withhold-sources               # description-only deletion
     python -m runner --systems ledger_llm             # calls the LLM configured in .env
+    python -m runner --answer                         # also answer every probe with the shared model
 """
 
 from __future__ import annotations
@@ -13,8 +14,10 @@ from pathlib import Path
 from typing import Callable
 
 from interface.memory_system import MemorySystem
+from runner.answer import Answerer
 from runner.replay import RunResult, run
 from systems.full_replay.system import FullReplay
+from systems.hybrid.system import LedgerHybrid
 from systems.ledger.llm import LLMExtractor
 from systems.ledger.system import Ledger
 from systems.no_memory.system import NoMemory
@@ -29,9 +32,14 @@ SYSTEMS: dict[str, tuple[Callable[[], MemorySystem], bool]] = {
     "transcript_rag": (TranscriptRAG, False),
     "ledger": (Ledger, False),
     "ledger_llm": (lambda: Ledger(LLMExtractor()), False),
+    "hybrid": (LedgerHybrid, False),
+    "hybrid_llm": (lambda: LedgerHybrid(LLMExtractor()), False),
+    # The configuration used on LongMemEval: facts plus turns, trusted sources only.
+    "hybrid_llm_aug": (lambda: LedgerHybrid(LLMExtractor(), mode="augment", extract_min_trust=2), False),
+    "hybrid_llm_fb": (lambda: LedgerHybrid(LLMExtractor(), mode="fallback", extract_min_trust=2), False),
 }
 #: Systems that spend money run only when named with --systems.
-PAID = {"ledger_llm"}
+PAID = {"ledger_llm", "hybrid_llm", "hybrid_llm_aug", "hybrid_llm_fb"}
 
 DEFAULT_TIMELINE = Path("workloads/examples/example_timeline.json")
 
@@ -52,6 +60,8 @@ def print_report(runs: list[RunResult]) -> None:
     sums = [r.summary() for r in runs]
     for label, get in [
         ("correct", lambda s: f"{s['correct']}/{s['probes']}"),
+        ("answer correct", lambda s: f"{s['answer_correct']}/{s['probes']}" if "answer_correct" in s else "-"),
+        ("cost $ (memory + answer)", lambda s: f"{s['memory_cost_usd']:.4f} + {s.get('answer_cost_usd', 0):.4f}"),
         ("budget violations", lambda s: str(s["budget_violations"])),
         ("isolation violations", lambda s: str(s["isolation_violations"])),
         ("unsupported ops", lambda s: ",".join(s["unsupported"]) or "-"),
@@ -74,6 +84,8 @@ def main() -> None:
     ap.add_argument("--budget", type=int, default=2000, help="evidence token budget per query")
     ap.add_argument("--withhold-sources", action="store_true",
                     help="send deletion requests without source_event_ids")
+    ap.add_argument("--answer", action="store_true",
+                    help="answer every probe with the shared model in .env (costs money; cached)")
     ap.add_argument("--out", type=Path, default=Path("runs"))
     args = ap.parse_args()
 
@@ -89,6 +101,7 @@ def main() -> None:
             factory(), timeline,
             token_budget=None if unbounded else args.budget,
             delete_with_sources=not args.withhold_sources,
+            answerer=Answerer() if args.answer else None,
         )
         (out_dir / f"{name}{suffix}.json").write_text(result.model_dump_json(indent=2), encoding="utf-8")
         runs.append(result)

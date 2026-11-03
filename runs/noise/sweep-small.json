@@ -1,0 +1,287 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "systems": {
+    "ledger_llm": {
+      "accuracy_pct": [
+        93.93939393939394,
+        88.43537414965986,
+        98.65319865319866,
+        85.04672897196262,
+        93.27217125382263
+      ],
+      "correct": {
+        "0": [
+          93,
+          93,
+          93
+        ],
+        "1": [
+          86,
+          87,
+          87
+        ],
+        "2": [
+          98,
+          97,
+          98
+        ],
+        "3": [
+          92,
+          91,
+          90
+        ],
+        "4": [
+          100,
+          102,
+          103
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 469,
+        "false_abstention": 38,
+        "missed": 1,
+        "wrong": 4
+      },
+      "by_type": {
+        "abstention": [
+          120,
+          120
+        ],
+        "contamination": [
+          62,
+          67
+        ],
+        "current": [
+          103,
+          112
+        ],
+        "historical": [
+          73,
+          93
+        ],
+        "post_delete": [
+          31,
+          31
+        ],
+        "post_update": [
+          80,
+          89
+        ]
+      },
+      "answer_accuracy_pct": [
+        93.93939393939394,
+        85.71428571428571,
+        97.97979797979798,
+        85.04672897196262,
+        91.74311926605505
+      ],
+      "answer_verdicts": {
+        "correct": 465,
+        "false_abstention": 43,
+        "wrong": 4
+      },
+      "cost_usd": {
+        "memory": 0.17504760000000003,
+        "answer": 0.05673400000000001
+      },
+      "noise": {
+        "flipped": 13,
+        "probes": 512,
+        "mean_sd": 0.7364451540062397
+      }
+    },
+    "hybrid_llm_fb": {
+      "accuracy_pct": [
+        69.6969696969697,
+        61.564625850340136,
+        71.38047138047139,
+        61.993769470404985,
+        69.1131498470948
+      ],
+      "correct": {
+        "0": [
+          69,
+          69,
+          69
+        ],
+        "1": [
+          61,
+          61,
+          59
+        ],
+        "2": [
+          71,
+          70,
+          71
+        ],
+        "3": [
+          66,
+          67,
+          66
+        ],
+        "4": [
+          75,
+          75,
+          76
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 342,
+        "no_abstention": 144,
+        "polluted": 8,
+        "wrong": 8,
+        "missed": 10
+      },
+      "by_type": {
+        "abstention": [
+          2,
+          120
+        ],
+        "contamination": [
+          63,
+          67
+        ],
+        "current": [
+          109,
+          112
+        ],
+        "historical": [
+          85,
+          93
+        ],
+        "post_delete": [
+          5,
+          31
+        ],
+        "post_update": [
+          78,
+          89
+        ]
+      },
+      "answer_accuracy_pct": [
+        97.97979797979798,
+        89.79591836734694,
+        96.96969696969697,
+        89.7196261682243,
+        97.24770642201835
+      ],
+      "answer_verdicts": {
+        "correct": 483,
+        "false_abstention": 15,
+        "wrong": 10,
+        "no_abstention": 4
+      },
+      "cost_usd": {
+        "memory": 0.1649524,
+        "answer": 0.0653536
+      },
+      "noise": {
+        "flipped": 11,
+        "probes": 512,
+        "mean_sd": 0.5773502691896257
+      }
+    }
+  },
+  "preset": "small",
+  "budget": 2000,
+  "repeats": 3,
+  "configs": {
+    "ledger_llm": {
+      "name": "ledger",
+      "version": "3",
+      "extractor": {
+        "name": "llm",
+        "version": "6",
+        "profile": "coding",
+        "provider": "openai",
+        "model": "gpt-4.1-mini",
+        "effort": null,
+        "base_url": null,
+        "temperature": 0.0,
+        "seed": 0,
+        "prompt_sha": "cb83f582ae5c",
+        "calls": 0,
+        "cache_hits": 153,
+        "refusals": 0,
+        "dropped_claims": 1,
+        "ungrounded_claims": 17
+      },
+      "trust": {
+        "user_message": 3,
+        "tool_result": 3,
+        "code_change": 3,
+        "document": 2,
+        "assistant_message": 1,
+        "tool_call": 1
+      },
+      "introduce_trust": 2,
+      "extract_min_trust": null
+    },
+    "hybrid_llm_fb": {
+      "name": "ledger_hybrid",
+      "version": "3",
+      "mode": "fallback",
+      "ledger": {
+        "name": "ledger",
+        "version": "3",
+        "extractor": {
+          "name": "llm",
+          "version": "6",
+          "profile": "coding",
+          "provider": "openai",
+          "model": "gpt-4.1-mini",
+          "effort": null,
+          "base_url": null,
+          "temperature": 0.0,
+          "seed": 0,
+          "prompt_sha": "cb83f582ae5c",
+          "calls": 0,
+          "cache_hits": 153,
+          "refusals": 0,
+          "dropped_claims": 1,
+          "ungrounded_claims": 20
+        },
+        "trust": {
+          "user_message": 3,
+          "tool_result": 3,
+          "code_change": 3,
+          "document": 2,
+          "assistant_message": 1,
+          "tool_call": 1
+        },
+        "introduce_trust": 2,
+        "extract_min_trust": 2
+      },
+      "episodes": {
+        "name": "transcript_rag",
+        "version": "1",
+        "retriever": "bm25",
+        "unit": "event",
+        "top_k": 5,
+        "k1": 1.5,
+        "b": 0.75,
+        "stopwords": 52
+      }
+    }
+  }
+}

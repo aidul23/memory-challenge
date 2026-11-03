@@ -71,6 +71,12 @@ def ev(eid: str, day: int, content: str, kind=EventKind.USER_MESSAGE) -> Event:
                  timestamp=datetime(2026, 1, day, 12, tzinfo=timezone.utc), kind=kind, content=content)
 
 
+def test_slot_key_drops_quotes_rejected_by_strict_schemas():
+    # Seen on LongMemEval: a book title in quotes broke OpenAI's enum of slot keys.
+    assert slot_key('"The Nightingale" book', "reading_status") == "the-nightingale-book/reading_status"
+    assert slot_key("a\\b", "x") == "ab/x"
+
+
 def test_slot_key_normalises():
     assert slot_key(" Payments-Service ", "Deploy Branch") == "payments-service/deploy_branch"
 
