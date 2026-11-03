@@ -1,0 +1,214 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "systems": {
+    "mem0": {
+      "accuracy_pct": [
+        33.333333333333336,
+        31.632653061224488,
+        38.38383838383838,
+        34.57943925233645,
+        36.69724770642202
+      ],
+      "correct": {
+        "0": [
+          33
+        ],
+        "1": [
+          31
+        ],
+        "2": [
+          38
+        ],
+        "3": [
+          37
+        ],
+        "4": [
+          40
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 179,
+        "missed": 75,
+        "wrong": 86,
+        "no_abstention": 151,
+        "polluted": 21
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          120
+        ],
+        "contamination": [
+          36,
+          67
+        ],
+        "current": [
+          86,
+          112
+        ],
+        "historical": [
+          18,
+          93
+        ],
+        "post_delete": [
+          0,
+          31
+        ],
+        "post_update": [
+          39,
+          89
+        ]
+      },
+      "answer_accuracy_pct": [
+        68.68686868686869,
+        64.28571428571429,
+        66.66666666666667,
+        68.22429906542057,
+        66.05504587155963
+      ],
+      "answer_verdicts": {
+        "correct": 342,
+        "missed": 8,
+        "wrong": 66,
+        "false_abstention": 93,
+        "no_abstention": 3
+      },
+      "cost_usd": {
+        "memory": 0.29036026000000004,
+        "answer": 0.0837268
+      }
+    },
+    "mem0_coding": {
+      "accuracy_pct": [
+        31.31313131313131,
+        34.69387755102041,
+        32.323232323232325,
+        37.38317757009346,
+        37.61467889908257
+      ],
+      "correct": {
+        "0": [
+          31
+        ],
+        "1": [
+          34
+        ],
+        "2": [
+          32
+        ],
+        "3": [
+          40
+        ],
+        "4": [
+          41
+        ]
+      },
+      "probes": {
+        "0": 99,
+        "1": 98,
+        "2": 99,
+        "3": 107,
+        "4": 109
+      },
+      "verdicts": {
+        "correct": 178,
+        "wrong": 85,
+        "no_abstention": 151,
+        "missed": 40,
+        "polluted": 58
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          120
+        ],
+        "contamination": [
+          27,
+          67
+        ],
+        "current": [
+          97,
+          112
+        ],
+        "historical": [
+          7,
+          93
+        ],
+        "post_delete": [
+          0,
+          31
+        ],
+        "post_update": [
+          47,
+          89
+        ]
+      },
+      "answer_accuracy_pct": [
+        61.61616161616162,
+        77.55102040816327,
+        66.66666666666667,
+        74.76635514018692,
+        72.4770642201835
+      ],
+      "answer_verdicts": {
+        "correct": 362,
+        "missed": 4,
+        "wrong": 82,
+        "false_abstention": 63,
+        "no_abstention": 1
+      },
+      "cost_usd": {
+        "memory": 0.34161872000000004,
+        "answer": 0.0876608
+      }
+    }
+  },
+  "preset": "small",
+  "budget": 2000,
+  "repeats": 1,
+  "configs": {
+    "mem0": {
+      "name": "mem0",
+      "version": "1",
+      "mem0ai": "1.0.11",
+      "llm": "gpt-4.1-mini",
+      "temperature": 0.0,
+      "seed": 0,
+      "embedder": "text-embedding-3-small",
+      "vector_store": "qdrant-local",
+      "top_k": 10,
+      "profile": "default",
+      "prompt_sha": null,
+      "calls": 233,
+      "cache_hits": 29
+    },
+    "mem0_coding": {
+      "name": "mem0",
+      "version": "1",
+      "mem0ai": "1.0.11",
+      "llm": "gpt-4.1-mini",
+      "temperature": 0.0,
+      "seed": 0,
+      "embedder": "text-embedding-3-small",
+      "vector_store": "qdrant-local",
+      "top_k": 10,
+      "profile": "coding",
+      "prompt_sha": "dda3925c8581",
+      "calls": 161,
+      "cache_hits": 150
+    }
+  }
+}

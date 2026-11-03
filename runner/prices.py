@@ -25,6 +25,14 @@ PRICES: dict[str, tuple[float, float]] = {
     "gpt-4.1-2025-04-14": (2.00, 8.00),
 }
 
+#: Embedding model id -> USD per 1M input tokens.
+EMBEDDING_PRICES: dict[str, float] = {
+    # https://developers.openai.com/api/docs/models/text-embedding-3-small
+    # (checked 2026-11-03; Mem0's embedder)
+    "text-embedding-3-small": 0.02,
+}
+
+
 def price_of(model_id: str) -> tuple[float, float]:
     matches = [m for m in PRICES if model_id.startswith(m)]
     if not matches:
@@ -33,11 +41,19 @@ def price_of(model_id: str) -> tuple[float, float]:
 
 
 def cost_usd(usage: Usage) -> float:
-    """Dollar cost of ``usage``. Zero when no LLM was called; an error when the
-    tokens span several models, since they cannot be split by model."""
-    if not usage.llm_input_tokens and not usage.llm_output_tokens:
-        return 0.0
-    if len(usage.model_ids) != 1:
-        raise ValueError(f"cannot price usage across models {usage.model_ids!r}")
-    inp, out = price_of(usage.model_ids[0])
-    return (usage.llm_input_tokens * inp + usage.llm_output_tokens * out) / 1e6
+    """Dollar cost of ``usage``. Zero when no model was called; an error when
+    the LLM or the embedding tokens span several models, since they cannot be
+    split by model."""
+    embedders = [m for m in usage.model_ids if m in EMBEDDING_PRICES]
+    llms = [m for m in usage.model_ids if m not in EMBEDDING_PRICES]
+    cost = 0.0
+    if usage.embedding_tokens:
+        if len(embedders) != 1:
+            raise ValueError(f"cannot price embedding usage across models {usage.model_ids!r}")
+        cost += usage.embedding_tokens * EMBEDDING_PRICES[embedders[0]] / 1e6
+    if usage.llm_input_tokens or usage.llm_output_tokens:
+        if len(llms) != 1:
+            raise ValueError(f"cannot price usage across models {usage.model_ids!r}")
+        inp, out = price_of(llms[0])
+        cost += (usage.llm_input_tokens * inp + usage.llm_output_tokens * out) / 1e6
+    return cost

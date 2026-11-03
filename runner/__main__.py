@@ -20,6 +20,7 @@ from systems.full_replay.system import FullReplay
 from systems.hybrid.system import LedgerHybrid
 from systems.ledger.llm import LLMExtractor
 from systems.ledger.system import Ledger
+from systems.mem0_oss.system import Mem0System
 from systems.no_memory.system import NoMemory
 from systems.transcript_rag.system import TranscriptRAG
 from workloads.timeline import Timeline
@@ -37,9 +38,13 @@ SYSTEMS: dict[str, tuple[Callable[[], MemorySystem], bool]] = {
     # The configuration used on LongMemEval: facts plus turns, trusted sources only.
     "hybrid_llm_aug": (lambda: LedgerHybrid(LLMExtractor(), mode="augment", extract_min_trust=2), False),
     "hybrid_llm_fb": (lambda: LedgerHybrid(LLMExtractor(), mode="fallback", extract_min_trust=2), False),
+    # Third-party baseline: Mem0's published extract-and-update algorithm.
+    "mem0": (Mem0System, False),
+    # The same, with Mem0's personal fact types swapped for the ledger's coding domain.
+    "mem0_coding": (lambda: Mem0System(profile="coding"), False),
 }
 #: Systems that spend money run only when named with --systems.
-PAID = {"ledger_llm", "hybrid_llm", "hybrid_llm_aug", "hybrid_llm_fb"}
+PAID = {"ledger_llm", "hybrid_llm", "hybrid_llm_aug", "hybrid_llm_fb", "mem0", "mem0_coding"}
 
 DEFAULT_TIMELINE = Path("workloads/examples/example_timeline.json")
 

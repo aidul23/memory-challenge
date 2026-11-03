@@ -376,7 +376,12 @@ judge returns \texttt{yes}/\texttt{no} in a JSON field.
 \label{sec:protocol}
 
 \textbf{Systems.} No memory; full replay (the whole history, unbounded);
-transcript RAG (BM25 over events, top 5, within the budget); \sys{} with a
+transcript RAG (BM25 over events, top 5, within the budget);
+Mem0~\cite{chhikara2025mem0} (OSS release 1.0.11, the last that implements
+its published add/update/delete step, unmodified, with a local vector store,
+\texttt{text-embedding-3-small} and our extraction model; top 10), and the same
+with its list of personal fact types replaced by our extractor's definition of
+a coding fact, a prompt fixed before any run (\emph{coding prompt}); \sys{} with a
 rule-based extractor (a model-free floor) and with the LLM extractor; and
 \hyb{}. Bounded systems share one evidence budget (2{,}000 tokens on the coding
 workload, 4{,}000 on LongMemEval); the runner truncates whole items.
@@ -577,7 +582,8 @@ write-time LLM calls per ingested session, median ingest time per session and
 retrieval time per query, store size at the end per seed, mean injected tokens
 per probe, and cost per probe in milli-dollars for memory and for answering.
 Times of the LLM systems are from uncached repeats (cached replays are not
-timings); augment mode shares fallback's write and routing path.}
+timings); augment mode shares fallback's write and routing path. Mem0 with the
+coding prompt shares Mem0's embedding cache, so its times are not reported.}
 \label{tab:efficiency}
 \centering
 \footnotesize
@@ -745,8 +751,9 @@ model's own noise at under one point per seed (Sec.~\ref{sec:results}).
 (\texttt{gpt-4.1-mini}, with \texttt{gpt-4.1} in the upgrade experiment), and
 all text is English. The LongMemEval subset is 210 of 500 questions, drawn
 stratified with a fixed seed; differences of a few points between systems on
-it are within its confidence intervals. We compare against the baselines the
-call requires, not against other memory products.
+it are within its confidence intervals. Besides the baselines the call
+requires we compare against one memory product, Mem0, and only on the coding
+workload; Zep and A-MEM are not evaluated.
 
 % ---------------------------------------------------------------------------
 \section{Related Work}

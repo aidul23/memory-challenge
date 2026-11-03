@@ -101,6 +101,9 @@ def test_prices():
         price_of("unknown-model")
     with pytest.raises(ValueError):
         cost_usd(Usage(llm_input_tokens=1, model_ids=("gpt-4.1-mini", "other")))
+    # Embedding tokens are priced by the embedding model beside the LLM.
+    assert cost_usd(Usage(llm_input_tokens=1_000_000, embedding_tokens=1_000_000,
+                          model_ids=("gpt-4.1-mini-2025-04-14", "text-embedding-3-small"))) == pytest.approx(0.42)
 
 
 def test_summary_prices_a_run_whose_model_changed():

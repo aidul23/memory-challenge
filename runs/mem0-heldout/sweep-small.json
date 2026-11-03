@@ -1,0 +1,214 @@
+{
+  "seeds": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "systems": {
+    "mem0": {
+      "accuracy_pct": [
+        44.44444444444444,
+        31.0,
+        36.36363636363637,
+        33.68421052631579,
+        28.31858407079646
+      ],
+      "correct": {
+        "5": [
+          48
+        ],
+        "6": [
+          31
+        ],
+        "7": [
+          40
+        ],
+        "8": [
+          32
+        ],
+        "9": [
+          32
+        ]
+      },
+      "probes": {
+        "5": 108,
+        "6": 100,
+        "7": 110,
+        "8": 95,
+        "9": 113
+      },
+      "verdicts": {
+        "correct": 183,
+        "missed": 81,
+        "no_abstention": 154,
+        "wrong": 86,
+        "polluted": 22
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          120
+        ],
+        "contamination": [
+          49,
+          84
+        ],
+        "current": [
+          79,
+          111
+        ],
+        "historical": [
+          7,
+          91
+        ],
+        "post_delete": [
+          0,
+          34
+        ],
+        "post_update": [
+          48,
+          86
+        ]
+      },
+      "answer_accuracy_pct": [
+        74.07407407407408,
+        56.0,
+        64.54545454545455,
+        71.57894736842105,
+        64.60176991150442
+      ],
+      "answer_verdicts": {
+        "correct": 348,
+        "false_abstention": 113,
+        "wrong": 59,
+        "missed": 3,
+        "no_abstention": 3
+      },
+      "cost_usd": {
+        "memory": 0.29274714,
+        "answer": 0.08401159999999999
+      }
+    },
+    "mem0_coding": {
+      "accuracy_pct": [
+        38.888888888888886,
+        38.0,
+        36.36363636363637,
+        35.78947368421053,
+        30.97345132743363
+      ],
+      "correct": {
+        "5": [
+          42
+        ],
+        "6": [
+          38
+        ],
+        "7": [
+          40
+        ],
+        "8": [
+          34
+        ],
+        "9": [
+          35
+        ]
+      },
+      "probes": {
+        "5": 108,
+        "6": 100,
+        "7": 110,
+        "8": 95,
+        "9": 113
+      },
+      "verdicts": {
+        "correct": 189,
+        "no_abstention": 154,
+        "wrong": 101,
+        "polluted": 43,
+        "missed": 39
+      },
+      "by_type": {
+        "abstention": [
+          0,
+          120
+        ],
+        "contamination": [
+          41,
+          84
+        ],
+        "current": [
+          96,
+          111
+        ],
+        "historical": [
+          2,
+          91
+        ],
+        "post_delete": [
+          0,
+          34
+        ],
+        "post_update": [
+          50,
+          86
+        ]
+      },
+      "answer_accuracy_pct": [
+        72.22222222222223,
+        63.0,
+        64.54545454545455,
+        71.57894736842105,
+        70.79646017699115
+      ],
+      "answer_verdicts": {
+        "correct": 360,
+        "wrong": 94,
+        "false_abstention": 65,
+        "no_abstention": 5,
+        "missed": 2
+      },
+      "cost_usd": {
+        "memory": 0.3421956,
+        "answer": 0.0888072
+      }
+    }
+  },
+  "preset": "small",
+  "budget": 2000,
+  "repeats": 1,
+  "configs": {
+    "mem0": {
+      "name": "mem0",
+      "version": "1",
+      "mem0ai": "1.0.11",
+      "llm": "gpt-4.1-mini",
+      "temperature": 0.0,
+      "seed": 0,
+      "embedder": "text-embedding-3-small",
+      "vector_store": "qdrant-local",
+      "top_k": 10,
+      "profile": "default",
+      "prompt_sha": null,
+      "calls": 218,
+      "cache_hits": 65
+    },
+    "mem0_coding": {
+      "name": "mem0",
+      "version": "1",
+      "mem0ai": "1.0.11",
+      "llm": "gpt-4.1-mini",
+      "temperature": 0.0,
+      "seed": 0,
+      "embedder": "text-embedding-3-small",
+      "vector_store": "qdrant-local",
+      "top_k": 10,
+      "profile": "coding",
+      "prompt_sha": "dda3925c8581",
+      "calls": 157,
+      "cache_hits": 172
+    }
+  }
+}

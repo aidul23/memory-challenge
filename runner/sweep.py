@@ -35,6 +35,7 @@ from runner.replay import RunResult, run
 from systems.ledger.llm import LLMExtractor
 from systems.hybrid.system import LedgerHybrid
 from systems.ledger.system import Ledger
+from systems.mem0_oss.system import Mem0System
 from workloads.generator import PRESETS, Config, generate
 from workloads.timeline import Timeline
 
@@ -44,6 +45,8 @@ UNCACHED: dict[str, Callable[[], MemorySystem]] = {
     "hybrid_llm": lambda: LedgerHybrid(LLMExtractor(cache_dir=None)),
     "hybrid_llm_aug": lambda: LedgerHybrid(LLMExtractor(cache_dir=None), mode="augment", extract_min_trust=2),
     "hybrid_llm_fb": lambda: LedgerHybrid(LLMExtractor(cache_dir=None), mode="fallback", extract_min_trust=2),
+    "mem0": lambda: Mem0System(cache_dir=None),
+    "mem0_coding": lambda: Mem0System(cache_dir=None, profile="coding"),
 }
 
 

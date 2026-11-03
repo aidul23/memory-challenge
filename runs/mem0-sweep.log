@@ -1,0 +1,65 @@
+synthetic-small-s0 mem0: 33/99
+synthetic-small-s0 mem0_coding: 31/99
+synthetic-small-s1 mem0: 31/98
+synthetic-small-s1 mem0_coding: 34/98
+synthetic-small-s2 mem0: 38/99
+synthetic-small-s2 mem0_coding: 32/99
+synthetic-small-s3 mem0: 37/107
+synthetic-small-s3 mem0_coding: 40/107
+synthetic-small-s4 mem0: 40/109
+synthetic-small-s4 mem0_coding: 41/109
+
+correct per seed (a range when repeated)
+system       s0     s1     s2     s3      s4      mean ± sd (% correct)
+mem0         33/99  31/98  38/99  37/107  40/109  34.9 ± 2.7
+mem0_coding  31/99  34/98  32/99  40/107  41/109  34.7 ± 2.9
+
+verdicts, all seeds (first repeat)
+system       correct  missed  no_abstention  polluted  wrong
+mem0         179      75      151            21        86
+mem0_coding  178      40      151            58        85
+
+correct by probe type, all seeds (first repeat)
+system       abstention  contamination  current  historical  post_delete  post_update
+mem0         0/120       36/67          86/112   18/93       0/31         39/89
+mem0_coding  0/120       27/67          97/112   7/93        0/31         47/89
+
+answer correct per seed, shared answerer (first repeat); cost summed over seeds
+system       s0     s1     s2     s3      s4      mean ± sd (% correct)  memory $  answer $
+mem0         68/99  63/98  66/99  73/107  72/109  66.8 ± 1.8             0.290     0.084
+mem0_coding  61/99  76/98  66/99  80/107  79/109  70.6 ± 6.4             0.342     0.088
+
+summary: runs/mem0/sweep-small.json
+synthetic-small-s5 mem0: 48/108
+synthetic-small-s5 mem0_coding: 42/108
+synthetic-small-s6 mem0: 31/100
+synthetic-small-s6 mem0_coding: 38/100
+synthetic-small-s7 mem0: 40/110
+synthetic-small-s7 mem0_coding: 40/110
+synthetic-small-s8 mem0: 32/95
+synthetic-small-s8 mem0_coding: 34/95
+Error processing memory action: {'id': '9', 'text': 'Auth-service database is PostgreSQL 14', 'event': 'UPDATE', 'old_memory': 'For auth-service, the database is PostgreSQL 15'}, Error: '9'
+synthetic-small-s9 mem0: 32/113
+synthetic-small-s9 mem0_coding: 35/113
+
+correct per seed (a range when repeated)
+system       s5      s6      s7      s8     s9      mean ± sd (% correct)
+mem0         48/108  31/100  40/110  32/95  32/113  34.8 ± 6.2
+mem0_coding  42/108  38/100  40/110  34/95  35/113  36.0 ± 3.1
+
+verdicts, all seeds (first repeat)
+system       correct  missed  no_abstention  polluted  wrong
+mem0         183      81      154            22        86
+mem0_coding  189      39      154            43        101
+
+correct by probe type, all seeds (first repeat)
+system       abstention  contamination  current  historical  post_delete  post_update
+mem0         0/120       49/84          79/111   7/91        0/34         48/86
+mem0_coding  0/120       41/84          96/111   2/91        0/34         50/86
+
+answer correct per seed, shared answerer (first repeat); cost summed over seeds
+system       s5      s6      s7      s8     s9      mean ± sd (% correct)  memory $  answer $
+mem0         80/108  56/100  71/110  68/95  73/113  66.2 ± 7.1             0.293     0.084
+mem0_coding  78/108  63/100  71/110  68/95  80/113  68.4 ± 4.3             0.342     0.089
+
+summary: runs/mem0-heldout/sweep-small.json

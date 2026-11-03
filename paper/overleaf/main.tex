@@ -376,7 +376,12 @@ judge returns \texttt{yes}/\texttt{no} in a JSON field.
 \label{sec:protocol}
 
 \textbf{Systems.} No memory; full replay (the whole history, unbounded);
-transcript RAG (BM25 over events, top 5, within the budget); \sys{} with a
+transcript RAG (BM25 over events, top 5, within the budget);
+Mem0~\cite{chhikara2025mem0} (OSS release 1.0.11, the last that implements
+its published add/update/delete step, unmodified, with a local vector store,
+\texttt{text-embedding-3-small} and our extraction model; top 10), and the same
+with its list of personal fact types replaced by our extractor's definition of
+a coding fact, a prompt fixed before any run (\emph{coding prompt}); \sys{} with a
 rule-based extractor (a model-free floor) and with the LLM extractor; and
 \hyb{}. Bounded systems share one evidence budget (2{,}000 tokens on the coding
 workload, 4{,}000 on LongMemEval); the runner truncates whole items.
@@ -435,6 +440,8 @@ System & Answer & Evidence & Wrong ans. & Forbidden in evidence & Deleted value 
 No memory & 29.5 $\pm$ 1.5 & 0.0 $\pm$ 0.0 & 0 & 0/0/0 & 0 / 0 & 0 & 0.05 \\
 Full replay & 82.1 $\pm$ 3.0 & 21.9 $\pm$ 1.8 & 65 & 129/93/93 & 46 / 4 & 982 & 0.28 \\
 Transcript RAG & 74.8 $\pm$ 3.6 & 27.0 $\pm$ 5.0 & 88 & 101/69/66 & 39 / 0 & 120 & 0.08 \\
+Mem0 & 66.8 $\pm$ 1.8 & 34.9 $\pm$ 2.7 & 66 & 45/56/13 & -- & 139 & 0.37 \\
+Mem0 (coding prompt) & 70.6 $\pm$ 6.4 & 34.7 $\pm$ 2.9 & 82 & 44/76/36 & -- & 154 & 0.43 \\
 \sys{} (rules) & 39.5 $\pm$ 6.9 & 38.7 $\pm$ 6.3 & 9 & 9/0/0 & 0 / 0 & 4 & 0.05 \\
 \sys{} (LLM) & 90.9 $\pm$ 5.5 & 91.7 $\pm$ 5.2 & 4 & 4/0/1 & 0 / 0 & 15 & 0.23 \\
 \hyb{} fallback & 94.3 $\pm$ 4.2 & 66.8 $\pm$ 4.6 & 10 & 6/8/3 & 0 / 0 & 56 & 0.23 \\
@@ -493,6 +500,8 @@ System & Answer & Evidence & Wrong ans. \\
 No memory & 29.4 $\pm$ 2.9 & 0.0 $\pm$ 0.0 & 0 \\
 Full replay & 83.3 $\pm$ 2.8 & 21.1 $\pm$ 0.7 & 58 \\
 Transcript RAG & 78.5 $\pm$ 3.1 & 23.8 $\pm$ 3.6 & 81 \\
+Mem0 & 66.2 $\pm$ 7.1 & 34.8 $\pm$ 6.2 & 59 \\
+Mem0 (coding prompt) & 68.4 $\pm$ 4.3 & 36.0 $\pm$ 3.1 & 94 \\
 \sys{} (rules) & 37.0 $\pm$ 2.2 & 37.0 $\pm$ 2.2 & 13 \\
 \sys{} (LLM) & 88.2 $\pm$ 3.2 & 89.9 $\pm$ 1.7 & 5 \\
 \hyb{} fallback & 91.1 $\pm$ 5.4 & 64.2 $\pm$ 4.8 & 15 \\
@@ -594,7 +603,8 @@ write-time LLM calls per ingested session, median ingest time per session and
 retrieval time per query, store size at the end per seed, mean injected tokens
 per probe, and cost per probe in milli-dollars for memory and for answering.
 Times of the LLM systems are from uncached repeats (cached replays are not
-timings); augment mode shares fallback's write and routing path.}
+timings); augment mode shares fallback's write and routing path. Mem0 with the
+coding prompt shares Mem0's embedding cache, so its times are not reported.}
 \label{tab:efficiency}
 \centering
 \footnotesize
@@ -605,6 +615,8 @@ System & LLM calls/session & Ingest ms & Retrieve ms & Store KiB & Tokens & Mem 
 No memory & 0.00 & 0.00 & 0.00 & 0.0 & 0 & 0.00 & 0.10 \\
 Full replay & 0.00 & 0.00 & 0.16 & 8.1 & 982 & 0.00 & 0.55 \\
 Transcript RAG & 0.00 & 0.00 & 0.35 & 8.1 & 120 & 0.00 & 0.16 \\
+Mem0 & 1.65 & 2989 & 174 & 1.5 & 139 & 0.57 & 0.16 \\
+Mem0 (coding prompt) & 1.83 & -- & -- & 1.9 & 154 & 0.67 & 0.17 \\
 \sys{} (rules) & 0.00 & 0.03 & 0.02 & 0.1 & 4 & 0.00 & 0.11 \\
 \sys{} (LLM) & 1.00 & 836 & 666 & 0.4 & 15 & 0.34 & 0.11 \\
 \hyb{} fallback & 0.93 & 817 & 662 & 8.0 & 56 & 0.32 & 0.13 \\
@@ -768,8 +780,9 @@ model's own noise at under one point per seed (Sec.~\ref{sec:results}).
 (\texttt{gpt-4.1-mini}, with \texttt{gpt-4.1} in the upgrade experiment), and
 all text is English. The LongMemEval subset is 210 of 500 questions, drawn
 stratified with a fixed seed; differences of a few points between systems on
-it are within its confidence intervals. We compare against the baselines the
-call requires, not against other memory products.
+it are within its confidence intervals. Besides the baselines the call
+requires we compare against one memory product, Mem0, and only on the coding
+workload; Zep and A-MEM are not evaluated.
 
 % ---------------------------------------------------------------------------
 \section{Related Work}

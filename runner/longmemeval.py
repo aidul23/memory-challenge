@@ -49,7 +49,7 @@ CACHE = ROOT / ".cache"
 #: LongMemEval systems: the synthetic ones, with the ledger's extractor on its
 #: personal-chat profile.
 LME_SYSTEMS: dict[str, tuple[Callable[[], MemorySystem], bool]] = {
-    **{n: SYSTEMS[n] for n in ("no_memory", "full_replay", "transcript_rag")},
+    **{n: SYSTEMS[n] for n in ("no_memory", "full_replay", "transcript_rag", "mem0")},
     "ledger_llm": (lambda: Ledger(LLMExtractor(profile="personal")), False),
     "hybrid_llm": (lambda: LedgerHybrid(LLMExtractor(profile="personal")), False),
     "hybrid_llm_augment": (lambda: LedgerHybrid(LLMExtractor(profile="personal"), mode="augment"), False),

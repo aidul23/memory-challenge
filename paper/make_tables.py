@@ -4,6 +4,8 @@
 
 Reads runs/synthetic-small-s{0..4}/*.json (coding workload, both deletion
 modes), runs/longmemeval/main/*.json and, when present, the long-preset logs.
+Mem0's logs come from their own sweeps, runs/mem0 (seeds 0--4) and
+runs/mem0-heldout (seeds 5--9).
 """
 
 from __future__ import annotations
@@ -23,6 +25,8 @@ CODING = {
     "no_memory": "No memory",
     "full_replay": "Full replay",
     "transcript_rag": "Transcript RAG",
+    "mem0": "Mem0",
+    "mem0_coding": "Mem0 (coding prompt)",
     "ledger": "\\sys{} (rules)",
     "ledger_llm": "\\sys{} (LLM)",
     "hybrid_llm_fb": "\\hyb{} fallback",
@@ -38,11 +42,21 @@ LME = {
 }
 LME_CATS = ["single-session-user", "single-session-assistant", "single-session-preference",
             "multi-session", "knowledge-update", "temporal-reasoning", "abstention"]
+#: Systems whose logs live in their own sweep folders: (seeds 0--4, seeds 5--9).
+ROOTS = {"mem0": ("mem0", "mem0-heldout"), "mem0_coding": ("mem0", "mem0-heldout")}
+#: Systems whose ingest and retrieval times are not timings: mem0_coding ran
+#: after mem0 on each seed and shares its embedding cache (probe embeddings hit).
+UNTIMED = {"mem0_coding"}
 LME_SHORT = ["SS-U", "SS-A", "Pref", "Multi", "KU", "Temp", "Abs"]
 
 
+def log_path(name: str, seed: int, suffix: str = "") -> Path:
+    root = RUNS / ROOTS[name][seed >= 5] if name in ROOTS else RUNS
+    return root / f"synthetic-small-s{seed}" / f"{name}{suffix}.json"
+
+
 def load(name: str, seed: int, suffix: str = "") -> dict:
-    return json.loads((RUNS / f"synthetic-small-s{seed}" / f"{name}{suffix}.json").read_text(encoding="utf-8"))
+    return json.loads(log_path(name, seed, suffix).read_text(encoding="utf-8"))
 
 
 def mean_sd(xs: list[float]) -> str:
@@ -61,7 +75,7 @@ def coding_table() -> str:
     rows = []
     for name, label in CODING.items():
         logs = [load(name, s) for s in SEEDS]
-        nosrc = [load(name, s, "__nosrc") for s in SEEDS] if (RUNS / "synthetic-small-s0" / f"{name}__nosrc.json").exists() else None
+        nosrc = [load(name, s, "__nosrc") for s in SEEDS] if log_path(name, 0, "__nosrc").exists() else None
         probes = [p for lg in logs for p in lg["probes"]]
         ev = [100 * sum(p["verdict"] == "correct" for p in lg["probes"]) / len(lg["probes"]) for lg in logs]
         ans = [100 * sum(p["answer_verdict"] == "correct" for p in lg["probes"]) / len(lg["probes"]) for lg in logs]
@@ -115,8 +129,7 @@ def heldout_table() -> str:
     """Final systems on small-preset seeds 5--9, never used during development."""
     rows = []
     for name, label in CODING.items():
-        logs = [json.loads((RUNS / f"synthetic-small-s{s}" / f"{name}.json").read_text(encoding="utf-8"))
-                for s in range(5, 10)]
+        logs = [load(name, s) for s in range(5, 10)]
         ans = [100 * sum(p["answer_verdict"] == "correct" for p in lg["probes"]) / len(lg["probes"]) for lg in logs]
         ev = [100 * sum(p["verdict"] == "correct" for p in lg["probes"]) / len(lg["probes"]) for lg in logs]
         wrong = sum(bool(p["answer_forbidden_hits"]) for lg in logs for p in lg["probes"])
@@ -146,7 +159,7 @@ def efficiency_table() -> str:
         n = sum(len(lg["probes"]) for lg in logs)
         mem = sum(_summary(lg)["memory"] for lg in logs)
         ans = sum(_summary(lg)["answer"] for lg in logs)
-        fmt = lambda ms: f"{ms:.0f}" if ms >= 10 else f"{ms:.2f}"
+        fmt = lambda ms: "--" if name in UNTIMED else f"{ms:.0f}" if ms >= 10 else f"{ms:.2f}"
         rows.append(f"{label} & {calls:.2f} & {fmt(ing_ms)} & {fmt(ret_ms)} & {kib:.1f} & {tokens:.0f} & "
                     f"{1000 * mem / n:.2f} & {1000 * ans / n:.2f} \\\\")
     return "\n".join(rows)
