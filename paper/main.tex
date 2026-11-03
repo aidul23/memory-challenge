@@ -36,15 +36,16 @@ claim must be grounded in its source event, and a value from a less trusted
 source can neither override nor introduce a fact. \hyb{} adds an episodic
 fallback over raw turns for questions the ledger does not model, without
 weakening deletion. We evaluate both under one answering model, one prompt and
-one price table against no memory, full-history replay and retrieval over raw
-transcripts, on LongMemEval and on a generated multi-session coding-agent
-workload with planted, typed ground truth. On the coding workload \hyb{}
-answers 94.3\% of questions correctly (five seeds), against 82.1\% for full
-replay, which sides with stale documents and the agent's own guesses in 45
-answers; over 540 days of sessions full replay falls to 70.5\% while \hyb{}
+one price table against no memory, full-history replay, retrieval over raw
+transcripts and Mem0, on LongMemEval and on a generated multi-session
+coding-agent workload with planted, typed ground truth. On the coding workload
+\hyb{} answers 94.3\% of questions correctly (five seeds), against 82.1\% for
+full replay, which sides with stale documents and the agent's own guesses in
+45 answers, and 66.8\% for Mem0, whose model-decided updates erase the values
+historical questions need; over 540 days of sessions full replay falls to 70.5\% while \hyb{}
 stays above 89\%. When deletion requests are only described, the transcript
-baselines send the deleted value to the model in up to 46 probes, our systems
-in none. On LongMemEval, \hyb{} matches full replay (74.8\%) with 1\% of its
+baselines send the deleted value to the model in up to 46 probes, Mem0 repeats
+it to the user in 17, our systems in none. On LongMemEval, \hyb{} matches full replay (74.8\%) with 1\% of its
 context. All runs are pinned, cached and replayable.
 \end{abstract}
 
@@ -442,7 +443,7 @@ System & Answer & Evidence & Wrong ans. & Forbidden in evidence & Deleted value 
 \end{tabular}
 \end{table*}
 
-Table~\ref{tab:coding} gives the results. Three findings stand out.
+Table~\ref{tab:coding} gives the results. Four findings stand out.
 
 \emph{Trust decided by rules beats trust decided by the reader.} With the whole
 history in context, full replay answers 82.1\% correctly, but 65 of its answers
@@ -451,6 +452,19 @@ with a stale document or with the assistant's own earlier guess over the user.
 It answers only 31/67 contamination probes. \sys{} answers 62/67, because
 the less trusted claim never reaches the context, and gives 4 wrong answers in
 total, all from updates the extractor missed.
+
+\emph{Letting the model decide updates does not close the gap.} Mem0 extracts
+facts and has the model add, update or delete each one; it answers 66.8\%,
+below transcript RAG. An update overwrites the memory in place, so the value
+an earlier date needs is gone: Mem0 answers 27 of 93 historical questions
+(\sys{} 69, full replay 74), and 27 of its answers give a later value for an
+earlier date. Its default prompt targets personal facts and misses many
+configuration statements (86/112 current questions). With our extractor's
+definition of a coding fact in its place, current answers rise to 96 and
+post-update answers from 46 to 61, but contaminated answers rise from 10 to
+27: more statements from documents become memories, and nothing ranks their
+source. Accuracy moves by under four points (70.6\%). The gap lies in deciding
+what is current, not in extraction.
 
 \emph{The episodic fallback recovers recall without giving up correctness.}
 \hyb{} answers 94.3--94.4\%, the best of all systems, mostly by turning the
@@ -464,7 +478,10 @@ ledger's fact line, which comes first.
 only a description, the transcript baselines cannot act on them: full replay sends
 the deleted value to the model in 46 probes and repeats it to the user in 4;
 transcript RAG sends it in 39. At answer level the leak is mostly invisible, since
-the model obeys the earlier ``forget it'' message it also sees. \sys{} and \hyb{}
+the model obeys the earlier ``forget it'' message it also sees. Mem0 cannot
+delete by description either, and its extractor finds no fact in the request,
+so its memory keeps the value but not the request: the value reaches the model
+in 18 probes and the user in 17. \sys{} and \hyb{}
 send no deleted value in either mode. An earlier version of \hyb{} did (3 probes):
 with trusted-only extraction, an assistant's guess at a value never became a
 ledger entry and survived as a raw turn, which motivated the entity-level
@@ -474,7 +491,7 @@ scrubbing in Sec.~\ref{sec:hybrid}.
 0--4. On seeds 5--9, run once with the final systems (Table~\ref{tab:heldout}),
 \hyb{} (91.1--91.8\%) and \sys{} (88.2\%) each lose about three points,
 while the untuned baselines stay level or rise slightly (full replay 83.3\%,
-transcript RAG 78.5\%). The development seeds thus flatter our systems
+transcript RAG 78.5\%, Mem0 66.2\% and 68.4\% with the coding prompt). The development seeds thus flatter our systems
 somewhat; the ordering and the margin over full replay (about eight points)
 hold.
 
