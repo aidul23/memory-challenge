@@ -571,13 +571,14 @@ than a fact.
 \centering
 \begin{tikzpicture}
 \begin{axis}[name=acc, width=0.56\columnwidth, height=4.2cm, xlabel={checkpoint}, ylabel={answer correct (\%)},
-  ymin=60, ymax=100, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize},
+  ymin=30, ymax=100, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize},
   legend style={font=\tiny, at={(0.02,0.02)}, anchor=south west, draw=none, fill=none}, legend cell align=left]
 \addplot[black, mark=*, mark size=1pt] table[x=cp, y=answer, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 96.24 59.46 1.33 5.91 63.9 0.784 \\ 2 94.78 64.74 3.33 11.64 55.4 0.545 \\ 3 91.03 65.53 3.33 17.07 54.2 0.574 \\ 4 89.70 63.36 4.33 22.07 55.6 0.455 \\ 5 93.53 68.86 2.67 27.04 51.6 0.486 \\ 6 93.01 66.54 3.00 32.18 52.2 0.558 \\ 7 94.34 66.15 1.67 36.43 52.8 0.512 \\ 8 92.91 65.99 3.00 41.06 53.9 0.487 \\};
 \addplot[blue, mark=square*, mark size=1pt] table[x=cp, y=answer, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 87.74 87.89 1.00 0.32 12.5 640.306 \\ 2 84.96 86.94 1.00 0.55 14.2 656.678 \\ 3 87.68 88.22 2.00 0.73 15.6 638.114 \\ 4 86.28 88.42 1.33 0.84 15.2 637.343 \\ 5 91.43 90.38 0.67 1.01 16.1 655.138 \\ 6 89.83 89.83 1.33 1.14 15.8 670.261 \\ 7 93.30 93.79 1.00 1.19 15.9 636.163 \\ 8 89.32 88.81 1.00 1.28 14.9 631.447 \\};
 \addplot[red, mark=triangle*, mark size=1.2pt] table[x=cp, y=answer, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 89.38 33.87 10.00 5.66 548.6 0.350 \\ 2 80.18 23.46 23.33 11.42 1054.3 0.659 \\ 3 82.53 19.77 31.00 16.94 1570.3 0.982 \\ 4 78.47 18.75 32.33 22.40 2075.6 1.205 \\ 5 81.82 17.78 34.67 27.70 2571.2 1.752 \\ 6 78.42 15.99 35.67 33.23 3069.1 1.680 \\ 7 77.48 16.92 35.67 38.10 3535.4 2.517 \\ 8 70.50 16.74 36.00 43.46 4024.2 1.705 \\};
 \addplot[orange, mark=diamond*, mark size=1.2pt] table[x=cp, y=answer, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 88.05 35.76 8.67 5.66 119.7 0.445 \\ 2 81.32 27.29 20.00 11.42 119.1 0.658 \\ 3 78.53 24.84 24.67 16.94 120.4 0.892 \\ 4 73.18 22.65 26.67 22.40 120.9 1.088 \\ 5 69.97 18.93 29.33 27.70 121.6 1.478 \\ 6 69.86 19.66 30.00 33.23 121.9 1.758 \\ 7 68.59 17.43 29.67 38.10 121.2 1.649 \\ 8 66.52 14.72 30.67 43.46 122.0 2.336 \\};
-\legend{\hyb{} fb, \sys{}, full replay, RAG}
+\addplot[violet, dashed, mark=x, mark size=1.5pt, mark options={solid}] table[x=cp, y=answer, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 78.32 40.38 5.00 1.74 108.1 52.336 \\ 2 67.37 37.21 11.67 2.97 157.4 67.940 \\ 3 64.48 36.75 11.00 3.75 170.9 67.224 \\ 4 61.46 32.48 11.67 4.33 182.2 66.300 \\ 5 62.00 34.17 13.67 4.84 183.1 65.203 \\ 6 62.68 36.84 13.33 5.59 182.0 74.735 \\ 7 56.27 23.43 19.00 6.03 181.1 53.739 \\ 8 63.41 29.42 18.67 6.47 182.9 59.519 \\};
+\legend{\hyb{} fb, \sys{}, full replay, RAG, Mem0}
 \end{axis}
 \begin{axis}[at={(acc.east)}, anchor=west, xshift=0.9cm, width=0.56\columnwidth, height=4.2cm, xlabel={checkpoint},
   ylabel={probes w/ forbidden evidence}, ymin=0, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize}]
@@ -585,6 +586,7 @@ than a fact.
 \addplot[blue, mark=square*, mark size=1pt] table[x=cp, y=forbidden, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 87.74 87.89 1.00 0.32 12.5 640.306 \\ 2 84.96 86.94 1.00 0.55 14.2 656.678 \\ 3 87.68 88.22 2.00 0.73 15.6 638.114 \\ 4 86.28 88.42 1.33 0.84 15.2 637.343 \\ 5 91.43 90.38 0.67 1.01 16.1 655.138 \\ 6 89.83 89.83 1.33 1.14 15.8 670.261 \\ 7 93.30 93.79 1.00 1.19 15.9 636.163 \\ 8 89.32 88.81 1.00 1.28 14.9 631.447 \\};
 \addplot[red, mark=triangle*, mark size=1.2pt] table[x=cp, y=forbidden, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 89.38 33.87 10.00 5.66 548.6 0.350 \\ 2 80.18 23.46 23.33 11.42 1054.3 0.659 \\ 3 82.53 19.77 31.00 16.94 1570.3 0.982 \\ 4 78.47 18.75 32.33 22.40 2075.6 1.205 \\ 5 81.82 17.78 34.67 27.70 2571.2 1.752 \\ 6 78.42 15.99 35.67 33.23 3069.1 1.680 \\ 7 77.48 16.92 35.67 38.10 3535.4 2.517 \\ 8 70.50 16.74 36.00 43.46 4024.2 1.705 \\};
 \addplot[orange, mark=diamond*, mark size=1.2pt] table[x=cp, y=forbidden, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 88.05 35.76 8.67 5.66 119.7 0.445 \\ 2 81.32 27.29 20.00 11.42 119.1 0.658 \\ 3 78.53 24.84 24.67 16.94 120.4 0.892 \\ 4 73.18 22.65 26.67 22.40 120.9 1.088 \\ 5 69.97 18.93 29.33 27.70 121.6 1.478 \\ 6 69.86 19.66 30.00 33.23 121.9 1.758 \\ 7 68.59 17.43 29.67 38.10 121.2 1.649 \\ 8 66.52 14.72 30.67 43.46 122.0 2.336 \\};
+\addplot[violet, dashed, mark=x, mark size=1.5pt, mark options={solid}] table[x=cp, y=forbidden, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 78.32 40.38 5.00 1.74 108.1 52.336 \\ 2 67.37 37.21 11.67 2.97 157.4 67.940 \\ 3 64.48 36.75 11.00 3.75 170.9 67.224 \\ 4 61.46 32.48 11.67 4.33 182.2 66.300 \\ 5 62.00 34.17 13.67 4.84 183.1 65.203 \\ 6 62.68 36.84 13.33 5.59 182.0 74.735 \\ 7 56.27 23.43 19.00 6.03 181.1 53.739 \\ 8 63.41 29.42 18.67 6.47 182.9 59.519 \\};
 \end{axis}
 \end{tikzpicture}
 \caption{Long preset (6 users, 60 sessions each over 540 days, 8 checkpoints; mean of 3 seeds). Left: answer accuracy per checkpoint. Right: probes per checkpoint whose evidence carried a stale, future or contaminated value.}
@@ -598,6 +600,16 @@ their evidence grow from about 10 to 36 per checkpoint. \sys{} stays between
 85.0\% and 93.3\% with about one such probe per checkpoint, and \hyb{}
 (fallback) between 89.7\% and 96.2\% with two to four. The ledger's store ends at 1.3\,KiB against 43.5\,KiB for
 the transcript stores; \hyb{} keeps both (41.1\,KiB).
+Mem0 starts lower, at 78.3\%, and drifts down to 56--63\% from the fourth
+checkpoint on (63.5$\pm$2.3\% over all probes), while the forbidden values in its
+evidence rise from 5 to 19 per checkpoint. Its store stays small (121 memories,
+6.5\,KiB), so it does not drown in history the way replay and RAG do; it fails
+on time instead. Of the 383 forbidden values in its evidence over the three
+seeds, 182 are \emph{future} ones (a
+question about an earlier date retrieves the value that later replaced the
+answer) and 140 are stale ones that an update left beside the current value. The coding prompt shifts the curve up by about five points
+(82.7\% to 66.5\%; 68.7$\pm$2.1\% overall) but brings more forbidden values
+(7 to 23 per checkpoint).
 
 \textbf{Restarts.} Snapshotting each store to disk after every checkpoint,
 restoring it into a fresh instance and continuing changed no verdict and no

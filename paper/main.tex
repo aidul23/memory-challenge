@@ -550,13 +550,14 @@ than a fact.
 \centering
 \begin{tikzpicture}
 \begin{axis}[name=acc, width=0.56\columnwidth, height=4.2cm, xlabel={checkpoint}, ylabel={answer correct (\%)},
-  ymin=60, ymax=100, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize},
+  ymin=30, ymax=100, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize},
   legend style={font=\tiny, at={(0.02,0.02)}, anchor=south west, draw=none, fill=none}, legend cell align=left]
 \addplot[black, mark=*, mark size=1pt] table[x=cp, y=answer] {figures/long-hybrid_llm_fb.dat};
 \addplot[blue, mark=square*, mark size=1pt] table[x=cp, y=answer] {figures/long-ledger_llm.dat};
 \addplot[red, mark=triangle*, mark size=1.2pt] table[x=cp, y=answer] {figures/long-full_replay.dat};
 \addplot[orange, mark=diamond*, mark size=1.2pt] table[x=cp, y=answer] {figures/long-transcript_rag.dat};
-\legend{\hyb{} fb, \sys{}, full replay, RAG}
+\addplot[violet, dashed, mark=x, mark size=1.5pt, mark options={solid}] table[x=cp, y=answer] {figures/long-mem0.dat};
+\legend{\hyb{} fb, \sys{}, full replay, RAG, Mem0}
 \end{axis}
 \begin{axis}[at={(acc.east)}, anchor=west, xshift=0.9cm, width=0.56\columnwidth, height=4.2cm, xlabel={checkpoint},
   ylabel={probes w/ forbidden evidence}, ymin=0, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize}]
@@ -564,6 +565,7 @@ than a fact.
 \addplot[blue, mark=square*, mark size=1pt] table[x=cp, y=forbidden] {figures/long-ledger_llm.dat};
 \addplot[red, mark=triangle*, mark size=1.2pt] table[x=cp, y=forbidden] {figures/long-full_replay.dat};
 \addplot[orange, mark=diamond*, mark size=1.2pt] table[x=cp, y=forbidden] {figures/long-transcript_rag.dat};
+\addplot[violet, dashed, mark=x, mark size=1.5pt, mark options={solid}] table[x=cp, y=forbidden] {figures/long-mem0.dat};
 \end{axis}
 \end{tikzpicture}
 \caption{Long preset (6 users, 60 sessions each over 540 days, 8 checkpoints; mean of 3 seeds). Left: answer accuracy per checkpoint. Right: probes per checkpoint whose evidence carried a stale, future or contaminated value.}
@@ -577,6 +579,16 @@ their evidence grow from about 10 to 36 per checkpoint. \sys{} stays between
 85.0\% and 93.3\% with about one such probe per checkpoint, and \hyb{}
 (fallback) between 89.7\% and 96.2\% with two to four. The ledger's store ends at 1.3\,KiB against 43.5\,KiB for
 the transcript stores; \hyb{} keeps both (41.1\,KiB).
+Mem0 starts lower, at 78.3\%, and drifts down to 56--63\% from the fourth
+checkpoint on (63.5$\pm$2.3\% over all probes), while the forbidden values in its
+evidence rise from 5 to 19 per checkpoint. Its store stays small (121 memories,
+6.5\,KiB), so it does not drown in history the way replay and RAG do; it fails
+on time instead. Of the 383 forbidden values in its evidence over the three
+seeds, 182 are \emph{future} ones (a
+question about an earlier date retrieves the value that later replaced the
+answer) and 140 are stale ones that an update left beside the current value. The coding prompt shifts the curve up by about five points
+(82.7\% to 66.5\%; 68.7$\pm$2.1\% overall) but brings more forbidden values
+(7 to 23 per checkpoint).
 
 \textbf{Restarts.} Snapshotting each store to disk after every checkpoint,
 restoring it into a fresh instance and continuing changed no verdict and no
