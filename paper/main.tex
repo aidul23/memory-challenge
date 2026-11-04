@@ -638,7 +638,7 @@ System & LLM calls/session & Ingest ms & Retrieve ms & Store KiB & Tokens & Mem 
 
 Table~\ref{tab:efficiency} gives the cost of the write and read paths. The
 LLM systems pay one extraction call per session (0.82--0.84\,s) and one
-routing call per question (median 0.66\,s, 95th percentile 0.96\,s); the
+routing call per question (median 0.66\,s, 95th percentile 0.97\,s); the
 transcript systems answer in under a millisecond but inject more context:
 982 tokens per probe for full replay and 120 for transcript RAG, against 15
 for the ledger and 56 for \hyb{} (fallback). Memory and answering together cost 0.45\,m\$ per probe for \hyb{}

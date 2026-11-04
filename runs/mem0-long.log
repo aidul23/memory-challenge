@@ -1,0 +1,29 @@
+synthetic-long-s0 mem0: 144/440
+synthetic-long-s0 mem0_coding: 141/440
+Error processing memory action: {'id': '7', 'text': 'auth-service uses NATS for its message queue', 'event': 'UPDATE', 'old_memory': 'Prefers not to touch the auth-service message queue this sprint'}, Error: '7'
+synthetic-long-s1 mem0: 158/459
+synthetic-long-s1 mem0_coding: 162/459
+synthetic-long-s2 mem0: 156/480
+synthetic-long-s2 mem0_coding: 132/480
+
+correct per seed (a range when repeated)
+system       s0       s1       s2       mean ± sd (% correct)
+mem0         144/440  158/459  156/480  33.2 ± 1.1
+mem0_coding  141/440  162/459  132/480  31.6 ± 3.9
+
+verdicts, all seeds (first repeat)
+system       correct  missed  no_abstention  polluted  wrong
+mem0         458      214     395            64        248
+mem0_coding  435      90      395            235       224
+
+correct by probe type, all seeds (first repeat)
+system       abstention  contamination  current  historical  post_delete  post_update
+mem0         0/288       109/208        193/268  36/257      0/107        120/251
+mem0_coding  0/288       77/208         242/268  19/257      0/107        97/251
+
+answer correct per seed, shared answerer (first repeat); cost summed over seeds
+system       s0       s1       s2       mean ± sd (% correct)  memory $  answer $
+mem0         273/440  304/459  299/480  63.5 ± 2.3             1.100     0.246
+mem0_coding  295/440  312/459  341/480  68.7 ± 2.1             1.260     0.248
+
+summary: runs/mem0/sweep-long.json
