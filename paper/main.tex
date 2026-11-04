@@ -166,7 +166,7 @@ user because it observes the world (a migration log).
 An extractor turns each ingested batch into claims
 $\langle\mathit{event}, \mathit{slot}, \mathit{value}\rangle$. The core never
 reads free text; it applies one of five rules per claim, in stream order:
-\begin{description}
+\begin{description}[\IEEEsetlabelwidth{supersede}]
 \item[restate] same value as the current entry: add the event to its
   provenance, no new item (I4);
 \item[supersede] different value from a source at least as trusted as the
@@ -561,8 +561,8 @@ current value, and its histories contain no deletion requests.
 \centering
 \begin{tikzpicture}
 \begin{axis}[name=acc, width=0.56\columnwidth, height=4.2cm, xlabel={checkpoint}, ylabel={answer correct (\%)},
-  ymin=30, ymax=100, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize},
-  legend style={font=\tiny, at={(0.02,0.02)}, anchor=south west, draw=none, fill=none}, legend cell align=left]
+  ymin=50, ymax=100, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize},
+  legend style={font=\tiny, at={(0.5,1.03)}, anchor=south, draw=none, fill=none}, legend columns=3, legend cell align=left]
 \addplot[black, mark=*, mark size=1pt] table[x=cp, y=answer] {figures/long-hybrid_llm_fb.dat};
 \addplot[blue, mark=square*, mark size=1pt] table[x=cp, y=answer] {figures/long-ledger_llm.dat};
 \addplot[red, mark=triangle*, mark size=1.2pt] table[x=cp, y=answer] {figures/long-full_replay.dat};

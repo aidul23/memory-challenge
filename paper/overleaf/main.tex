@@ -166,7 +166,7 @@ user because it observes the world (a migration log).
 An extractor turns each ingested batch into claims
 $\langle\mathit{event}, \mathit{slot}, \mathit{value}\rangle$. The core never
 reads free text; it applies one of five rules per claim, in stream order:
-\begin{description}
+\begin{description}[\IEEEsetlabelwidth{supersede}]
 \item[restate] same value as the current entry: add the event to its
   provenance, no new item (I4);
 \item[supersede] different value from a source at least as trusted as the
@@ -583,8 +583,8 @@ current value, and its histories contain no deletion requests.
 \centering
 \begin{tikzpicture}
 \begin{axis}[name=acc, width=0.56\columnwidth, height=4.2cm, xlabel={checkpoint}, ylabel={answer correct (\%)},
-  ymin=30, ymax=100, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize},
-  legend style={font=\tiny, at={(0.02,0.02)}, anchor=south west, draw=none, fill=none}, legend cell align=left]
+  ymin=50, ymax=100, xtick={1,...,8}, tick label style={font=\scriptsize}, label style={font=\scriptsize},
+  legend style={font=\tiny, at={(0.5,1.03)}, anchor=south, draw=none, fill=none}, legend columns=3, legend cell align=left]
 \addplot[black, mark=*, mark size=1pt] table[x=cp, y=answer, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 96.24 59.46 1.33 5.91 63.9 0.784 \\ 2 94.78 64.74 3.33 11.64 55.4 0.545 \\ 3 91.03 65.53 3.33 17.07 54.2 0.574 \\ 4 89.70 63.36 4.33 22.07 55.6 0.455 \\ 5 93.53 68.86 2.67 27.04 51.6 0.486 \\ 6 93.01 66.54 3.00 32.18 52.2 0.558 \\ 7 94.34 66.15 1.67 36.43 52.8 0.512 \\ 8 92.91 65.99 3.00 41.06 53.9 0.487 \\};
 \addplot[blue, mark=square*, mark size=1pt] table[x=cp, y=answer, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 87.74 87.89 1.00 0.32 12.5 640.306 \\ 2 84.96 86.94 1.00 0.55 14.2 656.678 \\ 3 87.68 88.22 2.00 0.73 15.6 638.114 \\ 4 86.28 88.42 1.33 0.84 15.2 637.343 \\ 5 91.43 90.38 0.67 1.01 16.1 655.138 \\ 6 89.83 89.83 1.33 1.14 15.8 670.261 \\ 7 93.30 93.79 1.00 1.19 15.9 636.163 \\ 8 89.32 88.81 1.00 1.28 14.9 631.447 \\};
 \addplot[red, mark=triangle*, mark size=1.2pt] table[x=cp, y=answer, row sep=\\] {cp answer evidence forbidden kib tokens retrievems \\ 1 89.38 33.87 10.00 5.66 548.6 0.350 \\ 2 80.18 23.46 23.33 11.42 1054.3 0.659 \\ 3 82.53 19.77 31.00 16.94 1570.3 0.982 \\ 4 78.47 18.75 32.33 22.40 2075.6 1.205 \\ 5 81.82 17.78 34.67 27.70 2571.2 1.752 \\ 6 78.42 15.99 35.67 33.23 3069.1 1.680 \\ 7 77.48 16.92 35.67 38.10 3535.4 2.517 \\ 8 70.50 16.74 36.00 43.46 4024.2 1.705 \\};
