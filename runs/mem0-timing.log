@@ -1,0 +1,28 @@
+synthetic-small-s0 mem0_coding r1: 31/99
+synthetic-small-s0 mem0_coding r2: 31/99
+synthetic-small-s1 mem0_coding r1: 34/98
+synthetic-small-s1 mem0_coding r2: 34/98
+synthetic-small-s2 mem0_coding r1: 32/99
+synthetic-small-s2 mem0_coding r2: 31/99
+synthetic-small-s3 mem0_coding r1: 40/107
+synthetic-small-s3 mem0_coding r2: 38/107
+synthetic-small-s4 mem0_coding r1: 41/109
+synthetic-small-s4 mem0_coding r2: 40/109
+
+correct per seed (a range when repeated)
+system       s0        s1        s2        s3         s4         mean ± sd (% correct)
+mem0_coding  31-31/99  34-34/98  31-32/99  38-40/107  40-41/109  34.3 ± 2.6
+
+verdicts, all seeds (first repeat)
+system       correct  missed  no_abstention  polluted  wrong
+mem0_coding  178      40      151            58        85
+
+correct by probe type, all seeds (first repeat)
+system       abstention  contamination  current  historical  post_delete  post_update
+mem0_coding  0/120       27/67          97/112   7/93        0/31         47/89
+
+run-to-run noise (same seed, cache bypassed after the first repeat)
+system       repeats  probes that changed verdict  mean sd across repeats (correct)
+mem0_coding  2        46/512                       0.57
+
+summary: runs/mem0-timing/sweep-small.json

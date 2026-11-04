@@ -645,7 +645,7 @@ retrieval time per query, store size at the end per seed, mean injected tokens
 per probe, and cost per probe in milli-dollars for memory and for answering.
 Times of the LLM systems are from uncached repeats (cached replays are not
 timings); augment mode shares fallback's write and routing path. Mem0 with the
-coding prompt shares Mem0's embedding cache, so its times are not reported.}
+coding prompt is timed from an uncached rerun, since its logged run reused Mem0's cached embeddings.}
 \label{tab:efficiency}
 \centering
 \footnotesize
@@ -657,7 +657,7 @@ No memory & 0.00 & 0.00 & 0.00 & 0.0 & 0 & 0.00 & 0.10 \\
 Full replay & 0.00 & 0.00 & 0.16 & 8.1 & 982 & 0.00 & 0.55 \\
 Transcript RAG & 0.00 & 0.00 & 0.35 & 8.1 & 120 & 0.00 & 0.16 \\
 Mem0 & 1.65 & 2989 & 174 & 1.5 & 139 & 0.57 & 0.16 \\
-Mem0 (coding prompt) & 1.83 & -- & -- & 1.9 & 154 & 0.67 & 0.17 \\
+Mem0 (coding prompt) & 1.83 & 3272 & 202 & 1.9 & 154 & 0.67 & 0.17 \\
 \sys{} (rules) & 0.00 & 0.03 & 0.02 & 0.1 & 4 & 0.00 & 0.11 \\
 \sys{} (LLM) & 1.00 & 836 & 666 & 0.4 & 15 & 0.34 & 0.11 \\
 \hyb{} fallback & 0.93 & 817 & 662 & 8.0 & 56 & 0.32 & 0.13 \\

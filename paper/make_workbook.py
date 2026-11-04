@@ -171,18 +171,13 @@ def deletion_rows() -> list[list]:
 
 def efficiency_inputs() -> list[list]:
     """Pooled medians of timings, computed exactly as make_tables.efficiency_table."""
-    live = {"ledger_llm": "ledger_llm", "hybrid_llm_fb": "hybrid_llm_fb", "hybrid_llm_aug": "hybrid_llm_fb"}
     rows = []
     for name in LABEL:
-        if name in mt.UNTIMED:
-            rows.append([LABEL[name], None, None, "shares Mem0's embedding cache; not timed"])
-            continue
-        if name in live:
-            timed = [load(RUNS / "noise" / f"synthetic-small-s{s}" / f"{live[name]}__r{k}.json")
-                     for s in range(5) for k in (2, 3)]
-            src = f"uncached repeats runs/noise/*/{live[name]}__r2,r3"
+        timed = mt.timed_logs(name)
+        if name in mt.TIMED_FROM:
+            folder, log, reps = mt.TIMED_FROM[name]
+            src = f"uncached reruns runs/{folder}/*/{log}__r{','.join(map(str, reps))}"
         else:
-            timed = [mt.load(name, s) for s in range(5)]
             src = "own runs, seeds 0-4"
         ing = 1000 * statistics.median(o["latency_s"] for lg in timed for o in lg["ops"] if o["op"] == "ingest")
         ret = 1000 * statistics.median(p["latency_s"] for lg in timed for p in lg["probes"])
@@ -826,7 +821,7 @@ def summary(wb: Workbook, cr: dict, dl: dict, ef: dict, lm: dict, lg: dict, ru: 
         ("Efficiency", "Total m$ per probe, LEDGER+EP fallback", 0.45, f"=Efficiency!I{ef['LEDGER+EP fallback']}", 2),
         ("Efficiency", "Total m$ per probe, full replay", 0.55, f"=Efficiency!I{ef['Full replay']}", 2),
         ("Efficiency", "Median routing s, LLM systems pooled", 0.66, f"=Efficiency!B{ef['routing']}/1000", 2),
-        ("Efficiency", "95th percentile routing s, LLM systems pooled", 0.96, f"=Efficiency!B{int(ef['routing']) + 1}/1000", 2),
+        ("Efficiency", "95th percentile routing s, LLM systems pooled", 0.97, f"=Efficiency!B{int(ef['routing']) + 1}/1000", 2),
         ("LongMemEval", "LEDGER+EP augment accuracy", 74.8, f"=LME_Results!C{lm['LEDGER+EP augment']}", 1),
         ("LongMemEval", "Full replay accuracy", 74.8, f"=LME_Results!C{lm['Full replay']}", 1),
         ("LongMemEval", "Transcript RAG accuracy", 71.4, f"=LME_Results!C{lm['Transcript RAG']}", 1),

@@ -45,9 +45,16 @@ LME_CATS = ["single-session-user", "single-session-assistant", "single-session-p
             "multi-session", "knowledge-update", "temporal-reasoning", "abstention"]
 #: Systems whose logs live in their own sweep folders: (seeds 0--4, seeds 5--9).
 ROOTS = {"mem0": ("mem0", "mem0-heldout"), "mem0_coding": ("mem0", "mem0-heldout")}
-#: Systems whose ingest and retrieval times are not timings: mem0_coding ran
-#: after mem0 on each seed and shares its embedding cache (probe embeddings hit).
-UNTIMED = {"mem0_coding"}
+#: Systems timed from uncached reruns, because their logged runs replayed a
+#: response cache: (folder under runs/, log name, repeats). Augment mode shares
+#: fallback's write and routing path; mem0_coding ran after mem0 on each seed
+#: and hit its cached probe embeddings.
+TIMED_FROM = {
+    "ledger_llm": ("noise", "ledger_llm", (2, 3)),
+    "hybrid_llm_fb": ("noise", "hybrid_llm_fb", (2, 3)),
+    "hybrid_llm_aug": ("noise", "hybrid_llm_fb", (2, 3)),
+    "mem0_coding": ("mem0-timing", "mem0_coding", (2,)),
+}
 LME_SHORT = ["SS-U", "SS-A", "Pref", "Multi", "KU", "Temp", "Abs"]
 
 
@@ -138,19 +145,23 @@ def heldout_table() -> str:
     return "\n".join(rows)
 
 
+def timed_logs(name: str) -> list[dict]:
+    """Logs whose op and probe latencies are timings (seeds 0--4)."""
+    if name not in TIMED_FROM:
+        return [load(name, s) for s in SEEDS]
+    folder, log, repeats = TIMED_FROM[name]
+    return [json.loads((RUNS / folder / f"synthetic-small-s{s}" / f"{log}__r{k}.json").read_text(encoding="utf-8"))
+            for s in SEEDS for k in repeats]
+
+
 def efficiency_table() -> str:
-    """Write and read cost on the small preset, seeds 0--4. Timings of LLM
-    systems come from the uncached repeats in runs/noise (a cached replay is not
-    a timing); the others are timed in their own runs."""
-    live = {"ledger_llm": "ledger_llm", "hybrid_llm_fb": "hybrid_llm_fb", "hybrid_llm_aug": "hybrid_llm_fb"}
+    """Write and read cost on the small preset, seeds 0--4. Timings of systems
+    in TIMED_FROM come from uncached reruns (a cached replay is not a timing);
+    the others are timed in their own runs."""
     rows = []
     for name, label in CODING.items():
         logs = [load(name, s) for s in SEEDS]
-        if name in live:
-            timed = [json.loads((RUNS / "noise" / f"synthetic-small-s{s}" / f"{live[name]}__r{k}.json")
-                                .read_text(encoding="utf-8")) for s in SEEDS for k in (2, 3)]
-        else:
-            timed = logs
+        timed = timed_logs(name)
         ingest = [o for lg in timed for o in lg["ops"] if o["op"] == "ingest"]
         ing_ms = 1000 * statistics.median(o["latency_s"] for o in ingest)
         calls = statistics.mean(o["usage"]["llm_calls"] for lg in logs for o in lg["ops"] if o["op"] == "ingest")
@@ -160,7 +171,7 @@ def efficiency_table() -> str:
         n = sum(len(lg["probes"]) for lg in logs)
         mem = sum(_summary(lg)["memory"] for lg in logs)
         ans = sum(_summary(lg)["answer"] for lg in logs)
-        fmt = lambda ms: "--" if name in UNTIMED else f"{ms:.0f}" if ms >= 10 else f"{ms:.2f}"
+        fmt = lambda ms: f"{ms:.0f}" if ms >= 10 else f"{ms:.2f}"
         rows.append(f"{label} & {calls:.2f} & {fmt(ing_ms)} & {fmt(ret_ms)} & {kib:.1f} & {tokens:.0f} & "
                     f"{1000 * mem / n:.2f} & {1000 * ans / n:.2f} \\\\")
     return "\n".join(rows)
