@@ -1,0 +1,1180 @@
+{
+ "benchmark": "LongMemEval_S (cleaned)",
+ "subset": "pilot",
+ "system": "mem0",
+ "started_at": "2026-11-03T20:40:39.176741+00:00",
+ "budget": 4000,
+ "prices_as_of": "2026-10-19",
+ "answer_backend": {
+  "provider": "openai",
+  "model": "gpt-4.1-mini",
+  "effort": null,
+  "base_url": null,
+  "temperature": 0.0,
+  "seed": 0
+ },
+ "judge_backend": {
+  "provider": "openai",
+  "model": "gpt-4o-2024-08-06",
+  "effort": null,
+  "base_url": null,
+  "temperature": 0.0,
+  "seed": 0
+ },
+ "answer_prompt_system": "You are a chat assistant with memory of your past conversations with this\nuser. Answer the user's question, given after the memory, using the memory.\nMemory items may carry dates; use them and today's date for questions about\ntime, order or duration, and when statements changed over time, answer with\nthe latest. If the memory does not contain the information the question\nneeds, say that you do not know or that it was not mentioned. Answer\nconcisely.\n",
+ "summary": {
+  "system": "mem0",
+  "questions": 14,
+  "errors": 0,
+  "accuracy": 0.7142857142857143,
+  "accuracy_by_category": {
+   "abstention": 1.0,
+   "knowledge-update": 0.5,
+   "multi-session": 0.5,
+   "single-session-assistant": 0.0,
+   "single-session-preference": 1.0,
+   "single-session-user": 1.0,
+   "temporal-reasoning": 1.0
+  },
+  "n_by_category": {
+   "abstention": 2,
+   "knowledge-update": 2,
+   "multi-session": 2,
+   "single-session-assistant": 2,
+   "single-session-preference": 2,
+   "single-session-user": 2,
+   "temporal-reasoning": 2
+  },
+  "mean_injected_tokens": 197.85714285714286,
+  "mean_ingest_s": 520.746376303075,
+  "mean_retrieve_ms": 304.7989048567875,
+  "mean_storage_bytes": 23319.85714285714,
+  "cost_usd": {
+   "memory": 2.28317124,
+   "answer": 0.0032036000000000005,
+   "judge": 0.008395
+  }
+ },
+ "instances": [
+  {
+   "question_id": "8a137a7f",
+   "category": "single-session-user",
+   "question_type": "single-session-user",
+   "question": "What type of bulb did I replace in my bedside lamp?",
+   "gold": "Philips LED bulb",
+   "response": "You replaced the bulb in your bedside lamp with a Philips LED bulb.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-22] Uses Philips LED bulb in bedside lamp and likes its warm tone",
+    "[2023-05-22] Values warm tone lighting similar to Philips LED bulb used in bedside lamp",
+    "[2023-05-22] Prefers warm white smart bulbs for kitchen to replace harsh overhead lighting",
+    "[2023-05-22] Considering smart lamp options for living room and smart light bulbs for kitchen",
+    "[2023-05-22] Prefers floor lamps with linen shades for a cozy feel",
+    "[2023-05-22] Interested in floor lamps with built-in timer or smart features due to positive experience with timer on desk lamp",
+    "[2023-05-22] Plans to place a floor lamp behind the sofa",
+    "[2023-05-22] Plans to start smart lighting in kitchen with a few smart bulbs",
+    "[2023-05-22] Wants to create a cozier atmosphere in the living room",
+    "[2023-05-22] Likes the layered lighting concept"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 187,
+   "injected_tokens": 187,
+   "history_tokens": 100517,
+   "sessions": 51,
+   "ingest_s": 445.64469871002075,
+   "retrieve_s": 0.2237781250005355,
+   "store_items": 250,
+   "storage_bytes": 20905,
+   "memory_usage": {
+    "llm_calls": 90,
+    "llm_input_tokens": 227608,
+    "llm_output_tokens": 38677,
+    "embedding_tokens": 4061,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 382,
+    "llm_output_tokens": 18,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 174,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.15300762,
+    "answer": 0.00018160000000000002,
+    "judge": 0.000485
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 344,
+    "cache_hits": 11
+   }
+  },
+  {
+   "question_id": "311778f1",
+   "category": "single-session-user",
+   "question_type": "single-session-user",
+   "question": "How many hours did I spend watching documentaries on Netflix last month?",
+   "gold": "10",
+   "response": "You spent around 10 hours watching documentaries on Netflix last month.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-25] Spent around 10 hours last month watching documentaries on Netflix",
+    "[2023-05-25] Intends to reduce Netflix screen time by about 30 minutes a day",
+    "[2023-05-25] Enjoys watching documentaries on Netflix about space exploration and artificial intelligence, especially the series 'Cosmos'",
+    "[2023-05-24] Allocates about 3 hours per week to research and professional development",
+    "[2023-05-21] Has a daily commute of about 45 minutes each way and listens to audiobooks during this time",
+    "[2023-05-29] Recently watched friend's baby Olivia while they went out for a date night",
+    "[2023-05-21] Recently got an Audible subscription and uses the 'Daily Deal' feature",
+    "[2023-05-24] Attended a lecture on climate change at the Science Museum in February as part of the 'Science in the City' series",
+    "[2023-05-24] Interested in learning about climate change and its impact on daily lives",
+    "[2023-05-21] Has been meaning to check out 'Good Omens'"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 211,
+   "injected_tokens": 211,
+   "history_tokens": 102386,
+   "sessions": 52,
+   "ingest_s": 499.1116738390265,
+   "retrieve_s": 0.23294562500086613,
+   "store_items": 295,
+   "storage_bytes": 23618,
+   "memory_usage": {
+    "llm_calls": 92,
+    "llm_input_tokens": 234278,
+    "llm_output_tokens": 42782,
+    "embedding_tokens": 4238,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 413,
+    "llm_output_tokens": 17,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 173,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.16224716,
+    "answer": 0.00019240000000000004,
+    "judge": 0.0004825
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 388,
+    "cache_hits": 2
+   }
+  },
+  {
+   "question_id": "15745da0_abs",
+   "category": "abstention",
+   "question_type": "single-session-user",
+   "question": "How long have I been collecting vintage films?",
+   "gold": "You did not mention this information. You mentioned collecting vintage cameras but not vintage films.",
+   "response": "The memory does not mention how long you have been collecting vintage films.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-25] Is a huge film buff",
+    "[2023-05-25] Interested in attending film festivals in Toronto",
+    "[2023-05-25] Interested in the Hot Docs Canadian International Documentary Festival",
+    "[2023-05-27] Prefers to organize videos by type with a consistent naming convention",
+    "[2023-05-22] Interested in personalized movie poster as a birthday gift for Emma",
+    "[2023-05-30] Looking to create a display case for grandmother's antique jewelry collection",
+    "[2023-05-25] Has attended documentary screenings at film festivals like Berlinale",
+    "[2023-05-25] Stood in line for 6 hours to get into the 'Dune' screening at the Toronto International Film Festival last year",
+    "[2023-05-25] Plans to attend documentary screenings at Hot Docs",
+    "[2023-05-30] Seeks recommendations for reputable online marketplaces for antique jewelry display cases or shadow boxes"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 179,
+   "injected_tokens": 179,
+   "history_tokens": 100229,
+   "sessions": 50,
+   "ingest_s": 492.72217941897543,
+   "retrieve_s": 0.3456776669991086,
+   "store_items": 272,
+   "storage_bytes": 20861,
+   "memory_usage": {
+    "llm_calls": 87,
+    "llm_input_tokens": 224120,
+    "llm_output_tokens": 41024,
+    "embedding_tokens": 4434,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 374,
+    "llm_output_tokens": 18,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 167,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.15537508000000003,
+    "answer": 0.0001784,
+    "judge": 0.0004675
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 394,
+    "cache_hits": 8
+   }
+  },
+  {
+   "question_id": "eeda8a6d_abs",
+   "category": "abstention",
+   "question_type": "multi-session",
+   "question": "How many fish are there in my 30-gallon tank?",
+   "gold": "The information provided is not enough. You did not mention that you have a 30-gallon tank.",
+   "response": "You have a 20-gallon tank, not a 30-gallon tank, with 10 neon tetras, 5 golden honey gouramis, and a small pleco catfish, totaling 16 fish.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-28] Has a 20-gallon community tank with 10 neon tetras, 5 golden honey gouramis, and a small pleco catfish",
+    "[2023-05-24] Has gouramis in the 20-gallon tank that show aggression during feeding times",
+    "[2023-05-24] Upgraded from an old 10-gallon tank",
+    "[2023-05-24] Considering adding schooling fish in groups and providing hiding places to reduce gourami aggression",
+    "[2023-05-28] Considering adding schooling fish like lemon tetras or zebra danios to the tank",
+    "[2023-05-24] Uses extra food and tank decorations to distract gouramis during feeding",
+    "[2023-05-24] Interested in arranging tank decorations to create a visually appealing aquascape",
+    "[2023-05-28] Wants to add decorations to create more hiding places for the fish, especially neon tetras",
+    "[2023-05-28] Already has artificial coral and rocks in the tank",
+    "[2023-05-28] Interested in adding live plants, specifically Java Moss and Anacharis, to the tank"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 203,
+   "injected_tokens": 203,
+   "history_tokens": 99754,
+   "sessions": 49,
+   "ingest_s": 530.0607872039909,
+   "retrieve_s": 0.26603774999966845,
+   "store_items": 296,
+   "storage_bytes": 22016,
+   "memory_usage": {
+    "llm_calls": 90,
+    "llm_input_tokens": 230980,
+    "llm_output_tokens": 43694,
+    "embedding_tokens": 4378,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 417,
+    "llm_output_tokens": 48,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 205,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.16238996,
+    "answer": 0.0002436,
+    "judge": 0.0005625
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 394,
+    "cache_hits": 2
+   }
+  },
+  {
+   "question_id": "1a1907b4",
+   "category": "single-session-preference",
+   "question_type": "single-session-preference",
+   "question": "I've been thinking about making a cocktail for an upcoming get-together, but I'm not sure which one to choose. Any suggestions?",
+   "gold": "Considering their mixology class background, the user would prefer cocktail suggestions that build upon their existing skills and interests, such as creative variations of classic cocktails or innovative twists on familiar flavors. They might appreciate recommendations that incorporate their experience with refreshing summer drinks like Pimm's Cup. The user would not prefer overly simplistic or basic cocktail recipes, and may not be interested in suggestions that don't take into account their mixology class background.",
+   "response": "You might enjoy making the Pimm's Cup with a Twist, especially since you like experimenting with garnishes like cucumber slices, grapefruit wedges, mint sprigs, edible flowers, and fresh fruit. Using Hendrick's gin with a citrus-flavored simple syrup, such as grapefruit simple syrup, would complement the flavors nicely. Serving it in a Collins glass will showcase the layers and garnishes beautifully.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-21] Planning to experiment with new cocktails this weekend using Hendrick's gin",
+    "[2023-05-21] Interested in making simple syrup for cocktails",
+    "[2023-05-21] Likes the idea of the Pimm's Cup with a Twist cocktail",
+    "[2023-05-21] Interested in garnishes like cucumber slices, grapefruit wedges, mint sprigs, edible flowers, and fresh fruit for Pimm's Cup with a Twist",
+    "[2023-05-21] Wants to try a citrus-flavored simple syrup to complement Hendrick's gin and cucumber",
+    "[2023-05-21] Has attended a mixology class recently where classic Pimm's Cup and classic cocktails were made",
+    "[2023-05-21] Excited to experiment with different garnishes and elements to make the Pimm's Cup with a Twist visually appealing",
+    "[2023-05-21] Plans to serve the Pimm's Cup with a Twist in a Collins glass for showcasing layers and garnishes",
+    "[2023-05-21] Prefers muddling cucumber slices over using cucumber juice in cocktails for more flavor and texture",
+    "[2023-05-21] Prefers grapefruit simple syrup for its bitterness balancing the sweetness of Pimm's"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 233,
+   "injected_tokens": 233,
+   "history_tokens": 104944,
+   "sessions": 48,
+   "ingest_s": 580.7358464979843,
+   "retrieve_s": 0.5212749999991502,
+   "store_items": 325,
+   "storage_bytes": 26911,
+   "memory_usage": {
+    "llm_calls": 90,
+    "llm_input_tokens": 238240,
+    "llm_output_tokens": 50384,
+    "embedding_tokens": 5346,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 449,
+    "llm_output_tokens": 83,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 321,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.17601732000000003,
+    "answer": 0.00031240000000000006,
+    "judge": 0.0008525
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 426,
+    "cache_hits": 11
+   }
+  },
+  {
+   "question_id": "0a34ad58",
+   "category": "single-session-preference",
+   "question_type": "single-session-preference",
+   "question": "I\u2019m a bit anxious about getting around Tokyo. Do you have any helpful tips?",
+   "gold": "The user would prefer responses that utilize their existing resources, such as their Suica card and TripIt app, to provide personalized tips for navigating Tokyo's public transportation. They might not prefer general tips or recommendations that do not take into account their prior preparations.",
+   "response": "Since you have a Suica card, using public transportation in Tokyo will be easier and more convenient. You can take the train from Narita Airport to Shinjuku Station smoothly with it. Also, staying at the Park Hyatt Tokyo puts you in a great location for shopping and exploring nearby areas. Planning guided tours, like your trip to Nikko National Park, can also reduce anxiety by having a structured itinerary. Overall, using your Suica card and planning your routes ahead will help you get around Tokyo confidently.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-22] Heading to Tokyo soon",
+    "[2023-05-22] Planning to visit Tokyo Tower",
+    "[2023-05-22] Planning to visit Tsukiji Fish Market",
+    "[2023-05-22] Interested in shopping near Park Hyatt Tokyo",
+    "[2023-05-22] Planning a guided tour to Nikko National Park",
+    "[2023-05-22] Planning to take the train from Narita Airport to Shinjuku Station",
+    "[2023-05-22] Staying at the Park Hyatt Tokyo",
+    "[2023-05-30] Loved trip to Japan in June",
+    "[2023-05-22] Has a Suica card for transportation",
+    "[2023-05-30] Interested in solo travel destinations in Asia similar to Japan"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 139,
+   "injected_tokens": 139,
+   "history_tokens": 104113,
+   "sessions": 42,
+   "ingest_s": 459.4364590819969,
+   "retrieve_s": 0.2294981250015553,
+   "store_items": 259,
+   "storage_bytes": 19620,
+   "memory_usage": {
+    "llm_calls": 80,
+    "llm_input_tokens": 219989,
+    "llm_output_tokens": 39990,
+    "embedding_tokens": 3922,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 344,
+    "llm_output_tokens": 106,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 302,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.15205804,
+    "answer": 0.00030720000000000004,
+    "judge": 0.000805
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 364,
+    "cache_hits": 0
+   }
+  },
+  {
+   "question_id": "9aaed6a3",
+   "category": "multi-session",
+   "question_type": "multi-session",
+   "question": "How much cashback did I earn at SaveMart last Thursday?",
+   "gold": "$0.75",
+   "response": "You spent $75 on groceries at SaveMart last Thursday and have a 1% cashback membership. Therefore, you earned $0.75 cashback.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-23] Spent $75 on groceries at SaveMart last Thursday",
+    "[2023-05-22] Has a SaveMart membership with 1% cashback on purchases",
+    "[2023-05-22] Has a digital coupon for $1 off marinara sauce at SaveMart",
+    "[2023-05-22] Aware of SaveMart sale: Buy One Get One 50% Off on ground beef products including 3-pound pack",
+    "[2023-05-26] Had a 20% off coupon for grocery shopping at Walmart last month",
+    "[2023-05-26] Aware of Walmart+ membership offering 2% cashback on online grocery purchases",
+    "[2023-05-26] Interested in Walmart+ cashback tracking or dashboard to monitor earnings",
+    "[2023-05-26] Plans to calculate if Walmart+ 2% cashback benefit is worth the cost",
+    "[2023-05-23] Spent $12.99 on a sandwich and salad at The Daily Grind with a 20% off offer last week",
+    "[2023-05-26] Knows Walmart+ cashback applies to all brands including Walmart store brands"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 207,
+   "injected_tokens": 207,
+   "history_tokens": 103201,
+   "sessions": 51,
+   "ingest_s": 617.6433202100161,
+   "retrieve_s": 0.2880425839975942,
+   "store_items": 344,
+   "storage_bytes": 27640,
+   "memory_usage": {
+    "llm_calls": 98,
+    "llm_input_tokens": 248520,
+    "llm_output_tokens": 53599,
+    "embedding_tokens": 5703,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 416,
+    "llm_output_tokens": 34,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 191,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.18528046000000004,
+    "answer": 0.0002208,
+    "judge": 0.0005275
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 460,
+    "cache_hits": 10
+   }
+  },
+  {
+   "question_id": "51c32626",
+   "category": "multi-session",
+   "question_type": "multi-session",
+   "question": "When did I submit my research paper on sentiment analysis?",
+   "gold": "February 1st",
+   "response": "The exact submission date of your research paper on sentiment analysis is not mentioned in the memory, but it was submitted to ACL before May 30, 2023.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-30] Has worked on a research paper on sentiment analysis submitted to ACL",
+    "[2023-05-30] Has been interested in sentiment analysis since thesis work",
+    "[2023-05-30] Exploring different approaches to sentiment analysis",
+    "[2023-05-30] Interested in natural language processing techniques for sentiment analysis",
+    "[2023-05-30] Specifically interested in deep learning techniques for sentiment analysis",
+    "[2023-05-30] Interested in how CNN and RNN are used for sentiment analysis",
+    "[2023-05-30] Curious about applications of hybrid CNN-RNN architecture in social media text sentiment analysis",
+    "[2023-05-30] Interested in hybrid CNN-RNN architecture for sentiment analysis",
+    "[2023-05-30] Reviewing for ACL conference with submission date February 1st",
+    "[2023-05-30] Has a master's thesis on natural language processing (NLP)"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 173,
+   "injected_tokens": 173,
+   "history_tokens": 103150,
+   "sessions": 51,
+   "ingest_s": 489.9771353250253,
+   "retrieve_s": 0.24580574999708915,
+   "store_items": 274,
+   "storage_bytes": 23519,
+   "memory_usage": {
+    "llm_calls": 92,
+    "llm_input_tokens": 233897,
+    "llm_output_tokens": 42656,
+    "embedding_tokens": 4712,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 366,
+    "llm_output_tokens": 37,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 193,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.16190264000000001,
+    "answer": 0.0002056,
+    "judge": 0.0005325
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 389,
+    "cache_hits": 3
+   }
+  },
+  {
+   "question_id": "dcfa8644",
+   "category": "temporal-reasoning",
+   "question_type": "temporal-reasoning",
+   "question": "How many days had passed since I bought my Adidas running shoes when I realized one of the shoelaces on my old Converse sneakers had broken?",
+   "gold": "14 days. 15 days (including the last day) is also acceptable.",
+   "response": "You bought your Adidas running shoes on January 10th and realized the shoelace on your old Converse sneakers had broken by January 24th. Therefore, 14 days had passed between these two events.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-02-03] Replaced a broken shoelace on old Converse sneakers on January 24th",
+    "[2023-02-03] Got new Adidas running shoes on January 10th",
+    "[2023-02-03] Went to outlet mall with sister on January 10th when buying Adidas running shoes",
+    "[2023-02-03] Has a pair of sneakers worn for basketball on February 1st that got dirty",
+    "[2023-02-03] Spent $80 on Adidas running shoes, which was more than budgeted but liked the design",
+    "[2023-02-03] Has a favorite pair of Vans lent to brother last month and returned on February 10th tighter than before, wants to restore original shape",
+    "[2023-02-03] Plans to try using shoe trees and stuffing Vans with paper to restore shape",
+    "[2023-02-03] Considering taking Vans to a cobbler for professional restoration if DIY methods are insufficient",
+    "[2023-02-03] Thinking of organizing shoe collection",
+    "[2023-02-03] Wants shoe care tips for cleaning sneakers and boots"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 201,
+   "injected_tokens": 201,
+   "history_tokens": 100543,
+   "sessions": 46,
+   "ingest_s": 474.0863470840559,
+   "retrieve_s": 0.2944122499975492,
+   "store_items": 282,
+   "storage_bytes": 21817,
+   "memory_usage": {
+    "llm_calls": 83,
+    "llm_input_tokens": 219050,
+    "llm_output_tokens": 39710,
+    "embedding_tokens": 4277,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 427,
+    "llm_output_tokens": 46,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 296,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.15124154,
+    "answer": 0.00024440000000000003,
+    "judge": 0.00079
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 370,
+    "cache_hits": 1
+   }
+  },
+  {
+   "question_id": "gpt4_7de946e7",
+   "category": "temporal-reasoning",
+   "question_type": "temporal-reasoning",
+   "question": "Which health issue did I deal with first, the persistent cough or the skin tag removal?",
+   "gold": "Persistent cough",
+   "response": "You dealt with the persistent cough first, which lasted for several weeks before February 28th, while the skin tag was removed on February 22nd.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-02-28] Recently had a skin tag removed from neck on February 22nd",
+    "[2023-02-28] Had a persistent cough for several weeks",
+    "[2023-02-28] Diagnosed with bronchitis and treated with antibiotics finished on February 20th",
+    "[2023-02-28] Visited primary care physician Dr. Smith on February 10th and again on March 1st",
+    "[2023-02-28] Visited pulmonologist Dr. Johnson on March 10th and diagnosed with pneumonia via chest X-ray",
+    "[2023-02-28] Concerned about grandmother's health after her hospitalization due to flu in January",
+    "[2023-02-28] Has been tracking food intake, time of eating, and symptoms for about a month",
+    "[2023-02-28] Planning to reduce dairy intake to see if symptoms improve",
+    "[2023-02-28] Scheduled to see gastroenterologist Dr. Patel on April 15th",
+    "[2023-02-28] Interested in brands known for natural ingredients and good for sensitive skin"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 193,
+   "injected_tokens": 193,
+   "history_tokens": 102705,
+   "sessions": 49,
+   "ingest_s": 561.1430861639601,
+   "retrieve_s": 0.25461170799826505,
+   "store_items": 301,
+   "storage_bytes": 23781,
+   "memory_usage": {
+    "llm_calls": 92,
+    "llm_input_tokens": 236343,
+    "llm_output_tokens": 46148,
+    "embedding_tokens": 4988,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 410,
+    "llm_output_tokens": 35,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 260,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.16847376,
+    "answer": 0.00022,
+    "judge": 0.0007
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 414,
+    "cache_hits": 18
+   }
+  },
+  {
+   "question_id": "b01defab",
+   "category": "knowledge-update",
+   "question_type": "knowledge-update",
+   "question": "Did I finish reading 'The Nightingale' by Kristin Hannah?",
+   "gold": "Yes",
+   "response": "Yes, you finished reading 'The Nightingale' by Kristin Hannah recently.",
+   "correct": true,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-03-30] Recently finished reading 'The Nightingale' by Kristin Hannah and found it amazing",
+    "[2023-03-30] Found 'The Nightingale' to be a powerful and emotional read",
+    "[2023-01-21] Wants staff recommendations to help get back into reading 'The Nightingale'",
+    "[2023-01-21] Wants to finish 'The Nightingale' in time for a book club discussion",
+    "[2023-03-30] Recently finished reading 'The Seven Husbands of Evelyn Hugo'",
+    "[2023-03-30] Interested in books similar to 'The Seven Husbands of Evelyn Hugo' and 'The Nightingale'",
+    "[2023-03-30] Resonated with the sisterly bond between Vianne and Isabelle in 'The Nightingale'",
+    "[2023-01-21] Has read and liked 'The Song of Achilles'",
+    "[2023-01-21] Plans to read 'The Poppy War' next",
+    "[2023-03-30] Plans to start reading 'The Alice Network' focusing on female spies during World War I"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 202,
+   "injected_tokens": 202,
+   "history_tokens": 104851,
+   "sessions": 50,
+   "ingest_s": 553.2087094980234,
+   "retrieve_s": 0.22402741700352635,
+   "store_items": 322,
+   "storage_bytes": 25991,
+   "memory_usage": {
+    "llm_calls": 92,
+    "llm_input_tokens": 236552,
+    "llm_output_tokens": 45686,
+    "embedding_tokens": 5101,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 403,
+    "llm_output_tokens": 19,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 159,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.16782042000000003,
+    "answer": 0.00019160000000000002,
+    "judge": 0.0004475
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 426,
+    "cache_hits": 10
+   }
+  },
+  {
+   "question_id": "9bbe84a2",
+   "category": "knowledge-update",
+   "question_type": "knowledge-update",
+   "question": "What was my previous goal for my Apex Legends level before I updated my goal?",
+   "gold": "level 100",
+   "response": "Your previous goal for your Apex Legends level was to reach level 150 eventually.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-09-30] Plays Apex Legends a lot and aims to reach level 150 in Apex Legends eventually",
+    "[2023-09-30] Intends to focus on completing daily and weekly challenges in Apex Legends to earn more experience points and level up faster, seeing challenges as a way to stay motivated and track progress",
+    "[2023-09-30] Wants to focus on improving gameplay skills, especially aiming and communication in Apex Legends",
+    "[2023-06-16] Looking for a new gaming headset compatible with PC and good for Apex Legends",
+    "[2023-09-30] Planning to organize a gaming session with friends this weekend and play Apex Legends together",
+    "[2023-05-24] Considering trying other discussed games before replaying The Last of Us Part II on higher difficulty",
+    "[2023-05-24] Plans to use HowLongToBeat and TrueAchievements for tracking playtime",
+    "[2023-06-16] Interested in gaming mice suitable for FPS games like Apex Legends",
+    "[2023-05-24] Wants to track playtime for games",
+    "[2023-05-24] Interested in Xbox Game Pass quest system to stay engaged with games"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 216,
+   "injected_tokens": 216,
+   "history_tokens": 102168,
+   "sessions": 48,
+   "ingest_s": 559.2773410429872,
+   "retrieve_s": 0.3093126250023488,
+   "store_items": 299,
+   "storage_bytes": 23042,
+   "memory_usage": {
+    "llm_calls": 92,
+    "llm_input_tokens": 237097,
+    "llm_output_tokens": 46815,
+    "embedding_tokens": 5051,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 422,
+    "llm_output_tokens": 20,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 165,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.16984382,
+    "answer": 0.0002008,
+    "judge": 0.0004625
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 438,
+    "cache_hits": 4
+   }
+  },
+  {
+   "question_id": "2bf43736",
+   "category": "single-session-assistant",
+   "question_type": "single-session-assistant",
+   "question": "I was going through our previous chat and I wanted to clarify something about the prayer of beginners in Tanqueray's Spiritual Life treatise. Can you remind me which chapter of the second part discusses vocal prayer and meditation?",
+   "gold": "Chapter 4 of Book 1, titled 'Vocal Prayer and Meditation'.",
+   "response": "In Adolphe Tanqueray's Spiritual Life treatise, the chapter in the second part that discusses vocal prayer and meditation for spiritual beginners is part of the chapters on the purgative way and prayer of spiritual beginners, which you have been focusing on. However, the exact chapter number was not specified in our previous conversations.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-30] The user is interested in Adolphe Tanqueray's Spiritual Life treatise, specifically the second part and its chapters on the purgative way and prayer of spiritual beginners.",
+    "[2023-05-30] The user is focused on understanding concepts such as the spiritual beginner, the active purgative way, and the prayer practices recommended for beginners, including vocal prayer and meditation.",
+    "[2023-05-30] The user requested summaries and mental maps of chapters related to the purgative way and the prayer of spiritual beginners.",
+    "[2023-05-22] Drawn to exploring contemplative prayer and meditation",
+    "[2023-05-22] Interested in exploring other ways to connect with God through prayer and meditation",
+    "[2023-05-21] Aware that St. Mary's Church offers a contemplative prayer group meeting weekly on Wednesday evenings",
+    "[2023-05-21] Chose to try the 'Lent for Everyone' devotional by N.T. Wright",
+    "[2023-05-21] Attending various church services and prayer meetings",
+    "[2023-05-21] Interested in online resources or apps to track daily devotional readings and reflections",
+    "[2023-05-22] Practicing meditation for 10 minutes every morning to set intentions and focus on daily goals"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 242,
+   "injected_tokens": 242,
+   "history_tokens": 102412,
+   "sessions": 44,
+   "ingest_s": 465.9785817890006,
+   "retrieve_s": 0.34403066700178897,
+   "store_items": 290,
+   "storage_bytes": 23071,
+   "memory_usage": {
+    "llm_calls": 78,
+    "llm_input_tokens": 212937,
+    "llm_output_tokens": 39240,
+    "embedding_tokens": 4595,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 480,
+    "llm_output_tokens": 70,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 270,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.1480507,
+    "answer": 0.000304,
+    "judge": 0.000725
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 375,
+    "cache_hits": 11
+   }
+  },
+  {
+   "question_id": "7a8d0b71",
+   "category": "single-session-assistant",
+   "question_type": "single-session-assistant",
+   "question": "I'm looking back at our previous chat about the DHL Wellness Retreats campaign. Can you remind me how much was allocated for influencer marketing in the campaign plan?",
+   "gold": "$2,000",
+   "response": "The memory does not contain information about the budget allocation for influencer marketing in the DHL Wellness Retreats campaign plan.",
+   "correct": false,
+   "abstained": false,
+   "abstain_reason": null,
+   "evidence": [
+    "[2023-05-24] Interested in detailed email marketing campaigns for wellness retreats",
+    "[2023-05-24] Interested in example emails for promoting wellness retreats",
+    "[2023-05-28] Collaborates with design, content, and development teams for the campaign",
+    "[2023-05-28] Is starting a new marketing campaign project to promote company's latest product release",
+    "[2023-05-28] Target audience for campaign: business owners and decision-makers in the industry",
+    "[2023-05-28] Campaign launch planned in about 6 weeks",
+    "[2023-05-28] Marketing campaign goals: increase brand awareness, generate leads, drive sales",
+    "[2023-05-23] Was promoted due to impressive work on the Johnson account",
+    "[2023-05-21] Participated in a silent auction and networked with people interested in philanthropy",
+    "[2023-05-27] Interested in success stories of companies implementing inclusive workplace environments for individuals with disabilities"
+   ],
+   "evidence_items": 10,
+   "evidence_tokens": 184,
+   "injected_tokens": 184,
+   "history_tokens": 104071,
+   "sessions": 45,
+   "ingest_s": 561.4231023779867,
+   "retrieve_s": 0.487729374995979,
+   "store_items": 292,
+   "storage_bytes": 23686,
+   "memory_usage": {
+    "llm_calls": 84,
+    "llm_input_tokens": 228530,
+    "llm_output_tokens": 48713,
+    "embedding_tokens": 5496,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14",
+     "text-embedding-3-small"
+    ]
+   },
+   "answer_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 398,
+    "llm_output_tokens": 26,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4.1-mini-2025-04-14"
+    ]
+   },
+   "judge_usage": {
+    "llm_calls": 1,
+    "llm_input_tokens": 202,
+    "llm_output_tokens": 5,
+    "embedding_tokens": 0,
+    "model_ids": [
+     "gpt-4o-2024-08-06"
+    ]
+   },
+   "cost_usd": {
+    "memory": 0.16946272,
+    "answer": 0.0002008,
+    "judge": 0.000555
+   },
+   "system_config": {
+    "name": "mem0",
+    "version": "1",
+    "mem0ai": "1.0.11",
+    "llm": "gpt-4.1-mini",
+    "temperature": 0.0,
+    "seed": 0,
+    "embedder": "text-embedding-3-small",
+    "vector_store": "qdrant-local",
+    "top_k": 10,
+    "profile": "default",
+    "prompt_sha": null,
+    "calls": 434,
+    "cache_hits": 17
+   }
+  }
+ ]
+}

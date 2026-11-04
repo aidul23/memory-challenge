@@ -46,7 +46,7 @@ historical questions need; over 540 days of sessions full replay falls to 70.5\%
 stays above 89\%. When deletion requests are only described, the transcript
 baselines send the deleted value to the model in up to 46 probes, Mem0 repeats
 it to the user in 17, our systems in none. On LongMemEval, \hyb{} matches full replay (74.8\%) with 1\% of its
-context. All runs are pinned, cached and replayable.
+context, and Mem0 (71.0\%) is within its confidence interval. All runs are pinned, cached and replayable.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -544,6 +544,17 @@ from the assistant's statements (SS-A 3\%). Full replay is best on
 preference questions (63 vs.\ 33), which need the whole conversation's tone rather
 than a fact.
 
+Mem0 reaches 71.0\% with 202 injected tokens, a fifth of \hyb{}'s; \hyb{}
+(augment) is 3.8 points ahead (CI $-3.8$ to $+11.4$), so the two are not
+separable here. Personal chat is the setting Mem0's default prompt was written
+for: it leads on preference questions (70) and temporal ones (80), and is
+weakest where its prompt extracts nothing, the assistant's statements (SS-A 40).
+Its writes cost three times ours (161 vs.\ 51 milli-dollars per history), as it
+makes two model calls per session where our extractor makes one. The gap that
+separates it from \hyb{} on the coding workload is thus a gap in what the
+workload asks: LongMemEval's knowledge-update questions ask only for the
+current value, and its histories contain no deletion requests.
+
 \subsection{Over time}
 
 \begin{figure}[t]
@@ -760,7 +771,8 @@ tokens per user), so full replay is cheap there; we did not measure coding
 histories beyond 540 days. LongMemEval answers are judged by a model; one
 author audited 60 of its decisions (59 distinct responses, as two systems gave
 one identical answer), blind to the system (20 each for full replay,
-transcript RAG and \hyb{}, half judged correct, spread over all categories).
+transcript RAG and \hyb{}, half judged correct, spread over all categories;
+Mem0's decisions, added later, were not audited).
 The judge agreed on 59 (98.3\%, Cohen's $\kappa=0.97$); in the one
 disagreement, a preference question answered by transcript RAG, it was
 stricter than the human. The auditor noted that the binary judgement accepts
@@ -781,8 +793,8 @@ model's own noise at under one point per seed (Sec.~\ref{sec:results}).
 all text is English. The LongMemEval subset is 210 of 500 questions, drawn
 stratified with a fixed seed; differences of a few points between systems on
 it are within its confidence intervals. Besides the baselines the call
-requires we compare against one memory product, Mem0, and only on the coding
-workload; Zep and A-MEM are not evaluated.
+requires we compare against one memory product, Mem0; Zep and A-MEM are not
+evaluated.
 
 % ---------------------------------------------------------------------------
 \section{Related Work}
@@ -796,8 +808,12 @@ libraries~\cite{wang2023voyager,wang2024awm} and hippocampal
 indexing~\cite{gutierrez2024hipporag} extend recall. LoCoMo~\cite{maharana2024locomo},
 LongMemEval~\cite{wu2025longmemeval} and MemoryAgentBench~\cite{hu2025memoryagentbench}
 measure it. Our ledger is closest to Zep, which also tracks when facts held, but
-decides trust, supersession and deletion with explicit rules, and our
-evaluation differs in typing each wrong value by why it is wrong and in
+decides trust, supersession and deletion with explicit rules. Mem0 is closest
+in pipeline: it also extracts facts and updates them, but the model chooses
+each update, and an update overwrites the stored text (its change log is not
+searched), so retrieval sees only the latest version;
+\S\ref{sec:results} measures what that costs on questions about an earlier
+date and on deletion. Our evaluation differs in typing each wrong value by why it is wrong and in
 scoring the injected evidence as well as the answer.
 
 % ---------------------------------------------------------------------------

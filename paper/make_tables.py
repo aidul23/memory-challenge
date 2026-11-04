@@ -36,6 +36,7 @@ LME = {
     "no_memory": "No memory",
     "full_replay": "Full replay",
     "transcript_rag": "Transcript RAG",
+    "mem0": "Mem0",
     "ledger_llm_user": "\\sys{} (LLM)",
     "hybrid_llm_user_fallback": "\\hyb{} fallback",
     "hybrid_llm_user": "\\hyb{} augment",
