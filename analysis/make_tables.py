@@ -16,6 +16,10 @@ import statistics
 from collections import Counter
 from pathlib import Path
 
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))  # run from the repo root without PYTHONPATH
+
 from interface.tokens import count_tokens
 from runner.recount_tokens import lme_full_replay_tokens
 

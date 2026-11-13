@@ -1,0 +1,164 @@
+\documentclass[10pt,conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{booktabs,tabularx,array}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\sys}{\textsc{Ledger}}
+\newcommand{\hyb}{\textsc{Ledger+Ep}}
+\begin{document}
+\title{Supplement to ``LEDGER: Auditable Agent Memory Under Change''}
+\author{\IEEEauthorblockN{Anonymous Author(s)}}
+\maketitle
+
+This supplement holds material moved out of the paper to fit the page limit. Section and table references such as Sec.~III or Table~V point to the paper. Every number here is generated from the run logs by \texttt{analysis/make\_tables.py} in the artifact; per-seed results, the cost breakdown and the LongMemEval pilot-overlap analysis are in \texttt{results/tables/}.
+
+\section*{S1. Generator settings}
+In the small preset, each of 3 users has 2--3 services and 16 sessions over 180 days, and each fact gets 1--5 mutations. A fact's first statement comes from the user (80\%), a tool result or code change (10\%) or a document (10\%). Each later mutation is a restatement, update, contradiction or deletion, with relative weights 1.0, 1.4, 1.0 and 0.3 (raised for staging hosts and on-call owners); a contradiction occurs only while the current value came from the user or a tool. Each session adds 1--4 filler or distractor events, so 33--48\% of events state a fact. At four checkpoints (25--100\% of the stream) the generator asks up to two probes per user of each of six types: \emph{current}, \emph{post-update}, \emph{historical} (with an as-of time), \emph{contamination}, \emph{post-delete} and \emph{abstention} (112, 89, 93, 67, 31 and 120 of the 512 probes on seeds 0--4). The long preset has 6 users with 2--4 services and 60 sessions each, 1--8 mutations per fact, and eight checkpoints. Aliases are fixed per fact kind: ``Postgres $N$'' and ``PG $N$'' for PostgreSQL, and ``Node.js $N$'' for Node. A timeline whose stored expectations disagree with the ground-truth function refuses to load.
+
+\section*{S2. Challenge requirements and how we evaluate them}
+We mark a requirement \emph{direct} when an experiment measures it, and \emph{partial} when we cover only part of it. Section numbers refer to the paper.
+
+\begin{table}[t]
+\caption{Challenge requirements, how we evaluate them, and whether the
+evaluation is direct or partial.}
+\label{tab:s-req}
+\centering
+\footnotesize
+\begin{tabular}{@{}p{0.27\columnwidth}p{0.52\columnwidth}l@{}}
+\toprule
+Requirement & How we evaluate it & Status \\
+\midrule
+R1 persistence across sessions and restarts
+  & Restart after every checkpoint of the long preset changes no answer; model
+    upgrade mid-stream (Sec.~V-D) & direct \\
+R1 heterogeneous traces
+  & Messages, tool calls and results, documents and code changes, but
+    generated from templates; LongMemEval is chat only (Sec.~IV-A)
+  & partial \\
+R1 provenance, update, supersession, deletion
+  & Evidence carries source events and validity; probes per mutation type;
+    deletion with and without source ids (Sec.~III, IV-A) & direct \\
+R1 bounded evidence, abstention
+  & One token budget for all bounded systems; abstention probes and
+    LongMemEval abstention questions (Sec.~IV-C) & direct \\
+\midrule
+R2 established benchmark
+  & LongMemEval\_S, stratified subset of 210 of 500 questions
+    (Sec.~IV-B) & direct \\
+R2 end-to-end multi-session agent workload
+  & Multi-session coding-agent traces with questions at checkpoints; no agent
+    performs a downstream task (Sec.~IV-A) & partial \\
+R2 same model, prompts, budgets; required baselines
+  & Shared answerer and prompt; one token budget for bounded systems, full
+    replay unbounded; no memory, full replay, transcript RAG, plus Mem0
+    (Sec.~IV-C) & direct \\
+R2 quality, tokens, \$, ingest, latency, storage
+  & Measured by the runner; quality is answer accuracy, not task success
+    (Sec.~IV-C) & direct \\
+\midrule
+R3 checkpoints, degradation, stale errors, growth, latency
+  & Long preset: 8 checkpoints over 540 simulated days, 3 seeds; accuracy and typed errors (Fig.~2 of the paper); tokens, store size and model-call tokens (Table~\ref{tab:s-growth}); no latency growth (cached replays) & partial \\
+R3 pinned models, repeated runs
+  & Pinned snapshots, response cache, 5 seeds plus uncached repeats
+    (Sec.~IV-C) & direct \\
+R3 human audit of LLM judge
+  & 60 judge decisions for 3 of 7 configurations, audited by one author, $\kappa=0.97$
+    (Sec.~IV-B) & partial \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section*{S3. Long preset per checkpoint}
+\begin{table}[t]
+\caption{Long preset per checkpoint, 3 seeds. Probes: total over seeds. Tokens: mean injected model tokens per question. Store: KiB per seed. Extract and route: \hyb{} (fallback) mean input tokens per ingested session and per question since the previous checkpoint.}
+\label{tab:s-growth}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabular}{@{}rrrrrrrr@{}}
+\toprule
+ & & \multicolumn{2}{c}{Tokens} & \multicolumn{2}{c}{Store KiB} & & \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+Cp & Probes & Replay & \hyb{} & \sys{} & Transcript & Extract & Route \\
+\midrule
+1 & 104 & 598 & 68 & 0.32 & 5.7 & 418 & 319 \\
+2 & 150 & 1{,}154 & 60 & 0.55 & 11.4 & 507 & 397 \\
+3 & 177 & 1{,}716 & 59 & 0.73 & 16.9 & 531 & 433 \\
+4 & 182 & 2{,}268 & 61 & 0.84 & 22.4 & 522 & 453 \\
+5 & 186 & 2{,}807 & 56 & 1.01 & 27.7 & 545 & 472 \\
+6 & 188 & 3{,}355 & 57 & 1.14 & 33.2 & 576 & 483 \\
+7 & 195 & 3{,}868 & 58 & 1.19 & 38.1 & 586 & 493 \\
+8 & 197 & 4{,}399 & 59 & 1.28 & 43.5 & 572 & 508 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{Cost as memory grows.} Table~\ref{tab:s-growth} gives what each system sends and stores per checkpoint. Full replay's context grows about seven times, while transcript RAG stays near 130 tokens, \sys{} near 17 and \hyb{} (fallback) at 56--68. The ledger's store ends at 1.3\,KiB against 43.5\,KiB for the transcript stores, and \hyb{} keeps both in 41.1\,KiB, less than transcript RAG because its deletion scrubbing removes 43--80 more turns per seed. Our systems make the same number of model calls throughout: at most one extraction call per session and one routing call per question. Each call grows, because it resends the list of known slots: from the first to the last checkpoint, extraction input grows from 418 to 572 tokens per session and routing input from 319 to 508 tokens per question, while output stays near 25 and 8 tokens. Priced with output, \hyb{}'s model cost grows from 0.20 to 0.27\,m\$ per session and from 0.14 to 0.22\,m\$ per question.
+
+\textbf{Model change.} In \hyb{} (augment mode, long preset, seeds 0 and 1), we switched the model behind both extraction and routing from \texttt{gpt-4.1-mini} to \texttt{gpt-4.1} after the fourth of eight checkpoints and kept the store; the answering model stayed \texttt{gpt-4.1-mini}. No migration was needed: the new model routes and restates the slot keys and values the old one wrote. Over the two seeds, accuracy in the second half rises from 92.0\% (mini throughout) to 95.4\%, within 0.3 points of a run on \texttt{gpt-4.1} throughout (95.7\%). The extraction and routing calls of the whole run cost \$1.18 for both seeds, against \$1.89 on \texttt{gpt-4.1} throughout and \$0.36 on mini throughout. The saving comes from the first half; in the second half the two cost about the same (\$1.02 vs.\ \$1.09).
+
+\section*{S4. Development-history comparisons}
+\begin{table}[t]
+\caption{Development-time changes on the coding workload (small preset, seeds 0--4), one before/after run each. Evidence and answer: \% correct;
+other metrics: number of probes.}
+\label{tab:s-ablation}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llrr@{}}
+\toprule
+Change & Metric & Before & After \\
+\midrule
+\multicolumn{4}{@{}l}{\emph{(b) Safeguards added during development}} \\
+Enumerate event ids in schema & evidence & 88.7 & 92.2 \\
+Grounding check & no abstention & 1 & 0 \\
+Named-slot deletion (description only) & leaked & 2 & 0 \\
+Entity-level episode scrubbing (\hyb{}) & leaked & 3 & 0 \\
+\midrule
+\multicolumn{4}{@{}l}{\emph{(c) Prompt and LLM-call revisions}} \\
+Neutral router examples (kept) & evidence & 91.9 & 91.5 \\
+Terse-value extraction prompt (removed) & evidence & 91.9 & 90.7 \\
+LLM slot-merge check (removed) & evidence & 92.2 & 92.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\emph{(b) Safeguards added during development} were each measured once, on
+the development seeds, before and after the change, with the affected
+sessions extracted again. Each was added after a failure we saw. The model
+wrote \texttt{e0014} for \texttt{e00014}, and a session's claims were
+dropped. About one claim in ten was invented, for example known values
+copied onto a diff summary. The router returned no slot for ``Don't keep
+gateway-service's CI provider in memory anymore'' in five of five live
+retries, so the value leaked. In \hyb{}, an assistant's guess at a value was
+never extracted and survived as a raw turn. Before the grounding check, about one extracted claim in ten was invalid, but only one probe failed because of it; invalid claims are frequent, while their effect on answers is small. Each row reports the observed outcome before and after the change, in one run each. The id row (+3.5 points) also re-ran every extraction, so part of its gain may be extraction noise.
+
+\emph{(c) Prompt and LLM-call revisions} change what the model sees, so every
+extraction is rolled again. With \texttt{gpt-4.1-mini} this moves about 150
+extractions per seed. The rows in (b) and (c) are both observed before/after outcomes from single development runs. Without repeated controlled runs, none of them establishes a stable, isolated effect, including the larger id row.
+
+\textbf{Missing experiments.} We did not run leave-one-out ablations of the
+final system: removing each safeguard or rule in turn, on all seeds, with
+repeats. The rows in (b) are therefore not on the held-out seeds and have no
+confidence intervals. We also did not ablate the trust ranking itself (all
+sources equal), the episode store's retriever (BM25 only) or the token
+budget, and we ran no ablation on the long preset or on LongMemEval.
+
+\section*{S5. Design details}
+\textbf{Hold rule.} With no current value and source trust $<2$, the ledger keeps the value as unconfirmed. If a trusted source later states the same value, it becomes an entry that is valid from the trusted statement, not from the earlier mention; the earlier events are kept only in its provenance. If the trusted source states a different value, the held value becomes a dispute.
+
+\textbf{Retrieval with mixed slots.} In \hyb{}, the episode store ranks all of the user's stored turns with BM25, using the question's words without stopwords as the query. It adds the top five turns, each with its date and source kind, while they fit in the token budget left after the facts. Turns are not filtered by the as-of time, so the answering model must judge their dates. Fallback mode searches only when the ledger returns no fact, so the unanswered part of a multi-slot question gets no turns. Augment mode always adds turns after the facts. A question that matches only deleted or empty slots, at least one of them deleted, is refused and gets no turns in either mode. If it matches a deleted slot and a live one, the live fact is returned and the deleted slot gets no line. Fallback mode then adds no turns. Augment mode still adds turns, so here only episode scrubbing keeps the deleted value out (the paper).
+
+\textbf{Affected slots.} If the request carries source event ids, the affected slots are those with any entry, dispute or unconfirmed value from these events. An id cannot single out one fact of an event that states several, so all slots stated by these events are affected. In our coding workload each event states at most one fact, and LongMemEval has no deletions. If there are no ids, or the extractor never turned these events into claims, the router maps the description to known slots. As a third safeguard, we also add every slot the description names outright (the entity as a whole word, and every word of the attribute as the start of a word in the text). One routing call can return no slot, and a missed slot is a privacy failure.
+
+\textbf{Ledger deletion.} For each affected slot, the ledger erases every entry, dispute and unconfirmed value recorded up to the request. Past values are erased too, so a question about an earlier date cannot return them (I1). When the slots come from routing instead, other slots whose entries cite the same event keep those entries. The event itself is blocked in both cases, and \hyb{} removes the whole turn from the episode store, with any details in it that the ledger did not extract.
+
+\textbf{Tombstones.} Each affected slot keeps a tombstone without its value, also after the user states a value again. The extractor is never shown an erased stored record again: it sees the slot as deleted, or, once the user states a value again, which is allowed, that new current value. A value stated after the request opens a new entry from that statement: current questions return it, while questions about earlier times still abstain with ``deleted at the user's request''.
+
+\textbf{Replay prevention.} Every event removed by a deletion is blocked: the request's source events, the source events of erased values and every scrubbed turn. If any of them is ingested again, for example in a replay after a crash, both stores reject it.
+
+\textbf{Persistence.} Each store writes its full state to one JSON file and can restore it: entries, disputes, unconfirmed values, tombstones, blocked and seen event ids, and for \hyb{} the episode store. \hyb{} writes both stores to the same file at once, so a snapshot holds them in the same state. In our runs a snapshot is taken after every checkpoint, and a restart restores the last completed one. We did not test a crash during a write; the file is not written atomically. Deletion covers the live stores and later snapshots, but not earlier snapshots, the cache of model responses or the run logs, which a deployment would also have to clear. All state is partitioned by user, and retrieval and deletion only touch the partition of the user id they are given (I7). The paper tests restarts after every checkpoint.
+
+\end{document}

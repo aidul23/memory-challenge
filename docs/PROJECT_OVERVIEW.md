@@ -18,7 +18,7 @@ For the short version and the commands, see `README.md`.
 10. [The systems under test](#10-the-systems-under-test)
 11. [The ledger, in depth](#11-the-ledger-in-depth-systemsledger)
 12. [LLM providers and configuration](#12-llm-providers-and-configuration)
-13. [Results so far](#13-results-so-far)
+13. [Results](#13-results)
 14. [Running it](#14-running-it)
 15. [Tests](#15-tests)
 16. [Known limitations and next steps](#16-known-limitations-and-next-steps)
@@ -209,8 +209,9 @@ which the runner records as "unsupported" instead of crashing.
 1. Black-box first: the runner needs only `ingest`, `retrieve`, `delete`, `stats`.
 2. Everything is scoped by `user_id`.
 3. Systems report token usage; the **runner** measures latency, counts
-   injected tokens with one tokenizer (`interface/tokens.py`, a word/punctuation
-   counter, version `regex-words/1`), and owns cost. No system can flatter itself.
+   injected tokens with one tokenizer (`interface/tokens.py`, the answering
+   model's `o200k_base`; logged runs used the earlier word/punctuation counter
+   `regex-words/1`, see `runner/recount_tokens.py`), and owns cost. No system can flatter itself.
 4. All types are pydantic models, so every call can be logged and re-scored.
 
 ## 6. Planted-fact timelines: the ground truth (`workloads/timeline.py`)
@@ -668,139 +669,12 @@ part of the cache key. That narrows run-to-run variation without removing it
 the Anthropic backend only the cache makes a rerun reproducible; measure the
 noise with `python -m runner.sweep --repeats`.
 
-## 13. Results so far
+## 13. Results
 
-### Hand-built example: 8 probes, deletion with source ids
-
-| Probe | Type | Expected | no_memory | full_replay | transcript_rag | ledger | ledger_llm |
-|---|---|---|---|---|---|---|---|
-| p01 | current | PostgreSQL 14 | missed | correct | correct | correct | correct |
-| p02 | contamination | main | missed | polluted (contaminated) | polluted (contaminated) | correct | correct |
-| p03 | post_update | PostgreSQL 16 | missed | polluted (stale) | polluted (stale) | correct | correct |
-| p04 | post_update | make test | missed | polluted (stale) | polluted (stale) | correct | correct |
-| p05 | historical | PostgreSQL 14 | missed | polluted (future) | polluted (future) | correct | correct |
-| p06 | post_delete | abstain | no_abstention | no_abstention | no_abstention | correct | correct |
-| p07 | contamination | main | missed | polluted (contaminated) | polluted (contaminated) | correct | correct |
-| p08 | abstention | abstain | no_abstention | no_abstention | no_abstention | correct | correct |
-| **Correct** | | | **0/8** | **1/8** | **1/8** | **8/8** | **8/8** |
-| Injected tokens | | | 0 | 1,644 | 393 | 103 | 127 |
-
-`ledger_llm` above ran with OpenAI `gpt-4.1-mini`: 14 calls, 5,161 input and
-283 output tokens, about 0.65 s mean retrieval latency (versus about 0.1 ms for
-the rule-based ledger).
-
-With deletion by description only (`--withhold-sources`), the transcript
-baselines get worse on p06 (`leaked`: the deleted hostname comes back, since
-they cannot act on a description); both ledgers still score 8/8.
-
-### Synthetic workloads: small preset, seeds 0–4 (512 probes)
-
-`python -m runner.sweep --seeds 0 1 2 3 4`, with `ledger_llm` on OpenAI
-`gpt-4.1-mini` (temperature 0, fixed seed). Logs in `runs/synthetic-small-s*/`,
-summary in `runs/sweep-small.json`.
-
-| | no_memory | full_replay | transcript_rag | ledger (rules) | ledger_llm |
-|---|---|---|---|---|---|
-| Seed 0 | 0/99 | 24/99 | 34/99 | 29/99 | 93/99 |
-| Seed 1 | 0/98 | 19/98 | 20/98 | 41/98 | 86/98 |
-| Seed 2 | 0/99 | 22/99 | 27/99 | 45/99 | 98/99 |
-| Seed 3 | 0/107 | 24/107 | 27/107 | 38/107 | 92/107 |
-| Seed 4 | 0/109 | 23/109 | 30/109 | 45/109 | 100/109 |
-| **% correct, mean ± sd** | 0.0 ± 0.0 | 21.9 ± 1.8 | 27.0 ± 5.0 | 38.7 ± 6.3 | **91.7 ± 5.2** |
-
-Correct by probe type, all seeds:
-
-| Type | no_memory | full_replay | transcript_rag | ledger (rules) | ledger_llm |
-|---|---|---|---|---|---|
-| current | 0/112 | 112/112 | 102/112 | 27/112 | 103/112 |
-| post_update | 0/89 | 0/89 | 5/89 | 13/89 | 80/89 |
-| historical | 0/93 | 0/93 | 17/93 | 14/93 | 73/93 |
-| contamination | 0/67 | 0/67 | 14/67 | 6/67 | 62/67 |
-| post_delete | 0/31 | 0/31 | 0/31 | 30/31 | 31/31 |
-| abstention | 0/120 | 0/120 | 0/120 | 108/120 | 120/120 |
-
-Verdicts, all seeds:
-
-| | correct | polluted | wrong | missed | false_abstention | no_abstention |
-|---|---|---|---|---|---|---|
-| full_replay | 112 | 249 | 0 | 0 | 0 | 151 |
-| transcript_rag | 138 | 139 | 56 | 28 | 0 | 151 |
-| ledger (rules) | 198 | 0 | 9 | 28 | 264 | 13 |
-| ledger_llm | 469 | 0 | 4 | 1 | 38 | 0 |
-
-- **full_replay** answers every `current` probe and pollutes every update,
-  contamination and historical probe: the old value is always there too.
-- **transcript_rag** is mixed, and never abstains.
-- **The rule-based ledger** never pollutes, but its extractor misses most
-  generated phrasings: 264 false abstentions, and its correct abstention and
-  post-delete answers come largely from knowing nothing.
-- **The LLM ledger** never pollutes, abstains correctly on all 120
-  abstention probes, and its failures are mostly false abstentions (38).
-  Its 4 `wrong` answers (seeds 3 and 4) all come from an update stated
-  indirectly that was missed, so the old value is served: "build #812
-  reported by Jenkins", "escalation policy -> Mikko Laine",
-  `config-sync: auth.database = MySQL 8.4`. Its one `missed` routes "where
-  do the gateway-service builds run" to the runtime slot. Two more were wrong before the
-  hold rule: the user's first value was missed ("Page Leena Koski if
-  gateway-service breaks") and the assistant's later guess ("I'll assume
-  Mikko Laine") was served. They now abstain.
-
-  Before the grounding check it also had one `no_abstention` (a deletion
-  request extracted as the database value "not in memory") and one `missed`
-  current answer (an invented "GitHub Actions" replacing Jenkins); both are
-  now correct.
-
-**Deletion by description only** (`--withhold-sources`, logs
-`runs/synthetic-small-s*/*__nosrc.json`): the LLM ledger scores 469 correct,
-38 false abstentions, 1 missed, 4 wrong and **0 leaked** over the 5 seeds.
-Before `named_slots` it leaked 2 deleted values on seed 4 ("Don't keep
-gateway-service's CI provider / on-call owner in memory anymore"): the router
-returned no slot although both were listed. Asked again live, it missed the
-CI provider 5 times out of 5 with the user's 14 slots listed (and found it
-with only the gateway slots listed); it found the on-call owner 5 times out of
-5, so the cached miss was noise. Either way a single routing call decided
-whether a deletion happened. The fix changed no other verdict, apart from one
-contamination probe (p0104) whose router call changed because the gateway
-slots now show as deleted; it now abstains, a routing miss on a fragmented
-`inventory/ci_provider` slot.
-
-No run has an isolation violation. The one the runner reported before the
-grounding check (seed 4, p0051) was not a cross-user leak: the extractor had
-invented "GitHub Actions" from a diff summary, and that string happens to be
-another user's value.
-
-**Noise.** Three identical runs per seed (`--repeats 3`) changed the verdict
-of 20 of 512 probes, a standard deviation of about 1 probe per seed. Seeds
-differ far more: up to 16 points for the rule-based ledger. Any change has to
-be judged on the 5-seed mean, and differences of a point or two are noise.
-
-**What changed the LLM ledger's score, measured this way** (mean % correct
-over seeds 0–4):
-
-| Change | Before | After | Kept |
-|---|---|---|---|
-| Enumerate event ids in the extraction schema (fixes silently lost sessions) | 88.7 ± 4.0 | 92.2 ± 4.1 | yes |
-| Merge a new slot into an existing one when an LLM judges them the same property | 92.2 | 92.0 | no: 127 checks, 0 merges |
-| Map short service names (`auth` → `auth-service`); ask for tersely stated values | 91.9 | 90.7 | no: fixed 7 historical probes, broke 7 others |
-| Router prompt examples reworded so they no longer copy the generator's phrasing | 91.9 | 91.5 | yes: within noise, and 120/120 abstentions |
-| Hold values the assistant states first as unconfirmed (introduce trust 2) | 91.5, 6 wrong | 91.5, 4 wrong | yes: 2 wrong → abstain, nothing else changed |
-| Also hold values a document states first (introduce trust 3) | 91.5 | 89.7 | no: 9 correct answers lost, documents are often the only first source |
-| Deletion also erases slots the description names outright (`named_slots`) | 2 leaked (description only) | 0 leaked | yes: with-sources results unchanged |
-| Drop claims whose value is not in their event (`grounded`) | 91.5, 1 no_abstention | 91.7, 0 no_abstention | yes: 38 invented claims dropped; 2 probes fixed, 2 lost and 1 gained to router noise |
-
-The first two rows average three runs per seed, the others one run (91.9
-is the single-run baseline). The trust rows change only the ledger core, so
-they replay every extraction from the cache: no LLM calls, no noise, and the
-difference is exact. The router's examples were originally tuned on
-seed 0 using the generator's own question wording, which flattered the score;
-91.5 is the number without that. The extraction-prompt experiments show the pattern behind the remaining
-errors: with `gpt-4.1-mini`, rewording the prompt re-rolls all ~150
-extractions and moves failures around rather than removing them. What is left
-is the extraction model's recall on terse or indirect statements, mostly a
-fact's *first* value (`config-sync: auth.staging_host = ...`, "Page Priya
-Nair if auth-service breaks"). A missed first value makes every historical
-question before the next update abstain, which is why historical probes
-(74/93) are the weakest type.
+The numbers in the paper come from the run logs in `runs/` and are regenerated
+by `analysis/make_tables.py`; see the README's reproduction map. An earlier
+development log of intermediate results was removed from this document,
+because those numbers predate the final systems and the model-token counts.
 
 ## 14. Running it
 
@@ -824,7 +698,7 @@ python -m pytest -q tests
 
 ## 15. Tests
 
-81 tests, all offline: the LLM tests use fake clients and never touch the
+107 tests, all offline: the LLM tests use fake clients and never touch the
 network or your real `.env`.
 
 | File | Tests | Covers |
