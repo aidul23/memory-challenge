@@ -145,6 +145,7 @@ def _run_instance(name: str, inst: lme.Instance, budget: int, answer_backend, ju
         judge_prompt(inst.question_type, inst.question, inst.answer, response, inst.abstention),
         JUDGE_SCHEMA, "judgement")
     stats = system.stats(inst.question_id)
+    write_usage = sum_usage(ingest_usage)
     memory_usage = sum_usage(ingest_usage + [res.usage])
     return {
         "question_id": inst.question_id, "category": inst.category, "question_type": inst.question_type,
@@ -156,9 +157,13 @@ def _run_instance(name: str, inst: lme.Instance, budget: int, answer_backend, ju
         "history_tokens": sum(count_tokens(e.content) for e in inst.events),
         "sessions": inst.sessions, "ingest_s": ingest_s, "retrieve_s": retrieve_s,
         "store_items": stats.n_items, "storage_bytes": stats.storage_bytes,
-        "memory_usage": memory_usage.model_dump(), "answer_usage": ans_usage.model_dump(),
+        "memory_usage": memory_usage.model_dump(), "write_usage": write_usage.model_dump(),
+        "read_usage": res.usage.model_dump(), "answer_usage": ans_usage.model_dump(),
         "judge_usage": judge_usage.model_dump(),
-        "cost_usd": {"memory": cost_usd(memory_usage), "answer": cost_usd(ans_usage),
+        # memory = write (ingest, paid once per history) + read (retrieval,
+        # paid per question); kept for older logs that have only the sum.
+        "cost_usd": {"memory": cost_usd(memory_usage), "write": cost_usd(write_usage),
+                     "read": cost_usd(res.usage), "answer": cost_usd(ans_usage),
                      "judge": cost_usd(judge_usage)},
         "system_config": system.config(),
     }

@@ -137,9 +137,11 @@ def score(
     foreign = tuple(v for v in foreign_values if any(mentions(t, v) for t in text))
 
     if expected.kind is ExpectedKind.ABSTAIN:
+        # A forbidden value counts even when the memory also abstains, so an
+        # abstain flag cannot hide a leaked (e.g. deleted) value.
         verdict = (
-            Verdict.CORRECT if abstained
-            else Verdict.LEAKED if hits
+            Verdict.LEAKED if hits
+            else Verdict.CORRECT if abstained
             else Verdict.NO_ABSTENTION
         )
     elif abstained:

@@ -1,20 +1,29 @@
 """The one tokenizer used to count injected evidence tokens (R2).
 
 The runner measures every system's evidence with this function, and systems
-may import it to fit their output into ``Query.token_budget``. It is a
-dependency-free stand-in (words and punctuation marks); to switch to a model
-tokenizer, change only this module and bump ``TOKENIZER`` so old runs stay
-distinguishable.
+import it to fit their output into ``Query.token_budget``. It is the answering
+model's own tokenizer: ``o200k_base``, the encoding of ``gpt-4.1-mini``.
+
+Runs logged before this change (``settings.tokenizer == "regex-words/1"``)
+counted words and punctuation marks instead. In none of them did a budget cut
+any evidence (``runner/recount_tokens.py`` checks this), so their evidence
+is what this tokenizer would have selected; their token counts are recomputed
+from the logged evidence by ``runner/recount_tokens.py``.
 """
 
 from __future__ import annotations
 
-import re
+from functools import lru_cache
 
-TOKENIZER = "regex-words/1"
+import tiktoken
 
-_TOKEN = re.compile(r"\w+|[^\w\s]")
+TOKENIZER = "o200k_base/1"
+
+
+@lru_cache(maxsize=1)
+def _encoding() -> tiktoken.Encoding:
+    return tiktoken.get_encoding("o200k_base")
 
 
 def count_tokens(text: str) -> int:
-    return len(_TOKEN.findall(text))
+    return len(_encoding().encode(text, disallowed_special=()))

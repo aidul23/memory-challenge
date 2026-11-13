@@ -162,7 +162,7 @@ def report(args) -> None:
     path.write_text(json.dumps(table, indent=1), encoding="utf-8")
     print(f"\nsummary: {path}")
     # Data files for pgfplots in the paper (no plotting dependency here).
-    fig_dir = Path("paper/figures")
+    fig_dir = Path("results/figures")
     fig_dir.mkdir(parents=True, exist_ok=True)
     for name, agg in table.items():
         lines = ["cp answer evidence forbidden kib tokens retrievems"]
